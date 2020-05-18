@@ -1,0 +1,22 @@
+minimum_cumulusci_version: '3.8.0'
+project:
+    name: Salesforce-ClassManagement-BusinessProcess
+    package:
+        name:  Salesforce-ClassManagement-BusinessProcess
+        api_version: '48.0'
+    source_format: sfdx
+    dependencies:
+        - github: https://github.com/SalesforceFoundation/Cumulus
+        - github: https://github.com/SalesforceFoundation/Volunteers-for-Salesforce
+
+tasks:
+    robot:
+        options:
+            suites: robot/Salesforce-ClassManagement-BusinessProcess/tests
+            options:
+                outputdir: robot/Salesforce-ClassManagement-BusinessProcess/results
+
+    robot_testdoc:
+        options:
+            path: robot/Salesforce-ClassManagement-BusinessProcess/tests
+            output: robot/Salesforce-ClassManagement-BusinessProcess/doc/Salesforce-ClassManagement-BusinessProcess_tests.html
