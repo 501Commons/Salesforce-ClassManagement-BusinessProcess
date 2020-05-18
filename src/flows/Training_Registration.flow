@@ -898,13 +898,6 @@
         <dataType>String</dataType>
         <displayField>c501_cm__Training_Name_WebForm__c</displayField>
         <filters>
-            <field>c501_cm__Class_Type__c</field>
-            <operator>Contains</operator>
-            <value>
-                <elementReference>varInputDay1Filter</elementReference>
-            </value>
-        </filters>
-        <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
             <value>
@@ -916,6 +909,13 @@
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Full</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__Class_Type__c</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>varInputDay1Filter</elementReference>
             </value>
         </filters>
         <filters>
@@ -958,13 +958,6 @@
         <dataType>String</dataType>
         <displayField>c501_cm__Training_Name_WebForm__c</displayField>
         <filters>
-            <field>c501_cm__Class_Type__c</field>
-            <operator>Contains</operator>
-            <value>
-                <elementReference>varInputDay2Filter</elementReference>
-            </value>
-        </filters>
-        <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
             <value>
@@ -976,6 +969,13 @@
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Full</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__Class_Type__c</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>varInputDay2Filter</elementReference>
             </value>
         </filters>
         <filters>
@@ -1028,13 +1028,6 @@
         <dataType>String</dataType>
         <displayField>c501_cm__Training_Name_WebForm__c</displayField>
         <filters>
-            <field>c501_cm__Class_Type__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varInputDay3Filter</elementReference>
-            </value>
-        </filters>
-        <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
             <value>
@@ -1046,6 +1039,13 @@
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Full</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__Class_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputDay3Filter</elementReference>
             </value>
         </filters>
         <filters>
