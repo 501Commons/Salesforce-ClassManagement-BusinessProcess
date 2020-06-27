@@ -1,4 +1,4 @@
-<apex:page id="EmailPref" showHeader="false">
+<apex:page id="cmbp_TrainingRegistration" showHeader="false">
 
   
 <html>
@@ -66,23 +66,68 @@
               }
            }
         };
-        $Lightning.use("c:C501_Lighting_Flow_APP", function() {
+        
+        var inputDebugMode = "{!$CurrentPage.parameters.inputDebugMode}" == "true";
+        var varInputClassTypeFilter = "{!$CurrentPage.parameters.varInputClassTypeFilter}";
+        var varInputDay1Filter = "{!$CurrentPage.parameters.varInputDay1Filter}";
+        var varInputDay2Filter = "{!$CurrentPage.parameters.varInputDay2Filter}";
+        var varInputDay3Filter = "{!$CurrentPage.parameters.varInputDay3Filter}";
+        var varInputEnforceConsecutive = "{!$CurrentPage.parameters.varInputEnforceConsecutive}" == "true";
+        var varInputRestrictByDay = "{!$CurrentPage.parameters.varInputRestrictByDay}" == "true";
+        var varInputTrainingFilter = "{!$CurrentPage.parameters.varInputTrainingFilter}";
+        
+        $Lightning.use("c:cmbp_Lighting_Flow_APP", function() {
            // Create the flow component and set the onstatuschange attribute
            $Lightning.createComponent("lightning:flow", {"onstatuschange":statusChange},
               "flowContainer",
               function (component) {
                  // Set the input variables
                  var inputVariables = [
-                    //{
-                       //name : 'myInput',
-                       //type : 'String',
-                       //value : "Hello, world"
-                    //}
+                    {
+                       name : 'inputDebugMode',
+                       type : 'Boolean',
+                       value : inputDebugMode
+                    },
+                    {
+                       name : 'varInputClassTypeFilter',
+                       type : 'String',
+                       value : varInputClassTypeFilter
+                    },              
+                    {
+                       name : 'varInputDay1Filter',
+                       type : 'String',
+                       value : varInputDay1Filter
+                    },
+                    {
+                       name : 'varInputDay2Filter',
+                       type : 'String',
+                       value : varInputDay2Filter
+                    },
+                    {
+                       name : 'varInputDay3Filter',
+                       type : 'String',
+                       value : varInputDay3Filter
+                    },
+                    {
+                       name : 'varInputEnforceConsecutive',
+                       type : 'Boolean',
+                       value : varInputEnforceConsecutive
+                    },
+                    {
+                       name : 'varInputRestrictByDay',
+                       type : 'Boolean',
+                       value : varInputRestrictByDay
+                    },
+                    {
+                       name : 'varInputTrainingFilter',
+                       type : 'String',
+                       value : varInputTrainingFilter
+                    }
                  ];
                  
                  // Start an interview in the flowContainer div, and 
                  // initializes the input variables.
-                 component.startFlow("Email_Only_Preferences_FLOW", inputVariables);
+                 component.startFlow("cmbp_Training_Registration", inputVariables);
               }
            );
         });

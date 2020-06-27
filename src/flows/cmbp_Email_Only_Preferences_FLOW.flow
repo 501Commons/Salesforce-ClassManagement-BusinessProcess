@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Send_Email_of_Change</name>
         <label>Send Email of Change</label>
-        <locationX>833</locationX>
+        <locationX>996</locationX>
         <locationY>669</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
@@ -25,7 +25,7 @@
         <inputParameters>
             <name>senderAddress</name>
             <value>
-                <stringValue>elizabeth.sheehancastro@seiuesf.org</stringValue>
+                <elementReference>Get_cmbp_Custom_Settings.OrgWideEmailAddress__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -44,7 +44,7 @@
     <assignments>
         <name>addEachContact_to_Collection</name>
         <label>addEachContact to Collection</label>
-        <locationX>1326</locationX>
+        <locationX>1489</locationX>
         <locationY>432</locationY>
         <assignmentItems>
             <assignToReference>conCollFinal</assignToReference>
@@ -60,7 +60,7 @@
     <assignments>
         <name>AssignEmailOptout</name>
         <label>AssignEmailOptout</label>
-        <locationX>1471</locationX>
+        <locationX>1634</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>conEach.HasOptedOutOfEmail</assignToReference>
@@ -70,7 +70,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>conEach.c501_cm__ii_Primary_Language__c</assignToReference>
+            <assignToReference>conEach.ii_Primary_Language__c</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>formLanguagesSelected</elementReference>
@@ -83,17 +83,17 @@
     <assignments>
         <name>AssignSMSOptout</name>
         <label>AssignSMSOptout</label>
-        <locationX>1581</locationX>
+        <locationX>1744</locationX>
         <locationY>137</locationY>
         <assignmentItems>
-            <assignToReference>conEach.c501_cm__C501_SMS_Opt_Out__c</assignToReference>
+            <assignToReference>conEach.C501_SMS_Opt_Out__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>formSetSMSOptOUT</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>conEach.c501_cm__ii_Primary_Language__c</assignToReference>
+            <assignToReference>conEach.ii_Primary_Language__c</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>formLanguagesSelected</elementReference>
@@ -106,7 +106,7 @@
     <assignments>
         <name>Both_Entered_Error</name>
         <label>Both Entered Error</label>
-        <locationX>71</locationX>
+        <locationX>234</locationX>
         <locationY>227</locationY>
         <assignmentItems>
             <assignToReference>Error_Message</assignToReference>
@@ -122,7 +122,7 @@
     <assignments>
         <name>increase_count</name>
         <label>increase count</label>
-        <locationX>795</locationX>
+        <locationX>958</locationX>
         <locationY>45</locationY>
         <assignmentItems>
             <assignToReference>varCount</assignToReference>
@@ -142,7 +142,7 @@
             <assignToReference>varSMSOptedOutSingle</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>conEach.c501_cm__C501_SMS_Opt_Out__c</elementReference>
+                <elementReference>conEach.C501_SMS_Opt_Out__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -152,7 +152,7 @@
     <assignments>
         <name>Nothing_Entered_Error</name>
         <label>Nothing Entered Error</label>
-        <locationX>299</locationX>
+        <locationX>462</locationX>
         <locationY>211</locationY>
         <assignmentItems>
             <assignToReference>Error_Message</assignToReference>
@@ -191,7 +191,7 @@
     <decisions>
         <name>Contact_Count</name>
         <label>Contact Count</label>
-        <locationX>655</locationX>
+        <locationX>818</locationX>
         <locationY>316</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -301,7 +301,7 @@
     <decisions>
         <name>entered_Email_or_Phone</name>
         <label>entered Email or Phone</label>
-        <locationX>293</locationX>
+        <locationX>456</locationX>
         <locationY>51</locationY>
         <defaultConnector>
             <targetReference>Nothing_Entered_Error</targetReference>
@@ -377,7 +377,7 @@
     <decisions>
         <name>Opting_IN_OR_OUT</name>
         <label>Opting IN OR OUT</label>
-        <locationX>891</locationX>
+        <locationX>1054</locationX>
         <locationY>190</locationY>
         <defaultConnector>
             <targetReference>countContacts_0</targetReference>
@@ -409,7 +409,7 @@
     <decisions>
         <name>Update_What</name>
         <label>Update What</label>
-        <locationX>1246</locationX>
+        <locationX>1409</locationX>
         <locationY>146</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -460,7 +460,7 @@
     <decisions>
         <name>Update_What_0</name>
         <label>Update What</label>
-        <locationX>947</locationX>
+        <locationX>1110</locationX>
         <locationY>582</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -511,7 +511,7 @@
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>c501_cm__ii_Primary_Language__c</picklistField>
+        <picklistField>ii_Primary_Language__c</picklistField>
         <picklistObject>Contact</picklistObject>
     </dynamicChoiceSets>
     <formulas>
@@ -533,7 +533,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <formulas>
         <name>formEmailMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetEmailOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_In_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_Out_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c})</expression>
+        <expression>IF({!varSetEmailOptIn},{!$Setup.Imagine_Settings__c.Email_Opt_In_Reply__c}+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c},{!$Setup.Imagine_Settings__c.Email_Opt_Out_Reply__c}+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c})</expression>
     </formulas>
     <formulas>
         <name>formEmailOptedOutSingle</name>
@@ -563,19 +563,19 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <formulas>
         <name>fromSMSMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetSMSOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_In_Reply__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_Out_Reply__c})+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c}</expression>
+        <expression>IF({!varSetSMSOptIn},{!$Setup.Imagine_Settings__c.SMS_Opt_In_Reply__c},{!$Setup.Imagine_Settings__c.SMS_Opt_Out_Reply__c})+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c}</expression>
     </formulas>
     <formulas>
         <name>SMSorEmail</name>
         <dataType>String</dataType>
         <expression>IF(OR({!X1_Email},{!greaterthan1Email}),&apos;Email&apos;,&apos;SMS&apos;)</expression>
     </formulas>
-    <interviewLabel>Email Only Preferences FLOW {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Email Only Preferences FLOW</label>
+    <interviewLabel>cmbp Email Only Preferences FLOW {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Email Only Preferences FLOW</label>
     <loops>
         <name>countContacts</name>
         <label>countContacts</label>
-        <locationX>664</locationX>
+        <locationX>827</locationX>
         <locationY>45</locationY>
         <assignNextValueToReference>conEach</assignNextValueToReference>
         <collectionReference>contactsColl</collectionReference>
@@ -590,7 +590,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <loops>
         <name>countContacts_0</name>
         <label>countContacts</label>
-        <locationX>1156</locationX>
+        <locationX>1319</locationX>
         <locationY>313</locationY>
         <assignNextValueToReference>conEach</assignNextValueToReference>
         <collectionReference>contactsColl</collectionReference>
@@ -618,63 +618,76 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <recordCreates>
         <name>Create_Guest_Update_Email</name>
         <label>Create Guest Update Email</label>
-        <locationX>1325</locationX>
+        <locationX>1488</locationX>
         <locationY>272</locationY>
         <connector>
             <targetReference>addEachContact_to_Collection</targetReference>
         </connector>
         <inputAssignments>
-            <field>c501_cm__C501_Contact__c</field>
+            <field>C501_Contact__c</field>
             <value>
                 <elementReference>conEach.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>c501_cm__C501_Email_Opt_Out_Text__c</field>
+            <field>C501_Email_Opt_Out_Text__c</field>
             <value>
                 <elementReference>formSetEmailOptOUT</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>c501_cm__Languages__c</field>
+            <field>Languages__c</field>
             <value>
                 <elementReference>Language_s</elementReference>
             </value>
         </inputAssignments>
-        <object>c501_cm__C501_Guest_Update__c</object>
+        <object>C501_Guest_Update__c</object>
     </recordCreates>
     <recordCreates>
         <name>Create_Guest_Update_Phone</name>
         <label>Create Guest Update Phone</label>
-        <locationX>1579</locationX>
+        <locationX>1742</locationX>
         <locationY>427</locationY>
         <connector>
             <targetReference>addEachContact_to_Collection</targetReference>
         </connector>
         <inputAssignments>
-            <field>c501_cm__C501_Contact__c</field>
+            <field>C501_Contact__c</field>
             <value>
                 <elementReference>conEach.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>c501_cm__C501_SMS_Opt_Out_Text__c</field>
+            <field>C501_SMS_Opt_Out_Text__c</field>
             <value>
                 <elementReference>formSetSMSOptOUT</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>c501_cm__Languages__c</field>
+            <field>Languages__c</field>
             <value>
                 <elementReference>Language_s</elementReference>
             </value>
         </inputAssignments>
-        <object>c501_cm__C501_Guest_Update__c</object>
+        <object>C501_Guest_Update__c</object>
     </recordCreates>
+    <recordLookups>
+        <name>Get_cmbp_Custom_Settings</name>
+        <label>Get cmbp Custom Settings</label>
+        <locationX>173</locationX>
+        <locationY>43</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Input_Phone_or_Email</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>cmbp_Custom_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Lookup_Contacts_By_Email</name>
         <label>Lookup Contacts By Email</label>
-        <locationX>544</locationX>
+        <locationX>707</locationX>
         <locationY>42</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -690,21 +703,21 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <object>Contact</object>
         <outputReference>contactsColl</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>c501_cm__C501_SMS_Opt_Out__c</queriedFields>
+        <queriedFields>C501_SMS_Opt_Out__c</queriedFields>
         <queriedFields>HasOptedOutOfEmail</queriedFields>
-        <queriedFields>c501_cm__ii_Primary_Language__c</queriedFields>
+        <queriedFields>ii_Primary_Language__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Lookup_Contacts_By_Phone</name>
         <label>Lookup Contacts By Phone</label>
-        <locationX>550</locationX>
+        <locationX>713</locationX>
         <locationY>155</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>countContacts</targetReference>
         </connector>
         <filters>
-            <field>c501_cm__C501_Clean_Both_Mobile_Numbers__c</field>
+            <field>C501_Clean_Both_Mobile_Numbers__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>forCleanPhone</elementReference>
@@ -713,21 +726,21 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <object>Contact</object>
         <outputReference>contactsColl</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>c501_cm__C501_SMS_Opt_Out__c</queriedFields>
+        <queriedFields>C501_SMS_Opt_Out__c</queriedFields>
         <queriedFields>HasOptedOutOfEmail</queriedFields>
-        <queriedFields>c501_cm__ii_Primary_Language__c</queriedFields>
+        <queriedFields>ii_Primary_Language__c</queriedFields>
     </recordLookups>
     <screens>
         <name>Confirmation_Screen</name>
         <label>Confirmation Screen</label>
-        <locationX>959</locationX>
+        <locationX>1122</locationX>
         <locationY>722</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
             <name>ConfirmationNotice</name>
-            <fieldText>&lt;p&gt;Your {!SMSorEmail} preference has been updated. We have sent an &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!SMSorEmail}&lt;/span&gt; to you to confirm your changes.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If there is anything else we can do for you, please don&apos;t hesitate to reach out at &lt;a href=&quot;https://www.seiueducation.org/contact&quot; target=&quot;_blank&quot;&gt;https://www.seiueducation.org/contact&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Your {!SMSorEmail} preference has been updated. We have sent an &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!SMSorEmail}&lt;/span&gt; to you to confirm your changes.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If there is anything else we can do for you, please don&apos;t hesitate to reach out at {!Get_cmbp_Custom_Settings.Website_Contact__c}</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -736,14 +749,14 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Confirmation_Screen_0</name>
         <label>Confirmation Screen</label>
-        <locationX>584</locationX>
+        <locationX>747</locationX>
         <locationY>477</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
             <name>ConfirmationNotice_0</name>
-            <fieldText>&lt;p&gt;We did not find your information based on the email you entered. Please go back and try again.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If you believe this is in error, please don&apos;t hesitate to contact us at &lt;a href=&quot;https://www.seiueducation.org/contact&quot; target=&quot;_blank&quot;&gt;https://www.seiueducation.org/contact&lt;/a&gt;.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;We did not find your information based on the email you entered. Please go back and try again.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If you believe this is in error, please don&apos;t hesitate to contact us at {!Get_cmbp_Custom_Settings.Website_Contact__c}.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -752,7 +765,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Input_Phone_or_Email</name>
         <label>Input Phone or Email</label>
-        <locationX>167</locationX>
+        <locationX>330</locationX>
         <locationY>50</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -786,7 +799,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Language_Preferences</name>
         <label>Language Preferences</label>
-        <locationX>1111</locationX>
+        <locationX>1274</locationX>
         <locationY>95</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -796,7 +809,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         </connector>
         <fields>
             <name>langMessage</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Language preferences. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Set which language(s) you prefer. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;If you want to change your language preferences in more detail, please contact at &lt;/span&gt;&lt;a href=&quot;https://www.seiueducation.org/contact&quot; target=&quot;_blank&quot; style=&quot;font-size: 12px;&quot;&gt;https://www.seiueducation.org/contact&lt;/a&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Language preferences. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Set which language(s) you prefer. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;If you want to change your language preferences in more detail, please contact at {!Get_cmbp_Custom_Settings.Website_Contact__c}</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -814,7 +827,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Multi_Contact_Found_Email</name>
         <label>Multi Contact Found Email</label>
-        <locationX>747</locationX>
+        <locationX>910</locationX>
         <locationY>476</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -867,7 +880,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Multi_Contact_Found_Phone</name>
         <label>Multi Contact Found Phone</label>
-        <locationX>835</locationX>
+        <locationX>998</locationX>
         <locationY>413</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -920,7 +933,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Single_Contact_Found_Email</name>
         <label>Single Contact Found Email</label>
-        <locationX>799</locationX>
+        <locationX>962</locationX>
         <locationY>269</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -973,7 +986,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <screens>
         <name>Single_Contact_Found_Phone</name>
         <label>Single Contact Found Phone</label>
-        <locationX>754</locationX>
+        <locationX>917</locationX>
         <locationY>166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1025,12 +1038,12 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>48</locationY>
         <connector>
-            <targetReference>Input_Phone_or_Email</targetReference>
+            <targetReference>Get_cmbp_Custom_Settings</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>lineBreak</name>
         <text>{!emptyString}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Outreach_Area_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Outreach Area 1</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Counties</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Outreach_Area_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Outreach Area 2</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Counties</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Outreach_Area_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Outreach Area 3</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Counties</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Outreach_Area_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Outreach Area 4</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Counties</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Outreach_Today__c</fullName>
+        <description>Outreach today available for training</description>
+        <externalId>false</externalId>
+        <formula>AND(
+OR(CEILING(ii_Days_Until_Class__c) = 30.0, CEILING(ii_Days_Until_Class__c) = 14.0, CEILING(ii_Days_Until_Class__c) = 7.0),
+OR(TEXT(Outreach_Area_1__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_2__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_3__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_4__c) &lt;&gt; &apos;&apos;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Outreach today available for training</inlineHelpText>
+        <label>Outreach Today</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>States</valueSetName>
+        </valueSet>
+    </fields>
+</CustomObject>

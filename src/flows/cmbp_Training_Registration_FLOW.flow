@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <assignments>
+        <name>Build_Child_Training_List</name>
+        <label>Build Child Training List</label>
+        <locationX>440</locationX>
+        <locationY>1188</locationY>
+        <assignmentItems>
+            <assignToReference>varChildTrainings</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>getChildTrainingDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Child_Trainings</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Clear_Error_Message</name>
         <label>Clear Error Message</label>
-        <locationX>1275</locationX>
+        <locationX>1422</locationX>
         <locationY>408</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
@@ -14,15 +30,47 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Day1_Already_Registered</name>
+        <label>Day1 Already Registered</label>
+        <locationX>321</locationX>
+        <locationY>852</locationY>
+        <assignmentItems>
+            <assignToReference>varDay1AlreadyRegisteredMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>**Already Created Registration Request--&gt;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Day2_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Day2_Already_Registered</name>
+        <label>Day2 Already Registered</label>
+        <locationX>830</locationX>
+        <locationY>957</locationY>
+        <assignmentItems>
+            <assignToReference>varDay2AlreadyRegisteredMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>**Already Created Registration Request--&gt;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Day3_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Day2_Min_Day</name>
         <label>Day2 Min Day</label>
-        <locationX>1676</locationX>
+        <locationX>1823</locationX>
         <locationY>203</locationY>
         <assignmentItems>
             <assignToReference>varDay2MinDay</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>soDay1Training.c501_cm__custom_End_DateTime__c</elementReference>
+                <elementReference>soDay1Training.custom_End_DateTime__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -30,15 +78,31 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Day3_Already_Registered</name>
+        <label>Day3 Already Registered</label>
+        <locationX>1218</locationX>
+        <locationY>957</locationY>
+        <assignmentItems>
+            <assignToReference>varDay3AlreadyRegisteredMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>**Already Created Registration Request--&gt;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Finish</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Day3_Min_Day</name>
         <label>Day3 Min Day</label>
-        <locationX>1573</locationX>
+        <locationX>1720</locationX>
         <locationY>606</locationY>
         <assignmentItems>
             <assignToReference>varDay3MinDay</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>soDay2Training.c501_cm__custom_End_DateTime__c</elementReference>
+                <elementReference>soDay2Training.custom_End_DateTime__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -48,7 +112,7 @@
     <assignments>
         <name>Facility_Lead</name>
         <label>Facility Lead</label>
-        <locationX>1191</locationX>
+        <locationX>1338</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>soLead.FirstName</assignToReference>
@@ -96,7 +160,7 @@
             <assignToReference>soLead.State</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Facility_State</elementReference>
+                <elementReference>State_Facility_Picklist</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -121,14 +185,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.c501_cm__Class_Type__c</assignToReference>
+            <assignToReference>soLead.Class_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varInputDay1Filter</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.c501_cm__Training_Status__c</assignToReference>
+            <assignToReference>soLead.Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -152,7 +216,7 @@
     <assignments>
         <name>Restrict_By_Day</name>
         <label>Restrict By Day</label>
-        <locationX>140</locationX>
+        <locationX>287</locationX>
         <locationY>265</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDayFilter</assignToReference>
@@ -182,7 +246,7 @@
     <assignments>
         <name>Set_Lead_Id</name>
         <label>Set Lead Id</label>
-        <locationX>111</locationX>
+        <locationX>258</locationX>
         <locationY>618</locationY>
         <assignmentItems>
             <assignToReference>varLeadId</assignToReference>
@@ -198,7 +262,7 @@
     <assignments>
         <name>Set_Substitute_Day1_Error</name>
         <label>Set Error</label>
-        <locationX>576</locationX>
+        <locationX>723</locationX>
         <locationY>431</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
@@ -214,7 +278,7 @@
     <assignments>
         <name>Set_Substitute_Day1_Error_1</name>
         <label>Set Error</label>
-        <locationX>1524</locationX>
+        <locationX>1671</locationX>
         <locationY>446</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
@@ -230,7 +294,7 @@
     <assignments>
         <name>Set_Substitute_Day1_Error_1_1</name>
         <label>Set Error</label>
-        <locationX>1245</locationX>
+        <locationX>1392</locationX>
         <locationY>736</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
@@ -246,7 +310,7 @@
     <assignments>
         <name>Substitute_Lead</name>
         <label>Substitute Lead</label>
-        <locationX>1079</locationX>
+        <locationX>1226</locationX>
         <locationY>12</locationY>
         <assignmentItems>
             <assignToReference>soLead.FirstName</assignToReference>
@@ -294,7 +358,7 @@
             <assignToReference>soLead.State</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Substitute_State</elementReference>
+                <elementReference>State_Sub_Picklist</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -319,14 +383,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.c501_cm__Class_Type__c</assignToReference>
+            <assignToReference>soLead.Class_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varInputDay1Filter</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.c501_cm__Training_Status__c</assignToReference>
+            <assignToReference>soLead.Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -350,7 +414,7 @@
     <assignments>
         <name>Training_Lead</name>
         <label>Training Lead</label>
-        <locationX>1085</locationX>
+        <locationX>1232</locationX>
         <locationY>124</locationY>
         <assignmentItems>
             <assignToReference>soLead.FirstName</assignToReference>
@@ -398,7 +462,7 @@
             <assignToReference>soLead.State</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Training_State</elementReference>
+                <elementReference>State_Training_Picklist</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -423,14 +487,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.c501_cm__Class_Type__c</assignToReference>
+            <assignToReference>soLead.Class_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varInputDay1Filter</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.c501_cm__Training_Status__c</assignToReference>
+            <assignToReference>soLead.Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -466,8 +530,8 @@
     <decisions>
         <name>Check_Day1_Member</name>
         <label>Existing Day1 Member</label>
-        <locationX>115</locationX>
-        <locationY>842</locationY>
+        <locationX>42</locationX>
+        <locationY>750</locationY>
         <defaultConnector>
             <targetReference>Create_Member_Day1</targetReference>
         </defaultConnector>
@@ -483,7 +547,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Day2_0</targetReference>
+                <targetReference>Day1_Already_Registered</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -491,7 +555,7 @@
     <decisions>
         <name>Check_Day2</name>
         <label>Check Day2</label>
-        <locationX>1304</locationX>
+        <locationX>1451</locationX>
         <locationY>201</locationY>
         <defaultConnector>
             <targetReference>Check_Day3b</targetReference>
@@ -507,6 +571,10 @@
                     <stringValue></stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>varInputDay2Filter</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Day2_Enforce_Consecutive</targetReference>
             </connector>
@@ -516,8 +584,8 @@
     <decisions>
         <name>Check_Day2_0</name>
         <label>Check Day2</label>
-        <locationX>495</locationX>
-        <locationY>808</locationY>
+        <locationX>590</locationX>
+        <locationY>863</locationY>
         <defaultConnector>
             <targetReference>Check_Day3_0</targetReference>
         </defaultConnector>
@@ -532,6 +600,10 @@
                     <stringValue></stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>varInputDay2Filter</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Existing_Day2_Member</targetReference>
             </connector>
@@ -541,7 +613,7 @@
     <decisions>
         <name>Check_Day2_Member</name>
         <label>Existing Day2 Member</label>
-        <locationX>569</locationX>
+        <locationX>716</locationX>
         <locationY>1084</locationY>
         <defaultConnector>
             <targetReference>Create_Member_Day2</targetReference>
@@ -558,7 +630,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Day3_0</targetReference>
+                <targetReference>Day2_Already_Registered</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -566,8 +638,8 @@
     <decisions>
         <name>Check_Day3_0</name>
         <label>Check Day3</label>
-        <locationX>764</locationX>
-        <locationY>812</locationY>
+        <locationX>908</locationX>
+        <locationY>871</locationY>
         <defaultConnector>
             <targetReference>Finish</targetReference>
         </defaultConnector>
@@ -582,6 +654,10 @@
                     <stringValue></stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>varInputDay3Filter</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Day3_Member</targetReference>
             </connector>
@@ -591,7 +667,7 @@
     <decisions>
         <name>Check_Day3b</name>
         <label>Check Day3</label>
-        <locationX>1128</locationX>
+        <locationX>1275</locationX>
         <locationY>506</locationY>
         <defaultConnector>
             <targetReference>Check_Lead</targetReference>
@@ -607,6 +683,10 @@
                     <stringValue></stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>varInputDay3Filter</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Day3_Enforce_Consecutive</targetReference>
             </connector>
@@ -616,7 +696,7 @@
     <decisions>
         <name>Check_varInputRestrictByDay</name>
         <label>Check varInputRestrictByDay</label>
-        <locationX>126</locationX>
+        <locationX>273</locationX>
         <locationY>45</locationY>
         <defaultConnector>
             <targetReference>Debug_Mode</targetReference>
@@ -641,7 +721,7 @@
     <decisions>
         <name>Day2_Enforce_Consecutive</name>
         <label>Enforce Consecutive</label>
-        <locationX>1487</locationX>
+        <locationX>1634</locationX>
         <locationY>204</locationY>
         <defaultConnector>
             <targetReference>Day2_Training</targetReference>
@@ -666,7 +746,7 @@
     <decisions>
         <name>Day3_Enforce_Consecutive</name>
         <label>Day3 Enforce Consecutive</label>
-        <locationX>1339</locationX>
+        <locationX>1486</locationX>
         <locationY>506</locationY>
         <defaultConnector>
             <targetReference>Day3_Training</targetReference>
@@ -691,7 +771,7 @@
     <decisions>
         <name>Debug_Mode</name>
         <label>Debug Mode</label>
-        <locationX>332</locationX>
+        <locationX>479</locationX>
         <locationY>57</locationY>
         <defaultConnector>
             <targetReference>Is_Facility</targetReference>
@@ -716,7 +796,7 @@
     <decisions>
         <name>Debug_Mode_0</name>
         <label>Debug Mode</label>
-        <locationX>1310</locationX>
+        <locationX>1457</locationX>
         <locationY>23</locationY>
         <defaultConnector>
             <targetReference>Check_Day2</targetReference>
@@ -741,7 +821,7 @@
     <decisions>
         <name>Default_Selected</name>
         <label>Default Selected</label>
-        <locationX>915</locationX>
+        <locationX>1062</locationX>
         <locationY>81</locationY>
         <defaultConnector>
             <targetReference>Substitute_Lead</targetReference>
@@ -766,7 +846,7 @@
     <decisions>
         <name>Default_Selected_0</name>
         <label>Default Selected</label>
-        <locationX>921</locationX>
+        <locationX>1068</locationX>
         <locationY>198</locationY>
         <defaultConnector>
             <targetReference>Training_Lead</targetReference>
@@ -791,7 +871,7 @@
     <decisions>
         <name>Default_Selected_0_0</name>
         <label>Default Selected</label>
-        <locationX>918</locationX>
+        <locationX>1065</locationX>
         <locationY>302</locationY>
         <defaultConnector>
             <targetReference>Facility_Lead</targetReference>
@@ -816,7 +896,7 @@
     <decisions>
         <name>Default_Selected_1</name>
         <label>Default Selected</label>
-        <locationX>1391</locationX>
+        <locationX>1538</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Clear_Error_Message</targetReference>
@@ -841,7 +921,7 @@
     <decisions>
         <name>Default_Selected_1_1</name>
         <label>Default Selected</label>
-        <locationX>1155</locationX>
+        <locationX>1302</locationX>
         <locationY>629</locationY>
         <defaultConnector>
             <targetReference>Check_Lead</targetReference>
@@ -866,7 +946,7 @@
     <decisions>
         <name>Existing_Day3_Member</name>
         <label>Existing Day3 Member</label>
-        <locationX>951</locationX>
+        <locationX>1098</locationX>
         <locationY>1129</locationY>
         <defaultConnector>
             <targetReference>Create_Member_Day3</targetReference>
@@ -883,7 +963,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Finish</targetReference>
+                <targetReference>Day3_Already_Registered</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -891,7 +971,7 @@
     <decisions>
         <name>Existing_Lead</name>
         <label>Existing Lead</label>
-        <locationX>394</locationX>
+        <locationX>541</locationX>
         <locationY>512</locationY>
         <defaultConnector>
             <targetReference>Create_Lead</targetReference>
@@ -916,7 +996,7 @@
     <decisions>
         <name>Is_Facility</name>
         <label>Is Facility</label>
-        <locationX>346</locationX>
+        <locationX>493</locationX>
         <locationY>317</locationY>
         <defaultConnector>
             <targetReference>Is_Substitute</targetReference>
@@ -941,7 +1021,7 @@
     <decisions>
         <name>Is_Substitute</name>
         <label>Is Substitute</label>
-        <locationX>431</locationX>
+        <locationX>578</locationX>
         <locationY>144</locationY>
         <defaultConnector>
             <targetReference>Day1_Training</targetReference>
@@ -963,7 +1043,9 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 6/18 - check for status = In Progress
+    <description>DB 6/25 - Allow 2 Character State only
+DB 6/23 - Add Parent based multi-day trainings
+DB 6/18 - check for status = In Progress
 DB 6/16 - Set flag for web registration
 6/11 - Default Lead Company if Facility Name not provided.
 6/4 DB - add varInputClassTypeFilter for filtering by class type
@@ -973,7 +1055,7 @@ DB 6/16 - Set flag for web registration
     <dynamicChoiceSets>
         <name>Day1Trainings</name>
         <dataType>String</dataType>
-        <displayField>c501_cm__Training_Name_WebForm__c</displayField>
+        <displayField>Training_Name_WebForm__c</displayField>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -989,21 +1071,21 @@ DB 6/16 - Set flag for web registration
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Class_Type__c</field>
+            <field>Class_Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>getDay1Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varTrainingDayFilter</elementReference>
@@ -1019,21 +1101,21 @@ DB 6/16 - Set flag for web registration
             <field>Name</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay1Training.c501_cm__Training_Name_WebForm__c</assignToReference>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <assignToReference>soDay1Training.Training_Name_WebForm__c</assignToReference>
+            <field>Training_Name_WebForm__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay1Training.c501_cm__custom_End_DateTime__c</assignToReference>
-            <field>c501_cm__custom_End_DateTime__c</field>
+            <assignToReference>soDay1Training.custom_End_DateTime__c</assignToReference>
+            <field>custom_End_DateTime__c</field>
         </outputAssignments>
-        <sortField>c501_cm__Training_Name_WebForm__c</sortField>
+        <sortField>Training_Name_WebForm__c</sortField>
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>Day2Trainings</name>
         <dataType>String</dataType>
-        <displayField>c501_cm__Training_Name_WebForm__c</displayField>
+        <displayField>Training_Name_WebForm__c</displayField>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -1045,39 +1127,39 @@ DB 6/16 - Set flag for web registration
             <field>Status</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Planned,In Progress</stringValue>
+                <stringValue>In Progress</stringValue>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Class_Type__c</field>
+            <field>Class_Type__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputDay2Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>soDay1Training.c501_cm__Training_Name_WebForm__c</elementReference>
+                <elementReference>soDay1Training.Training_Name_WebForm__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varTrainingDay2Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__custom_Start_DateTime__c</field>
+            <field>custom_Start_DateTime__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>varDay2MinDay</elementReference>
@@ -1089,21 +1171,21 @@ DB 6/16 - Set flag for web registration
             <field>Id</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay2Training.c501_cm__Training_Name_WebForm__c</assignToReference>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <assignToReference>soDay2Training.Training_Name_WebForm__c</assignToReference>
+            <field>Training_Name_WebForm__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay2Training.c501_cm__custom_End_DateTime__c</assignToReference>
-            <field>c501_cm__custom_End_DateTime__c</field>
+            <assignToReference>soDay2Training.custom_End_DateTime__c</assignToReference>
+            <field>custom_End_DateTime__c</field>
         </outputAssignments>
-        <sortField>c501_cm__Training_Name_WebForm__c</sortField>
+        <sortField>Training_Name_WebForm__c</sortField>
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>Day3Trainings</name>
         <dataType>String</dataType>
-        <displayField>c501_cm__Training_Name_WebForm__c</displayField>
+        <displayField>Training_Name_WebForm__c</displayField>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -1115,46 +1197,46 @@ DB 6/16 - Set flag for web registration
             <field>Status</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Planned,In Progress</stringValue>
+                <stringValue>In Progress</stringValue>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Class_Type__c</field>
+            <field>Class_Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varInputDay3Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>soDay1Training.c501_cm__Training_Name_WebForm__c</elementReference>
+                <elementReference>soDay1Training.Training_Name_WebForm__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>soDay2Training.c501_cm__Training_Name_WebForm__c</elementReference>
+                <elementReference>soDay2Training.Training_Name_WebForm__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__Training_Name_WebForm__c</field>
+            <field>Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varTrainingDay3Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__custom_Start_DateTime__c</field>
+            <field>custom_Start_DateTime__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>varDay3MinDay</elementReference>
@@ -1165,22 +1247,35 @@ DB 6/16 - Set flag for web registration
             <assignToReference>soDay3Training.Id</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>c501_cm__Training_Name_WebForm__c</sortField>
+        <sortField>Training_Name_WebForm__c</sortField>
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistTrainingState</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>State__c</picklistField>
+        <picklistObject>Campaign</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>TrainingList</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>c501_cm__Location__c</picklistField>
+        <picklistField>Location__c</picklistField>
         <picklistObject>Campaign</picklistObject>
     </dynamicChoiceSets>
     <formulas>
         <name>fEmailCheck</name>
         <dataType>Boolean</dataType>
         <expression>Contains({!Training_Email}, &quot;@&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>getChildTrainingDescription</name>
+        <dataType>String</dataType>
+        <expression>&quot;     --&gt; &quot; +  {!soDay1Training.Training_Name_WebForm__c} + BR()</expression>
     </formulas>
     <formulas>
         <name>getDay1Filter</name>
@@ -1209,8 +1304,23 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
         <dataType>String</dataType>
         <expression>IF(LEN({!Training_Facility_Name}) &gt; 0, {!Training_Facility_Name}, {!Training_First_Name} + &quot; &quot; + {!Training_Last_Name})</expression>
     </formulas>
-    <interviewLabel>Training Registration {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Training Registration</label>
+    <interviewLabel>cmbp Training Registration FLOW {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Training Registration FLOW</label>
+    <loops>
+        <name>Loop_Child_Trainings</name>
+        <label>Loop Child Trainings</label>
+        <locationX>274</locationX>
+        <locationY>1056</locationY>
+        <assignNextValueToReference>soDay1Training</assignNextValueToReference>
+        <collectionReference>Get_Child_Trainings</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Create_Child_Training_Member</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Day2_0</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -1219,9 +1329,38 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>Create_Child_Training_Member</name>
+        <label>Create Child Training Member</label>
+        <locationX>273</locationX>
+        <locationY>1271</locationY>
+        <connector>
+            <targetReference>Build_Child_Training_List</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId__c</field>
+            <value>
+                <elementReference>soDay1Training.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadId__c</field>
+            <value>
+                <elementReference>varLeadId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Training_Status__c</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Class_Member__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Lead</name>
         <label>Create Lead</label>
-        <locationX>214</locationX>
+        <locationX>361</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Set_Lead_Id</targetReference>
@@ -1231,10 +1370,10 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordCreates>
         <name>Create_Member_Day1</name>
         <label>Create Day1 Member</label>
-        <locationX>125</locationX>
-        <locationY>1068</locationY>
+        <locationX>49</locationX>
+        <locationY>992</locationY>
         <connector>
-            <targetReference>Check_Day2_0</targetReference>
+            <targetReference>Get_Child_Trainings</targetReference>
         </connector>
         <inputAssignments>
             <field>CampaignId__c</field>
@@ -1260,7 +1399,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordCreates>
         <name>Create_Member_Day2</name>
         <label>Create Day2 Member</label>
-        <locationX>768</locationX>
+        <locationX>915</locationX>
         <locationY>1086</locationY>
         <connector>
             <targetReference>Check_Day3_0</targetReference>
@@ -1289,7 +1428,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordCreates>
         <name>Create_Member_Day3</name>
         <label>Create Day3 Member</label>
-        <locationX>1217</locationX>
+        <locationX>1364</locationX>
         <locationY>1103</locationY>
         <connector>
             <targetReference>Finish</targetReference>
@@ -1318,7 +1457,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordLookups>
         <name>Check_Lead</name>
         <label>Check Lead</label>
-        <locationX>541</locationX>
+        <locationX>688</locationX>
         <locationY>546</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1354,7 +1493,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordLookups>
         <name>Day3_Member</name>
         <label>Day3 Member</label>
-        <locationX>897</locationX>
+        <locationX>1044</locationX>
         <locationY>973</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1383,8 +1522,8 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordLookups>
         <name>Existing_Day1_Member</name>
         <label>Day1 Member</label>
-        <locationX>273</locationX>
-        <locationY>656</locationY>
+        <locationX>414</locationX>
+        <locationY>731</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Day1_Member</targetReference>
@@ -1412,8 +1551,8 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <recordLookups>
         <name>Existing_Day2_Member</name>
         <label>Day2 Member</label>
-        <locationX>509</locationX>
-        <locationY>984</locationY>
+        <locationX>596</locationX>
+        <locationY>1083</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Day2_Member</targetReference>
@@ -1438,10 +1577,32 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
             <field>Id</field>
         </outputAssignments>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Child_Trainings</name>
+        <label>Get Child Trainings</label>
+        <locationX>50</locationX>
+        <locationY>1138</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Child_Trainings</targetReference>
+        </connector>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>soDay1Training.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Campaign</object>
+        <sortField>custom_Start_DateTime__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <screens>
         <name>Day1_Training</name>
         <label>Day1 Training</label>
-        <locationX>578</locationX>
+        <locationX>725</locationX>
         <locationY>195</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
@@ -1496,10 +1657,11 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Training_State</name>
+            <name>State_Training_Picklist</name>
+            <choiceReferences>picklistTrainingState</choiceReferences>
             <dataType>String</dataType>
             <fieldText>State</fieldText>
-            <fieldType>InputField</fieldType>
+            <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1558,7 +1720,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <screens>
         <name>Day2_Training</name>
         <label>Day2 Training</label>
-        <locationX>1713</locationX>
+        <locationX>1859</locationX>
         <locationY>363</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
@@ -1583,7 +1745,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
         </fields>
         <fields>
             <name>PersonalInfo_Day2</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.FirstName}, {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}{!Facility_Training}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}{!Facility_Training}&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1592,7 +1754,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <screens>
         <name>Day3_Training</name>
         <label>Day3 Training</label>
-        <locationX>1335</locationX>
+        <locationX>1482</locationX>
         <locationY>629</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
@@ -1617,7 +1779,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
         </fields>
         <fields>
             <name>PersonalInfo_Day3</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.FirstName}, {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}{!Facility_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!Training_Day2}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!Training_Day3}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!Substitute_Training}{!Training_Training}{!Facility_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!Training_Day2}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;{!Training_Day3}&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1626,7 +1788,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <screens>
         <name>Debug_Day1_Query</name>
         <label>Debug Day1 Query</label>
-        <locationX>248</locationX>
+        <locationX>395</locationX>
         <locationY>196</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1636,7 +1798,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
         </connector>
         <fields>
             <name>QueryInfo</name>
-            <fieldText>&lt;p&gt;getDay1Filter: {!getDay1Filter}&lt;/p&gt;&lt;p&gt;varInputDay1Filter: {!varInputDay1Filter}&lt;/p&gt;&lt;p&gt;varInputClassTypeFilter: &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!varInputClassTypeFilter}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;varTrainingDayFilter: &lt;/span&gt;{!varTrainingDayFilter}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;varInputTrainingFilter: &lt;/span&gt;{!varInputTrainingFilter}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;&lt;u&gt;Input Variables&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;varInputClassTypeFilter: &lt;/span&gt;{!varInputClassTypeFilter}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;varInputDay1Filter: &lt;/span&gt;{!varInputDay1Filter}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;varInputDay2Filter: &lt;/span&gt;{!varInputDay2Filter}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;varInputDay3Filter: &lt;/span&gt;{!varInputDay3Filter}&lt;/p&gt;&lt;p&gt;varInputEnforceConsecutive: {!varInputEnforceConsecutive}&lt;/p&gt;&lt;p&gt;varInputRestrictByDay: {!varInputRestrictByDay}&lt;/p&gt;&lt;p&gt;varInputTrainingFilter: {!varInputTrainingFilter}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;u&gt;Others&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;getDay1Filter: {!getDay1Filter}&lt;/p&gt;&lt;p&gt;varInputDay1Filter: {!varInputDay1Filter}&lt;/p&gt;&lt;p&gt;varInputClassTypeFilter: &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!varInputClassTypeFilter}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;varTrainingDayFilter: &lt;/span&gt;{!varTrainingDayFilter}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;varInputTrainingFilter: &lt;/span&gt;{!varInputTrainingFilter}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1645,7 +1807,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <screens>
         <name>Debug_Forms</name>
         <label>Debug Forms</label>
-        <locationX>1463</locationX>
+        <locationX>1610</locationX>
         <locationY>20</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1664,7 +1826,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
     <screens>
         <name>Facility_Training_Pick</name>
         <label>Facility Training Pick</label>
-        <locationX>579</locationX>
+        <locationX>726</locationX>
         <locationY>304</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
@@ -1719,10 +1881,11 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Facility_State</name>
+            <name>State_Facility_Picklist</name>
+            <choiceReferences>picklistTrainingState</choiceReferences>
             <dataType>String</dataType>
             <fieldText>State</fieldText>
-            <fieldType>InputField</fieldType>
+            <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1778,14 +1941,14 @@ ISNUMBER({!Facility_State_Id})</formulaExpression>
     <screens>
         <name>Finish</name>
         <label>Finish</label>
-        <locationX>1403</locationX>
+        <locationX>1550</locationX>
         <locationY>921</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
             <name>PersonalInfo_Summary_0</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Registration application received.  An Administrator will review the request and will send an email reply.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}{!Facility_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Training_Day2}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Training_Day3}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Registration application received.  An Administrator will review the request and will send an email reply.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}&lt;/b&gt;&lt;b style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!varDay1AlreadyRegisteredMessage}&lt;/b&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Training_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!varChildTrainings}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Facility_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!varDay2AlreadyRegisteredMessage}&lt;/b&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Training_Day2}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!varDay3AlreadyRegisteredMessage}&lt;/b&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Training_Day3}&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1794,7 +1957,7 @@ ISNUMBER({!Facility_State_Id})</formulaExpression>
     <screens>
         <name>Substitute_Day1</name>
         <label>Day1 Substitute</label>
-        <locationX>576</locationX>
+        <locationX>723</locationX>
         <locationY>85</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
@@ -1849,10 +2012,11 @@ ISNUMBER({!Facility_State_Id})</formulaExpression>
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Substitute_State</name>
+            <name>State_Sub_Picklist</name>
+            <choiceReferences>picklistTrainingState</choiceReferences>
             <dataType>String</dataType>
             <fieldText>State</fieldText>
-            <fieldType>InputField</fieldType>
+            <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1906,13 +2070,13 @@ ISNUMBER({!Substitute_State_Id})</formulaExpression>
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>197</locationX>
         <locationY>105</locationY>
         <connector>
             <targetReference>Check_varInputRestrictByDay</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>textTemplateTrainingDefaultSelectedError</name>
         <text>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:16px&quot; COLOR=&quot;#FF0000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Error: Please select a training&lt;/FONT&gt;&lt;/DIV&gt;</text>
@@ -1957,6 +2121,20 @@ ISNUMBER({!Substitute_State_Id})</formulaExpression>
         <objectType>Lead</objectType>
     </variables>
     <variables>
+        <name>varChildTrainings</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varDay1AlreadyRegisteredMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>varDay1Member</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1965,6 +2143,13 @@ ISNUMBER({!Substitute_State_Id})</formulaExpression>
         <value>
             <stringValue></stringValue>
         </value>
+    </variables>
+    <variables>
+        <name>varDay2AlreadyRegisteredMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>varDay2Member</name>
@@ -1985,6 +2170,13 @@ ISNUMBER({!Substitute_State_Id})</formulaExpression>
         <value>
             <dateTimeValue>2017-01-01T08:00:00.000Z</dateTimeValue>
         </value>
+    </variables>
+    <variables>
+        <name>varDay3AlreadyRegisteredMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>varDay3Member</name>

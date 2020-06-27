@@ -1,4 +1,4 @@
-<apex:page id="TrainingRegister" showHeader="false">
+<apex:page id="cmbp_EmailPref" showHeader="false">
 
   
 <html>
@@ -66,7 +66,7 @@
               }
            }
         };
-        $Lightning.use("c:C501_Lighting_Flow_APP", function() {
+        $Lightning.use("c:cmbp_Lighting_Flow_APP", function() {
            // Create the flow component and set the onstatuschange attribute
            $Lightning.createComponent("lightning:flow", {"onstatuschange":statusChange},
               "flowContainer",
@@ -82,7 +82,7 @@
                  
                  // Start an interview in the flowContainer div, and 
                  // initializes the input variables.
-                 component.startFlow("Training_Registration", inputVariables);
+                 component.startFlow("cmbp_Email_Only_Preferences_FLOW", inputVariables);
               }
            );
         });

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Admin since contact missing notification field(s)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>cmbp_Class_Management_Letterhead</letterhead>
+    <name>cmbp Notify Administrator</name>
+    <style>freeForm</style>
+    <subject>Class Management - Admin - Action Required - Call</subject>
+    <textOnly>Administrator - Action Required
+
+There was a problem notifying {!CampaignMember.FirstName} {!CampaignMember.LastName}.  This could be related to an invalid email, Salesforce issue, missing fields on Training, or a new email Confirmation or Reminder template added that needs to be updated in Salesforce Process Builder/Flow.
+
+Please call to let them know about the training if they are registered then investigate what caused the issue (e.g., update contact email).
+
+The Training Status is {!CampaignMember.Training_Status__c}.
+
+If Denied then let them know they were not accepted for the training.  Otherwise, based on the status, let them know they are registered and send a reminder for the training.
+
+Phone: {!CampaignMember.Phone}
+Email: {!CampaignMember.Email}
+Training Status: {!CampaignMember.Training_Status__c}
+Training: {!CampaignMember.Training_Full_Name__c}
+
+Remember, all eligible participants who complete all hours of this training will receive a {!CampaignMember.Training_Incentive__c} bonus! Details are below!
+
+When: {!CampaignMember.Training_Start_DateTime__c} - {!CampaignMember.Training_End_DateTime__c}
+Where: {!CampaignMember.C501_Training_Location_Text__c}
+
+Please let us know if you won&apos;t be able to make it so we can let another provider take the class.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

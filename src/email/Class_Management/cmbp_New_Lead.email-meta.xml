@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email received when new lead in Salesforce</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>cmbp_Class_Management_Letterhead</letterhead>
+    <name>cmbp New Lead</name>
+    <style>freeForm</style>
+    <subject>Class Management New Lead</subject>
+    <textOnly>A new Lead for the Training Class below is assigned to you and available for processing in Salesforce.
+
+The Lead is {!Lead.FirstName} {!Lead.LastName}.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

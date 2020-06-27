@@ -2,19 +2,82 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>site</fullName>
     <types>
-        <members>EmailPref</members>
-        <members>TrainingRegister</members>
-        <members>TrainingRegistration</members>
+        <members>cmbp_EmailPref</members>
+        <members>cmbp_TrainingRegistration</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>C501_Lighting_Flow_APP</members>
+        <members>cmbp_Lighting_Flow_APP</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>Email_Only_Preferences_FLOW</members>
-        <members>Training_Registration</members>
+        <members>cmbp_Custom_Settings__c.OrgWideEmailAddress__c</members>
+        <members>cmbp_Custom_Settings__c.Website_Contact__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Campaign.Outreach_Area_1__c</members>
+        <members>Campaign.Outreach_Area_2__c</members>
+        <members>Campaign.Outreach_Area_3__c</members>
+        <members>Campaign.Outreach_Area_4__c</members>
+        <members>Campaign.Outreach_Today__c</members>
+        <members>Campaign.State__c</members>
+        <members>CampaignMember.Outreach_Member__c</members>
+        <members>Class_Member__c.CampaignId__c</members>
+        <members>Class_Member__c.LeadId__c</members>
+        <members>Class_Member__c.Training_Status__c</members>
+        <members>Contact.County__c</members>
+        <members>Contact.Outreach_Area__c</members>
+        <members>Contact.Outreach_County__c</members>
+        <members>Contact.Outreach_Date_Last_Sent__c</members>
+        <members>Contact.Outreach_Date_Last_Training__c</members>
+        <members>Contact.Outreach_Region__c</members>
+        <members>Contact.Outreach_State__c</members>
+        <members>Contact.Region__c</members>
+        <members>Lead.State_Id__c</members>
+        <members>Lead.Union_Id__c</members>
+        <members>cmbp_Custom_Settings__c.OrgWideEmailAddress__c</members>
+        <members>cmbp_Custom_Settings__c.Website_Contact__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Class_Member__c</members>
+        <members>cmbp_Custom_Settings__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Class_Management</members>
+        <members>Class_Management/cmbp_New_Lead</members>
+        <members>Class_Management/cmbp_Notify_Administrator</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>cmbp_Email_Only_Preferences_FLOW</members>
+        <members>cmbp_Training_Change_Process</members>
+        <members>cmbp_Training_Member_Change_Process</members>
+        <members>cmbp_Training_Notification_FLOW_TEMPLATE</members>
+        <members>cmbp_Training_Outreach_FLOW</members>
+        <members>cmbp_Training_Registration_Create_Member_FLOW</members>
+        <members>cmbp_Training_Registration_FLOW</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>Counties</members>
+        <members>States</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>Class_Member__c-Class Member Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>cmbp_Class_Management_Letterhead</members>
+        <name>Letterhead</name>
+    </types>
+    <types>
+        <members>CampaignMember.cmbp_Admin_Alert</members>
+        <members>Lead.cmbp_Admin_New_Lead</members>
+        <name>WorkflowAlert</name>
     </types>
     <version>48.0</version>
 </Package>

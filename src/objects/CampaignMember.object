@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Outreach_Member__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set as true when member was added because of the outreach process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set as true when member was added because of the outreach process</inlineHelpText>
+        <label>Outreach Member</label>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>
