@@ -167,7 +167,7 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Registered</stringValue>
@@ -204,7 +204,7 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <value>
                 <stringValue>Canceled</stringValue>
             </value>
@@ -296,7 +296,7 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -333,7 +333,7 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <value>
                 <stringValue>Canceled</stringValue>
             </value>

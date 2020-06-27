@@ -184,7 +184,7 @@ DB - 6/18 - make sure lead and campaign member still valid</description>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <value>
                 <elementReference>Get_Class_Member.Training_Status__c</elementReference>
             </value>
@@ -311,7 +311,7 @@ DB - 6/18 - make sure lead and campaign member still valid</description>
             </value>
         </filters>
         <filters>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Outreach</stringValue>

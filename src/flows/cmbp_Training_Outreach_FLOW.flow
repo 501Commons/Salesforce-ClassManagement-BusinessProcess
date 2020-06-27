@@ -66,7 +66,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>memberRecord.Training_Status__c</assignToReference>
+            <assignToReference>memberRecord.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Outreach</stringValue>

@@ -70,7 +70,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>conEach.ii_Primary_Language__c</assignToReference>
+            <assignToReference>conEach.c501_cm__ii_Primary_Language__c</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>formLanguagesSelected</elementReference>
@@ -86,14 +86,14 @@
         <locationX>1744</locationX>
         <locationY>137</locationY>
         <assignmentItems>
-            <assignToReference>conEach.C501_SMS_Opt_Out__c</assignToReference>
+            <assignToReference>conEach.c501_cm__C501_SMS_Opt_Out__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>formSetSMSOptOUT</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>conEach.ii_Primary_Language__c</assignToReference>
+            <assignToReference>conEach.c501_cm__ii_Primary_Language__c</assignToReference>
             <operator>Add</operator>
             <value>
                 <elementReference>formLanguagesSelected</elementReference>
@@ -142,7 +142,7 @@
             <assignToReference>varSMSOptedOutSingle</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>conEach.C501_SMS_Opt_Out__c</elementReference>
+                <elementReference>conEach.c501_cm__C501_SMS_Opt_Out__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -511,7 +511,7 @@
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>ii_Primary_Language__c</picklistField>
+        <picklistField>c501_cm__ii_Primary_Language__c</picklistField>
         <picklistObject>Contact</picklistObject>
     </dynamicChoiceSets>
     <formulas>
@@ -533,7 +533,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <formulas>
         <name>formEmailMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetEmailOptIn},{!$Setup.Imagine_Settings__c.Email_Opt_In_Reply__c}+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c},{!$Setup.Imagine_Settings__c.Email_Opt_Out_Reply__c}+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c})</expression>
+        <expression>IF({!varSetEmailOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_In_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_Out_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c})</expression>
     </formulas>
     <formulas>
         <name>formEmailOptedOutSingle</name>
@@ -563,7 +563,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <formulas>
         <name>fromSMSMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetSMSOptIn},{!$Setup.Imagine_Settings__c.SMS_Opt_In_Reply__c},{!$Setup.Imagine_Settings__c.SMS_Opt_Out_Reply__c})+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c}</expression>
+        <expression>IF({!varSetSMSOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_In_Reply__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_Out_Reply__c})+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c}</expression>
     </formulas>
     <formulas>
         <name>SMSorEmail</name>
@@ -624,24 +624,24 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
             <targetReference>addEachContact_to_Collection</targetReference>
         </connector>
         <inputAssignments>
-            <field>C501_Contact__c</field>
+            <field>c501_cm__C501_Contact__c</field>
             <value>
                 <elementReference>conEach.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>C501_Email_Opt_Out_Text__c</field>
+            <field>c501_cm__C501_Email_Opt_Out_Text__c</field>
             <value>
                 <elementReference>formSetEmailOptOUT</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Languages__c</field>
+            <field>c501_cm__Languages__c</field>
             <value>
                 <elementReference>Language_s</elementReference>
             </value>
         </inputAssignments>
-        <object>C501_Guest_Update__c</object>
+        <object>c501_cm__C501_Guest_Update__c</object>
     </recordCreates>
     <recordCreates>
         <name>Create_Guest_Update_Phone</name>
@@ -652,24 +652,24 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
             <targetReference>addEachContact_to_Collection</targetReference>
         </connector>
         <inputAssignments>
-            <field>C501_Contact__c</field>
+            <field>c501_cm__C501_Contact__c</field>
             <value>
                 <elementReference>conEach.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>C501_SMS_Opt_Out_Text__c</field>
+            <field>c501_cm__C501_SMS_Opt_Out_Text__c</field>
             <value>
                 <elementReference>formSetSMSOptOUT</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Languages__c</field>
+            <field>c501_cm__Languages__c</field>
             <value>
                 <elementReference>Language_s</elementReference>
             </value>
         </inputAssignments>
-        <object>C501_Guest_Update__c</object>
+        <object>c501_cm__C501_Guest_Update__c</object>
     </recordCreates>
     <recordLookups>
         <name>Get_cmbp_Custom_Settings</name>
@@ -703,9 +703,9 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <object>Contact</object>
         <outputReference>contactsColl</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>C501_SMS_Opt_Out__c</queriedFields>
+        <queriedFields>c501_cm__C501_SMS_Opt_Out__c</queriedFields>
         <queriedFields>HasOptedOutOfEmail</queriedFields>
-        <queriedFields>ii_Primary_Language__c</queriedFields>
+        <queriedFields>c501_cm__ii_Primary_Language__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Lookup_Contacts_By_Phone</name>
@@ -717,7 +717,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
             <targetReference>countContacts</targetReference>
         </connector>
         <filters>
-            <field>C501_Clean_Both_Mobile_Numbers__c</field>
+            <field>c501_cm__C501_Clean_Both_Mobile_Numbers__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>forCleanPhone</elementReference>
@@ -726,9 +726,9 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <object>Contact</object>
         <outputReference>contactsColl</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>C501_SMS_Opt_Out__c</queriedFields>
+        <queriedFields>c501_cm__C501_SMS_Opt_Out__c</queriedFields>
         <queriedFields>HasOptedOutOfEmail</queriedFields>
-        <queriedFields>ii_Primary_Language__c</queriedFields>
+        <queriedFields>c501_cm__ii_Primary_Language__c</queriedFields>
     </recordLookups>
     <screens>
         <name>Confirmation_Screen</name>

@@ -85,23 +85,23 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>PRIORVALUE([CampaignMember].Training_Status__c ) &lt;&gt; TEXT([CampaignMember].Training_Status__c) </stringValue>
+                <stringValue>PRIORVALUE([CampaignMember].c501_cm__Training_Status__c ) &lt;&gt; TEXT([CampaignMember].c501_cm__Training_Status__c) </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
-        <expression>PRIORVALUE({!myVariable_current.Training_Status__c} ) &lt;&gt; TEXT({!myVariable_current.Training_Status__c})</expression>
+        <expression>PRIORVALUE({!myVariable_current.c501_cm__Training_Status__c} ) &lt;&gt; TEXT({!myVariable_current.c501_cm__Training_Status__c})</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>PRIORVALUE([CampaignMember].Training_Status__c ) &lt;&gt; TEXT([CampaignMember].Training_Status__c) &amp;&amp; (TEXT([CampaignMember].Training_Status__c) = &quot;Attended&quot; || TEXT([CampaignMember].Training_Status__c) = &quot;Registered&quot;)</stringValue>
+                <stringValue>PRIORVALUE([CampaignMember].c501_cm__Training_Status__c ) &lt;&gt; TEXT([CampaignMember].c501_cm__Training_Status__c) &amp;&amp; (TEXT([CampaignMember].c501_cm__Training_Status__c) = &quot;Attended&quot; || TEXT([CampaignMember].c501_cm__Training_Status__c) = &quot;Registered&quot;)</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_4</name>
         <dataType>Boolean</dataType>
-        <expression>PRIORVALUE({!myVariable_current.Training_Status__c} ) &lt;&gt; TEXT({!myVariable_current.Training_Status__c}) &amp;&amp; (TEXT({!myVariable_current.Training_Status__c}) = &quot;Attended&quot; || TEXT({!myVariable_current.Training_Status__c}) = &quot;Registered&quot;)</expression>
+        <expression>PRIORVALUE({!myVariable_current.c501_cm__Training_Status__c} ) &lt;&gt; TEXT({!myVariable_current.c501_cm__Training_Status__c}) &amp;&amp; (TEXT({!myVariable_current.c501_cm__Training_Status__c}) = &quot;Attended&quot; || TEXT({!myVariable_current.c501_cm__Training_Status__c}) = &quot;Registered&quot;)</expression>
     </formulas>
     <interviewLabel>cmbp_Training_Member_Change_Process-1_InterviewLabel</interviewLabel>
     <label>cmbp Training Member Change Process</label>

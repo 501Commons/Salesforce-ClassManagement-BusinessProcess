@@ -183,7 +183,7 @@
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
-            <valueSetName>Training_Status</valueSetName>
+            <valueSetName>c501_cm__Training_Status</valueSetName>
         </valueSet>
     </fields>
     <label>Class Member</label>

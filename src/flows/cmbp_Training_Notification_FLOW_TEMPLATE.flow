@@ -99,7 +99,7 @@
             <name>Pending_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Pending</stringValue>
@@ -114,7 +114,7 @@
             <name>Denied_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Denied</stringValue>
@@ -126,7 +126,7 @@
             <name>Registered_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered</stringValue>
@@ -141,7 +141,7 @@
             <name>No_Show</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>No Show</stringValue>
@@ -153,7 +153,7 @@
             <name>Canceled</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Canceled</stringValue>
@@ -165,7 +165,7 @@
             <name>Attended</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Attended</stringValue>
@@ -177,7 +177,7 @@
             <name>Outreach_RI</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Outreach</stringValue>
@@ -189,7 +189,7 @@
             <name>Registered_Reminder</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered Reminder</stringValue>
@@ -201,7 +201,7 @@
             <name>Wait_List_RI_Decision</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Wait List</stringValue>
@@ -248,7 +248,7 @@
             <name>Yes_SMS_OptOut</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Contact.C501_SMS_Opt_Out__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Contact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -366,8 +366,8 @@ DB 6/13 - Add No-Show, Canceled, Attended, Outreach</description>
         <dataType>String</dataType>
         <expression>SUBSTITUTE(
 SUBSTITUTE({!Get_SMS_Template.Body}, &quot;!Campaign.Name&quot;, {!Get_Campaign_Member.Campaign.Name}), 
-&quot;!Campaign.custom_Start_DateTime__c - !Campaign.custom_End_DateTime__c&quot;,
-TEXT({!Get_Campaign_Member.Campaign.custom_Start_DateTime__c}) + &quot; - &quot; + TEXT({!Get_Campaign_Member.Campaign.custom_End_DateTime__c}))</expression>
+&quot;!Campaign.c501_cm__custom_Start_DateTime__c - !Campaign.c501_cm__custom_End_DateTime__c&quot;,
+TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot; - &quot; + TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_End_DateTime__c}))</expression>
     </formulas>
     <interviewLabel>cmbp Training Notification FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Training Notification FLOW TEMPLATE</label>
@@ -483,7 +483,7 @@ TEXT({!Get_Campaign_Member.Campaign.custom_Start_DateTime__c}) + &quot; - &quot;
             </value>
         </filters>
         <inputAssignments>
-            <field>Training_Status__c</field>
+            <field>c501_cm__Training_Status__c</field>
             <value>
                 <stringValue>Registered</stringValue>
             </value>

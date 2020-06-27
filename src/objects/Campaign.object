@@ -49,7 +49,7 @@
         <description>Outreach today available for training</description>
         <externalId>false</externalId>
         <formula>AND(
-OR(CEILING(ii_Days_Until_Class__c) = 30.0, CEILING(ii_Days_Until_Class__c) = 14.0, CEILING(ii_Days_Until_Class__c) = 7.0),
+OR(CEILING(c501_cm__ii_Days_Until_Class__c) = 30.0, CEILING(c501_cm__ii_Days_Until_Class__c) = 14.0, CEILING(c501_cm__ii_Days_Until_Class__c) = 7.0),
 OR(TEXT(Outreach_Area_1__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_2__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_3__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_4__c) &lt;&gt; &apos;&apos;)
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

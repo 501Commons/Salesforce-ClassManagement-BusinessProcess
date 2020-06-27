@@ -70,7 +70,7 @@
             <assignToReference>varDay2MinDay</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>soDay1Training.custom_End_DateTime__c</elementReference>
+                <elementReference>soDay1Training.c501_cm__custom_End_DateTime__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -102,7 +102,7 @@
             <assignToReference>varDay3MinDay</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>soDay2Training.custom_End_DateTime__c</elementReference>
+                <elementReference>soDay2Training.c501_cm__custom_End_DateTime__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -185,14 +185,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Class_Type__c</assignToReference>
+            <assignToReference>soLead.c501_cm__Class_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varInputDay1Filter</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Training_Status__c</assignToReference>
+            <assignToReference>soLead.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -383,14 +383,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Class_Type__c</assignToReference>
+            <assignToReference>soLead.c501_cm__Class_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varInputDay1Filter</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Training_Status__c</assignToReference>
+            <assignToReference>soLead.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -487,14 +487,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Class_Type__c</assignToReference>
+            <assignToReference>soLead.c501_cm__Class_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>varInputDay1Filter</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Training_Status__c</assignToReference>
+            <assignToReference>soLead.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -1055,7 +1055,7 @@ DB 6/16 - Set flag for web registration
     <dynamicChoiceSets>
         <name>Day1Trainings</name>
         <dataType>String</dataType>
-        <displayField>Training_Name_WebForm__c</displayField>
+        <displayField>c501_cm__Training_Name_WebForm__c</displayField>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -1071,21 +1071,21 @@ DB 6/16 - Set flag for web registration
             </value>
         </filters>
         <filters>
-            <field>Class_Type__c</field>
+            <field>c501_cm__Class_Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>getDay1Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varTrainingDayFilter</elementReference>
@@ -1101,21 +1101,21 @@ DB 6/16 - Set flag for web registration
             <field>Name</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay1Training.Training_Name_WebForm__c</assignToReference>
-            <field>Training_Name_WebForm__c</field>
+            <assignToReference>soDay1Training.c501_cm__Training_Name_WebForm__c</assignToReference>
+            <field>c501_cm__Training_Name_WebForm__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay1Training.custom_End_DateTime__c</assignToReference>
-            <field>custom_End_DateTime__c</field>
+            <assignToReference>soDay1Training.c501_cm__custom_End_DateTime__c</assignToReference>
+            <field>c501_cm__custom_End_DateTime__c</field>
         </outputAssignments>
-        <sortField>Training_Name_WebForm__c</sortField>
+        <sortField>c501_cm__Training_Name_WebForm__c</sortField>
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>Day2Trainings</name>
         <dataType>String</dataType>
-        <displayField>Training_Name_WebForm__c</displayField>
+        <displayField>c501_cm__Training_Name_WebForm__c</displayField>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -1131,35 +1131,35 @@ DB 6/16 - Set flag for web registration
             </value>
         </filters>
         <filters>
-            <field>Class_Type__c</field>
+            <field>c501_cm__Class_Type__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputDay2Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>soDay1Training.Training_Name_WebForm__c</elementReference>
+                <elementReference>soDay1Training.c501_cm__Training_Name_WebForm__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varTrainingDay2Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>custom_Start_DateTime__c</field>
+            <field>c501_cm__custom_Start_DateTime__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>varDay2MinDay</elementReference>
@@ -1171,21 +1171,21 @@ DB 6/16 - Set flag for web registration
             <field>Id</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay2Training.Training_Name_WebForm__c</assignToReference>
-            <field>Training_Name_WebForm__c</field>
+            <assignToReference>soDay2Training.c501_cm__Training_Name_WebForm__c</assignToReference>
+            <field>c501_cm__Training_Name_WebForm__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soDay2Training.custom_End_DateTime__c</assignToReference>
-            <field>custom_End_DateTime__c</field>
+            <assignToReference>soDay2Training.c501_cm__custom_End_DateTime__c</assignToReference>
+            <field>c501_cm__custom_End_DateTime__c</field>
         </outputAssignments>
-        <sortField>Training_Name_WebForm__c</sortField>
+        <sortField>c501_cm__Training_Name_WebForm__c</sortField>
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>Day3Trainings</name>
         <dataType>String</dataType>
-        <displayField>Training_Name_WebForm__c</displayField>
+        <displayField>c501_cm__Training_Name_WebForm__c</displayField>
         <filters>
             <field>IsActive</field>
             <operator>EqualTo</operator>
@@ -1201,42 +1201,42 @@ DB 6/16 - Set flag for web registration
             </value>
         </filters>
         <filters>
-            <field>Class_Type__c</field>
+            <field>c501_cm__Class_Type__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>varInputDay3Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>soDay1Training.Training_Name_WebForm__c</elementReference>
+                <elementReference>soDay1Training.c501_cm__Training_Name_WebForm__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>NotEqualTo</operator>
             <value>
-                <elementReference>soDay2Training.Training_Name_WebForm__c</elementReference>
+                <elementReference>soDay2Training.c501_cm__Training_Name_WebForm__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Training_Name_WebForm__c</field>
+            <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
                 <elementReference>varTrainingDay3Filter</elementReference>
             </value>
         </filters>
         <filters>
-            <field>custom_Start_DateTime__c</field>
+            <field>c501_cm__custom_Start_DateTime__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>varDay3MinDay</elementReference>
@@ -1247,7 +1247,7 @@ DB 6/16 - Set flag for web registration
             <assignToReference>soDay3Training.Id</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <sortField>Training_Name_WebForm__c</sortField>
+        <sortField>c501_cm__Training_Name_WebForm__c</sortField>
         <sortOrder>Asc</sortOrder>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
@@ -1264,7 +1264,7 @@ DB 6/16 - Set flag for web registration
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>Location__c</picklistField>
+        <picklistField>c501_cm__Location__c</picklistField>
         <picklistObject>Campaign</picklistObject>
     </dynamicChoiceSets>
     <formulas>
@@ -1275,7 +1275,7 @@ DB 6/16 - Set flag for web registration
     <formulas>
         <name>getChildTrainingDescription</name>
         <dataType>String</dataType>
-        <expression>&quot;     --&gt; &quot; +  {!soDay1Training.Training_Name_WebForm__c} + BR()</expression>
+        <expression>&quot;     --&gt; &quot; +  {!soDay1Training.c501_cm__Training_Name_WebForm__c} + BR()</expression>
     </formulas>
     <formulas>
         <name>getDay1Filter</name>
@@ -1595,7 +1595,7 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Campaign</object>
-        <sortField>custom_Start_DateTime__c</sortField>
+        <sortField>c501_cm__custom_Start_DateTime__c</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
