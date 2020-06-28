@@ -78,6 +78,10 @@
         <name>Letterhead</name>
     </types>
     <types>
+        <members>cmbp_Class_Management</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
         <members>AutomationReportsSystemAdminOnly</members>
         <members>AutomationReportsSystemAdminOnly/Outreach_Automation_Contact_vHN</members>
         <members>AutomationReportsSystemAdminOnly/Outreach_Automation_Training_ZCe</members>
