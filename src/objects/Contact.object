@@ -58,6 +58,47 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Outreach_Days_Since_Last_Sent_Outreach__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Outreach_Date_Last_Sent__c), 999, ABS(TODAY() - Outreach_Date_Last_Sent__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outreach Days Since Last Sent Outreach</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outreach_Days_Since_Last_Training__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Outreach_Date_Last_Training__c), 999,  ABS(TODAY() - Outreach_Date_Last_Training__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outreach Days Since Last Training</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outreach_Most_Recent_Training_Area__c</fullName>
+        <description>Most recent training area related to the contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Most recent training area related to the contact</inlineHelpText>
+        <label>Outreach Most Recent Training Area</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Counties</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Outreach_Region__c</fullName>
         <externalId>false</externalId>
         <formula>TEXT(Region__c)</formula>

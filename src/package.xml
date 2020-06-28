@@ -31,6 +31,9 @@
         <members>Contact.Outreach_County__c</members>
         <members>Contact.Outreach_Date_Last_Sent__c</members>
         <members>Contact.Outreach_Date_Last_Training__c</members>
+        <members>Contact.Outreach_Days_Since_Last_Sent_Outreach__c</members>
+        <members>Contact.Outreach_Days_Since_Last_Training__c</members>
+        <members>Contact.Outreach_Most_Recent_Training_Area__c</members>
         <members>Contact.Outreach_Region__c</members>
         <members>Contact.Outreach_State__c</members>
         <members>Contact.Region__c</members>
@@ -73,6 +76,12 @@
     <types>
         <members>cmbp_Class_Management_Letterhead</members>
         <name>Letterhead</name>
+    </types>
+    <types>
+        <members>AutomationReportsSystemAdminOnly</members>
+        <members>AutomationReportsSystemAdminOnly/Outreach_Automation_Contact_vHN</members>
+        <members>AutomationReportsSystemAdminOnly/Outreach_Automation_Training_ZCe</members>
+        <name>Report</name>
     </types>
     <types>
         <members>CampaignMember.cmbp_Admin_Alert</members>
