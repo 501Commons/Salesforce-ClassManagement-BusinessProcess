@@ -52,10 +52,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>memberRecord.Status</assignToReference>
+            <assignToReference>memberRecord.Notification_Pending__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Responded</stringValue>
+                <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
