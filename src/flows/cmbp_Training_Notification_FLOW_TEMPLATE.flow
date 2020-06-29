@@ -17,278 +17,6 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <actionCalls>
-        <name>Attended_MA_Notification</name>
-        <label>Attended MA</label>
-        <locationX>2591</locationX>
-        <locationY>1506</locationY>
-        <actionName>CampaignMember.Training_Attended_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Attended_RI</name>
-        <label>Attended RI</label>
-        <locationX>1896</locationX>
-        <locationY>1027</locationY>
-        <actionName>CampaignMember.Training_Attended_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Canceled_MA</name>
-        <label>Canceled MA</label>
-        <locationX>2537</locationX>
-        <locationY>1397</locationY>
-        <actionName>CampaignMember.Training_Canceled_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Canceled_RI</name>
-        <label>Canceled RI</label>
-        <locationX>1778</locationX>
-        <locationY>933</locationY>
-        <actionName>CampaignMember.Training_Canceled_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Denied_RI_Email</name>
-        <label>Denied RI Email</label>
-        <locationX>1571</locationX>
-        <locationY>785</locationY>
-        <actionName>CampaignMember.Training_Denied_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>MA_Denied_Email</name>
-        <label>MA Denied Email</label>
-        <locationX>2402</locationX>
-        <locationY>1198</locationY>
-        <actionName>CampaignMember.Training_Denied_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>MA_Reminder</name>
-        <label>MA Reminder</label>
-        <locationX>2838</locationX>
-        <locationY>1729</locationY>
-        <actionName>CampaignMember.Training_Reminder_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>No_Show_MA</name>
-        <label>No-Show MA</label>
-        <locationX>2478</locationX>
-        <locationY>1291</locationY>
-        <actionName>CampaignMember.Training_NoShow_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>No_Show_RI</name>
-        <label>No-Show RI</label>
-        <locationX>1683</locationX>
-        <locationY>858</locationY>
-        <actionName>CampaignMember.Training_NoShow_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Outreach_MA_Email</name>
-        <label>Outreach MA</label>
-        <locationX>2900</locationX>
-        <locationY>1834</locationY>
-        <actionName>CampaignMember.Training_Outreach_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Contact_Outreach</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Outreach_RI_Email</name>
-        <label>Outreach RI</label>
-        <locationX>2198</locationX>
-        <locationY>1361</locationY>
-        <actionName>CampaignMember.Training_Outreach_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Contact_Outreach</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>RI_Reminder</name>
-        <label>RI Reminder</label>
-        <locationX>2131</locationX>
-        <locationY>1266</locationY>
-        <actionName>CampaignMember.Training_Reminder_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Send_MA_Confirmation_Email</name>
-        <label>Send MA Confirmation Email</label>
-        <locationX>2129</locationX>
-        <locationY>704</locationY>
-        <actionName>CampaignMember.Training_Confirmation_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Member</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Send_RI_Email</name>
-        <label>Send RI Email</label>
-        <locationX>1428</locationX>
-        <locationY>535</locationY>
-        <actionName>CampaignMember.Training_Confirmation_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Member</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Wait_List_MA</name>
-        <label>Wait List MA</label>
-        <locationX>2728</locationX>
-        <locationY>1624</locationY>
-        <actionName>CampaignMember.Training_Wait_List_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Wait_List_RI</name>
-        <label>Wait List RI</label>
-        <locationX>2006</locationX>
-        <locationY>1128</locationY>
-        <actionName>CampaignMember.Training_Wait_List_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
     <assignments>
         <name>Event_Assignment_Email</name>
         <label>Event Assignment Email</label>
@@ -425,9 +153,6 @@
                     <stringValue>(MA)</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Get_Training_Status_MA</targetReference>
-            </connector>
             <label>MA</label>
         </rules>
     </decisions>
@@ -479,151 +204,6 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Get_Training_Status_MA</name>
-        <label>Get Training Status MA</label>
-        <locationX>2031</locationX>
-        <locationY>348</locationY>
-        <defaultConnector>
-            <targetReference>Admin_Alert_Email</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Pending</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Pending</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Send_MA_Confirmation_Email</targetReference>
-            </connector>
-            <label>Pending</label>
-        </rules>
-        <rules>
-            <name>Denied</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Denied</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>MA_Denied_Email</targetReference>
-            </connector>
-            <label>Denied</label>
-        </rules>
-        <rules>
-            <name>Registered</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Registered</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Send_MA_Confirmation_Email</targetReference>
-            </connector>
-            <label>Registered</label>
-        </rules>
-        <rules>
-            <name>No_Show_Status_MA</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>No Show</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>No_Show_MA</targetReference>
-            </connector>
-            <label>No-Show</label>
-        </rules>
-        <rules>
-            <name>Canceled_Status_MA</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Canceled</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Canceled_MA</targetReference>
-            </connector>
-            <label>Canceled</label>
-        </rules>
-        <rules>
-            <name>Attended_MA</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Attended</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Attended_MA_Notification</targetReference>
-            </connector>
-            <label>Attended</label>
-        </rules>
-        <rules>
-            <name>Outreach_MA_Path</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Outreach</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Outreach_MA_Email</targetReference>
-            </connector>
-            <label>Outreach</label>
-        </rules>
-        <rules>
-            <name>Registered_Reminder_MA</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Registered Reminder</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>MA_Reminder</targetReference>
-            </connector>
-            <label>Registered Reminder</label>
-        </rules>
-        <rules>
-            <name>Wait_List_MA_Decision</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Wait List</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Wait_List_MA</targetReference>
-            </connector>
-            <label>Wait List</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Get_Training_Status_RI</name>
         <label>Get Training Status RI</label>
         <locationX>1560</locationX>
@@ -642,9 +222,6 @@
                     <stringValue>Pending</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Send_RI_Email</targetReference>
-            </connector>
             <label>Pending</label>
         </rules>
         <rules>
@@ -657,9 +234,6 @@
                     <stringValue>Denied</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Denied_RI_Email</targetReference>
-            </connector>
             <label>Denied</label>
         </rules>
         <rules>
@@ -672,9 +246,6 @@
                     <stringValue>Registered</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Send_RI_Email</targetReference>
-            </connector>
             <label>Registered</label>
         </rules>
         <rules>
@@ -687,9 +258,6 @@
                     <stringValue>No Show</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>No_Show_RI</targetReference>
-            </connector>
             <label>No-Show</label>
         </rules>
         <rules>
@@ -702,9 +270,6 @@
                     <stringValue>Canceled</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Canceled_RI</targetReference>
-            </connector>
             <label>Canceled</label>
         </rules>
         <rules>
@@ -717,9 +282,6 @@
                     <stringValue>Attended</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Attended_RI</targetReference>
-            </connector>
             <label>Attended</label>
         </rules>
         <rules>
@@ -732,9 +294,6 @@
                     <stringValue>Outreach</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Outreach_RI_Email</targetReference>
-            </connector>
             <label>Outreach</label>
         </rules>
         <rules>
@@ -747,9 +306,6 @@
                     <stringValue>Registered Reminder</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>RI_Reminder</targetReference>
-            </connector>
             <label>Registered Reminder</label>
         </rules>
         <rules>
@@ -762,9 +318,6 @@
                     <stringValue>Wait List</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Wait_List_RI</targetReference>
-            </connector>
             <label>Wait List</label>
         </rules>
     </decisions>
