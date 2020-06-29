@@ -66,7 +66,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A2_2007394469</name>
+        <name>formula_2_myRule_1_A2_7840288691</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -77,7 +77,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_4_A1_2826403120</name>
+        <name>formula_5_myRule_4_A1_5045799830</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -103,7 +103,7 @@
         <dataType>Boolean</dataType>
         <expression>PRIORVALUE({!myVariable_current.c501_cm__Training_Status__c} ) &lt;&gt; TEXT({!myVariable_current.c501_cm__Training_Status__c}) &amp;&amp; (TEXT({!myVariable_current.c501_cm__Training_Status__c}) = &quot;Attended&quot; || TEXT({!myVariable_current.c501_cm__Training_Status__c}) = &quot;Registered&quot;)</expression>
     </formulas>
-    <interviewLabel>cmbp_Training_Member_Change_Process-1_InterviewLabel</interviewLabel>
+    <interviewLabel>cmbp_Training_Member_Change_Process-2_InterviewLabel</interviewLabel>
     <label>cmbp Training Member Change Process</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -156,7 +156,7 @@
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Update Status</label>
+        <label>Update Notification Pending</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <connector>
@@ -291,7 +291,7 @@
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A2_2007394469</elementReference>
+                <elementReference>formula_2_myRule_1_A2_7840288691</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -371,7 +371,7 @@
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_5_myRule_4_A1_2826403120</elementReference>
+                <elementReference>formula_5_myRule_4_A1_5045799830</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>

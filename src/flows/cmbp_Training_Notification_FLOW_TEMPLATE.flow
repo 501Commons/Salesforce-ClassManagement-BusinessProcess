@@ -20,8 +20,8 @@
     <assignments>
         <name>Event_Assignment_Email</name>
         <label>Event Assignment Email</label>
-        <locationX>1437</locationX>
-        <locationY>1202</locationY>
+        <locationX>1683</locationX>
+        <locationY>1110</locationY>
         <assignmentItems>
             <assignToReference>notificationEvent.WhoId</assignToReference>
             <operator>Assign</operator>
@@ -504,10 +504,10 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordCreates>
         <name>Create_Notification_Event_Email</name>
         <label>Create Notification Event Email</label>
-        <locationX>1300</locationX>
-        <locationY>1200</locationY>
+        <locationX>1510</locationX>
+        <locationY>1107</locationY>
         <connector>
-            <targetReference>SMS_Opt_Out</targetReference>
+            <targetReference>Update_Member_Pending_Notification</targetReference>
         </connector>
         <inputReference>notificationEvent</inputReference>
     </recordCreates>
@@ -516,6 +516,9 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
         <label>Create Notification Event SMS</label>
         <locationX>1564</locationX>
         <locationY>1720</locationY>
+        <connector>
+            <targetReference>Update_Member_Pending_Notification_SMS</targetReference>
+        </connector>
         <inputReference>notificationEvent</inputReference>
     </recordCreates>
     <recordLookups>
@@ -646,7 +649,7 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
         <locationX>1424</locationX>
         <locationY>702</locationY>
         <connector>
-            <targetReference>SMS_Opt_Out</targetReference>
+            <targetReference>Update_Member_Pending_Notification</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -663,6 +666,49 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
         </inputAssignments>
         <object>CampaignMember</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Member_Pending_Notification</name>
+        <label>Update Member Pending Notification</label>
+        <locationX>1290</locationX>
+        <locationY>1110</locationY>
+        <connector>
+            <targetReference>SMS_Opt_Out</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputCampaignMember</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Notification_Pending__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Member_Pending_Notification_SMS</name>
+        <label>Update Member Pending Notification SMS</label>
+        <locationX>1750</locationX>
+        <locationY>1722</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputCampaignMember</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Notification_Pending__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>49</locationY>
@@ -670,7 +716,7 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
             <targetReference>Get_Campaign_Member</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>inputCampaignMember</name>
         <dataType>String</dataType>

@@ -22,6 +22,7 @@
         <members>Campaign.Outreach_Area_4__c</members>
         <members>Campaign.Outreach_Today__c</members>
         <members>Campaign.State__c</members>
+        <members>CampaignMember.Notification_Pending__c</members>
         <members>CampaignMember.Outreach_Member__c</members>
         <members>Class_Member__c.CampaignId__c</members>
         <members>Class_Member__c.LeadId__c</members>
