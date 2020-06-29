@@ -233,9 +233,6 @@
                     <numberValue>98.0</numberValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Commit_Insert_Members</targetReference>
-            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -302,9 +299,6 @@ DB 6/14 - Filter out Contacts with no County or Region</description>
         <nextValueConnector>
             <targetReference>Contact_within_Outreach_Criteria</targetReference>
         </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Commit_Insert_Members</targetReference>
-        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -322,8 +316,8 @@ DB 6/14 - Filter out Contacts with no County or Region</description>
     <recordCreates>
         <name>Commit_Insert_Members</name>
         <label>Commit Insert Members</label>
-        <locationX>1013</locationX>
-        <locationY>44</locationY>
+        <locationX>1011</locationX>
+        <locationY>424</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -415,8 +409,8 @@ DB 6/14 - Filter out Contacts with no County or Region</description>
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
-        <locationX>1144</locationX>
-        <locationY>44</locationY>
+        <locationX>1009</locationX>
+        <locationY>244</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>

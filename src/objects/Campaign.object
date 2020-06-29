@@ -49,8 +49,8 @@
         <description>Outreach today available for training</description>
         <externalId>false</externalId>
         <formula>AND(
-OR(CEILING(c501_cm__ii_Days_Until_Class__c) = 30.0, CEILING(c501_cm__ii_Days_Until_Class__c) = 14.0, CEILING(c501_cm__ii_Days_Until_Class__c) = 7.0),
-OR(TEXT(Outreach_Area_1__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_2__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_3__c) &lt;&gt; &apos;&apos;, TEXT(Outreach_Area_4__c) &lt;&gt; &apos;&apos;)
+OR(ROUND(c501_cm__ii_Days_Until_Class__c, 0) = 30, ROUND(c501_cm__ii_Days_Until_Class__c, 0) = 14, ROUND(c501_cm__ii_Days_Until_Class__c, 0) = 7),
+OR(NOT(ISBLANK(TEXT(Outreach_Area_1__c))), NOT(ISBLANK(TEXT(Outreach_Area_2__c))), NOT(ISBLANK(TEXT(Outreach_Area_3__c))), NOT(ISBLANK(TEXT(Outreach_Area_4__c))))
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>Outreach today available for training</inlineHelpText>
