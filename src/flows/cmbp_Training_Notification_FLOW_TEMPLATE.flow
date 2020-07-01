@@ -120,43 +120,6 @@
         </connector>
     </assignments>
     <decisions>
-        <name>Check_State</name>
-        <label>Check State</label>
-        <locationX>1545</locationX>
-        <locationY>156</locationY>
-        <defaultConnector>
-            <targetReference>Admin_Alert_Email</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Unknown Outcome</defaultConnectorLabel>
-        <rules>
-            <name>RI</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Name__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>(RI)</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Training_Status_RI</targetReference>
-            </connector>
-            <label>RI</label>
-        </rules>
-        <rules>
-            <name>MA</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Name__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>(MA)</stringValue>
-                </rightValue>
-            </conditions>
-            <label>MA</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Do_Not_Contact</name>
         <label>Do Not Contact</label>
         <locationX>904</locationX>
@@ -207,10 +170,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Get_Training_Status_RI</name>
-        <label>Get Training Status RI</label>
-        <locationX>1560</locationX>
-        <locationY>353</locationY>
+        <name>Get_Training_Status_Email</name>
+        <label>Get Training Status Email</label>
+        <locationX>1524</locationX>
+        <locationY>255</locationY>
         <defaultConnector>
             <targetReference>Admin_Alert_Email</targetReference>
         </defaultConnector>
@@ -325,6 +288,148 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Get_Training_Status_Email_0</name>
+        <label>Get Training Status Email</label>
+        <locationX>1362</locationX>
+        <locationY>1326</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Pending_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Pending</label>
+        </rules>
+        <rules>
+            <name>Denied_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Denied</label>
+        </rules>
+        <rules>
+            <name>Registered_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Registered</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Registered</label>
+        </rules>
+        <rules>
+            <name>No_Show_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>No-Show</label>
+        </rules>
+        <rules>
+            <name>Canceled_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Canceled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Canceled</label>
+        </rules>
+        <rules>
+            <name>Attended_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Attended</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Attended</label>
+        </rules>
+        <rules>
+            <name>Outreach_RI_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Outreach</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Outreach</label>
+        </rules>
+        <rules>
+            <name>Registered_Reminder_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Registered Reminder</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Registered Reminder</label>
+        </rules>
+        <rules>
+            <name>Wait_List_RI_Decision_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Wait List</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SMS_Template</targetReference>
+            </connector>
+            <label>Wait List</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Group_Class</name>
         <label>Group Class</label>
         <locationX>409</locationX>
@@ -374,8 +479,8 @@
     <decisions>
         <name>SMS_Opt_Out</name>
         <label>SMS Opt Out</label>
-        <locationX>1135</locationX>
-        <locationY>1215</locationY>
+        <locationX>993</locationX>
+        <locationY>1131</locationY>
         <defaultConnector>
             <targetReference>Valid_MobilePhone</targetReference>
         </defaultConnector>
@@ -462,7 +567,7 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
-                <targetReference>Check_State</targetReference>
+                <targetReference>Get_Training_Status_Email</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -470,8 +575,8 @@
     <decisions>
         <name>Valid_MobilePhone</name>
         <label>Valid MobilePhone</label>
-        <locationX>1138</locationX>
-        <locationY>1467</locationY>
+        <locationX>998</locationX>
+        <locationY>1336</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_Valid_MobilePhone</name>
@@ -481,7 +586,7 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
-                <targetReference>Get_SMS_Template</targetReference>
+                <targetReference>Get_Training_Status_Email_0</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -576,8 +681,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordLookups>
         <name>Get_SMS_Template</name>
         <label>Get SMS Template</label>
-        <locationX>1368</locationX>
-        <locationY>1462</locationY>
+        <locationX>1367</locationX>
+        <locationY>1557</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Event_Assignment_SMS</targetReference>
