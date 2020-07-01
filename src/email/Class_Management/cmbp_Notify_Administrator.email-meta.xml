@@ -24,8 +24,10 @@ Training: {!CampaignMember.c501_cm__Training_Full_Name__c}
 
 Remember, all eligible participants who complete all hours of this training will receive a {!CampaignMember.c501_cm__Training_Incentive__c} bonus! Details are below!
 
-When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+When: {!CampaignMember.c501_Email_Display_Date__c}
 Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
 
 Please let us know if you won&apos;t be able to make it so we can let another provider take the class.</textOnly>
     <type>html</type>
