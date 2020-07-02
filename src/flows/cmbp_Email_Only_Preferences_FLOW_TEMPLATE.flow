@@ -505,7 +505,7 @@
             <label>Email</label>
         </rules>
     </decisions>
-    <description>Flow to change email opt out settings.</description>
+    <description>Make a copy of the template to add custom logic</description>
     <dynamicChoiceSets>
         <name>languages1</name>
         <dataType>Picklist</dataType>
@@ -570,8 +570,8 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <dataType>String</dataType>
         <expression>IF(OR({!X1_Email},{!greaterthan1Email}),&apos;Email&apos;,&apos;SMS&apos;)</expression>
     </formulas>
-    <interviewLabel>cmbp Email Only Preferences FLOW {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>cmbp Email Only Preferences FLOW</label>
+    <interviewLabel>cmbp Email Only Preferences FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Email Only Preferences FLOW TEMPLATE</label>
     <loops>
         <name>countContacts</name>
         <label>countContacts</label>

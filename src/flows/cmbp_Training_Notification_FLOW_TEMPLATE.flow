@@ -119,6 +119,19 @@
             <targetReference>Create_Notification_Event_SMS</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Update_Status</name>
+        <label>Update Status</label>
+        <locationX>1528</locationX>
+        <locationY>616</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Campaign_Member.c501_cm__Training_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Registered</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <decisions>
         <name>Do_Not_Contact</name>
         <label>Do Not Contact</label>
@@ -188,6 +201,9 @@
                     <stringValue>Pending</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Update_Member</targetReference>
+            </connector>
             <label>Pending</label>
         </rules>
         <rules>
@@ -760,10 +776,10 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordUpdates>
         <name>Update_Member</name>
         <label>Update Member</label>
-        <locationX>1424</locationX>
-        <locationY>702</locationY>
+        <locationX>1530</locationX>
+        <locationY>479</locationY>
         <connector>
-            <targetReference>Update_Member_Pending_Notification</targetReference>
+            <targetReference>Update_Status</targetReference>
         </connector>
         <filters>
             <field>Id</field>

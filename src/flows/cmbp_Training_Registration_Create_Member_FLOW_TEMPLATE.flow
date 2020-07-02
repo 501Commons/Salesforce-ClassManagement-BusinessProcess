@@ -133,11 +133,9 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB - 6/25 - check for existing Outreach Member
-DB - Add notification to Training Owner for new lead, assign lead to training owner
-DB - 6/18 - make sure lead and campaign member still valid</description>
-    <interviewLabel>cmbp Training Registration Create Member FLOW {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>cmbp Training Registration Create Member FLOW</label>
+    <description>Make a copy of the template to add custom logic</description>
+    <interviewLabel>cmbp Training Registration Create Member FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Training Registration Create Member FLOW TEMPLATE</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -169,6 +167,12 @@ DB - 6/18 - make sure lead and campaign member still valid</description>
             <field>LeadId</field>
             <value>
                 <elementReference>Get_Class_Member.LeadId__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notification_Pending__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -412,7 +416,7 @@ DB - 6/18 - make sure lead and campaign member still valid</description>
             <targetReference>Get_Class_Member</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>campaignMemberId</name>
         <dataType>String</dataType>

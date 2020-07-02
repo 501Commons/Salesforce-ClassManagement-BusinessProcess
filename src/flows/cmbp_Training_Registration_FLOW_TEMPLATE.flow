@@ -1043,15 +1043,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 6/25 - Allow 2 Character State only
-DB 6/23 - Add Parent based multi-day trainings
-DB 6/18 - check for status = In Progress
-DB 6/16 - Set flag for web registration
-6/11 - Default Lead Company if Facility Name not provided.
-6/4 DB - add varInputClassTypeFilter for filtering by class type
-6/3 DB - fix {!flow} showing in dialog
-5/29 DB - use a new Class_Member__c object instead of CampaignMember since unable to get CampaignMember created from external guest user
-5/21 DB - Rebrand to Generic</description>
+    <description>Make a copy of the template to add custom logic</description>
     <dynamicChoiceSets>
         <name>Day1Trainings</name>
         <dataType>String</dataType>
@@ -1304,8 +1296,8 @@ IF(ISBLANK({!Training_Day3}), &quot;&quot;, {!Training_Day3} + &quot;&lt;br/&gt;
         <dataType>String</dataType>
         <expression>IF(LEN({!Training_Facility_Name}) &gt; 0, {!Training_Facility_Name}, {!Training_First_Name} + &quot; &quot; + {!Training_Last_Name})</expression>
     </formulas>
-    <interviewLabel>cmbp Training Registration FLOW {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>cmbp Training Registration FLOW</label>
+    <interviewLabel>cmbp Training Registration FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Training Registration FLOW TEMPLATE</label>
     <loops>
         <name>Loop_Child_Trainings</name>
         <label>Loop Child Trainings</label>

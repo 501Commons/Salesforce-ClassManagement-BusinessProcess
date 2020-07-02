@@ -261,11 +261,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 6/23 - Add Outreach based on Outreach State, Outreach Area, Outreach Region or Outreach County
-DB 6/18 - Get subset of contacts based on outreach area
-DB 6/18 - Monitor SOQL Query Limit to keep under 100
-DB 6/14 - Don&apos;t send outreach if training is full
-DB 6/14 - Filter out Contacts with no County or Region</description>
+    <description>Make a copy of the template to add custom logic</description>
     <formulas>
         <name>getTrainingArea1StateAllCounties</name>
         <dataType>String</dataType>
@@ -286,8 +282,8 @@ DB 6/14 - Filter out Contacts with no County or Region</description>
         <dataType>String</dataType>
         <expression>SUBSTITUTE(TEXT({!Get_Outreach_Trainings.Outreach_Area_4__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
     </formulas>
-    <interviewLabel>cmbp Training Outreach FLOW {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>cmbp Training Outreach FLOW</label>
+    <interviewLabel>cmbp Training Outreach FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Training Outreach FLOW TEMPLATE</label>
     <loops>
         <name>Loop_Trainings</name>
         <label>Loop Trainings</label>
@@ -433,7 +429,7 @@ DB 6/14 - Filter out Contacts with no County or Region</description>
             <targetReference>Get_Outreach_Contact</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>flowElementsVisited</name>
         <dataType>Number</dataType>
