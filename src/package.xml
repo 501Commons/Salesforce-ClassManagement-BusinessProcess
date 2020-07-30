@@ -49,7 +49,6 @@
         <members>Contact.Region__c</members>
         <members>Contact.State_Id__c</members>
         <members>Contact.Union_Id__c</members>
-        <members>Contact.c501_cm__ii_Mentor_Program__c</members>
         <members>Lead.External_Id__c</members>
         <members>Lead.State_Id__c</members>
         <members>Lead.Union_Id__c</members>
