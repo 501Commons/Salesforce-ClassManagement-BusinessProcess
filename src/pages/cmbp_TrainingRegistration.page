@@ -127,7 +127,7 @@
                  
                  // Start an interview in the flowContainer div, and 
                  // initializes the input variables.
-                 component.startFlow("cmbp_Training_Registration", inputVariables);
+                 component.startFlow("cmbp_Training_Registration_FLOW_Custom", inputVariables);
               }
            );
         });
