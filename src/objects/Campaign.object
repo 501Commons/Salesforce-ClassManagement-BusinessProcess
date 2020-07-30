@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <fullName>Approval_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Code</label>
+        <length>16</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Evaluations_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Evaluations Sent</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Organization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant Organization</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Organization</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Type</field>
+                <operation>equals</operation>
+                <value>Grant</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Trainings (Grant Organization)</relationshipLabel>
+        <relationshipName>Trainings</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incentive_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Incentive Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Gift Card</fullName>
+                    <default>false</default>
+                    <label>Gift Card</label>
+                </value>
+                <value>
+                    <fullName>Honorarium</fullName>
+                    <default>false</default>
+                    <label>Honorarium</label>
+                </value>
+                <value>
+                    <fullName>Stipend</fullName>
+                    <default>false</default>
+                    <label>Stipend</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Outreach_Area_1__c</fullName>
         <description>Sets not only outreach area, but if outreach should be sent for a given event.  Leave blank if the event is not the first day of a training.</description>
         <externalId>false</externalId>
@@ -47,6 +116,16 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Outreach_Areas__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Outreach_Area_1__c) + &quot;,&quot; + TEXT(Outreach_Area_2__c) + &quot;,&quot; + TEXT(Outreach_Area_3__c) + &quot;,&quot; + TEXT(Outreach_Area_4__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outreach Areas</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Outreach_Today__c</fullName>
         <description>Outreach today available for training</description>
         <externalId>false</externalId>
@@ -69,5 +148,25 @@ OR(NOT(ISBLANK(TEXT(Outreach_Area_1__c))), NOT(ISBLANK(TEXT(Outreach_Area_2__c))
             <restricted>true</restricted>
             <valueSetName>States</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Training_County__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(c501_cm__C501_Training_Location__r.County__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Training County</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Training_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>c501_cm__C501_Training_Location__r.BillingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Training State</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
 </CustomObject>

@@ -16,18 +16,26 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>Campaign.Approval_Code__c</members>
+        <members>Campaign.Evaluations_Sent__c</members>
+        <members>Campaign.Grant_Organization__c</members>
+        <members>Campaign.Incentive_Type__c</members>
         <members>Campaign.Outreach_Area_1__c</members>
         <members>Campaign.Outreach_Area_2__c</members>
         <members>Campaign.Outreach_Area_3__c</members>
         <members>Campaign.Outreach_Area_4__c</members>
+        <members>Campaign.Outreach_Areas__c</members>
         <members>Campaign.Outreach_Today__c</members>
         <members>Campaign.State__c</members>
+        <members>Campaign.Training_County__c</members>
+        <members>Campaign.Training_State__c</members>
         <members>CampaignMember.Notification_Pending__c</members>
         <members>CampaignMember.Outreach_Member__c</members>
         <members>Class_Member__c.CampaignId__c</members>
         <members>Class_Member__c.LeadId__c</members>
         <members>Class_Member__c.Training_Status__c</members>
         <members>Contact.County__c</members>
+        <members>Contact.Dues_Paying_Union_Member__c</members>
         <members>Contact.Outreach_Area__c</members>
         <members>Contact.Outreach_County__c</members>
         <members>Contact.Outreach_Date_Last_Sent__c</members>
@@ -37,7 +45,12 @@
         <members>Contact.Outreach_Most_Recent_Training_Area__c</members>
         <members>Contact.Outreach_Region__c</members>
         <members>Contact.Outreach_State__c</members>
+        <members>Contact.Provider_Type__c</members>
         <members>Contact.Region__c</members>
+        <members>Contact.State_Id__c</members>
+        <members>Contact.Union_Id__c</members>
+        <members>Contact.ii_Mentor_Program__c</members>
+        <members>Lead.External_Id__c</members>
         <members>Lead.State_Id__c</members>
         <members>Lead.Union_Id__c</members>
         <members>cmbp_Custom_Settings__c.OrgWideEmailAddress__c</members>
