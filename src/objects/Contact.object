@@ -206,4 +206,14 @@
         <type>Text</type>
         <unique>true</unique>
     </fields>
+    <fields>
+        <fullName>c501_cm__ii_Mentor_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Mentor Program</label>
+        <summaryForeignKey>c501_cm__ii_Program_Membership__c.c501_cm__Member__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
 </CustomObject>
