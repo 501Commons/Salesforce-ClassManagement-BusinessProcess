@@ -24,7 +24,7 @@
     </columns>
     <description>Trainings that are available for outreach today.  If you change this logic you need to update the Training Outreach FLOW with the logic change.</description>
     <filter>
-        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5) AND 6 AND 7 AND 8</booleanFilter>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5) AND 6 AND 7</booleanFilter>
         <criteriaItems>
             <column>Campaign.Outreach_Today__c</column>
             <columnToColumn>false</columnToColumn>
@@ -65,7 +65,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>In Progress</value>
+            <value>Planned,In Progress</value>
         </criteriaItems>
         <criteriaItems>
             <column>ACTIVE</column>
@@ -73,13 +73,6 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>1</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Campaign.c501_cm__ii_Days_Until_Class__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>7,14,30</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

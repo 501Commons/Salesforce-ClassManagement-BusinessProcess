@@ -7,9 +7,11 @@
     <name>cmbp Notify Administrator</name>
     <style>freeForm</style>
     <subject>Class Management - Admin - Action Required - Call</subject>
-    <textOnly>Administrator - Action Required
+    <textOnly>SEIU ESF Administrator - Action Required
 
-There was a problem notifying {!CampaignMember.FirstName} {!CampaignMember.LastName}.  This could be related to an invalid email, Salesforce issue, missing fields on Training, or a new email Confirmation or Reminder template added that needs to be updated in Salesforce Process Builder/Flow.
+There was a problem notifying {!CampaignMember.FirstName} {!CampaignMember.LastName}.  
+
+This could be related to an invalid email, Salesforce issue, missing fields on Training, or a new email Confirmation or Reminder template added that needs to be updated in Salesforce Process Builder/Flow.
 
 Please call to let them know about the training if they are registered then investigate what caused the issue (e.g., update contact email).
 
@@ -25,11 +27,12 @@ Training: {!CampaignMember.c501_cm__Training_Full_Name__c}
 Remember, all eligible participants who complete all hours of this training will receive a {!CampaignMember.c501_cm__Training_Incentive__c} bonus! Details are below!
 
 
-When: {!CampaignMember.c501_Email_Display_Date__c}
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}.
+
 Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
 
 
-Please let us know if you won&apos;t be able to make it so we can let another provider take the class.</textOnly>
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
     <type>html</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

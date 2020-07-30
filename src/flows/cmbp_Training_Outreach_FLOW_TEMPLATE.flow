@@ -3,8 +3,8 @@
     <assignments>
         <name>Add_Member_Insert</name>
         <label>Add Member</label>
-        <locationX>1013</locationX>
-        <locationY>566</locationY>
+        <locationX>1440</locationX>
+        <locationY>697</locationY>
         <assignmentItems>
             <assignToReference>insertMembers</assignToReference>
             <operator>Add</operator>
@@ -19,8 +19,8 @@
     <assignments>
         <name>Assign_Limits</name>
         <label>Assign Limits</label>
-        <locationX>761</locationX>
-        <locationY>336</locationY>
+        <locationX>1182</locationX>
+        <locationY>403</locationY>
         <assignmentItems>
             <assignToReference>flowElementsVisited</assignToReference>
             <operator>Add</operator>
@@ -35,8 +35,8 @@
     <assignments>
         <name>Assign_Member_Fields</name>
         <label>Assign Member Fields</label>
-        <locationX>626</locationX>
-        <locationY>566</locationY>
+        <locationX>1053</locationX>
+        <locationY>697</locationY>
         <assignmentItems>
             <assignToReference>memberRecord.ContactId</assignToReference>
             <operator>Assign</operator>
@@ -79,8 +79,8 @@
     <decisions>
         <name>Contact_within_Outreach_Criteria</name>
         <label>Contact within Outreach Criteria</label>
-        <locationX>465</locationX>
-        <locationY>287</locationY>
+        <locationX>904</locationX>
+        <locationY>230</locationY>
         <defaultConnector>
             <targetReference>Assign_Limits</targetReference>
         </defaultConnector>
@@ -201,6 +201,31 @@
                 </rightValue>
             </conditions>
             <connector>
+                <targetReference>Language_Match</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Language_Match</name>
+        <label>Language Match</label>
+        <locationX>911</locationX>
+        <locationY>405</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Limits</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_LanguageMatch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>doesLanguageMatch</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
                 <targetReference>Get_Training_Member</targetReference>
             </connector>
             <label>Yes</label>
@@ -210,8 +235,8 @@
         <description>Flow Limit - Executed elements at runtime per flow = 2000</description>
         <name>Near_Flow_Limit</name>
         <label>Near Flow Limit</label>
-        <locationX>752</locationX>
-        <locationY>192</locationY>
+        <locationX>1149</locationX>
+        <locationY>60</locationY>
         <defaultConnector>
             <targetReference>Loop_Trainings</targetReference>
         </defaultConnector>
@@ -237,10 +262,54 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Valid_Email_or_SMS</name>
+        <label>Valid Email or SMS</label>
+        <locationX>588</locationX>
+        <locationY>64</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_ValidEmaiSMS</name>
+            <conditionLogic>1 AND ((2 AND 3) OR (4 AND 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.npsp__Do_Not_Contact__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.HasOptedOutOfEmail</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.MobilePhone</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Outreach_Trainings</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Valid_Member_Exists</name>
         <label>Valid Member Exists</label>
-        <locationX>467</locationX>
-        <locationY>433</locationY>
+        <locationX>894</locationX>
+        <locationY>564</locationY>
         <defaultConnector>
             <targetReference>Assign_Member_Fields</targetReference>
         </defaultConnector>
@@ -262,6 +331,13 @@
         </rules>
     </decisions>
     <description>Make a copy of the template to add custom logic</description>
+    <formulas>
+        <name>doesLanguageMatch</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Spanish&quot; &amp;&amp; TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Spanish&quot;, TRUE,
+IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Somali&quot; &amp;&amp; TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Somali&quot;, TRUE,
+IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &amp;&amp; (TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;English&quot; || TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;&quot;), TRUE, FALSE)))</expression>
+    </formulas>
     <formulas>
         <name>getTrainingArea1StateAllCounties</name>
         <dataType>String</dataType>
@@ -287,8 +363,8 @@
     <loops>
         <name>Loop_Trainings</name>
         <label>Loop Trainings</label>
-        <locationX>481</locationX>
-        <locationY>40</locationY>
+        <locationX>903</locationX>
+        <locationY>59</locationY>
         <assignNextValueToReference>outreachTrainingRecord</assignNextValueToReference>
         <collectionReference>Get_Outreach_Trainings</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -312,8 +388,8 @@
     <recordCreates>
         <name>Commit_Insert_Members</name>
         <label>Commit Insert Members</label>
-        <locationX>1011</locationX>
-        <locationY>424</locationY>
+        <locationX>1438</locationX>
+        <locationY>555</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -322,11 +398,11 @@
     <recordLookups>
         <name>Get_Outreach_Contact</name>
         <label>Get Outreach Contact</label>
-        <locationX>179</locationX>
-        <locationY>41</locationY>
+        <locationX>446</locationX>
+        <locationY>68</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Outreach_Trainings</targetReference>
+            <targetReference>Valid_Email_or_SMS</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -342,8 +418,8 @@
     <recordLookups>
         <name>Get_Outreach_Trainings</name>
         <label>Get Outreach Trainings</label>
-        <locationX>330</locationX>
-        <locationY>40</locationY>
+        <locationX>748</locationX>
+        <locationY>64</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Trainings</targetReference>
@@ -376,8 +452,8 @@
     <recordLookups>
         <name>Get_Training_Member</name>
         <label>Get Training Member</label>
-        <locationX>262</locationX>
-        <locationY>359</locationY>
+        <locationX>689</locationX>
+        <locationY>490</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Valid_Member_Exists</targetReference>
@@ -405,8 +481,8 @@
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
-        <locationX>1009</locationX>
-        <locationY>244</locationY>
+        <locationX>1436</locationX>
+        <locationY>375</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -424,7 +500,7 @@
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>37</locationY>
+        <locationY>50</locationY>
         <connector>
             <targetReference>Get_Outreach_Contact</targetReference>
         </connector>

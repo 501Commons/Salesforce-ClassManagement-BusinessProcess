@@ -2,7 +2,9 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
         <fullName>Outreach_Area_1__c</fullName>
+        <description>Sets not only outreach area, but if outreach should be sent for a given event.  Leave blank if the event is not the first day of a training.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Sets not only outreach area, but if outreach should be sent for a given event.  Leave blank if the event is not the first day of a training.</inlineHelpText>
         <label>Outreach Area 1</label>
         <required>false</required>
         <type>Picklist</type>

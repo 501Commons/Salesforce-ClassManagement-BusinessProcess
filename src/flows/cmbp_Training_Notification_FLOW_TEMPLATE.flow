@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Admin_Alert_Email</name>
         <label>Admin Alert Email</label>
-        <locationX>1219</locationX>
-        <locationY>273</locationY>
+        <locationX>993</locationX>
+        <locationY>923</locationY>
         <actionName>CampaignMember.cmbp_Admin_Alert</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Event_Assignment_Email</name>
         <label>Event Assignment Email</label>
-        <locationX>1683</locationX>
-        <locationY>1110</locationY>
+        <locationX>1896</locationX>
+        <locationY>1323</locationY>
         <assignmentItems>
             <assignToReference>notificationEvent.WhoId</assignToReference>
             <operator>Assign</operator>
@@ -71,8 +71,8 @@
     <assignments>
         <name>Event_Assignment_SMS</name>
         <label>Event Assignment SMS</label>
-        <locationX>1369</locationX>
-        <locationY>1720</locationY>
+        <locationX>1582</locationX>
+        <locationY>1933</locationY>
         <assignmentItems>
             <assignToReference>notificationEvent.WhoId</assignToReference>
             <operator>Assign</operator>
@@ -122,8 +122,8 @@
     <assignments>
         <name>Update_Status</name>
         <label>Update Status</label>
-        <locationX>1528</locationX>
-        <locationY>616</locationY>
+        <locationX>1741</locationX>
+        <locationY>829</locationY>
         <assignmentItems>
             <assignToReference>Get_Campaign_Member.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -133,35 +133,10 @@
         </assignmentItems>
     </assignments>
     <decisions>
-        <name>Do_Not_Contact</name>
-        <label>Do Not Contact</label>
-        <locationX>904</locationX>
-        <locationY>50</locationY>
-        <defaultConnector>
-            <targetReference>Email_Opt_Out</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_DoNot_Contact</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.Contact.npsp__Do_Not_Contact__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Member_Pending_Notification_End</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Email_Opt_Out</name>
         <label>Email Opt Out</label>
-        <locationX>1074</locationX>
-        <locationY>49</locationY>
+        <locationX>1287</locationX>
+        <locationY>262</locationY>
         <defaultConnector>
             <targetReference>Valid_Email</targetReference>
         </defaultConnector>
@@ -185,10 +160,10 @@
     <decisions>
         <name>Get_Training_Status_Email</name>
         <label>Get Training Status Email</label>
-        <locationX>1524</locationX>
-        <locationY>255</locationY>
+        <locationX>1737</locationX>
+        <locationY>468</locationY>
         <defaultConnector>
-            <targetReference>Admin_Alert_Email</targetReference>
+            <targetReference>Update_Member_Pending_Notification</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -306,8 +281,8 @@
     <decisions>
         <name>Get_Training_Status_Email_0</name>
         <label>Get Training Status Email</label>
-        <locationX>1362</locationX>
-        <locationY>1326</locationY>
+        <locationX>1575</locationX>
+        <locationY>1539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Pending_0_0</name>
@@ -448,42 +423,20 @@
     <decisions>
         <name>Group_Class</name>
         <label>Group Class</label>
-        <locationX>409</locationX>
-        <locationY>623</locationY>
+        <locationX>622</locationX>
+        <locationY>836</locationY>
         <defaultConnector>
-            <targetReference>Get_Training_Events</targetReference>
+            <targetReference>Valid_Contact</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_Group_Class</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>varParentId</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>Get_Training.CampaignMemberRecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Notification_Sent</name>
-        <label>Notification Sent</label>
-        <locationX>584</locationX>
-        <locationY>54</locationY>
-        <defaultConnector>
-            <targetReference>Valid_Contact</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_Notification_Sent</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>varEventId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <elementReference>Get_Record_Type_Group.Id</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -495,8 +448,8 @@
     <decisions>
         <name>SMS_Opt_Out</name>
         <label>SMS Opt Out</label>
-        <locationX>993</locationX>
-        <locationY>1131</locationY>
+        <locationX>1206</locationX>
+        <locationY>1344</locationY>
         <defaultConnector>
             <targetReference>Valid_MobilePhone</targetReference>
         </defaultConnector>
@@ -517,8 +470,8 @@
     <decisions>
         <name>Test_Contact</name>
         <label>Test Contact</label>
-        <locationX>175</locationX>
-        <locationY>430</locationY>
+        <locationX>386</locationX>
+        <locationY>551</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_TestContact</name>
@@ -538,7 +491,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Child_Campaign</targetReference>
+                <targetReference>Get_Record_Type_Group</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -547,8 +500,8 @@
         <description>Check to make sure not a Lead</description>
         <name>Valid_Contact</name>
         <label>Valid Contact</label>
-        <locationX>738</locationX>
-        <locationY>52</locationY>
+        <locationX>951</locationX>
+        <locationY>265</locationY>
         <defaultConnector>
             <targetReference>Update_Member_Pending_Notification_End</targetReference>
         </defaultConnector>
@@ -561,7 +514,7 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
-                <targetReference>Do_Not_Contact</targetReference>
+                <targetReference>Valid_Email_SMS</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -569,10 +522,10 @@
     <decisions>
         <name>Valid_Email</name>
         <label>Valid Email</label>
-        <locationX>1239</locationX>
-        <locationY>44</locationY>
+        <locationX>1452</locationX>
+        <locationY>257</locationY>
         <defaultConnector>
-            <targetReference>Admin_Alert_Email</targetReference>
+            <targetReference>Update_Member_Pending_Notification</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -589,10 +542,57 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Valid_Email_SMS</name>
+        <label>Valid Email or SMS</label>
+        <locationX>1117</locationX>
+        <locationY>263</locationY>
+        <defaultConnector>
+            <targetReference>Admin_Alert_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_ValidEmailSMS</name>
+            <conditionLogic>1 AND ((2 AND 3) OR (4 AND 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Contact.npsp__Do_Not_Contact__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Contact.Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Contact.HasOptedOutOfEmail</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Contact.MobilePhone</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Campaign_Member.Contact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Opt_Out</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Valid_MobilePhone</name>
         <label>Valid MobilePhone</label>
-        <locationX>998</locationX>
-        <locationY>1336</locationY>
+        <locationX>1211</locationX>
+        <locationY>1549</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_Valid_MobilePhone</name>
@@ -634,8 +634,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordCreates>
         <name>Create_Notification_Event_Email</name>
         <label>Create Notification Event Email</label>
-        <locationX>1510</locationX>
-        <locationY>1107</locationY>
+        <locationX>1723</locationX>
+        <locationY>1320</locationY>
         <connector>
             <targetReference>Update_Member_Pending_Notification</targetReference>
         </connector>
@@ -644,8 +644,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordCreates>
         <name>Create_Notification_Event_SMS</name>
         <label>Create Notification Event SMS</label>
-        <locationX>1564</locationX>
-        <locationY>1720</locationY>
+        <locationX>1777</locationX>
+        <locationY>1933</locationY>
         <connector>
             <targetReference>Update_Member_Pending_Notification_SMS</targetReference>
         </connector>
@@ -654,11 +654,11 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordLookups>
         <name>Get_Campaign_Member</name>
         <label>Get Campaign Member</label>
-        <locationX>177</locationX>
-        <locationY>50</locationY>
+        <locationX>390</locationX>
+        <locationY>263</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Test_Contact</targetReference>
+            <targetReference>Get_Training</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -672,33 +672,37 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <description>Check if there is at least 1 child campaign</description>
-        <name>Get_Child_Campaign</name>
-        <label>Get Child Campaign</label>
-        <locationX>183</locationX>
-        <locationY>620</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <name>Get_Record_Type_Group</name>
+        <label>Get Record Type Group</label>
+        <locationX>416</locationX>
+        <locationY>827</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Group_Class</targetReference>
         </connector>
         <filters>
-            <field>ParentId</field>
+            <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Campaign_Member.CampaignId</elementReference>
+                <stringValue>Training_Series</stringValue>
             </value>
         </filters>
-        <object>Campaign</object>
-        <outputAssignments>
-            <assignToReference>varParentId</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Campaign</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_SMS_Template</name>
         <label>Get SMS Template</label>
-        <locationX>1367</locationX>
-        <locationY>1557</locationY>
+        <locationX>1580</locationX>
+        <locationY>1770</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Event_Assignment_SMS</targetReference>
@@ -715,46 +719,30 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Training_Events</name>
-        <label>Get Training Events</label>
-        <locationX>430</locationX>
-        <locationY>214</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <name>Get_Training</name>
+        <label>Get Training</label>
+        <locationX>391</locationX>
+        <locationY>417</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Notification_Sent</targetReference>
+            <targetReference>Test_Contact</targetReference>
         </connector>
         <filters>
-            <field>Subject</field>
-            <operator>StartsWith</operator>
-            <value>
-                <elementReference>Get_Campaign_Member.c501_cm__Training_Status__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>WhatId</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>Get_Campaign_Member.CampaignId</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>WhoId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Campaign_Member.ContactId</elementReference>
-            </value>
-        </filters>
-        <object>Event</object>
-        <outputAssignments>
-            <assignToReference>varEventId</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Update_Contact_Outreach</name>
         <label>Update Contact Outreach</label>
-        <locationX>1999</locationX>
-        <locationY>1589</locationY>
+        <locationX>2212</locationX>
+        <locationY>1802</locationY>
         <connector>
             <targetReference>Event_Assignment_Email</targetReference>
         </connector>
@@ -776,8 +764,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordUpdates>
         <name>Update_Member</name>
         <label>Update Member</label>
-        <locationX>1530</locationX>
-        <locationY>479</locationY>
+        <locationX>1743</locationX>
+        <locationY>692</locationY>
         <connector>
             <targetReference>Update_Status</targetReference>
         </connector>
@@ -799,8 +787,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordUpdates>
         <name>Update_Member_Pending_Notification</name>
         <label>Update Member Pending Notification</label>
-        <locationX>995</locationX>
-        <locationY>711</locationY>
+        <locationX>1208</locationX>
+        <locationY>924</locationY>
         <connector>
             <targetReference>SMS_Opt_Out</targetReference>
         </connector>
@@ -822,8 +810,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordUpdates>
         <name>Update_Member_Pending_Notification_End</name>
         <label>Update Member Pending Notification</label>
-        <locationX>743</locationX>
-        <locationY>353</locationY>
+        <locationX>628</locationX>
+        <locationY>264</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -842,8 +830,8 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     <recordUpdates>
         <name>Update_Member_Pending_Notification_SMS</name>
         <label>Update Member Pending Notification SMS</label>
-        <locationX>1750</locationX>
-        <locationY>1722</locationY>
+        <locationX>1963</locationX>
+        <locationY>1935</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -861,7 +849,7 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>49</locationY>
+        <locationY>262</locationY>
         <connector>
             <targetReference>Get_Campaign_Member</targetReference>
         </connector>
@@ -884,13 +872,6 @@ TEXT({!Get_Campaign_Member.Campaign.c501_cm__custom_Start_DateTime__c}) + &quot;
     </variables>
     <variables>
         <name>varEventId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>varParentId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

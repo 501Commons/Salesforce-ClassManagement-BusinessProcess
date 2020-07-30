@@ -7,9 +7,12 @@
     <name>cmbp New Lead</name>
     <style>freeForm</style>
     <subject>Class Management New Lead</subject>
-    <textOnly>A new Lead for the Training Class below is assigned to you and available for processing in Salesforce.
+    <textOnly>A new Lead for a training class is assigned to you and available for processing in Salesforce.
 
-The Lead is {!Lead.FirstName} {!Lead.LastName}.</textOnly>
+The Lead is {!Lead.FirstName} {!Lead.LastName}.
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
     <type>html</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
