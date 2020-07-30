@@ -52,8 +52,8 @@
             <label>Training Canceled</label>
         </rules>
     </decisions>
-    <interviewLabel>cmbp_Training_Change_Process-1_InterviewLabel</interviewLabel>
-    <label>cmbp Training Change Process</label>
+    <interviewLabel>cmbp_Training_Change_Process_TEMPLATE-1_InterviewLabel</interviewLabel>
+    <label>cmbp Training Change Process TEMPLATE</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
@@ -341,7 +341,7 @@
         <object>CampaignMember</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
