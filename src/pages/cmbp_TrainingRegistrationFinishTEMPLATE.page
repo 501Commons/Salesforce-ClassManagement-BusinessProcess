@@ -1,4 +1,6 @@
-<apex:page id="finishRegistration" showHeader="false" sidebar="false" lightningStylesheets="true">
+<apex:page id="cmbp_TrainingRegistrationFinishTEMPLATE" showHeader="false" sidebar="false" lightningStylesheets="true">
+
+  <!-- Create a copy of this file called cmbp_TrainingRegistrationFinishedCustom, so you can add custom messaging without getting overwritten, which is referenced by cmbp_TrainingRegistration when Finish button clicked in Flow -->
 
   <style> 
   
@@ -26,6 +28,6 @@
             
   </style>
 
-<br/><br/>
-<h1>Thanks for registering</h1>
+  <br/><br/>
+  <h1>Thanks for registering</h1>
 </apex:page>

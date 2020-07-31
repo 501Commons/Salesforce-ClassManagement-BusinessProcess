@@ -55,7 +55,7 @@
         var statusChange = function (event) {
            if(event.getParam("status") === "FINISHED") {
 
-              var url="{!$Page.cmbp_TrainingRegistrationFinished}";
+              var url="{!$Page.cmbp_TrainingRegistrationFinishCustom}";
               window.open(url,"_self");             
            }
         };
