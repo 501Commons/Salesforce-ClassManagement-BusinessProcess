@@ -74,6 +74,7 @@
         <members>cmbp_Training_Notification_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Outreach_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Registration_Create_Member_FLOW_TEMPLATE</members>
+        <members>cmbp_Training_Registration_FLOW_Custom</members>
         <members>cmbp_Training_Registration_FLOW_TEMPLATE</members>
         <name>Flow</name>
     </types>

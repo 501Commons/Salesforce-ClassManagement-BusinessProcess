@@ -67,13 +67,11 @@
            }
         };
         
-        var inputDebugMode = "{!$CurrentPage.parameters.inputDebugMode}" == "true";
+        var varInputDebugModeValue = "{!$CurrentPage.parameters.varInputDebugMode}" == "true";
+        var varInputDebugMode = "varInputDebugModeValue.toLowerCase()" == "true";
         var varInputClassTypeFilter = "{!$CurrentPage.parameters.varInputClassTypeFilter}";
-        var varInputDay1Filter = "{!$CurrentPage.parameters.varInputDay1Filter}";
-        var varInputDay2Filter = "{!$CurrentPage.parameters.varInputDay2Filter}";
-        var varInputDay3Filter = "{!$CurrentPage.parameters.varInputDay3Filter}";
-        var varInputEnforceConsecutive = "{!$CurrentPage.parameters.varInputEnforceConsecutive}" == "true";
-        var varInputRestrictByDay = "{!$CurrentPage.parameters.varInputRestrictByDay}" == "true";
+        var varInputRestrictByDayValue = "{!$CurrentPage.parameters.varInputRestrictByDay}";
+        var varInputRestrictByDay = "varInputRestrictByDayValue.toLowerCase()" == "true";
         var varInputTrainingFilter = "{!$CurrentPage.parameters.varInputTrainingFilter}";
         
         $Lightning.use("c:cmbp_Lighting_Flow_APP", function() {
@@ -84,35 +82,15 @@
                  // Set the input variables
                  var inputVariables = [
                     {
-                       name : 'inputDebugMode',
+                       name : 'varInputDebugMode',
                        type : 'Boolean',
-                       value : inputDebugMode
+                       value : varInputDebugMode
                     },
                     {
                        name : 'varInputClassTypeFilter',
                        type : 'String',
                        value : varInputClassTypeFilter
                     },              
-                    {
-                       name : 'varInputDay1Filter',
-                       type : 'String',
-                       value : varInputDay1Filter
-                    },
-                    {
-                       name : 'varInputDay2Filter',
-                       type : 'String',
-                       value : varInputDay2Filter
-                    },
-                    {
-                       name : 'varInputDay3Filter',
-                       type : 'String',
-                       value : varInputDay3Filter
-                    },
-                    {
-                       name : 'varInputEnforceConsecutive',
-                       type : 'Boolean',
-                       value : varInputEnforceConsecutive
-                    },
                     {
                        name : 'varInputRestrictByDay',
                        type : 'Boolean',
