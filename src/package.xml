@@ -4,6 +4,7 @@
     <types>
         <members>cmbp_EmailPref</members>
         <members>cmbp_TrainingRegistration</members>
+        <members>cmbp_TrainingRegistrationFinished</members>
         <name>ApexPage</name>
     </types>
     <types>

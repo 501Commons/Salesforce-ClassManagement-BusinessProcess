@@ -7,7 +7,6 @@
      <style> 
   
       body { 
-        background-color: #FF195A; 
         font-family: 'Houschka Rounded Alt';
         font-weight: 500;
         font-style: normal;
@@ -55,23 +54,16 @@
      <script>
         var statusChange = function (event) {
            if(event.getParam("status") === "FINISHED") {
-              // Control what happens when the interview finishes
 
-              var outputVariables = event.getParam("outputVariables");
-              var key;
-              for(key in outputVariables) {
-                 if(outputVariables[key].name === "myOutput") {
-                    // Do something with an output variable
-                 }
-              }
+              var url="{!$Page.cmbp_TrainingRegistrationFinished}";
+              window.open(url,"_self");             
            }
         };
         
-        var varInputDebugModeValue = "{!$CurrentPage.parameters.varInputDebugMode}" == "true";
-        var varInputDebugMode = "varInputDebugModeValue.toLowerCase()" == "true";
+        var varInputDebugMode = "{!$CurrentPage.parameters.varInputDebugMode}" == "true";
         var varInputClassTypeFilter = "{!$CurrentPage.parameters.varInputClassTypeFilter}";
         var varInputRestrictByDayValue = "{!$CurrentPage.parameters.varInputRestrictByDay}";
-        var varInputRestrictByDay = "varInputRestrictByDayValue.toLowerCase()" == "true";
+        var varInputRestrictByDay = "{!$CurrentPage.parameters.varInputRestrictByDay}" == "true";
         var varInputTrainingFilter = "{!$CurrentPage.parameters.varInputTrainingFilter}";
         
         $Lightning.use("c:cmbp_Lighting_Flow_APP", function() {

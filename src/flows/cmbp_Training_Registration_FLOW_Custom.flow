@@ -1201,6 +1201,13 @@
                 <elementReference>getDayCheck</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>c501_cm__Training_Name_WebForm__c</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>varInputTrainingFilter</elementReference>
+            </value>
+        </filters>
         <object>Campaign</object>
         <outputAssignments>
             <assignToReference>soDay1Training.Id</assignToReference>
@@ -2314,7 +2321,7 @@ ISNUMBER({!Facility_Payee_Number})</formulaExpression>
             <targetReference>Get_Available_Trainings</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>textTemplateTrainingAlreadyRegistered</name>
         <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 16px; font-family: sans-serif; color: rgb(255, 0, 0);&quot;&gt;Error: Already registered for training.  Please select a different training.&lt;/span&gt;&lt;/p&gt;</text>
