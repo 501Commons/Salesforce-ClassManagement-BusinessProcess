@@ -37,7 +37,7 @@
         </lookupFilter>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Trainings (Grant Organization)</relationshipLabel>
-        <relationshipName>Trainings</relationshipName>
+        <relationshipName>Trainings_Grant_Organization</relationshipName>
         <required>false</required>
         <type>Lookup</type>
     </fields>
