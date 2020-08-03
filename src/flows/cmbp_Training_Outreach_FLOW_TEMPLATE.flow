@@ -3,8 +3,8 @@
     <assignments>
         <name>Add_Member_Insert</name>
         <label>Add Member</label>
-        <locationX>1440</locationX>
-        <locationY>697</locationY>
+        <locationX>1954</locationX>
+        <locationY>757</locationY>
         <assignmentItems>
             <assignToReference>insertMembers</assignToReference>
             <operator>Add</operator>
@@ -19,13 +19,13 @@
     <assignments>
         <name>Assign_Limits</name>
         <label>Assign Limits</label>
-        <locationX>1182</locationX>
-        <locationY>403</locationY>
+        <locationX>1254</locationX>
+        <locationY>483</locationY>
         <assignmentItems>
             <assignToReference>flowElementsVisited</assignToReference>
             <operator>Add</operator>
             <value>
-                <numberValue>6.0</numberValue>
+                <numberValue>10.0</numberValue>
             </value>
         </assignmentItems>
         <connector>
@@ -35,8 +35,8 @@
     <assignments>
         <name>Assign_Member_Fields</name>
         <label>Assign Member Fields</label>
-        <locationX>1053</locationX>
-        <locationY>697</locationY>
+        <locationX>1766</locationX>
+        <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>memberRecord.ContactId</assignToReference>
             <operator>Assign</operator>
@@ -72,15 +72,79 @@
                 <stringValue>Outreach</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>memberRecord.Group_Classes__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>textTemplateGroupClasses</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_Member_Insert</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Build_Group_List</name>
+        <label>Build Group List</label>
+        <locationX>1405</locationX>
+        <locationY>1149</locationY>
+        <assignmentItems>
+            <assignToReference>varChildTrainings</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>getChildTrainingDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Child_Classes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Build_Group_List_0</name>
+        <label>Build Group List</label>
+        <locationX>1564</locationX>
+        <locationY>973</locationY>
+        <assignmentItems>
+            <assignToReference>varChildTrainings</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Child_Classes</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Class_Type</name>
+        <label>Class Type</label>
+        <locationX>752</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Limits</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Facility</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>outreachTrainingRecord.c501_cm__Class_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Facility</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Training_Member</targetReference>
+            </connector>
+            <label>Facility</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Contact_within_Outreach_Criteria</name>
         <label>Contact within Outreach Criteria</label>
-        <locationX>904</locationX>
-        <locationY>230</locationY>
+        <locationX>997</locationX>
+        <locationY>211</locationY>
         <defaultConnector>
             <targetReference>Assign_Limits</targetReference>
         </defaultConnector>
@@ -207,14 +271,103 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Language_Match</name>
-        <label>Language Match</label>
-        <locationX>911</locationX>
-        <locationY>405</locationY>
+        <name>Is_Child_Training</name>
+        <label>Is Child Training</label>
+        <locationX>1349</locationX>
+        <locationY>769</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Member_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Child_Training</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>outreachTrainingRecord.ParentId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Child_Trainings</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Test_Contact</name>
+        <label>Is Test Contact</label>
+        <locationX>945</locationX>
+        <locationY>1191</locationY>
         <defaultConnector>
             <targetReference>Assign_Limits</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Test_Contact</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.FirstName</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>**Test**</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.LastName</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>**Test**</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Valid_Member_Exists</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Test_Training</name>
+        <label>Is Test Training</label>
+        <locationX>632</locationX>
+        <locationY>1011</locationY>
+        <defaultConnector>
+            <targetReference>Valid_Member_Exists</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Test_Training</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>outreachTrainingRecord.c501_cm__Training_Name__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>**Test**</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>outreachTrainingRecord.TestFlight_Enabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Test_Contact</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Language_Match</name>
+        <label>Language Match</label>
+        <locationX>999</locationX>
+        <locationY>412</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Limits</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_LanguageMatch</name>
             <conditionLogic>and</conditionLogic>
@@ -226,7 +379,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Training_Member</targetReference>
+                <targetReference>Class_Type</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -235,8 +388,8 @@
         <description>Flow Limit - Executed elements at runtime per flow = 2000</description>
         <name>Near_Flow_Limit</name>
         <label>Near Flow Limit</label>
-        <locationX>1149</locationX>
-        <locationY>60</locationY>
+        <locationX>1252</locationX>
+        <locationY>52</locationY>
         <defaultConnector>
             <targetReference>Loop_Trainings</targetReference>
         </defaultConnector>
@@ -262,21 +415,14 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Valid_Email_or_SMS</name>
-        <label>Valid Email or SMS</label>
-        <locationX>588</locationX>
-        <locationY>64</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <name>Valid_Communication_Values</name>
+        <label>Valid Communication Values</label>
+        <locationX>564</locationX>
+        <locationY>128</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
-            <name>Yes_ValidEmaiSMS</name>
-            <conditionLogic>1 AND ((2 AND 3) OR (4 AND 5))</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Outreach_Contact.npsp__Do_Not_Contact__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
+            <name>Yes_ValidValues</name>
+            <conditionLogic>((1 AND 2) OR (4 AND 5)) AND 3</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Email</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -289,8 +435,18 @@
                 </rightValue>
             </conditions>
             <conditions>
+                <leftValueReference>Get_Outreach_Contact.npsp__Do_Not_Contact__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
                 <leftValueReference>Get_Outreach_Contact.MobilePhone</leftValueReference>
                 <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
@@ -308,10 +464,10 @@
     <decisions>
         <name>Valid_Member_Exists</name>
         <label>Valid Member Exists</label>
-        <locationX>894</locationX>
-        <locationY>564</locationY>
+        <locationX>917</locationX>
+        <locationY>757</locationY>
         <defaultConnector>
-            <targetReference>Assign_Member_Fields</targetReference>
+            <targetReference>Is_Child_Training</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -330,13 +486,17 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>Make a copy of the template to add custom logic</description>
     <formulas>
         <name>doesLanguageMatch</name>
         <dataType>Boolean</dataType>
         <expression>IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Spanish&quot; &amp;&amp; TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Spanish&quot;, TRUE,
 IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Somali&quot; &amp;&amp; TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Somali&quot;, TRUE,
 IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &amp;&amp; (TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;English&quot; || TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;&quot;), TRUE, FALSE)))</expression>
+    </formulas>
+    <formulas>
+        <name>getChildTrainingDescription</name>
+        <dataType>String</dataType>
+        <expression>&quot;     --&gt; &quot; +  {!Loop_Child_Classes.c501_cm__Training_Name_WebForm__c} + BR()</expression>
     </formulas>
     <formulas>
         <name>getTrainingArea1StateAllCounties</name>
@@ -361,10 +521,24 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
     <interviewLabel>cmbp Training Outreach FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Training Outreach FLOW TEMPLATE</label>
     <loops>
+        <name>Loop_Child_Classes</name>
+        <label>Loop Child Classes</label>
+        <locationX>1688</locationX>
+        <locationY>1150</locationY>
+        <collectionReference>Get_Child_Trainings</collectionReference>
+        <iterationOrder>Desc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Build_Group_List</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Assign_Member_Fields</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
         <name>Loop_Trainings</name>
         <label>Loop Trainings</label>
-        <locationX>903</locationX>
-        <locationY>59</locationY>
+        <locationX>1004</locationX>
+        <locationY>50</locationY>
         <assignNextValueToReference>outreachTrainingRecord</assignNextValueToReference>
         <collectionReference>Get_Outreach_Trainings</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -388,21 +562,41 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
     <recordCreates>
         <name>Commit_Insert_Members</name>
         <label>Commit Insert Members</label>
-        <locationX>1438</locationX>
-        <locationY>555</locationY>
+        <locationX>1965</locationX>
+        <locationY>476</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
         <inputReference>insertMembers</inputReference>
     </recordCreates>
     <recordLookups>
-        <name>Get_Outreach_Contact</name>
-        <label>Get Outreach Contact</label>
-        <locationX>446</locationX>
-        <locationY>68</locationY>
+        <name>Get_Child_Trainings</name>
+        <label>Get Child Trainings</label>
+        <locationX>1369</locationX>
+        <locationY>977</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Valid_Email_or_SMS</targetReference>
+            <targetReference>Build_Group_List_0</targetReference>
+        </connector>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>outreachTrainingRecord.ParentId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Outreach_Contact</name>
+        <label>Get Outreach Contact</label>
+        <locationX>434</locationX>
+        <locationY>127</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Valid_Communication_Values</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -418,8 +612,8 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
     <recordLookups>
         <name>Get_Outreach_Trainings</name>
         <label>Get Outreach Trainings</label>
-        <locationX>748</locationX>
-        <locationY>64</locationY>
+        <locationX>714</locationX>
+        <locationY>123</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Trainings</targetReference>
@@ -440,9 +634,23 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
         </filters>
         <filters>
             <field>Status</field>
-            <operator>EqualTo</operator>
+            <operator>NotEqualTo</operator>
             <value>
-                <stringValue>In Progress</stringValue>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Canceled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Full</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -452,11 +660,11 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
     <recordLookups>
         <name>Get_Training_Member</name>
         <label>Get Training Member</label>
-        <locationX>689</locationX>
-        <locationY>490</locationY>
+        <locationX>629</locationX>
+        <locationY>711</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Valid_Member_Exists</targetReference>
+            <targetReference>Is_Test_Training</targetReference>
         </connector>
         <filters>
             <field>CampaignId</field>
@@ -481,8 +689,8 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
-        <locationX>1436</locationX>
-        <locationY>375</locationY>
+        <locationX>1968</locationX>
+        <locationY>343</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -500,12 +708,16 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>250</locationY>
         <connector>
             <targetReference>Get_Outreach_Contact</targetReference>
         </connector>
     </start>
     <status>Draft</status>
+    <textTemplates>
+        <name>textTemplateGroupClasses</name>
+        <text>&lt;p&gt;Class is part of a Training Series: {!outreachTrainingRecord.Parent.c501_cm__Training_Name_WebForm__c}&lt;/p&gt;&lt;p&gt;{!varChildTrainings}&lt;/p&gt;</text>
+    </textTemplates>
     <variables>
         <name>flowElementsVisited</name>
         <dataType>Number</dataType>
@@ -566,5 +778,12 @@ IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &a
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Campaign</objectType>
+    </variables>
+    <variables>
+        <name>varChildTrainings</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>

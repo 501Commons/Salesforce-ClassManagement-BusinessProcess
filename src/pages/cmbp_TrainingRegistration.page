@@ -61,6 +61,7 @@
         };
         
         var varInputDebugMode = "{!$CurrentPage.parameters.varInputDebugMode}" == "true";
+        var varInputTestFlightEnabled = "{!$CurrentPage.parameters.varInputTestFlightEnabled}" == "true";
         var varInputClassTypeFilter = "{!$CurrentPage.parameters.varInputClassTypeFilter}";
         var varInputRestrictByDayValue = "{!$CurrentPage.parameters.varInputRestrictByDay}";
         var varInputRestrictByDay = "{!$CurrentPage.parameters.varInputRestrictByDay}" == "true";
@@ -73,6 +74,11 @@
               function (component) {
                  // Set the input variables
                  var inputVariables = [
+                    {
+                       name : 'varInputTestFlightEnabled',
+                       type : 'Boolean',
+                       value : varInputTestFlightEnabled
+                    },
                     {
                        name : 'varInputDebugMode',
                        type : 'Boolean',

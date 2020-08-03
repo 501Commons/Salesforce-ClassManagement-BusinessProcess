@@ -1103,6 +1103,13 @@
             </value>
         </filters>
         <filters>
+            <field>TestFlight_Enabled__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputTestFlightEnabled</elementReference>
+            </value>
+        </filters>
+        <filters>
             <field>c501_cm__Class_Type__c</field>
             <operator>EqualTo</operator>
             <value>
@@ -1188,6 +1195,13 @@
             </value>
         </filters>
         <filters>
+            <field>TestFlight_Enabled__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputTestFlightEnabled</elementReference>
+            </value>
+        </filters>
+        <filters>
             <field>c501_cm__Class_Type__c</field>
             <operator>EqualTo</operator>
             <value>
@@ -1263,6 +1277,13 @@
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Full</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TestFlight_Enabled__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputTestFlightEnabled</elementReference>
             </value>
         </filters>
         <filters>
@@ -1378,7 +1399,7 @@
         <locationY>758</locationY>
         <assignNextValueToReference>soDay1Training</assignNextValueToReference>
         <collectionReference>Get_Child_Trainings</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
+        <iterationOrder>Desc</iterationOrder>
         <nextValueConnector>
             <targetReference>Build_Child_Training_List_0</targetReference>
         </nextValueConnector>
@@ -2321,7 +2342,7 @@ ISNUMBER({!Facility_Payee_Number})</formulaExpression>
             <targetReference>Get_Available_Trainings</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>textTemplateTrainingAlreadyRegistered</name>
         <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 16px; font-family: sans-serif; color: rgb(255, 0, 0);&quot;&gt;Error: Already registered for training.  Please select a different training.&lt;/span&gt;&lt;/p&gt;</text>
@@ -2482,6 +2503,13 @@ ISNUMBER({!Facility_Payee_Number})</formulaExpression>
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>varInputTestFlightEnabled</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <description>Filter Day1 Training by Text Filter</description>
