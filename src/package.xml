@@ -32,9 +32,6 @@
         <members>Campaign.Training_State__c</members>
         <members>CampaignMember.Notification_Pending__c</members>
         <members>CampaignMember.Outreach_Member__c</members>
-        <members>Class_Member__c.CampaignId__c</members>
-        <members>Class_Member__c.LeadId__c</members>
-        <members>Class_Member__c.Training_Status__c</members>
         <members>Contact.County__c</members>
         <members>Contact.Dues_Paying_Union_Member__c</members>
         <members>Contact.Outreach_Area__c</members>
@@ -58,7 +55,6 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>Class_Member__c</members>
         <members>cmbp_Custom_Settings__c</members>
         <name>CustomObject</name>
     </types>
@@ -74,18 +70,8 @@
         <members>cmbp_Training_Member_Change_Process_TEMPLATE</members>
         <members>cmbp_Training_Notifications_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Outreach_FLOW_TEMPLATE</members>
-        <members>cmbp_Training_Registration_Create_Member_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Registration_FLOW_TEMPLATE</members>
         <name>Flow</name>
-    </types>
-    <types>
-        <members>Counties</members>
-        <members>States</members>
-        <name>GlobalValueSet</name>
-    </types>
-    <types>
-        <members>Class_Member__c-Class Member Layout</members>
-        <name>Layout</name>
     </types>
     <types>
         <members>cmbp_Class_Management_Letterhead</members>
