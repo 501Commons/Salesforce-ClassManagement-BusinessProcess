@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>ActionCallType</name>
+            <value>
+                <stringValue>flow</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>flowSelection</name>
+            <value>
+                <stringValue>cmbp Create Training Initialization TEMPLATE</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Init Training</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <actionName>cmbp_Create_Training_Initialization_TEMPLATE</actionName>
+        <actionType>flow</actionType>
+        <connector>
+            <targetReference>myDecision2</targetReference>
+        </connector>
+        <inputParameters>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>recordId</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>maxOccurs</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>objectType</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>recordId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -11,9 +76,43 @@
         <label>myDecision</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>IsNew()</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -47,11 +146,109 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_1_A1</targetReference>
+                <targetReference>myRule_3_A1</targetReference>
             </connector>
-            <label>Training Canceled</label>
+            <label>Canceled</label>
         </rules>
     </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>Training Time Management</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>DATE(YEAR([Campaign].ptStartDate__c),3,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 8) - DATE(1900, 1, 7), 7) = 0, 8,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 9) - DATE(1900, 1, 7), 7) = 0, 9,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 10) - DATE(1900, 1, 7), 7) = 0, 10,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 11) - DATE(1900, 1, 7), 7) = 0, 11,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 12) - DATE(1900, 1, 7), 7) = 0, 12,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 13) - DATE(1900, 1, 7), 7) = 0, 13,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 14) - DATE(1900, 1, 7), 7) = 0, 14, 0))))))))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_5_A1_4820718549</name>
+        <dataType>Date</dataType>
+        <expression>DATE(YEAR({!myVariable_current.ptStartDate__c}),3,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 8) - DATE(1900, 1, 7), 7) = 0, 8,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 9) - DATE(1900, 1, 7), 7) = 0, 9,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 10) - DATE(1900, 1, 7), 7) = 0, 10,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 11) - DATE(1900, 1, 7), 7) = 0, 11,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 12) - DATE(1900, 1, 7), 7) = 0, 12,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 13) - DATE(1900, 1, 7), 7) = 0, 13,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 14) - DATE(1900, 1, 7), 7) = 0, 14, 0))))))))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>DATE(YEAR([Campaign].ptStartDate__c),11,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 1) - DATE(1900, 1, 7), 7) = 0, 1,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 2) - DATE(1900, 1, 7), 7) = 0, 2,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 3) - DATE(1900, 1, 7), 7) = 0, 3,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 4) - DATE(1900, 1, 7), 7) = 0, 4,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 5) - DATE(1900, 1, 7), 7) = 0, 5,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 6) - DATE(1900, 1, 7), 7) = 0, 6,
+IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 7) - DATE(1900, 1, 7), 7) = 0, 7, 0)))))))) - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_5_A1_0461975058</name>
+        <dataType>Date</dataType>
+        <expression>DATE(YEAR({!myVariable_current.ptStartDate__c}),11,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 1) - DATE(1900, 1, 7), 7) = 0, 1,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 2) - DATE(1900, 1, 7), 7) = 0, 2,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 3) - DATE(1900, 1, 7), 7) = 0, 3,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 4) - DATE(1900, 1, 7), 7) = 0, 4,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 5) - DATE(1900, 1, 7), 7) = 0, 5,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 6) - DATE(1900, 1, 7), 7) = 0, 6,
+IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 7) - DATE(1900, 1, 7), 7) = 0, 7, 0)))))))) - 1</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* This node is only triggered when a Campaign is first created */
+
+ISNEW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>/* This node is only triggered when a Campaign is first created */
+
+ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>true</expression>
+    </formulas>
     <interviewLabel>cmbp_Training_Change_Process_TEMPLATE-1_InterviewLabel</interviewLabel>
     <label>cmbp Training Change Process TEMPLATE</label>
     <processMetadataValues>
@@ -104,12 +301,12 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>Registered to Canceled</label>
-        <locationX>100</locationX>
+        <name>myRule_3_A1</name>
+        <label>Registered</label>
+        <locationX>300</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myRule_1_A2</targetReference>
+            <targetReference>myRule_3_A2</targetReference>
         </connector>
         <filters>
             <processMetadataValues>
@@ -140,7 +337,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Training Status</stringValue>
+                    <stringValue>Status</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -167,7 +364,7 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>c501_cm__Training_Status__c</field>
+            <field>Status</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Registered</stringValue>
@@ -189,7 +386,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Training Status</stringValue>
+                    <stringValue>Status</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -204,7 +401,7 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>c501_cm__Training_Status__c</field>
+            <field>Status</field>
             <value>
                 <stringValue>Canceled</stringValue>
             </value>
@@ -236,10 +433,13 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_1_A2</name>
-        <label>Pending to Canceled</label>
-        <locationX>100</locationX>
+        <name>myRule_3_A2</name>
+        <label>Registered Reminder</label>
+        <locationX>300</locationX>
         <locationY>300</locationY>
+        <connector>
+            <targetReference>myRule_3_A3</targetReference>
+        </connector>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -269,7 +469,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Training Status</stringValue>
+                    <stringValue>Status</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -296,7 +496,139 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>c501_cm__Training_Status__c</field>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Registered Reminder</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Canceled</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Campaign].CampaignMembers</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_3_A3</name>
+        <label>Pending</label>
+        <locationX>300</locationX>
+        <locationY>400</locationY>
+        <connector>
+            <targetReference>myDecision4</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Pending</stringValue>
@@ -318,7 +650,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Training Status</stringValue>
+                    <stringValue>Status</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -333,12 +665,128 @@
                     <stringValue>Picklist</stringValue>
                 </value>
             </processMetadataValues>
-            <field>c501_cm__Training_Status__c</field>
+            <field>Status</field>
             <value>
                 <stringValue>Canceled</stringValue>
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Campaign]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>Update Training</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>ptPDTFirstDayDate</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ptPDTFirstDayDate__c</field>
+            <value>
+                <elementReference>formula_6_myRule_5_A1_4820718549</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>ptPDTLastDayDate</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ptPDTLastDayDate__c</field>
+            <value>
+                <elementReference>formula_7_myRule_5_A1_0461975058</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Campaign</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
     <status>Draft</status>

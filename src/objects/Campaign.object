@@ -10,6 +10,15 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>C501_CampaignMemberStatusesCreated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Filter - default is FALSE; CreateCampaignMemberStatus flow will set to TRUE once it&apos;s run</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Filter - default is FALSE; CreateCampaignMemberStatus flow will set to TRUE (checked) once the statuses are created</inlineHelpText>
+        <label>CampaignMemberStatusesCreated</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Evaluations_Sent__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -168,5 +177,61 @@ OR(NOT(ISBLANK(TEXT(Outreach_Area_1__c))), NOT(ISBLANK(TEXT(Outreach_Area_2__c))
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ptHOffset__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND(DateValue(c501_cm__custom_Start_DateTime__c) &gt;= ptPDTFirstDayDate__c, DateValue(c501_cm__custom_Start_DateTime__c) &lt;= ptPDTLastDayDate__c), -7, -8)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ptHOffset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ptPDTFirstDayDate__c</fullName>
+        <externalId>false</externalId>
+        <label>ptPDTFirstDayDate</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ptPDTLastDayDate__c</fullName>
+        <externalId>false</externalId>
+        <label>ptPDTLastDayDate</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ptStartDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(c501_cm__custom_Start_DateTime__c + (ptHOffset__c / 24))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ptStartDate</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ptTimeText__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(HOUR(ptTime__c) &gt; 12, TEXT(HOUR(ptTime__c) - 12), TEXT(HOUR(ptTime__c))) + &quot;:&quot; +
+IF(MINUTE(ptTime__c) &lt;= 9, &quot;0&quot;, &quot;&quot;) + TEXT(MINUTE(ptTime__c)) +
+IF(HOUR(ptTime__c) &gt;= 12, &quot; PM&quot;, &quot; AM&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ptTimeText</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ptTime__c</fullName>
+        <externalId>false</externalId>
+        <formula>TIMEVALUE(c501_cm__custom_Start_DateTime__c + (ptHOffset__c / 24))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ptTime</label>
+        <required>false</required>
+        <type>Time</type>
     </fields>
 </CustomObject>

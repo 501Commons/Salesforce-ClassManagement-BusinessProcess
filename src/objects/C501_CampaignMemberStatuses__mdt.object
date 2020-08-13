@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores the Campaign Member Status values that are automatically created via Flow for each new Campaign; Used to keep the Training Status field updated;</description>
+    <fields>
+        <fullName>HasResponded__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Maps to HasResponded boolean on Campaign Member Status</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Check the box if this Training Status value indicates the person has responded to the invitation to the Training - they&apos;ve signed up, attended, declined, canceled, etc</inlineHelpText>
+        <label>HasResponded</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Used in Flow to determine whether or not this Campaign Member Status should be created - uncheck the box if this value is deactivated in the Training Status picklist</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Uncheck the box if this value is no longer being used in the Training Status picklist</inlineHelpText>
+        <label>IsActive</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsDefaultValue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Maps to IsDefault checkbox on Campaign Member Status; only one of the active records should be selected as the default</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>***Note*** only one record should be selected as the default</inlineHelpText>
+        <label>IsDefaultValue</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sort_Order__c</fullName>
+        <description>Maps to Sort Order field on Campaign Member Status record; However, this field is neither in use nor on the page layout because the Statuses self-sort to alphabetical, which is how the values in the Training Status picklist are currently presented. Consider using this field if the picklist values are re-ordered.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Each record should have a Sort Order number - this determines the order in which the statuses will appear on the Campaign Member. First number should be 0; ideally, they should be in the same order as the values in the Training Status picklist.</inlineHelpText>
+        <label>Sort Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CampaignMemberStatus</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>MasterLabel</columns>
+        <columns>IsDefaultValue__c</columns>
+        <columns>IsActive__c</columns>
+        <columns>HasResponded__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>IsProtected</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>CampaignMemberStatuses</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

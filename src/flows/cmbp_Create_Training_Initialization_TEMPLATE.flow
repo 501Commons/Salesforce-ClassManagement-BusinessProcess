@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Email the running user when the flow fails</description>
+        <name>SendErrorEmail</name>
+        <label>SendErrorEmail</label>
+        <locationX>1235</locationX>
+        <locationY>932</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ErrorEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>db.ii@501commons.org,</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>db.ii@501commons.org</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>ErrorEmailSubject</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <description>Add each new Campaign Member Status record to a holding variable until the end of the flow, when they&apos;ll be created (inserted in the database)</description>
+        <name>AddToCreateNewCampaignMemberStatusCollection</name>
+        <label>AddToCreateNewCampaignMemberStatusCollection</label>
+        <locationX>994</locationX>
+        <locationY>362</locationY>
+        <assignmentItems>
+            <assignToReference>NewCampaignMemberStatuses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>loopCampaignMemberStatus</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Statuses</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Count how many Campaign Member records were retrieved - if there are any, we shouldn&apos;t proceed with this flow</description>
+        <name>CountCMs</name>
+        <label>CountCMs</label>
+        <locationX>282</locationX>
+        <locationY>333</locationY>
+        <assignmentItems>
+            <assignToReference>numCMs</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>GetCMs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>NoCMs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Count how many campaign member status records we initially retrieved - if there are any, we&apos;ll need to delete them</description>
+        <name>CountDefaultCMSs</name>
+        <label>CountDefaultCMSs</label>
+        <locationX>1373</locationX>
+        <locationY>366</locationY>
+        <assignmentItems>
+            <assignToReference>numDefaultCMSs</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>GetDefaultCMSs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>HasDefaultCMSsToDelete</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Count how many metadata records were returned - if none, don&apos;t continue the flow</description>
+        <name>CountMDTs</name>
+        <label>CountMDTs</label>
+        <locationX>709</locationX>
+        <locationY>337</locationY>
+        <assignmentItems>
+            <assignToReference>numMDTs</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>CampaignMemberStatusMDTs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>FoundMDTs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values used in the error email sent when the flow cannot create the campaign member statuses</description>
+        <name>ErrorEmailFaultCreateCMSs</name>
+        <label>ErrorEmailFaultCreateCMSs</label>
+        <locationX>1486</locationX>
+        <locationY>237</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: cannot create campaign member statuses</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it cannot create the campaign member status records. </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values used in the error email sent when the flow cannot delete the old campaign member statuses</description>
+        <name>ErrorEmailFaultDeleteCMSs</name>
+        <label>ErrorEmailFaultDeleteCMSs</label>
+        <locationX>1804</locationX>
+        <locationY>251</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: cannot delete campaign member statuses</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it cannot delete the original campaign member status records.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values for the error email sent when the flow can&apos;t access the campaign record</description>
+        <name>ErrorEmailFaultGetCampaign</name>
+        <label>ErrorEmailFaultGetCampaign</label>
+        <locationX>176</locationX>
+        <locationY>658</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: no campaign</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it couldn&apos;t get the campaign record that launched it.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values for the error email sent when the flow cannot access the campaign&apos;s campaign member records</description>
+        <name>ErrorEmailFaultGetCMs</name>
+        <label>ErrorEmailFaultGetCMs</label>
+        <locationX>399</locationX>
+        <locationY>234</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: cannot access campaign members</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it cannot access the campaign&apos;s campaign member records</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values for the error email sent when the flow cannot access the campaign member statuses already associated with the flow</description>
+        <name>ErrorEmailFaultGetCMSs</name>
+        <label>ErrorEmailFaultGetCMSs</label>
+        <locationX>582</locationX>
+        <locationY>658</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: no campaign member statuses</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it cannot access the campaign member statuses associated with the campaign that launched it.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values for the error email sent when the flow cannot access the campaign member status custom metadata type records</description>
+        <name>ErrorEmailFaultGetMDTs</name>
+        <label>ErrorEmailFaultGetMDTs</label>
+        <locationX>818</locationX>
+        <locationY>232</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: cannot access MDTs</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it cannot access the campaign member status custom metadata type records.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values used in the error email sent when the flow is unable to update the original campaign record</description>
+        <name>ErrorEmailFaultUpdateCampaign</name>
+        <label>ErrorEmailFaultUpdateCampaign</label>
+        <locationX>2099</locationX>
+        <locationY>488</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow fault: cannot update campaign</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow could not complete its final step, updating the original campaign record. </stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set values for the error email sent when campaign member records are found</description>
+        <name>ErrorEmailFoundCMs</name>
+        <label>ErrorEmailFoundCMs</label>
+        <locationX>280</locationX>
+        <locationY>658</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: found campaign members</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it found campaign members associated with the campaign that launched it.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set the variable values for the error email sent when the flow doesn&apos;t find valid campaign member status metadata records</description>
+        <name>ErrorEmailNoMDTs</name>
+        <label>ErrorEmailNoMDTs</label>
+        <locationX>709</locationX>
+        <locationY>658</locationY>
+        <assignmentItems>
+            <assignToReference>ErrorEmailSubject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Flow failure: no campaign member status metadata</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ErrorEmailBodyFailureReason</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The flow cannot proceed because it didn&apos;t find active campaign member status custom metadata type records.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SendErrorEmail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>For each active CampaignMemberStatus metadata record, assign the values to new Campaign Member Status records</description>
+        <name>Set_New_Campaign_Member_Status_Values</name>
+        <label>Set New Campaign Member Status Values</label>
+        <locationX>1202</locationX>
+        <locationY>280</locationY>
+        <assignmentItems>
+            <assignToReference>loopCampaignMemberStatus.Label</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>loopCampaignMemberStatusMDTs.Label</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>loopCampaignMemberStatus.HasResponded</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>loopCampaignMemberStatusMDTs.HasResponded__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>loopCampaignMemberStatus.IsDefault</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>loopCampaignMemberStatusMDTs.IsDefaultValue__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>loopCampaignMemberStatus.CampaignId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AddToCreateNewCampaignMemberStatusCollection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set the CampaignMemberStatusesCreated field on the original Campaign to TRUE</description>
+        <name>UpdatesToOriginalCampaign</name>
+        <label>UpdatesToOriginalCampaign</label>
+        <locationX>1821</locationX>
+        <locationY>443</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Campaign.C501_CampaignMemberStatusesCreated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateOriginalCampaign</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check to make sure we found some campaign member status metadata records - flow cannot proceed without them</description>
+        <name>FoundMDTs</name>
+        <label>FoundMDTs</label>
+        <locationX>701</locationX>
+        <locationY>464</locationY>
+        <defaultConnector>
+            <targetReference>ErrorEmailNoMDTs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Didn&apos;t Find MDTs</defaultConnectorLabel>
+        <rules>
+            <name>Found_MDTs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>numMDTs</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Statuses</targetReference>
+            </connector>
+            <label>Found MDTs</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If any campaign member statuses were retrieved in the earlier, we&apos;ll delete them; otherwise, we&apos;ll go straight to the campaign update</description>
+        <name>HasDefaultCMSsToDelete</name>
+        <label>HasDefaultCMSsToDelete</label>
+        <locationX>1365</locationX>
+        <locationY>501</locationY>
+        <defaultConnector>
+            <targetReference>UpdatesToOriginalCampaign</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>NothingToDelete</defaultConnectorLabel>
+        <rules>
+            <name>DeleteCMSs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>numDefaultCMSs</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Default_Campaign_Member_Statuses</targetReference>
+            </connector>
+            <label>DeleteCMSs</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If there are any campaign member records associated with this campaign, we shouldn&apos;t proceed with the flow</description>
+        <name>NoCMs</name>
+        <label>NoCMs</label>
+        <locationX>275</locationX>
+        <locationY>473</locationY>
+        <defaultConnector>
+            <targetReference>ErrorEmailFoundCMs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Found Campaign Members</defaultConnectorLabel>
+        <rules>
+            <name>No_Campaign_Members</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>numCMs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetDefaultCMSs</targetReference>
+            </connector>
+            <label>No Campaign Members</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <description>Assemble basic info about the flow for the error email body: who triggered it, when and where it failed, and what record it was working on</description>
+        <name>ErrorEmailFlowInfo</name>
+        <dataType>String</dataType>
+        <expression>&quot;The Create Campaign Member Statuses Flow was triggered by &quot; &amp; {!$User.FirstName} &amp; &quot; &quot; &amp; {!$User.LastName} &amp; &quot; (user id: &quot; &amp; {!$User.Id} &amp; &quot;); it failed at &quot; &amp; TEXT( {!$Flow.CurrentDateTime} )</expression>
+    </formulas>
+    <interviewLabel>cmbp Create Training Initialization TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>cmbp Create Training Initialization TEMPLATE</label>
+    <loops>
+        <description>Take the info from the CampaignMemberStatusMDT records and use it assign values to the new Campaign Member Statuses to be created</description>
+        <name>Assign_Statuses</name>
+        <label>Assign Statuses</label>
+        <locationX>994</locationX>
+        <locationY>213</locationY>
+        <assignNextValueToReference>loopCampaignMemberStatusMDTs</assignNextValueToReference>
+        <collectionReference>CampaignMemberStatusMDTs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_New_Campaign_Member_Status_Values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Campaign_Member_Statuses</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Insert the new Campaign Member Statuses into the database</description>
+        <name>Create_Campaign_Member_Statuses</name>
+        <label>Create Campaign Member Statuses</label>
+        <locationX>1373</locationX>
+        <locationY>209</locationY>
+        <connector>
+            <targetReference>CountDefaultCMSs</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultCreateCMSs</targetReference>
+        </faultConnector>
+        <inputReference>NewCampaignMemberStatuses</inputReference>
+    </recordCreates>
+    <recordDeletes>
+        <description>Remove the old Campaign Member Statuses - the ones Salesforce created by default</description>
+        <name>Delete_Default_Campaign_Member_Statuses</name>
+        <label>Delete Default Campaign Member Statuses</label>
+        <locationX>1684</locationX>
+        <locationY>221</locationY>
+        <connector>
+            <targetReference>UpdatesToOriginalCampaign</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultDeleteCMSs</targetReference>
+        </faultConnector>
+        <inputReference>GetDefaultCMSs</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Retrieves info from the campaign record that launched this flow</description>
+        <name>Get_Campaign</name>
+        <label>Get Campaign</label>
+        <locationX>176</locationX>
+        <locationY>198</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetCMs</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultGetCampaign</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>C501_CampaignMemberStatusesCreated__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the values we&apos;ll use to create new  Campaign Member Status records from the CampaignMemberStatus custom metadata</description>
+        <name>GetActiveCampaignMemberStatusMDT</name>
+        <label>GetActiveCampaignMemberStatusMDT</label>
+        <locationX>709</locationX>
+        <locationY>201</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CountMDTs</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultGetMDTs</targetReference>
+        </faultConnector>
+        <filters>
+            <field>IsActive__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>C501_CampaignMemberStatuses__mdt</object>
+        <outputReference>CampaignMemberStatusMDTs</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>HasResponded__c</queriedFields>
+        <queriedFields>Label</queriedFields>
+        <queriedFields>IsActive__c</queriedFields>
+        <queriedFields>IsDefaultValue__c</queriedFields>
+        <sortField>Label</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <description>Retrieve any Campaign Members - if there are any contacts or leads connected with this campaign, we don&apos;t want to proceed. This is unlikely, but it could happen.</description>
+        <name>GetCMs</name>
+        <label>GetCMs</label>
+        <locationX>286</locationX>
+        <locationY>198</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CountCMs</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultGetCMs</targetReference>
+        </faultConnector>
+        <filters>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Retrieve the Campaign Member Statuses that Salesforce creates by default - they&apos;ll be deleted at the end of this flow</description>
+        <name>GetDefaultCMSs</name>
+        <label>GetDefaultCMSs</label>
+        <locationX>585</locationX>
+        <locationY>201</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetActiveCampaignMemberStatusMDT</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultGetCMSs</targetReference>
+        </faultConnector>
+        <filters>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CampaignMemberStatus</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Set the Campaign Member Statuses Created field on the original Training (Campaign) record to TRUE (check the box)</description>
+        <name>UpdateOriginalCampaign</name>
+        <label>UpdateOriginalCampaign</label>
+        <locationX>1983</locationX>
+        <locationY>444</locationY>
+        <faultConnector>
+            <targetReference>ErrorEmailFaultUpdateCampaign</targetReference>
+        </faultConnector>
+        <inputReference>Get_Campaign</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Campaign</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>ErrorEmailBody</name>
+        <text>The Create Campaign Member Statuses flow didn&apos;t complete.  
+---------
+Suggested failure reason: {!ErrorEmailBodyFailureReason} 
+---------------
+General flow info: {!ErrorEmailFlowInfo}
+--------------
+System-generated error message, if there is one:
+{!$Flow.FaultMessage}</text>
+    </textTemplates>
+    <variables>
+        <name>CampaignMemberStatusMDTs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>C501_CampaignMemberStatuses__mdt</objectType>
+    </variables>
+    <variables>
+        <description>A reason why the flow might have failed</description>
+        <name>ErrorEmailBodyFailureReason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Error Email subject line</description>
+        <name>ErrorEmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>HoldCampaignMemberStatuses</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMemberStatus</objectType>
+    </variables>
+    <variables>
+        <name>loopCampaignMemberStatus</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMemberStatus</objectType>
+    </variables>
+    <variables>
+        <name>loopCampaignMemberStatusMDTs</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>C501_CampaignMemberStatuses__mdt</objectType>
+    </variables>
+    <variables>
+        <name>NewCampaignMemberStatuses</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CampaignMemberStatus</objectType>
+    </variables>
+    <variables>
+        <description>Number of campaign member records retrieved</description>
+        <name>numCMs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>count how many Campaign Member Statuses were returned</description>
+        <name>numDefaultCMSs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <description>Count how many MDTs were returned</description>
+        <name>numMDTs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

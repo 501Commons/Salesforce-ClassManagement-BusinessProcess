@@ -82,7 +82,7 @@
                  
                  // Start an interview in the flowContainer div, and 
                  // initializes the input variables.
-                 component.startFlow("cmbp_Email_Only_Preferences_FLOW", inputVariables);
+                 component.startFlow("cmbp_Email_Only_Preferences_FLOW_Custom", inputVariables);
               }
            );
         });

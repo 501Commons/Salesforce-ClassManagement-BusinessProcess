@@ -56,6 +56,15 @@
                 <stringValue>Outreach</stringValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Commit_Insert_Member</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Member_Fields_0</name>
+        <label>Assign Member Fields</label>
+        <locationX>1701</locationX>
+        <locationY>937</locationY>
         <assignmentItems>
             <assignToReference>memberRecord.Group_Classes__c</assignToReference>
             <operator>Assign</operator>
@@ -64,7 +73,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Commit_Insert_Member</targetReference>
+            <targetReference>Assign_Member_Fields</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -525,7 +534,7 @@ TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;English&qu
             <targetReference>Build_Group_List</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Assign_Member_Fields</targetReference>
+            <targetReference>Assign_Member_Fields_0</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>

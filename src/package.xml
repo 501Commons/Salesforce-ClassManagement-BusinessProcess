@@ -17,7 +17,12 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>C501_CampaignMemberStatuses__mdt.HasResponded__c</members>
+        <members>C501_CampaignMemberStatuses__mdt.IsActive__c</members>
+        <members>C501_CampaignMemberStatuses__mdt.IsDefaultValue__c</members>
+        <members>C501_CampaignMemberStatuses__mdt.Sort_Order__c</members>
         <members>Campaign.Approval_Code__c</members>
+        <members>Campaign.C501_CampaignMemberStatusesCreated__c</members>
         <members>Campaign.Evaluations_Sent__c</members>
         <members>Campaign.Grant_Organization__c</members>
         <members>Campaign.Incentive_Type__c</members>
@@ -30,6 +35,12 @@
         <members>Campaign.State__c</members>
         <members>Campaign.Training_County__c</members>
         <members>Campaign.Training_State__c</members>
+        <members>Campaign.ptHOffset__c</members>
+        <members>Campaign.ptPDTFirstDayDate__c</members>
+        <members>Campaign.ptPDTLastDayDate__c</members>
+        <members>Campaign.ptStartDate__c</members>
+        <members>Campaign.ptTimeText__c</members>
+        <members>Campaign.ptTime__c</members>
         <members>CampaignMember.Notification_Pending__c</members>
         <members>CampaignMember.Outreach_Member__c</members>
         <members>Contact.County__c</members>
@@ -55,6 +66,7 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>C501_CampaignMemberStatuses__mdt</members>
         <members>cmbp_Custom_Settings__c</members>
         <name>CustomObject</name>
     </types>
@@ -65,7 +77,9 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>cmbp_Create_Training_Initialization_TEMPLATE</members>
         <members>cmbp_Email_Only_Preferences_FLOW_TEMPLATE</members>
+        <members>cmbp_Lead_Change_Process_TEMPLATE</members>
         <members>cmbp_Training_Change_Process_TEMPLATE</members>
         <members>cmbp_Training_Member_Change_Process_TEMPLATE</members>
         <members>cmbp_Training_Notifications_FLOW_TEMPLATE</members>
@@ -74,8 +88,16 @@
         <name>Flow</name>
     </types>
     <types>
+        <members>C501_CampaignMemberStatuses__mdt-CampaignMemberStatus Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
         <members>cmbp_Class_Management_Letterhead</members>
         <name>Letterhead</name>
+    </types>
+    <types>
+        <members>C501_CampaignMemberStatuses__mdt.All</members>
+        <name>ListView</name>
     </types>
     <types>
         <members>cmbp_Class_Management</members>

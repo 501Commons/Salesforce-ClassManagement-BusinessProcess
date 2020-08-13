@@ -39,7 +39,7 @@
         <field>Contact.Outreach_Most_Recent_Training_Area__c</field>
     </columns>
     <filter>
-        <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5 AND (6 OR 7) AND ((8 AND 9) OR (10 AND 11))</booleanFilter>
+        <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5 AND (6 OR 7) AND ((8 AND 9) OR (10 AND 11)) AND 12</booleanFilter>
         <criteriaItems>
             <column>Contact.Outreach_Area__c</column>
             <columnToColumn>false</columnToColumn>
@@ -116,6 +116,13 @@
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.c501_cm__C501_Record_Type_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contact,Facility</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
