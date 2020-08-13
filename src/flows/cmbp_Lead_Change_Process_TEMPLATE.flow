@@ -61,7 +61,22 @@
      TEXT([Lead].c501_cm__Training_Status__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_4472157275</name>
+        <name>formula_2_myRule_1_A1_1121645027</name>
+        <dataType>String</dataType>
+        <expression>IF(ISPICKVAL({!myVariable_current.c501_cm__Training_Status__c}, &quot;Pending&quot;), 
+     &quot;Registered&quot;,
+     TEXT({!myVariable_current.c501_cm__Training_Status__c}))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(ISPICKVAL([Lead].c501_cm__Training_Status__c, &quot;Pending&quot;), 
+     &quot;Registered&quot;,
+     TEXT([Lead].c501_cm__Training_Status__c))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_0527878891</name>
         <dataType>String</dataType>
         <expression>IF(ISPICKVAL({!myVariable_current.c501_cm__Training_Status__c}, &quot;Pending&quot;), 
      &quot;Registered&quot;,
@@ -172,7 +187,43 @@
             </processMetadataValues>
             <field>Status</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_4472157275</elementReference>
+                <elementReference>formula_2_myRule_1_A1_1121645027</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Training Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>c501_cm__Training_Status__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_0527878891</elementReference>
             </value>
         </inputAssignments>
         <object>CampaignMember</object>

@@ -304,6 +304,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>soExtraDayTrainingMember.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>soExtraDayTrainingMember.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -1289,6 +1296,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>c501_cm__Training_Status__c</field>
             <value>
                 <stringValue>Pending</stringValue>
@@ -1335,6 +1348,12 @@
             <field>LeadId</field>
             <value>
                 <elementReference>varLeadId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Pending</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

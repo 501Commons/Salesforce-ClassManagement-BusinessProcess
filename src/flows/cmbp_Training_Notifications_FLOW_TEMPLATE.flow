@@ -419,6 +419,13 @@
                 <stringValue>Registered</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Campaign_Member.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Registered</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Send_MA_Registered_Email</targetReference>
         </connector>
@@ -430,6 +437,13 @@
         <locationY>837</locationY>
         <assignmentItems>
             <assignToReference>Get_Campaign_Member.c501_cm__Training_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Registered</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Campaign_Member.Status</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>Registered</stringValue>
@@ -542,7 +556,7 @@
             <name>Pending</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Pending</stringValue>
@@ -557,7 +571,7 @@
             <name>Denied</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Denied</stringValue>
@@ -572,7 +586,7 @@
             <name>Registered</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered</stringValue>
@@ -587,7 +601,7 @@
             <name>No_Show_Status_MA</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>No Show</stringValue>
@@ -602,7 +616,7 @@
             <name>Canceled_Status_MA</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Canceled</stringValue>
@@ -617,7 +631,7 @@
             <name>Attended_MA</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Attended</stringValue>
@@ -632,7 +646,7 @@
             <name>Outreach_MA_Path</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Outreach</stringValue>
@@ -647,7 +661,7 @@
             <name>Registered_Reminder_MA</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered Reminder</stringValue>
@@ -662,7 +676,7 @@
             <name>Wait_List_MA_Decision</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Wait List</stringValue>
@@ -687,7 +701,7 @@
             <name>Pending_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Pending</stringValue>
@@ -702,7 +716,7 @@
             <name>Denied_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Denied</stringValue>
@@ -717,7 +731,7 @@
             <name>Registered_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered</stringValue>
@@ -732,7 +746,7 @@
             <name>No_Show</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>No Show</stringValue>
@@ -747,7 +761,7 @@
             <name>Canceled</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Canceled</stringValue>
@@ -762,7 +776,7 @@
             <name>Attended</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Attended</stringValue>
@@ -777,7 +791,7 @@
             <name>Outreach_RI</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Outreach</stringValue>
@@ -792,7 +806,7 @@
             <name>Registered_Reminder</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered Reminder</stringValue>
@@ -807,7 +821,7 @@
             <name>Wait_List_RI_Decision</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Wait List</stringValue>
@@ -829,7 +843,7 @@
             <name>Pending_0_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Pending</stringValue>
@@ -841,7 +855,7 @@
             <name>Denied_0_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Denied</stringValue>
@@ -853,7 +867,7 @@
             <name>Registered_0_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered</stringValue>
@@ -865,7 +879,7 @@
             <name>No_Show_Status_MA_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>No Show</stringValue>
@@ -877,7 +891,7 @@
             <name>Canceled_Status_MA_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Canceled</stringValue>
@@ -889,7 +903,7 @@
             <name>Attended_MA_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Attended</stringValue>
@@ -901,7 +915,7 @@
             <name>Outreach_MA_Path_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Outreach</stringValue>
@@ -916,7 +930,7 @@
             <name>Registered_Reminder_MA_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Registered Reminder</stringValue>
@@ -928,7 +942,7 @@
             <name>Wait_List_MA_Decision_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.c501_cm__Training_Status__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Wait List</stringValue>
