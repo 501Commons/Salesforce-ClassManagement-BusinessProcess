@@ -56,12 +56,12 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>IF(ISPICKVAL([Lead].Training_Status__c, &quot;Pending&quot;), 
+                <stringValue>IF(ISPICKVAL([Lead].c501_cm__Training_Status__c, &quot;Pending&quot;), 
      &quot;Registered&quot;,
-     TEXT([Lead].Training_Status__c))</stringValue>
+     TEXT([Lead].c501_cm__Training_Status__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_6823831545</name>
+        <name>formula_2_myRule_1_A1_4472157275</name>
         <dataType>String</dataType>
         <expression>IF(ISPICKVAL({!myVariable_current.c501_cm__Training_Status__c}, &quot;Pending&quot;), 
      &quot;Registered&quot;,
@@ -172,7 +172,7 @@
             </processMetadataValues>
             <field>Status</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_6823831545</elementReference>
+                <elementReference>formula_2_myRule_1_A1_4472157275</elementReference>
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
@@ -235,7 +235,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>SMS Opt Out</stringValue>
+                    <stringValue>Email Opt Out</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -250,7 +250,7 @@
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
-            <field>c501_cm__C501_SMS_Opt_Out__c</field>
+            <field>HasOptedOutOfEmail</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
@@ -271,7 +271,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Email Opt Out</stringValue>
+                    <stringValue>SMS Opt Out</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -286,7 +286,7 @@
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
-            <field>HasOptedOutOfEmail</field>
+            <field>c501_cm__C501_SMS_Opt_Out__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
