@@ -1418,10 +1418,10 @@
             </value>
         </filters>
         <filters>
-            <field>LeadOrContactId</field>
+            <field>Email</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varLeadId</elementReference>
+                <elementReference>soLead.Email</elementReference>
             </value>
         </filters>
         <object>CampaignMember</object>
