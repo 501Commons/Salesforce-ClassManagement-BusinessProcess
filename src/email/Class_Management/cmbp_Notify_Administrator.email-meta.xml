@@ -7,7 +7,7 @@
     <name>cmbp Notify Administrator</name>
     <style>freeForm</style>
     <subject>Class Management - Admin - Action Required - Call</subject>
-    <textOnly>SEIU ESF Administrator - Action Required
+    <textOnly>Administrator - Action Required
 
 There was a problem notifying {!CampaignMember.FirstName} {!CampaignMember.LastName}.  
 
