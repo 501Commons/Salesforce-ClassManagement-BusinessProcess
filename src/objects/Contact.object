@@ -166,6 +166,16 @@
                     <default>false</default>
                     <label>IFC</label>
                 </value>
+                <value>
+                    <fullName>FCC</fullName>
+                    <default>false</default>
+                    <label>FCC</label>
+                </value>
+                <value>
+                    <fullName>GFCC</fullName>
+                    <default>false</default>
+                    <label>GFCC</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

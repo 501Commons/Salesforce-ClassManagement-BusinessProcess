@@ -78,9 +78,12 @@
     </types>
     <types>
         <members>cmbp_Create_Training_Initialization_TEMPLATE</members>
+        <members>cmbp_Delete_Incomplete_Lead_FLOW_TEMPLATE</members>
         <members>cmbp_Email_Only_Preferences_FLOW_TEMPLATE</members>
+        <members>cmbp_Lead_Assignment_FLOW_TEMPLATE</members>
         <members>cmbp_Lead_Change_FLOW_TEMPLATE</members>
         <members>cmbp_Lead_Change_Process_TEMPLATE</members>
+        <members>cmbp_Notification_Preferences_Commit_FLOW_TEMPLATE</members>
         <members>cmbp_Set_Training_Member_Reminder_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Change_Process_TEMPLATE</members>
         <members>cmbp_Training_Member_Change_Process_TEMPLATE</members>

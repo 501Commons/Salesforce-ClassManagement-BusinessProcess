@@ -13,7 +13,9 @@
     </fields>
     <fields>
         <fullName>State_Id__c</fullName>
+        <description>State Id a.k.a., State Number, License Program Id, EEC License Number</description>
         <externalId>false</externalId>
+        <inlineHelpText>State Id a.k.a., State Number, License Program Id, EEC License Number</inlineHelpText>
         <label>State Id</label>
         <length>18</length>
         <required>false</required>
@@ -23,7 +25,9 @@
     </fields>
     <fields>
         <fullName>Union_Id__c</fullName>
+        <description>Union Id a.k.a., Union Member, Union Number, Provider Id</description>
         <externalId>false</externalId>
+        <inlineHelpText>Union Id a.k.a., Union Member, Union Number, Provider Id</inlineHelpText>
         <label>Union Id</label>
         <length>18</length>
         <required>false</required>

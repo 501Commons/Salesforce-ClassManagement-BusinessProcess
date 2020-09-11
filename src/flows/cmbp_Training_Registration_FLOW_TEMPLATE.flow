@@ -224,13 +224,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>soLead.Serving_Families_with_Vouchers__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Facility_Serve_Families_Vouchers</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>soLead.Union_Member__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -2211,13 +2204,6 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
             <dataType>String</dataType>
             <fieldText>Position / Posición</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Facility_Serve_Families_Vouchers</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Do you serve families with vouchers? / ¿Sirves familias con vales o &quot;voucher&quot;?</fieldText>
-            <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
