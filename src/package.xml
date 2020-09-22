@@ -84,6 +84,7 @@
         <members>cmbp_Lead_Change_FLOW_TEMPLATE</members>
         <members>cmbp_Lead_Change_Process_TEMPLATE</members>
         <members>cmbp_Notification_Preferences_Commit_FLOW_TEMPLATE</members>
+        <members>cmbp_OnCreate_Training_Member_FLOW_TEMPLATE</members>
         <members>cmbp_Set_Training_Member_Reminder_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Change_Process_TEMPLATE</members>
         <members>cmbp_Training_Member_Change_Process_TEMPLATE</members>

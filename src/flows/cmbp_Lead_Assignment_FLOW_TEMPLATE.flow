@@ -1,57 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <decisions>
-        <name>Any_Trainings</name>
-        <label>Any Trainings</label>
-        <locationX>753</locationX>
-        <locationY>323</locationY>
+        <name>Test_Flight_Enabled_Training</name>
+        <label>Test Flight Enabled Training</label>
+        <locationX>851</locationX>
+        <locationY>455</locationY>
         <defaultConnector>
-            <targetReference>Delete_Lead</targetReference>
+            <targetReference>Loop_Members</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
-            <name>Yes_Trainings</name>
+            <name>Yes_TestFlightEnabled</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>varTrainingMemberId</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Custom_Settings</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>What_State</name>
-        <label>What State</label>
-        <locationX>1005</locationX>
-        <locationY>61</locationY>
-        <defaultConnector>
-            <targetReference>RI_Lead_Owner</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Other</defaultConnectorLabel>
-        <rules>
-            <name>MA</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Lead.State</leftValueReference>
+                <leftValueReference>Get_Training.TestFlight_Enabled__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>MA</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>MA_Lead_Owner</targetReference>
-            </connector>
-            <label>MA</label>
+            <label>Yes</label>
         </rules>
     </decisions>
     <interviewLabel>cmbp Lead Assignment FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Lead Assignment FLOW TEMPLATE</label>
+    <loops>
+        <name>Loop_Members</name>
+        <label>Loop Members</label>
+        <locationX>594</locationX>
+        <locationY>279</locationY>
+        <collectionReference>Get_Members</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Training</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Lead</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -65,29 +51,12 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordDeletes>
-        <name>Delete_Lead</name>
-        <label>Delete Lead</label>
-        <locationX>1016</locationX>
-        <locationY>321</locationY>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varInputLeadId</elementReference>
-            </value>
-        </filters>
-        <object>Lead</object>
-    </recordDeletes>
     <recordLookups>
         <name>Get_Custom_Settings</name>
         <label>Get Custom Settings</label>
         <locationX>800</locationX>
         <locationY>59</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>What_State</targetReference>
-        </connector>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>cmbp_Custom_Settings__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -95,11 +64,11 @@
     <recordLookups>
         <name>Get_Lead</name>
         <label>Get Lead</label>
-        <locationX>577</locationX>
-        <locationY>73</locationY>
+        <locationX>587</locationX>
+        <locationY>70</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Training_Member</targetReference>
+            <targetReference>Get_Custom_Settings</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -113,13 +82,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Training_Member</name>
-        <label>Get Training Member</label>
-        <locationX>584</locationX>
-        <locationY>311</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <name>Get_Members</name>
+        <label>Get Members</label>
+        <locationX>447</locationX>
+        <locationY>269</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Any_Trainings</targetReference>
+            <targetReference>Loop_Members</targetReference>
         </connector>
         <filters>
             <field>LeadOrContactId</field>
@@ -128,57 +97,35 @@
                 <elementReference>varInputLeadId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>CampaignMember</object>
-        <outputAssignments>
-            <assignToReference>varTrainingMemberId</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>MA_Lead_Owner</name>
-        <label>MA Lead Owner</label>
-        <locationX>1242</locationX>
-        <locationY>57</locationY>
+    <recordLookups>
+        <name>Get_Training</name>
+        <label>Get Training</label>
+        <locationX>860</locationX>
+        <locationY>265</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Test_Flight_Enabled_Training</targetReference>
+        </connector>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varInputLeadId</elementReference>
+                <elementReference>Loop_Members.CampaignId</elementReference>
             </value>
         </filters>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Custom_Settings.MA_Lead_Owner__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Lead</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>RI_Lead_Owner</name>
-        <label>RI Lead Owner</label>
-        <locationX>1257</locationX>
-        <locationY>224</locationY>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varInputLeadId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Custom_Settings.RI_Lead_Owner__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Lead</object>
-    </recordUpdates>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>50</locationX>
         <locationY>50</locationY>
         <connector>
-            <targetReference>Get_Lead</targetReference>
+            <targetReference>Get_Members</targetReference>
         </connector>
     </start>
     <status>Draft</status>
@@ -187,13 +134,6 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>varTrainingMemberId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
 </Flow>

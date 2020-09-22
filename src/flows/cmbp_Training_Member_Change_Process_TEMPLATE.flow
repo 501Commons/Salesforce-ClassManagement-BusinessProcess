@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <decisions>
-        <name>isChangedDecision10_myRule_9_Status</name>
-        <label>isChangedDecision10_myRule_9_Status</label>
+        <name>isChangedDecision12_myRule_11_Status</name>
+        <label>isChangedDecision12_myRule_11_Status</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
@@ -10,7 +10,7 @@
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>isChangedRule_10_myRule_9_Status</name>
+            <name>isChangedRule_12_myRule_11_Status</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -29,7 +29,7 @@
             <connector>
                 <targetReference>myDecision</targetReference>
             </connector>
-            <label>isChangedRule_10_myRule_9_Status</label>
+            <label>isChangedRule_12_myRule_11_Status</label>
         </rules>
     </decisions>
     <decisions>
@@ -61,6 +61,89 @@
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
             <label>Update Status on Status Change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_12_myRule_11_Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Reference</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.c501_cm__Training_Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>Member Change</label>
         </rules>
     </decisions>
     <decisions>
@@ -122,7 +205,7 @@
             <connector>
                 <targetReference>myRule_7_A1</targetReference>
             </connector>
-            <label>New Member</label>
+            <label>New Member Has Training Status</label>
         </rules>
     </decisions>
     <decisions>
@@ -136,76 +219,24 @@
         <label>myDecision8</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision10</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_9</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>isChangedRule_10_myRule_9_Status</leftValueReference>
+                <leftValueReference>formula_myRule_9</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Reference</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Status</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.c501_cm__Training_Status__c</elementReference>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>myRule_9_A1</targetReference>
             </connector>
-            <label>Member Change</label>
+            <label>New Member No Training Status</label>
         </rules>
     </decisions>
     <formulas>
@@ -215,7 +246,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A2_1955061880</name>
+        <name>formula_2_myRule_1_A2_2126970855</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -226,7 +257,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_4_A1_3781042828</name>
+        <name>formula_5_myRule_4_A1_9743347032</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -256,16 +287,47 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>ISNEW() &amp;&amp;
+                <stringValue>/* Campaign Membership is new, Campaign Member Status doesn&apos;t match Training Status, and Training Status is not blank */
 
-TEXT( [CampaignMember].Status ) &lt;&gt; TEXT( [CampaignMember].c501_cm__Training_Status__c )</stringValue>
+ISNEW() &amp;&amp;
+
+TEXT( [CampaignMember].Status ) &lt;&gt; TEXT( [CampaignMember].c501_cm__Training_Status__c ) &amp;&amp;
+
+NOT( ISBLANK( TEXT( [CampaignMember].c501_cm__Training_Status__c )))</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_7</name>
         <dataType>Boolean</dataType>
-        <expression>ISNEW() &amp;&amp;
+        <expression>/* Campaign Membership is new, Campaign Member Status doesn&apos;t match Training Status, and Training Status is not blank */
 
-TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm__Training_Status__c} )</expression>
+ISNEW() &amp;&amp;
+
+TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm__Training_Status__c} ) &amp;&amp;
+
+NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>/* Campaign Membership is new, Campaign Member Status doesn&apos;t match Training Status, and Training Status is blank */
+
+ISNEW() &amp;&amp;
+
+TEXT( [CampaignMember].Status ) &lt;&gt; TEXT( [CampaignMember].c501_cm__Training_Status__c ) &amp;&amp;
+
+ISBLANK( TEXT( [CampaignMember].c501_cm__Training_Status__c ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9</name>
+        <dataType>Boolean</dataType>
+        <expression>/* Campaign Membership is new, Campaign Member Status doesn&apos;t match Training Status, and Training Status is blank */
+
+ISNEW() &amp;&amp;
+
+TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm__Training_Status__c} ) &amp;&amp;
+
+ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} ))</expression>
     </formulas>
     <interviewLabel>cmbp_Training_Member_Change_Process_TEMPLATE-1_InterviewLabel</interviewLabel>
     <label>cmbp Training Member Change Process TEMPLATE</label>
@@ -294,6 +356,86 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[CampaignMember]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>Update Training Status</label>
+        <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Training Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>c501_cm__Training_Status__c</field>
+            <value>
+                <elementReference>myVariable_current.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
     <recordUpdates>
         <processMetadataValues>
             <name>evaluationType</name>
@@ -455,7 +597,7 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A2_1955061880</elementReference>
+                <elementReference>formula_2_myRule_1_A2_2126970855</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -538,7 +680,7 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_5_myRule_4_A1_3781042828</elementReference>
+                <elementReference>formula_5_myRule_4_A1_9743347032</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -572,6 +714,9 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
         <label>Update Status</label>
         <locationX>700</locationX>
         <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision8</targetReference>
+        </connector>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -703,7 +848,7 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
         </inputAssignments>
         <object>CampaignMember</object>
     </recordUpdates>
-    <startElementReference>isChangedDecision10_myRule_9_Status</startElementReference>
+    <startElementReference>isChangedDecision12_myRule_11_Status</startElementReference>
     <status>Draft</status>
     <variables>
         <name>myVariable_current</name>

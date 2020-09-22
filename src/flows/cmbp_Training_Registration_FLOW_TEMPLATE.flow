@@ -3,8 +3,8 @@
     <assignments>
         <name>Build_Child_Training_List_0</name>
         <label>Build Child Training List</label>
-        <locationX>2749</locationX>
-        <locationY>952</locationY>
+        <locationX>3093</locationX>
+        <locationY>955</locationY>
         <assignmentItems>
             <assignToReference>varChildTrainings</assignToReference>
             <operator>Add</operator>
@@ -19,8 +19,8 @@
     <assignments>
         <name>Build_Extra_Day_Training_List</name>
         <label>Build Extra Day Training List</label>
-        <locationX>3638</locationX>
-        <locationY>644</locationY>
+        <locationX>3981</locationX>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>varExtraDayTrainings</assignToReference>
             <operator>Add</operator>
@@ -35,8 +35,8 @@
     <assignments>
         <name>Clear_Child_Training_List</name>
         <label>Clear Child Training List</label>
-        <locationX>2748</locationX>
-        <locationY>481</locationY>
+        <locationX>3091</locationX>
+        <locationY>485</locationY>
         <assignmentItems>
             <assignToReference>varChildTrainings</assignToReference>
             <operator>Assign</operator>
@@ -51,8 +51,8 @@
     <assignments>
         <name>Clear_Error_Message</name>
         <label>Clear Error Message</label>
-        <locationX>3785</locationX>
-        <locationY>638</locationY>
+        <locationX>4129</locationX>
+        <locationY>641</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
             <operator>Assign</operator>
@@ -64,8 +64,8 @@
     <assignments>
         <name>Extra_Day_Error</name>
         <label>Set Error</label>
-        <locationX>4082</locationX>
-        <locationY>801</locationY>
+        <locationX>4425</locationX>
+        <locationY>805</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
             <operator>Assign</operator>
@@ -80,8 +80,8 @@
     <assignments>
         <name>Extra_Day_Error_Already_Registered</name>
         <label>Set Error Already Registered</label>
-        <locationX>4265</locationX>
-        <locationY>995</locationY>
+        <locationX>4609</locationX>
+        <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>varTrainingDefaultSelectedError</assignToReference>
             <operator>Assign</operator>
@@ -96,8 +96,8 @@
     <assignments>
         <name>Extra_Day_Min</name>
         <label>Extra Day Min</label>
-        <locationX>3639</locationX>
-        <locationY>873</locationY>
+        <locationX>3982</locationX>
+        <locationY>877</locationY>
         <assignmentItems>
             <assignToReference>varExtraDayMin</assignToReference>
             <operator>Assign</operator>
@@ -265,6 +265,13 @@
                 <elementReference>Facility_QRIS</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>soLead.Serving_Families_with_Vouchers__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Facility_Service_Voucher</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Existing_Day1_Training_Member</targetReference>
         </connector>
@@ -390,6 +397,20 @@
                 <elementReference>Facility_ZipCode_0</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>soLead.Provider_Id_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Facility_Provider_Id_0</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>soLead.Provider_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Facility_Provider_Name_0</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Existing_Day1_Training_Member</targetReference>
         </connector>
@@ -397,8 +418,8 @@
     <assignments>
         <name>Insert_Training_Members</name>
         <label>Insert Training Members</label>
-        <locationX>3784</locationX>
-        <locationY>830</locationY>
+        <locationX>4127</locationX>
+        <locationY>833</locationY>
         <assignmentItems>
             <assignToReference>soExtraDayTrainingMembers</assignToReference>
             <operator>Add</operator>
@@ -413,8 +434,8 @@
     <assignments>
         <name>Set_Lead_Id</name>
         <label>Set Lead Id</label>
-        <locationX>2421</locationX>
-        <locationY>383</locationY>
+        <locationX>1752</locationX>
+        <locationY>1660</locationY>
         <assignmentItems>
             <assignToReference>varLeadId</assignToReference>
             <operator>Assign</operator>
@@ -423,14 +444,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Debug_Mode_0</targetReference>
+            <targetReference>Check_Day1_Member_0</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Min_Date</name>
         <label>Set Min Date</label>
-        <locationX>3015</locationX>
-        <locationY>291</locationY>
+        <locationX>3358</locationX>
+        <locationY>294</locationY>
         <assignmentItems>
             <assignToReference>varExtraDayMin</assignToReference>
             <operator>Assign</operator>
@@ -468,8 +489,8 @@
     <assignments>
         <name>Set_Training_Member</name>
         <label>Set Training Member</label>
-        <locationX>3797</locationX>
-        <locationY>1047</locationY>
+        <locationX>4141</locationX>
+        <locationY>1050</locationY>
         <assignmentItems>
             <assignToReference>soExtraDayTrainingMember.LeadId</assignToReference>
             <operator>Assign</operator>
@@ -745,6 +766,9 @@
         <label>Existing Day1 Member</label>
         <locationX>2166</locationX>
         <locationY>383</locationY>
+        <defaultConnector>
+            <targetReference>Confirmation</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
             <name>No_Check_Day1_Member</name>
@@ -757,7 +781,32 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Lead</targetReference>
+                <targetReference>Debug_Mode_0</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Day1_Member_0</name>
+        <label>Existing Day1 Member</label>
+        <locationX>1745</locationX>
+        <locationY>1929</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Extra_Day_Trainings</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No_Check_Day1_Member_0_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varDayTrainingMember</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Training_Member_Day1</targetReference>
             </connector>
             <label>No</label>
         </rules>
@@ -765,8 +814,8 @@
     <decisions>
         <name>Check_Extra_Day</name>
         <label>Check Extra Day</label>
-        <locationX>3443</locationX>
-        <locationY>294</locationY>
+        <locationX>3786</locationX>
+        <locationY>297</locationY>
         <defaultConnector>
             <targetReference>Loop_Extra_Days</targetReference>
         </defaultConnector>
@@ -790,8 +839,8 @@
     <decisions>
         <name>Check_Extra_Day_Member</name>
         <label>Existing Extra Day Member</label>
-        <locationX>3811</locationX>
-        <locationY>1474</locationY>
+        <locationX>4154</locationX>
+        <locationY>1477</locationY>
         <defaultConnector>
             <targetReference>Extra_Day_Error_Already_Registered</targetReference>
         </defaultConnector>
@@ -815,8 +864,8 @@
     <decisions>
         <name>Check_varInputRestrictByDay</name>
         <label>Check varInputRestrictByDay</label>
-        <locationX>3001</locationX>
-        <locationY>1149</locationY>
+        <locationX>3345</locationX>
+        <locationY>1153</locationY>
         <defaultConnector>
             <targetReference>Confirmation</targetReference>
         </defaultConnector>
@@ -833,31 +882,6 @@
             </conditions>
             <connector>
                 <targetReference>Set_Min_Date</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Check_varInputRestrictByDay_0</name>
-        <label>Check varInputRestrictByDay</label>
-        <locationX>2016</locationX>
-        <locationY>1781</locationY>
-        <defaultConnector>
-            <targetReference>Create_Training_Member_Day1</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_RestrictByDay_0</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>varInputRestrictByDay</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Create_Extra_Day_Training_Members_Insert</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -890,8 +914,8 @@
     <decisions>
         <name>Debug_Mode_0</name>
         <label>Debug Mode</label>
-        <locationX>2523</locationX>
-        <locationY>384</locationY>
+        <locationX>2866</locationX>
+        <locationY>387</locationY>
         <defaultConnector>
             <targetReference>Group_Selected</targetReference>
         </defaultConnector>
@@ -1015,8 +1039,8 @@
     <decisions>
         <name>Default_Selected_1</name>
         <label>Default Selected</label>
-        <locationX>3904</locationX>
-        <locationY>805</locationY>
+        <locationX>4247</locationX>
+        <locationY>809</locationY>
         <defaultConnector>
             <targetReference>Existing_Extra_Day_Training_Member</targetReference>
         </defaultConnector>
@@ -1040,8 +1064,8 @@
     <decisions>
         <name>Group_Selected</name>
         <label>Group Selected</label>
-        <locationX>2844</locationX>
-        <locationY>300</locationY>
+        <locationX>3187</locationX>
+        <locationY>303</locationY>
         <defaultConnector>
             <targetReference>Check_varInputRestrictByDay</targetReference>
         </defaultConnector>
@@ -1157,23 +1181,9 @@
         </filters>
         <filters>
             <field>Status</field>
-            <operator>NotEqualTo</operator>
+            <operator>EqualTo</operator>
             <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Canceled</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Full</stringValue>
+                <stringValue>In Progress</stringValue>
             </value>
         </filters>
         <filters>
@@ -1194,7 +1204,7 @@
             <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
-                <elementReference>varInputTrainingFilter</elementReference>
+                <elementReference>getTrainingFilter</elementReference>
             </value>
         </filters>
         <object>Campaign</object>
@@ -1249,23 +1259,9 @@
         </filters>
         <filters>
             <field>Status</field>
-            <operator>NotEqualTo</operator>
+            <operator>EqualTo</operator>
             <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Canceled</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Full</stringValue>
+                <stringValue>In Progress</stringValue>
             </value>
         </filters>
         <filters>
@@ -1293,7 +1289,7 @@
             <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
-                <elementReference>varInputTrainingFilter</elementReference>
+                <elementReference>getTrainingFilter</elementReference>
             </value>
         </filters>
         <object>Campaign</object>
@@ -1334,23 +1330,9 @@
         </filters>
         <filters>
             <field>Status</field>
-            <operator>NotEqualTo</operator>
+            <operator>EqualTo</operator>
             <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Canceled</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Full</stringValue>
+                <stringValue>In Progress</stringValue>
             </value>
         </filters>
         <filters>
@@ -1423,6 +1405,14 @@
         <picklistObject>Contact</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>
+        <name>picklistServingVouchers</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Serving_Families_with_Vouchers__c</picklistField>
+        <picklistObject>Lead</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
         <name>picklistTrainingState</name>
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
@@ -1467,6 +1457,11 @@
         <expression>{!soExtraDayTraining.c501_cm__Training_Name_WebForm__c} + BR()</expression>
     </formulas>
     <formulas>
+        <name>getTrainingFilter</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!varInputTrainingFilter}, &quot;)&quot;), {!varInputTrainingFilter}, {!varInputTrainingFilter} + &quot;)&quot;)</expression>
+    </formulas>
+    <formulas>
         <name>leadCompanyFacility</name>
         <dataType>String</dataType>
         <expression>&quot;Facility&quot;</expression>
@@ -1484,22 +1479,10 @@
     <interviewLabel>cmbp Training Registration FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Training Registration FLOW TEMPLATE</label>
     <loops>
-        <name>Loop_Child_Trainings</name>
-        <label>Loop Child Trainings</label>
-        <locationX>2307</locationX>
-        <locationY>2181</locationY>
-        <assignNextValueToReference>soDay1Training</assignNextValueToReference>
-        <collectionReference>Get_Child_Trainings</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Create_Child_Training_Member_Day1</targetReference>
-        </nextValueConnector>
-    </loops>
-    <loops>
         <name>Loop_Child_Trainings_0</name>
         <label>Loop Child Trainings</label>
-        <locationX>2745</locationX>
-        <locationY>758</locationY>
+        <locationX>3089</locationX>
+        <locationY>761</locationY>
         <assignNextValueToReference>soDay1Training</assignNextValueToReference>
         <collectionReference>Get_Child_Trainings</collectionReference>
         <iterationOrder>Desc</iterationOrder>
@@ -1511,10 +1494,21 @@
         </noMoreValuesConnector>
     </loops>
     <loops>
+        <name>Loop_Extra_Day_Trainings</name>
+        <label>Loop Extra Day Trainings</label>
+        <locationX>2306</locationX>
+        <locationY>2052</locationY>
+        <collectionReference>soExtraDayTrainingMembers</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Create_Extra_Day_Training_Member</targetReference>
+        </nextValueConnector>
+    </loops>
+    <loops>
         <name>Loop_Extra_Days</name>
         <label>Loop Extra Days</label>
-        <locationX>3281</locationX>
-        <locationY>1595</locationY>
+        <locationX>3625</locationX>
+        <locationY>1598</locationY>
         <collectionReference>Get_Extra_Days</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1532,17 +1526,17 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_Child_Training_Member_Day1</name>
-        <label>Create Child Day1 Training Member</label>
-        <locationX>2634</locationX>
-        <locationY>2182</locationY>
+        <name>Create_Extra_Day_Training_Member</name>
+        <label>Create Extra Day Training Member</label>
+        <locationX>2309</locationX>
+        <locationY>2352</locationY>
         <connector>
-            <targetReference>Loop_Child_Trainings</targetReference>
+            <targetReference>Loop_Extra_Day_Trainings</targetReference>
         </connector>
         <inputAssignments>
             <field>CampaignId</field>
             <value>
-                <elementReference>soDay1Training.Id</elementReference>
+                <elementReference>Loop_Extra_Day_Trainings.CampaignId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1567,20 +1561,11 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
-        <name>Create_Extra_Day_Training_Members_Insert</name>
-        <label>Create Extra Day Training Members</label>
-        <locationX>2418</locationX>
-        <locationY>1791</locationY>
-        <connector>
-            <targetReference>Create_Training_Member_Day1</targetReference>
-        </connector>
-        <inputReference>soExtraDayTrainingMembers</inputReference>
-    </recordCreates>
-    <recordCreates>
+        <description>Reference each field to avoid Flow doing a Fast Create which is a Create pending that does not actually get created until later.</description>
         <name>Create_Lead</name>
         <label>Create Lead</label>
-        <locationX>2312</locationX>
-        <locationY>381</locationY>
+        <locationX>1756</locationX>
+        <locationY>1383</locationY>
         <connector>
             <targetReference>Set_Lead_Id</targetReference>
         </connector>
@@ -1589,10 +1574,10 @@
     <recordCreates>
         <name>Create_Training_Member_Day1</name>
         <label>Create Day1 Training Member</label>
-        <locationX>1764</locationX>
-        <locationY>2167</locationY>
+        <locationX>1746</locationX>
+        <locationY>2169</locationY>
         <connector>
-            <targetReference>Loop_Child_Trainings</targetReference>
+            <targetReference>Loop_Extra_Day_Trainings</targetReference>
         </connector>
         <inputAssignments>
             <field>CampaignId</field>
@@ -1660,8 +1645,8 @@
     <recordLookups>
         <name>Existing_Extra_Day_Training_Member</name>
         <label>Extra Day Training Member</label>
-        <locationX>3921</locationX>
-        <locationY>1124</locationY>
+        <locationX>4265</locationX>
+        <locationY>1127</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Extra_Day_Member</targetReference>
@@ -1748,8 +1733,8 @@
     <recordLookups>
         <name>Get_Child_Trainings</name>
         <label>Get Child Trainings</label>
-        <locationX>2741</locationX>
-        <locationY>622</locationY>
+        <locationX>3085</locationX>
+        <locationY>625</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Child_Trainings_0</targetReference>
@@ -1764,14 +1749,14 @@
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Campaign</object>
         <sortField>c501_cm__custom_Start_DateTime__c</sortField>
-        <sortOrder>Asc</sortOrder>
+        <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Extra_Days</name>
         <label>Get Extra Days</label>
-        <locationX>3130</locationX>
-        <locationY>292</locationY>
+        <locationX>3473</locationX>
+        <locationY>295</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Extra_Days</targetReference>
@@ -1822,7 +1807,7 @@
             <field>c501_cm__Training_Name_WebForm__c</field>
             <operator>Contains</operator>
             <value>
-                <stringValue>Day</stringValue>
+                <elementReference>getDayCheck</elementReference>
             </value>
         </filters>
         <filters>
@@ -1867,11 +1852,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Check_varInputRestrictByDay_0</targetReference>
+            <targetReference>Create_Lead</targetReference>
         </connector>
         <fields>
             <name>PersonalInfo_Summary_0</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Please confirm your registration by clicking &apos;Next&apos; or click &apos;Previous&apos; to change your registration.  After you confirm the registration by clicking &apos;Next&apos; an Administrator will review the request and will send an email reply.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Solicitud de registro recibida. Un administrador revisará la solicitud y enviará una respuesta por correo electrónico.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Al registrarse para un entrenamiento y proporcionar su número de teléfono y correo electrónico, usted acepta recibir mensajes de texto y correo electrónico.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Resumen de entrenamiento:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255)); color: var(--lwc-colorTextWeak,rgb(62, 62, 60)); font-family: var(--lwc-fontFamily,&amp;quot;Salesforce Sans&amp;quot;, Arial, sans-serif); font-size: 14px;&quot;&gt;{!Facility_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!varChildTrainings}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!varExtraDayTrainings}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Please confirm your registration by clicking &apos;Next&apos; or click &apos;Previous&apos; to change your registration.  After you confirm the registration by clicking &apos;Next&apos; an Administrator will review the request and will send an email reply.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Solicitud de registro recibida. Un administrador revisará la solicitud y enviará una respuesta por correo electrónico.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Al registrarse para un entrenamiento y proporcionar su número de teléfono y correo electrónico, usted acepta recibir mensajes de texto y correo electrónico.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Resumen de entrenamiento:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255)); color: var(--lwc-colorTextWeak,rgb(62, 62, 60)); font-family: var(--lwc-fontFamily,&amp;quot;Salesforce Sans&amp;quot;, Arial, sans-serif); font-size: 14px;&quot;&gt;{!Facility_Training}{!Facility_Training_0}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!varChildTrainings}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!varExtraDayTrainings}&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -2007,8 +1992,8 @@
     <screens>
         <name>Debug_Forms</name>
         <label>Debug Forms</label>
-        <locationX>2525</locationX>
-        <locationY>180</locationY>
+        <locationX>2869</locationX>
+        <locationY>183</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2026,8 +2011,8 @@
     <screens>
         <name>Extra_Day_Training</name>
         <label>Extra Day Training</label>
-        <locationX>4090</locationX>
-        <locationY>300</locationY>
+        <locationX>4433</locationX>
+        <locationY>303</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
@@ -2104,7 +2089,7 @@
             <isRequired>true</isRequired>
             <validationRule>
                 <errorMessage>&lt;p&gt;Email Invalid - the value you entered for email doesn&apos;t meet the validation criteria (name@domain.org).&lt;/p&gt;</errorMessage>
-                <formulaExpression>REGEX({!Facility_Email},&quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}&quot;)</formulaExpression>
+                <formulaExpression>REGEX(TRIM({!Facility_Email}),&quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}&quot;)</formulaExpression>
             </validationRule>
         </fields>
         <fields>
@@ -2148,7 +2133,6 @@
             <dataType>String</dataType>
             <fieldText>Union ID number / Número do identificación de la unión</fieldText>
             <fieldType>InputField</fieldType>
-            <helpText>{!constHelpTextPayeeNumber}</helpText>
             <isRequired>false</isRequired>
             <validationRule>
                 <errorMessage>&lt;p&gt;Value must be a number and 32 digits or less.&lt;/p&gt;</errorMessage>
@@ -2177,23 +2161,23 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
             <name>Facility_Language</name>
             <choiceReferences>picklistLanguage</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Language / Idioma</fieldText>
+            <fieldText>Preferred Language / Idioma preferido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Facility_Language_Other</name>
             <dataType>String</dataType>
-            <fieldText>Language Other / Idioma Otro</fieldText>
+            <fieldText>Other Language / Idioma Otro</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
                     <leftValueReference>Facility_Language</leftValueReference>
-                    <operator>Contains</operator>
+                    <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>Facility_Language_Other</elementReference>
+                        <stringValue>Other</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -2203,6 +2187,14 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
             <choiceReferences>picklistPosition</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Position / Posición</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Facility_Service_Voucher</name>
+            <choiceReferences>picklistServingVouchers</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Do you serve families with vouchers? / ¿Sirves familias con vales o &quot;voucher&quot;?</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -2277,7 +2269,7 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
             <isRequired>true</isRequired>
             <validationRule>
                 <errorMessage>&lt;p&gt;Email Invalid - the value you entered for email doesn&apos;t meet the validation criteria (name@domain.org).&lt;/p&gt;</errorMessage>
-                <formulaExpression>REGEX({!Facility_Email_0},&quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}&quot;)</formulaExpression>
+                <formulaExpression>REGEX(TRIM({!Facility_Email_0}),&quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}&quot;)</formulaExpression>
             </validationRule>
         </fields>
         <fields>
@@ -2311,33 +2303,32 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
         </fields>
         <fields>
             <name>Facility_Provider_Id_0</name>
-            <dataType>Number</dataType>
+            <dataType>String</dataType>
             <fieldText>Provider ID number / Número de identificación del Proveedor</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
-            <scale>0</scale>
         </fields>
         <fields>
             <name>Facility_Language_0</name>
             <choiceReferences>picklistLanguage</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Language / Idioma</fieldText>
+            <fieldText>Preferred Language / Idioma preferido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>Facility_Language_Other_0</name>
             <dataType>String</dataType>
-            <fieldText>Language Other / Idioma Otro</fieldText>
+            <fieldText>Other Language / Idioma Otro</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>false</isRequired>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>Facility_Language</leftValueReference>
-                    <operator>Contains</operator>
+                    <leftValueReference>Facility_Language_0</leftValueReference>
+                    <operator>EqualTo</operator>
                     <rightValue>
-                        <elementReference>Facility_Language_Other</elementReference>
+                        <stringValue>Other</stringValue>
                     </rightValue>
                 </conditions>
             </visibilityRule>
@@ -2375,7 +2366,7 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
         </fields>
         <fields>
             <name>Display_Disclaimer3_0</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Al registrarse para un entrenamiento y proporcionar su número de teléfono y correo electrónico, usted acepta recibir mensajes de texto y correo electrónico.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -2384,17 +2375,17 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
     <screens>
         <name>Group_Confirmation</name>
         <label>Group Confirmation</label>
-        <locationX>1751</locationX>
-        <locationY>1280</locationY>
+        <locationX>1749</locationX>
+        <locationY>1179</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Training_Member_Day1</targetReference>
+            <targetReference>Create_Lead</targetReference>
         </connector>
         <fields>
             <name>PersonalInfo_Summary_0_0</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: var(--lwc-fontFamily,&amp;quot;Salesforce Sans&amp;quot;, Arial, sans-serif); background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255)); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;You have selected a Training Series which includes 1 or more trainings.  Please review the following list of trainings and click Next to Register or Previous to select a different training.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Resumen de entrenamiento:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255)); color: var(--lwc-colorTextWeak,rgb(62, 62, 60)); font-family: var(--lwc-fontFamily,&amp;quot;Salesforce Sans&amp;quot;, Arial, sans-serif); font-size: 14px;&quot;&gt;{!Facility_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!varChildTrainings}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;You have selected a Training Series which includes 1 or more trainings.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Usted ha seleccionado una serie de capacitaciones que incluye una o más capacitaciones.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please confirm your registration by clicking “Next” or click “Previous” to change your registration. After you confirm the registration by clicking “Next” an Administrator will review the request and will send an email reply.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Confirme su inscripción haciendo clic en &quot;Next&quot; o haga clic en &quot;Previous&quot; para cambiar su inscripción. Después de confirmar su inscripción haciendo clic en &quot;Next&quot;, un administrador revisará la solicitud y enviará una respuesta por correo electrónico.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;By registering for training, and providing your phone number and email, you consent to receive text and email messages.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Al registrarse para un entrenamiento y proporcionar su número de teléfono y correo electrónico, usted acepta recibir mensajes de texto y correo electrónico.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;﻿{!soLead.FirstName} {!soLead.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!soLead.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;Training Summary:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Resumen de entrenamiento:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!Substitute_Training}{!Training_Training}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255)); color: var(--lwc-colorTextWeak,rgb(62, 62, 60)); font-family: var(--lwc-fontFamily,&amp;quot;Salesforce Sans&amp;quot;, Arial, sans-serif); font-size: 14px;&quot;&gt;{!Facility_Training}{!Facility_Training_0}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;{!varChildTrainings}&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -2589,6 +2580,13 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
     <variables>
         <name>varDayTrainingMember</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varDefaultSelectValue</name>
+        <dataType>Picklist</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
