@@ -1,294 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <name>Admin_Alert_Email</name>
-        <label>Admin Alert Email</label>
-        <locationX>1125</locationX>
-        <locationY>547</locationY>
-        <actionName>CampaignMember.cmbp_Admin_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Member_Pending_Notification</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Attended_MA_Notification</name>
-        <label>Attended MA</label>
-        <locationX>2804</locationX>
-        <locationY>1759</locationY>
-        <actionName>CampaignMember.Training_Attended_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Attended_RI</name>
-        <label>Attended RI</label>
-        <locationX>2109</locationX>
-        <locationY>1280</locationY>
-        <actionName>CampaignMember.Training_Attended_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Canceled_MA</name>
-        <label>Canceled MA</label>
-        <locationX>2750</locationX>
-        <locationY>1650</locationY>
-        <actionName>CampaignMember.Training_Canceled_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Canceled_RI</name>
-        <label>Canceled RI</label>
-        <locationX>1991</locationX>
-        <locationY>1186</locationY>
-        <actionName>CampaignMember.Training_Canceled_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Denied_RI_Email</name>
-        <label>Denied RI Email</label>
-        <locationX>1784</locationX>
-        <locationY>1038</locationY>
-        <actionName>CampaignMember.Training_Denied_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>MA_Denied_Email</name>
-        <label>MA Denied Email</label>
-        <locationX>2615</locationX>
-        <locationY>1451</locationY>
-        <actionName>CampaignMember.Training_Denied_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>MA_Reminder</name>
-        <label>MA Reminder</label>
-        <locationX>3051</locationX>
-        <locationY>1982</locationY>
-        <actionName>CampaignMember.Training_Reminder_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>No_Show_MA</name>
-        <label>No-Show MA</label>
-        <locationX>2691</locationX>
-        <locationY>1544</locationY>
-        <actionName>CampaignMember.Training_NoShow_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>No_Show_RI</name>
-        <label>No-Show RI</label>
-        <locationX>1896</locationX>
-        <locationY>1111</locationY>
-        <actionName>CampaignMember.Training_NoShow_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Outreach_MA_Email</name>
-        <label>Outreach MA</label>
-        <locationX>3113</locationX>
-        <locationY>2087</locationY>
-        <actionName>CampaignMember.Training_Outreach_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Contact_Outreach</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Outreach_RI_Email</name>
-        <label>Outreach RI</label>
-        <locationX>2411</locationX>
-        <locationY>1614</locationY>
-        <actionName>CampaignMember.Training_Outreach_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Update_Contact_Outreach</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>RI_Reminder</name>
-        <label>RI Reminder</label>
-        <locationX>2344</locationX>
-        <locationY>1519</locationY>
-        <actionName>CampaignMember.Training_Reminder_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Send_MA_Registered_Email</name>
-        <label>Send MA Registered Email</label>
-        <locationX>2359</locationX>
-        <locationY>920</locationY>
-        <actionName>CampaignMember.Training_Confirmation_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Send_Registered_RI_Email</name>
-        <label>Send Registered RI Email</label>
-        <locationX>1665</locationX>
-        <locationY>847</locationY>
-        <actionName>CampaignMember.Training_Confirmation_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Wait_List_MA</name>
-        <label>Wait List MA</label>
-        <locationX>2941</locationX>
-        <locationY>1877</locationY>
-        <actionName>CampaignMember.Training_Wait_List_Email_Alert_MA</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Wait_List_RI</name>
-        <label>Wait List RI</label>
-        <locationX>2219</locationX>
-        <locationY>1381</locationY>
-        <actionName>CampaignMember.Training_Wait_List_Email_Alert_RI</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Event_Assignment_Email</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>inputCampaignMember</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
     <assignments>
         <name>Event_Assignment_Email</name>
         <label>Event Assignment Email</label>
@@ -343,8 +54,8 @@
     <assignments>
         <name>Event_Assignment_SMS</name>
         <label>Event Assignment SMS</label>
-        <locationX>1899</locationX>
-        <locationY>2107</locationY>
+        <locationX>1730</locationX>
+        <locationY>2051</locationY>
         <assignmentItems>
             <assignToReference>notificationEvent.WhoId</assignToReference>
             <operator>Assign</operator>
@@ -394,8 +105,8 @@
     <assignments>
         <name>Set_Language_English_Default</name>
         <label>Set Language English</label>
-        <locationX>902</locationX>
-        <locationY>488</locationY>
+        <locationX>868</locationX>
+        <locationY>519</locationY>
         <assignmentItems>
             <assignToReference>varMemberLanguage</assignToReference>
             <operator>Assign</operator>
@@ -410,8 +121,8 @@
     <assignments>
         <name>Update_Training_Status_MA</name>
         <label>Update Training Status</label>
-        <locationX>2522</locationX>
-        <locationY>836</locationY>
+        <locationX>3082</locationX>
+        <locationY>886</locationY>
         <assignmentItems>
             <assignToReference>Get_Campaign_Member.c501_cm__Training_Status__c</assignToReference>
             <operator>Assign</operator>
@@ -426,9 +137,6 @@
                 <stringValue>Registered</stringValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>Send_MA_Registered_Email</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Update_Training_Status_RI</name>
@@ -449,9 +157,6 @@
                 <stringValue>Registered</stringValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>Send_Registered_RI_Email</targetReference>
-        </connector>
     </assignments>
     <decisions>
         <name>Check_State</name>
@@ -494,6 +199,94 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Child_Training</name>
+        <label>Child Training</label>
+        <locationX>3390</locationX>
+        <locationY>664</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Child_Training</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Training.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_Sibling_Training_Sooner</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Child_Training_0</name>
+        <label>Child Training</label>
+        <locationX>1964</locationX>
+        <locationY>571</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Child_Training_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Training.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_Sibling_Training_Sooner_0</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Earlier_Training</name>
+        <label>Earlier Training</label>
+        <locationX>3564</locationX>
+        <locationY>863</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Earlier_Training</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varEarlierActiveSiblingTraining</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Member_Pending_Notification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Earlier_Training_0</name>
+        <label>Earlier Training</label>
+        <locationX>2157</locationX>
+        <locationY>753</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Earlier_Training_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varEarlierActiveSiblingTraining</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Member_Pending_Notification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Email_Opt_Out</name>
         <label>Email Opt Out</label>
         <locationX>1288</locationX>
@@ -521,15 +314,15 @@
     <decisions>
         <name>Get_Language_0</name>
         <label>Get Language</label>
-        <locationX>893</locationX>
-        <locationY>715</locationY>
+        <locationX>873</locationX>
+        <locationY>718</locationY>
         <defaultConnector>
             <targetReference>Set_Language_English_Default</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>English_0</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Campaign_Member.Contact.c501_cm__ii_Primary_Language__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -546,8 +339,8 @@
     <decisions>
         <name>Get_Training_Status_MA</name>
         <label>Get Training Status MA</label>
-        <locationX>2244</locationX>
-        <locationY>601</locationY>
+        <locationX>2804</locationX>
+        <locationY>651</locationY>
         <defaultConnector>
             <targetReference>Update_Member_Pending_Notification</targetReference>
         </defaultConnector>
@@ -577,9 +370,6 @@
                     <stringValue>Denied</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>MA_Denied_Email</targetReference>
-            </connector>
             <label>Denied</label>
         </rules>
         <rules>
@@ -592,9 +382,6 @@
                     <stringValue>Registered</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Send_MA_Registered_Email</targetReference>
-            </connector>
             <label>Registered</label>
         </rules>
         <rules>
@@ -607,9 +394,6 @@
                     <stringValue>No Show</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>No_Show_MA</targetReference>
-            </connector>
             <label>No-Show</label>
         </rules>
         <rules>
@@ -622,9 +406,6 @@
                     <stringValue>Canceled</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Canceled_MA</targetReference>
-            </connector>
             <label>Canceled</label>
         </rules>
         <rules>
@@ -637,9 +418,6 @@
                     <stringValue>Attended</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Attended_MA_Notification</targetReference>
-            </connector>
             <label>Attended</label>
         </rules>
         <rules>
@@ -652,9 +430,6 @@
                     <stringValue>Outreach</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Outreach_MA_Email</targetReference>
-            </connector>
             <label>Outreach</label>
         </rules>
         <rules>
@@ -668,7 +443,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>MA_Reminder</targetReference>
+                <targetReference>Child_Training</targetReference>
             </connector>
             <label>Registered Reminder</label>
         </rules>
@@ -682,9 +457,6 @@
                     <stringValue>Wait List</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Wait_List_MA</targetReference>
-            </connector>
             <label>Wait List</label>
         </rules>
     </decisions>
@@ -722,9 +494,6 @@
                     <stringValue>Denied</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Denied_RI_Email</targetReference>
-            </connector>
             <label>Denied</label>
         </rules>
         <rules>
@@ -737,9 +506,6 @@
                     <stringValue>Registered</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Send_Registered_RI_Email</targetReference>
-            </connector>
             <label>Registered</label>
         </rules>
         <rules>
@@ -752,9 +518,6 @@
                     <stringValue>No Show</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>No_Show_RI</targetReference>
-            </connector>
             <label>No-Show</label>
         </rules>
         <rules>
@@ -767,9 +530,6 @@
                     <stringValue>Canceled</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Canceled_RI</targetReference>
-            </connector>
             <label>Canceled</label>
         </rules>
         <rules>
@@ -782,9 +542,6 @@
                     <stringValue>Attended</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Attended_RI</targetReference>
-            </connector>
             <label>Attended</label>
         </rules>
         <rules>
@@ -797,9 +554,6 @@
                     <stringValue>Outreach</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Outreach_RI_Email</targetReference>
-            </connector>
             <label>Outreach</label>
         </rules>
         <rules>
@@ -813,7 +567,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>RI_Reminder</targetReference>
+                <targetReference>Child_Training_0</targetReference>
             </connector>
             <label>Registered Reminder</label>
         </rules>
@@ -827,17 +581,14 @@
                     <stringValue>Wait List</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Wait_List_RI</targetReference>
-            </connector>
             <label>Wait List</label>
         </rules>
     </decisions>
     <decisions>
         <name>Get_Training_Status_SMS</name>
         <label>Get Training Status SMS</label>
-        <locationX>1334</locationX>
-        <locationY>1750</locationY>
+        <locationX>1254</locationX>
+        <locationY>1734</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Pending_0_0</name>
@@ -954,8 +705,8 @@
     <decisions>
         <name>Group_Class</name>
         <label>Group Class</label>
-        <locationX>691</locationX>
-        <locationY>721</locationY>
+        <locationX>704</locationX>
+        <locationY>829</locationY>
         <defaultConnector>
             <targetReference>Get_Language_0</targetReference>
         </defaultConnector>
@@ -989,13 +740,6 @@
             <name>Yes_Test_Training</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Training.c501_cm__Training_Name__c</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>**Test**</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>Get_Training.TestFlight_Enabled__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
@@ -1011,8 +755,8 @@
     <decisions>
         <name>SMS_Opt_Out</name>
         <label>SMS Opt Out</label>
-        <locationX>1330</locationX>
-        <locationY>1377</locationY>
+        <locationX>1251</locationX>
+        <locationY>1347</locationY>
         <defaultConnector>
             <targetReference>Valid_MobilePhone</targetReference>
         </defaultConnector>
@@ -1043,17 +787,10 @@
             <name>Yes_TestContact</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Contact.FirstName</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>Get_Campaign_Member.Contact.TestFlight_Enabled__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>**Test**</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Campaign_Member.Contact.LastName</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>**Test**</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1112,9 +849,6 @@
         <label>Valid Email or SMS</label>
         <locationX>1117</locationX>
         <locationY>303</locationY>
-        <defaultConnector>
-            <targetReference>Admin_Alert_Email</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_ValidEmailSMS</name>
@@ -1157,8 +891,8 @@
     <decisions>
         <name>Valid_MobilePhone</name>
         <label>Valid MobilePhone</label>
-        <locationX>1332</locationX>
-        <locationY>1558</locationY>
+        <locationX>1248</locationX>
+        <locationY>1532</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_Valid_MobilePhone</name>
@@ -1173,7 +907,6 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>TEMPLATE - Save As &apos;A New Flow&apos; version and replace TEMPLATE with CUSTOM in the name and add custom elements.</description>
     <formulas>
         <name>getSMSMessage</name>
         <dataType>String</dataType>
@@ -1189,7 +922,7 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
 &quot;Imagine_Settings__c.Email_SMS_Unsub_Text__c&quot;, {!Get_Custom_Settings.c501_cm__Email_SMS_Unsub_Text__c}),
 &quot;CampaignMember.Group_Classes__c&quot;,{!Get_Campaign_Member.Group_Classes__c})</expression>
     </formulas>
-    <interviewLabel>TEMPLATE - Save As &apos;A New Flow&apos; version and replace TEMPLATE with CUSTOM in the name and add custom elements. {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>cmbp Training Notifications FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Training Notifications FLOW TEMPLATE</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -1208,7 +941,7 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
         <name>Create_Notification_Event_Email</name>
         <label>Create Notification Event Email</label>
         <locationX>1513</locationX>
-        <locationY>1453</locationY>
+        <locationY>1449</locationY>
         <connector>
             <targetReference>Update_Member_Pending_Notification</targetReference>
         </connector>
@@ -1217,13 +950,113 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordCreates>
         <name>Create_Notification_Event_SMS</name>
         <label>Create Notification Event SMS</label>
-        <locationX>1900</locationX>
-        <locationY>2286</locationY>
+        <locationX>1897</locationX>
+        <locationY>2051</locationY>
         <connector>
             <targetReference>Update_Member_Pending_Notification_SMS</targetReference>
         </connector>
         <inputReference>notificationEvent</inputReference>
     </recordCreates>
+    <recordLookups>
+        <name>Active_Sibling_Training_Sooner</name>
+        <label>Active Sibling Training Sooner</label>
+        <locationX>3568</locationX>
+        <locationY>658</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Earlier_Training</targetReference>
+        </connector>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Training.ParentId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Canceled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__custom_Start_DateTime__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <elementReference>Get_Training.c501_cm__custom_Start_DateTime__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__custom_Start_DateTime__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputAssignments>
+            <assignToReference>varEarlierActiveSiblingTraining</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Active_Sibling_Training_Sooner_0</name>
+        <label>Active Sibling Training Sooner</label>
+        <locationX>2159</locationX>
+        <locationY>571</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Earlier_Training_0</targetReference>
+        </connector>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Training.ParentId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Canceled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__custom_Start_DateTime__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <elementReference>Get_Training.c501_cm__custom_Start_DateTime__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__custom_Start_DateTime__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputAssignments>
+            <assignToReference>varEarlierActiveSiblingTraining</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
     <recordLookups>
         <name>Get_Campaign_Member</name>
         <label>Get Campaign Member</label>
@@ -1247,8 +1080,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordLookups>
         <name>Get_Custom_Settings</name>
         <label>Get Custom Settings</label>
-        <locationX>1732</locationX>
-        <locationY>1948</locationY>
+        <locationX>1596</locationX>
+        <locationY>1888</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>c501_cm__Imagine_Settings__c</object>
@@ -1257,8 +1090,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordLookups>
         <name>Get_Record_Type_Group</name>
         <label>Get Record Type Group</label>
-        <locationX>402</locationX>
-        <locationY>799</locationY>
+        <locationX>551</locationX>
+        <locationY>814</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Group_Class</targetReference>
@@ -1284,8 +1117,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordLookups>
         <name>Get_SMS_Template</name>
         <label>Get SMS Template</label>
-        <locationX>1561</locationX>
-        <locationY>1947</locationY>
+        <locationX>1411</locationX>
+        <locationY>1877</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Custom_Settings</targetReference>
@@ -1324,8 +1157,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordUpdates>
         <name>Update_Contact_Outreach</name>
         <label>Update Contact Outreach</label>
-        <locationX>2212</locationX>
-        <locationY>1842</locationY>
+        <locationX>2092</locationX>
+        <locationY>1774</locationY>
         <connector>
             <targetReference>Event_Assignment_Email</targetReference>
         </connector>
@@ -1347,8 +1180,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordUpdates>
         <name>Update_Member_MA</name>
         <label>Update Member</label>
-        <locationX>2524</locationX>
-        <locationY>682</locationY>
+        <locationX>3084</locationX>
+        <locationY>732</locationY>
         <connector>
             <targetReference>Update_Training_Status_MA</targetReference>
         </connector>
@@ -1371,7 +1204,7 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
         <name>Update_Member_Pending_Notification</name>
         <label>Update Member Pending Notification</label>
         <locationX>1406</locationX>
-        <locationY>1003</locationY>
+        <locationY>1002</locationY>
         <connector>
             <targetReference>SMS_Opt_Out</targetReference>
         </connector>
@@ -1413,8 +1246,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordUpdates>
         <name>Update_Member_Pending_Notification_SMS</name>
         <label>Update Member Pending Notification SMS</label>
-        <locationX>2115</locationX>
-        <locationY>2285</locationY>
+        <locationX>2066</locationX>
+        <locationY>2049</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -1446,6 +1279,12 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
             </value>
         </filters>
         <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Registered</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>c501_cm__Training_Status__c</field>
             <value>
                 <stringValue>Registered</stringValue>
@@ -1475,6 +1314,13 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Event</objectType>
+    </variables>
+    <variables>
+        <name>varEarlierActiveSiblingTraining</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>varEventId</name>

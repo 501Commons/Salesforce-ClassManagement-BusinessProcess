@@ -64,7 +64,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <interviewLabel>cmbp {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>cmbp Lead Change FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Lead Change FLOW TEMPLATE</label>
     <loops>
         <name>Loop_Lead_Members</name>

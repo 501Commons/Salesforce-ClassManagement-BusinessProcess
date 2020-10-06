@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Lead_Notification</name>
+        <label>Lead Notification</label>
+        <locationX>1456</locationX>
+        <locationY>107</locationY>
+        <actionName>Lead.Admin_New_Lead</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputLeadId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <decisions>
         <name>Test_Flight_Enabled_Training</name>
         <label>Test Flight Enabled Training</label>
@@ -20,6 +34,31 @@
                 </rightValue>
             </conditions>
             <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_State</name>
+        <label>What State</label>
+        <locationX>1005</locationX>
+        <locationY>61</locationY>
+        <defaultConnector>
+            <targetReference>RI_Lead_Owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>MA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Lead.State</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MA</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>MA_Lead_Owner</targetReference>
+            </connector>
+            <label>MA</label>
         </rules>
     </decisions>
     <interviewLabel>cmbp Lead Assignment FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
@@ -57,6 +96,9 @@
         <locationX>800</locationX>
         <locationY>59</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>What_State</targetReference>
+        </connector>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>cmbp_Custom_Settings__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -121,6 +163,52 @@
         <object>Campaign</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>MA_Lead_Owner</name>
+        <label>MA Lead Owner</label>
+        <locationX>1242</locationX>
+        <locationY>57</locationY>
+        <connector>
+            <targetReference>Lead_Notification</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputLeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Custom_Settings.MA_Lead_Owner__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>RI_Lead_Owner</name>
+        <label>RI Lead Owner</label>
+        <locationX>1257</locationX>
+        <locationY>224</locationY>
+        <connector>
+            <targetReference>Lead_Notification</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputLeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Custom_Settings.RI_Lead_Owner__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>50</locationY>

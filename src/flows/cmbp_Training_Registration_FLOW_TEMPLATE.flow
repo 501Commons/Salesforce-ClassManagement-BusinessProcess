@@ -434,8 +434,8 @@
     <assignments>
         <name>Set_Lead_Id</name>
         <label>Set Lead Id</label>
-        <locationX>1752</locationX>
-        <locationY>1660</locationY>
+        <locationX>2070</locationX>
+        <locationY>1925</locationY>
         <assignmentItems>
             <assignToReference>varLeadId</assignToReference>
             <operator>Assign</operator>
@@ -444,7 +444,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Check_Day1_Member_0</targetReference>
+            <targetReference>Create_Training_Member_Day1</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -480,6 +480,22 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>textTemplateTrainingDefaultSelectedError</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Facility</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Substitute_Day1_Error_0</name>
+        <label>Set Error</label>
+        <locationX>1412</locationX>
+        <locationY>1706</locationY>
+        <assignmentItems>
+            <assignToReference>varTrainingDefaultSelectedError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>textTemplateTrainingAlreadyRegistered</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -767,7 +783,7 @@
         <locationX>2166</locationX>
         <locationY>383</locationY>
         <defaultConnector>
-            <targetReference>Confirmation</targetReference>
+            <targetReference>Set_Substitute_Day1_Error_0</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
@@ -789,10 +805,10 @@
     <decisions>
         <name>Check_Day1_Member_0</name>
         <label>Existing Day1 Member</label>
-        <locationX>1745</locationX>
-        <locationY>1929</locationY>
+        <locationX>1751</locationX>
+        <locationY>1930</locationY>
         <defaultConnector>
-            <targetReference>Loop_Extra_Day_Trainings</targetReference>
+            <targetReference>Set_Substitute_Day1_Error_0</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
@@ -806,7 +822,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Training_Member_Day1</targetReference>
+                <targetReference>Create_Lead</targetReference>
             </connector>
             <label>No</label>
         </rules>
@@ -1496,8 +1512,8 @@
     <loops>
         <name>Loop_Extra_Day_Trainings</name>
         <label>Loop Extra Day Trainings</label>
-        <locationX>2306</locationX>
-        <locationY>2052</locationY>
+        <locationX>2289</locationX>
+        <locationY>2148</locationY>
         <collectionReference>soExtraDayTrainingMembers</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1528,8 +1544,8 @@
     <recordCreates>
         <name>Create_Extra_Day_Training_Member</name>
         <label>Create Extra Day Training Member</label>
-        <locationX>2309</locationX>
-        <locationY>2352</locationY>
+        <locationX>2290</locationX>
+        <locationY>2367</locationY>
         <connector>
             <targetReference>Loop_Extra_Day_Trainings</targetReference>
         </connector>
@@ -1564,8 +1580,8 @@
         <description>Reference each field to avoid Flow doing a Fast Create which is a Create pending that does not actually get created until later.</description>
         <name>Create_Lead</name>
         <label>Create Lead</label>
-        <locationX>1756</locationX>
-        <locationY>1383</locationY>
+        <locationX>1920</locationX>
+        <locationY>1927</locationY>
         <connector>
             <targetReference>Set_Lead_Id</targetReference>
         </connector>
@@ -1574,8 +1590,8 @@
     <recordCreates>
         <name>Create_Training_Member_Day1</name>
         <label>Create Day1 Training Member</label>
-        <locationX>1746</locationX>
-        <locationY>2169</locationY>
+        <locationX>2287</locationX>
+        <locationY>1927</locationY>
         <connector>
             <targetReference>Loop_Extra_Day_Trainings</targetReference>
         </connector>
@@ -1852,7 +1868,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Lead</targetReference>
+            <targetReference>Check_Day1_Member_0</targetReference>
         </connector>
         <fields>
             <name>PersonalInfo_Summary_0</name>
@@ -2381,7 +2397,7 @@ ISNUMBER({!Facility_Union_Id})</formulaExpression>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Lead</targetReference>
+            <targetReference>Check_Day1_Member_0</targetReference>
         </connector>
         <fields>
             <name>PersonalInfo_Summary_0_0</name>
