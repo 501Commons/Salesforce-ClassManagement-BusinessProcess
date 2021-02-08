@@ -327,15 +327,15 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>c501_cm__C501_Email_Opt_Out_by_Contact_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>HasOptedOutOfEmail</field>
             <value>
                 <elementReference>getEmailOptOut</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>c501_cm__C501_Email_Opt_Out_by_Contact_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -399,7 +399,7 @@
             <targetReference>Get_Guest_Update</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>InvalidDraft</status>
     <variables>
         <name>conEach</name>
         <dataType>SObject</dataType>

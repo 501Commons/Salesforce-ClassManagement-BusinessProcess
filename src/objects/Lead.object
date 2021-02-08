@@ -7,7 +7,6 @@
         <label>External Id</label>
         <length>80</length>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>true</unique>
     </fields>
@@ -17,7 +16,6 @@
         <label>Language Other</label>
         <length>80</length>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -26,7 +24,6 @@
         <externalId>false</externalId>
         <label>Position</label>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -55,7 +52,6 @@
         <externalId>false</externalId>
         <label>Primary Language</label>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -68,7 +64,6 @@
         <label>Provider Id Number</label>
         <length>18</length>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -78,7 +73,6 @@
         <label>Provider Name</label>
         <length>80</length>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -87,7 +81,6 @@
         <externalId>false</externalId>
         <label>QRIS Level</label>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -126,7 +119,6 @@
         <externalId>false</externalId>
         <label>Serving Families with Vouchers</label>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
@@ -156,7 +148,6 @@
         <label>State Id</label>
         <length>18</length>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -166,7 +157,6 @@
         <label>Union Id</label>
         <length>18</length>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -175,7 +165,6 @@
         <externalId>false</externalId>
         <label>Union Member</label>
         <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>

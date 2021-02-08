@@ -361,8 +361,8 @@ Insert Campaign:
     c501_cm__Trainer__c:
       table: Contact
       after: Insert Contact
-Insert C501_Class_Notification__c:
-  sf_object: C501_Class_Notification__c
+Insert c501_cm__C501_Class_Notification__c:
+  sf_object: c501_cm__C501_Class_Notification__c
   fields:
   - c501_cm__Confirmation_Email_Template__c
   - Contact_Record_Type__c
@@ -387,8 +387,8 @@ Insert CampaignMember:
   - Notification_Pending__c
   - Outreach_Member__c
   - Send_SMS_Training_Registered__c
-  - Send_Training_Registered__c
-  - Send_Training_Reminder__c
+  - c501_cm__Send_Training_Registered__c
+  - c501_cm__Send_Training_Reminder__c
   - Status_Matching__c
   - c501_cm__Training_Status__c
   - custom_Attended__c
@@ -405,7 +405,7 @@ Insert Contact:
   sf_object: Contact
   fields:
   - C501_BloodBorneP_Training_Completed__c
-  - C501_Certs_Expiring_Message__c
+  - c501_cm__C501_Certs_Expiring_Message__c
   - C501_EAS_Access_Code__c
   - C501_EAS_Attendance_Status__c
   - C501_EAS_Due_Date__c
@@ -420,7 +420,7 @@ Insert Contact:
   - C501_Previous_Unit_Status__c
   - C501_Profile_Pic__c
   - C501_Relative__c
-  - C501_SMS_Opt_Out__c
+  - c501_cm__C501_SMS_Opt_Out__c
   - c501_cm__C501_SMS_Out_Out_by_Contact_Date__c
   - C501_Safe_Sleep_Training_Completed__c
   - Director_Owner_Licensee__c
@@ -441,7 +441,7 @@ Insert Contact:
   - HasOptedOutOfFax
   - Imagine_Email__c
   - Imagine_Home_Phone__c
-  - Imagine_Mobile_Phone__c
+  - c501_cm__Imagine_Mobile_Phone__c
   - LastName
   - Outreach_Area__c
   - Outreach_Date_Last_Sent__c
@@ -476,7 +476,7 @@ Insert Contact:
   - ii_Child_Abuse_Cert_Date__c
   - ii_Child_Abuse_Cert_Status__c
   - c501_cm__ii_County__c
-  - ii_Cpr_Cert_Date__c
+  - c501_cm__ii_Cpr_Cert_Date__c
   - >c501_cm__ii_Cpr_Cert_Status__c
   - ii_DEL_Licensing_Office__c
   - ii_DEL_Licensing_Region__c
@@ -494,9 +494,9 @@ Insert Contact:
   - ii_Facility_Orientation__c
   - ii_Facility_Type__c
   - ii_FamLink_Id__c
-  - ii_First_Aid_Cert_Date__c
+  - c501_cm__ii_First_Aid_Cert_Date__c
   - c501_cm__ii_First_Aid_Cert_Status__c
-  - ii_Food_Handler_Cert_Date__c
+  - c501_cm__ii_Food_Handler_Cert_Date__c
   - ii_Food_Handler_Cert_Status__c
   - ii_Hiv_Cert_Date__c
   - c501_cm__ii_Hiv_Cert_Status__c
@@ -512,7 +512,7 @@ Insert Contact:
   - ii_Orientation_Date__c
   - ii_Orientation_Incomplete_Reason__c
   - ii_Orientation_Status__c
-  - ii_PBC_Expiration__c
+  - c501_cm__ii_PBC_Expiration__c
   - ii_PBC_Status__c
   - ii_Participation_Status__c
   - ii_Primary_Contact__c
@@ -522,7 +522,7 @@ Insert Contact:
   - ii_RecordType_Previous__c
   - ii_SSPS_Number_Matching__c
   - ii_SSPS_Number__c
-  - ii_Safe_Sleep_Cert_Date__c
+  - c501_cm__ii_Safe_Sleep_Cert_Date__c
   - ii_Safe_Sleep_Cert_Status__c
   - ii_Serving_Children_On_Subsidy__c
   - ii_Stars_Id_Matching__c

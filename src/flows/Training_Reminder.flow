@@ -1,82 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>FFN_Reminder_English_Alert</name>
+        <label>FFN Reminder (English) Alert</label>
+        <locationX>1450</locationX>
+        <locationY>92</locationY>
+        <actionName>CampaignMember.Training_Member_FFN_Reminder</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>FFN_Reminder_Spanish_Alert</name>
+        <label>FFN Reminder (Spanish) Alert</label>
+        <locationX>1455</locationX>
+        <locationY>206</locationY>
+        <actionName>CampaignMember.Training_Member_FFN_Reminder_Spanish</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Imagine_U_Reminder_bilingual_Alert</name>
+        <label>Imagine U Reminder (bilingual) Alert</label>
+        <locationX>992</locationX>
+        <locationY>862</locationY>
+        <actionName>CampaignMember.Training_Member_Imagine_Reminder_bilingual</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Imagine_U_Reminder_Spanish_Alert</name>
+        <label>Imagine U Reminder (Spanish) Alert</label>
+        <locationX>985</locationX>
+        <locationY>644</locationY>
+        <actionName>CampaignMember.Training_Member_Imagine_Reminder</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>LFCCP_Creative_Reminder1_Alert</name>
+        <label>LFCCP Creative Reminder1 Alert</label>
+        <locationX>1158</locationX>
+        <locationY>88</locationY>
+        <actionName>CampaignMember.Training_Member_LFCCP_Creative_Reminder_English_Spanish</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>LFCCP_Reminder_Spanish_Alert</name>
+        <label>LFCCP Reminder Spanish Alert</label>
+        <locationX>1159</locationX>
+        <locationY>278</locationY>
+        <actionName>CampaignMember.Training_Member_LFCCP_Reminder_Spanish</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>LFCCPReminder_Alert</name>
+        <label>LFCCPReminder Alert</label>
+        <locationX>1155</locationX>
+        <locationY>187</locationY>
+        <actionName>CampaignMember.Training_Member_LFCCPReminder</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
         <name>Notify_Admin</name>
         <label>Notify Admin</label>
-        <locationX>719</locationX>
-        <locationY>390</locationY>
+        <locationX>798</locationX>
+        <locationY>141</locationY>
         <actionName>CampaignMember.Training_Member_Notify_Imagine_Admin</actionName>
         <actionType>emailAlert</actionType>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
-                <elementReference>varMemberId</elementReference>
+                <elementReference>varInputMemberId</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
     <actionCalls>
-        <name>Send_SMS</name>
-        <label>Send SMS</label>
-        <locationX>1609</locationX>
-        <locationY>61</locationY>
-        <actionName>TwilioSF__TwilioSendSMS</actionName>
-        <actionType>apex</actionType>
+        <name>Prepare_Reminder_English_Alert</name>
+        <label>Prepare Reminder (English) Alert</label>
+        <locationX>1439</locationX>
+        <locationY>752</locationY>
+        <actionName>CampaignMember.Training_Member_Prepare_Reminder</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
         <inputParameters>
-            <name>message</name>
+            <name>SObjectRowId</name>
             <value>
-                <elementReference>SMS_Body</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>recordId</name>
-            <value>
-                <elementReference>soContact.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>toNumber</name>
-            <value>
-                <elementReference>soContact.MobilePhone</elementReference>
+                <elementReference>varInputMemberId</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
-    <assignments>
-        <name>SubPool_Reminder_English_SMS_Body</name>
-        <label>SubPool Reminder English SMS Body</label>
-        <locationX>1150</locationX>
-        <locationY>403</locationY>
-        <assignmentItems>
-            <assignToReference>SMS_Body</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>SMSEnglishReminder</elementReference>
-            </value>
-        </assignmentItems>
+    <actionCalls>
+        <name>Substitute_Pool_Reminder_English_Alert</name>
+        <label>Substitute Pool Reminder (English) Alert</label>
+        <locationX>1653</locationX>
+        <locationY>157</locationY>
+        <actionName>CampaignMember.SubPool_Reminder_English</actionName>
+        <actionType>emailAlert</actionType>
         <connector>
-            <targetReference>Valid_Mobile</targetReference>
+            <targetReference>Create_Event</targetReference>
         </connector>
-    </assignments>
-    <assignments>
-        <name>SubPool_Reminder_Spanish_SMS_Body</name>
-        <label>SubPool Reminder Spanish SMS Body</label>
-        <locationX>1379</locationX>
-        <locationY>692</locationY>
-        <assignmentItems>
-            <assignToReference>SMS_Body</assignToReference>
-            <operator>Assign</operator>
+        <inputParameters>
+            <name>SObjectRowId</name>
             <value>
-                <elementReference>SMSSpanishReminder</elementReference>
+                <elementReference>varInputMemberId</elementReference>
             </value>
-        </assignmentItems>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Training_Member_Imagine_Reminder_Spanish_Alert</name>
+        <label>Training_Member_Imagine_Reminder_Spanish_Alert</label>
+        <locationX>988</locationX>
+        <locationY>751</locationY>
+        <actionName>CampaignMember.Training_Member_Imagine_Reminder_Spanish</actionName>
+        <actionType>emailAlert</actionType>
         <connector>
-            <targetReference>Valid_Mobile</targetReference>
+            <targetReference>Create_Event</targetReference>
         </connector>
-    </assignments>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>varInputMemberId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <name>Check_Valid_Campaign</name>
+        <label>Check Valid Campaign</label>
+        <locationX>622</locationX>
+        <locationY>723</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_ValidCampaign</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>soCampaign.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Planned</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>soCampaign.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>soCampaign.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Full</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Valid_Class_Notification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Send_Reminder</name>
         <label>Send Reminder</label>
-        <locationX>707</locationX>
-        <locationY>583</locationY>
+        <locationX>791</locationX>
+        <locationY>396</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
         </defaultConnector>
@@ -99,7 +247,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_English_SMS_Body</targetReference>
+                <targetReference>FFN_Reminder_English_Alert</targetReference>
             </connector>
             <label>FFN Reminder (English)</label>
         </rules>
@@ -121,7 +269,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_Spanish_SMS_Body</targetReference>
+                <targetReference>FFN_Reminder_Spanish_Alert</targetReference>
             </connector>
             <label>FFN Reminder (Spanish)</label>
         </rules>
@@ -143,7 +291,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_English_SMS_Body</targetReference>
+                <targetReference>Imagine_U_Reminder_Spanish_Alert</targetReference>
             </connector>
             <label>Imagine U Reminder (English)</label>
         </rules>
@@ -165,9 +313,31 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_Spanish_SMS_Body</targetReference>
+                <targetReference>Training_Member_Imagine_Reminder_Spanish_Alert</targetReference>
             </connector>
             <label>Imagine U Reminder (Spanish)</label>
+        </rules>
+        <rules>
+            <name>Imagine_U_Reminder_bilingual</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>varEmailType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Imagine_U_Reminder_bilingual</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varEmailType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Imagine U Reminder (bilingual)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Imagine_U_Reminder_bilingual_Alert</targetReference>
+            </connector>
+            <label>Imagine U Reminder (bilingual)</label>
         </rules>
         <rules>
             <name>Substitute_Pool_Reminder_English</name>
@@ -187,7 +357,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_English_SMS_Body</targetReference>
+                <targetReference>Substitute_Pool_Reminder_English_Alert</targetReference>
             </connector>
             <label>Substitute Pool Reminder (English)</label>
         </rules>
@@ -208,9 +378,6 @@
                     <stringValue>Substitute Pool Reminder (Spanish)</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>SubPool_Reminder_Spanish_SMS_Body</targetReference>
-            </connector>
             <label>Substitute Pool Reminder (Spanish)</label>
         </rules>
         <rules>
@@ -231,7 +398,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_English_SMS_Body</targetReference>
+                <targetReference>LFCCPReminder_Alert</targetReference>
             </connector>
             <label>LFCCPReminder</label>
         </rules>
@@ -253,7 +420,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_Spanish_SMS_Body</targetReference>
+                <targetReference>LFCCP_Reminder_Spanish_Alert</targetReference>
             </connector>
             <label>LFCCP Reminder Spanish</label>
         </rules>
@@ -275,7 +442,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_English_SMS_Body</targetReference>
+                <targetReference>LFCCP_Creative_Reminder1_Alert</targetReference>
             </connector>
             <label>LFCCP Creative Reminder1</label>
         </rules>
@@ -297,7 +464,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>SubPool_Reminder_English_SMS_Body</targetReference>
+                <targetReference>Prepare_Reminder_English_Alert</targetReference>
             </connector>
             <label>Prepare Reminder (English)</label>
         </rules>
@@ -305,8 +472,8 @@
     <decisions>
         <name>Valid_Class_Notification</name>
         <label>Valid Class Notification</label>
-        <locationX>508</locationX>
-        <locationY>675</locationY>
+        <locationX>802</locationX>
+        <locationY>719</locationY>
         <defaultConnector>
             <targetReference>Get_Campaign</targetReference>
         </defaultConnector>
@@ -334,8 +501,8 @@
     <decisions>
         <name>Valid_Email</name>
         <label>Valid Email</label>
-        <locationX>508</locationX>
-        <locationY>392</locationY>
+        <locationX>589</locationX>
+        <locationY>306</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
         </defaultConnector>
@@ -359,14 +526,14 @@
     <decisions>
         <name>Valid_Member</name>
         <label>Valid Member</label>
-        <locationX>509</locationX>
-        <locationY>204</locationY>
+        <locationX>390</locationX>
+        <locationY>303</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>Valid_Member_Check</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>varMemberId</leftValueReference>
+                <leftValueReference>varInputMemberId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -378,80 +545,78 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Valid_Mobile</name>
-        <label>Valid Mobile</label>
-        <locationX>1371</locationX>
-        <locationY>70</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Valid_Mobile_Number</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>soContact.MobilePhone</leftValueReference>
-                <operator>NotEqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>soContact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Send_SMS</targetReference>
-            </connector>
-            <label>Valid Mobile Number</label>
-        </rules>
-    </decisions>
-    <description>DB 2/7 - Switch to Twilio managed Send SMS
-LS 10/27 - set to run as System Context with Sharing
-DB 9/11 - remove create event (just have in master)
-DB 8/5 Switch from Training Status to Status
-SMS Async Send</description>
+    <description>DB 8/5 Switch from Training Status to Status
+LS 6/25 adding bilingual Imagine U reminder
+DaveB: Default Event Ownership to Training
+3/22 DB - filter by Member Status</description>
     <formulas>
         <name>checkValidEmail</name>
         <dataType>Boolean</dataType>
         <expression>REGEX({!varMemberEmail},&quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}&quot;)</expression>
     </formulas>
-    <formulas>
-        <name>SMSEnglishReminder</name>
-        <dataType>String</dataType>
-        <expression>&quot;Hey, this is the Imagine Institute! Your orientation is coming up! &quot; +
-{!soCampaign.c501_cm__Training_Name__c} + &quot; is almost here. &quot; + 
-&quot;When: &quot; + TEXT(DATEVALUE({!soCampaign.c501_cm__custom_Start_DateTime__c})) + &quot; &quot; +
-&quot;Where: &quot; + SUBSTITUTE({!soCampaign.c501_cm__C501_Training_Location_Text__c}, &quot;&lt;br&gt;&quot;, &quot; &quot;) +
-&quot;  &gt;&gt;Change your preferences here: https://imaginewa.org/pref&quot;</expression>
-    </formulas>
-    <formulas>
-        <name>SMSSpanishReminder</name>
-        <dataType>String</dataType>
-        <expression>&quot;¡Hola, es el Instituto Imagine! ¡Su entrenamiento se acerca! &quot; +
-{!soCampaign.c501_cm__Training_Name__c} + &quot; ya casi está aquí. &quot; + 
-&quot;Cuando: &quot; + TEXT(DATEVALUE({!soCampaign.c501_cm__custom_Start_DateTime__c})) + &quot; &quot; +
-&quot;Dirección: &quot; + SUBSTITUTE({!soCampaign.c501_cm__C501_Training_Location_Text__c}, &quot;&lt;br&gt;&quot;, &quot; &quot;) +
-&quot; &gt;&gt;Cambia tus preferencias aquí: https://imaginewa.org/pref&quot;</expression>
-    </formulas>
-    <interviewLabel>Training Reminder SMS {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Training Reminder SMS</label>
+    <interviewLabel>Training Reminder {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Training Reminder</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
-    <processMetadataValues>
-        <name>CanvasMode</name>
-        <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
-        </value>
-    </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Event</name>
+        <label>Create Event</label>
+        <locationX>1638</locationX>
+        <locationY>529</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>varEmailType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <stringValue>0056A000000qgpsQAA</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Class Reminder Email Notification</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Email</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>soContact.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordCreates>
     <recordLookups>
         <name>Get_Campaign</name>
         <label>Get Campaign</label>
-        <locationX>514</locationX>
-        <locationY>507</locationY>
+        <locationX>534</locationX>
+        <locationY>519</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Send_Reminder</targetReference>
@@ -468,15 +633,41 @@ SMS Async Send</description>
             <assignToReference>varEmailType</assignToReference>
             <field>c501_cm__Reminder_Email_Template__c</field>
         </outputAssignments>
+        <outputAssignments>
+            <assignToReference>soCampaign.Status</assignToReference>
+            <field>Status</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_0</name>
+        <label>Get Campaign</label>
+        <locationX>492</locationX>
+        <locationY>728</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Valid_Campaign</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>soCampaign.Id</elementReference>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputAssignments>
+            <assignToReference>soCampaign.Status</assignToReference>
+            <field>Status</field>
+        </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>Get_Class_Notification</name>
         <label>Get Class Notification</label>
-        <locationX>323</locationX>
-        <locationY>673</locationY>
+        <locationX>347</locationX>
+        <locationY>727</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Valid_Class_Notification</targetReference>
+            <targetReference>Get_Campaign_0</targetReference>
         </connector>
         <filters>
             <field>c501_cm__Contact_Record_Type_Id__c</field>
@@ -501,8 +692,8 @@ SMS Async Send</description>
     <recordLookups>
         <name>Get_Contact</name>
         <label>Get Contact</label>
-        <locationX>323</locationX>
-        <locationY>517</locationY>
+        <locationX>347</locationX>
+        <locationY>464</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Class_Notification</targetReference>
@@ -516,35 +707,15 @@ SMS Async Send</description>
         </filters>
         <object>Contact</object>
         <outputAssignments>
-            <assignToReference>soContact.FirstName</assignToReference>
-            <field>FirstName</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.Id</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.LastName</assignToReference>
-            <field>LastName</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.MobilePhone</assignToReference>
-            <field>MobilePhone</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>soContact.RecordTypeId</assignToReference>
             <field>RecordTypeId</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.c501_cm__C501_SMS_Opt_Out__c</assignToReference>
-            <field>c501_cm__C501_SMS_Opt_Out__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>Get_Member</name>
         <label>Get Member</label>
-        <locationX>390</locationX>
-        <locationY>52</locationY>
+        <locationX>400</locationX>
+        <locationY>164</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Valid_Member</targetReference>
@@ -577,46 +748,18 @@ SMS Async Send</description>
             <field>Email</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>varMemberId</assignToReference>
+            <assignToReference>varInputMemberId</assignToReference>
             <field>Id</field>
         </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soCampaign.c501_cm__C501_Training_Location_Text__c</assignToReference>
-            <field>c501_cm__C501_Training_Location_Text__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soCampaign.c501_cm__custom_End_DateTime__c</assignToReference>
-            <field>c501_cm__Training_End_DateTime__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soCampaign.c501_cm__C501_Training_Location__c</assignToReference>
-            <field>c501_cm__Training_Location__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soCampaign.c501_cm__Training_Name__c</assignToReference>
-            <field>c501_cm__Training_Name__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soCampaign.c501_cm__custom_Start_DateTime__c</assignToReference>
-            <field>c501_cm__Training_Start_DateTime__c</field>
-        </outputAssignments>
     </recordLookups>
-    <runInMode>SystemModeWithSharing</runInMode>
     <start>
         <locationX>50</locationX>
-        <locationY>48</locationY>
+        <locationY>224</locationY>
         <connector>
             <targetReference>Get_Member</targetReference>
         </connector>
     </start>
-    <status>Active</status>
-    <variables>
-        <name>SMS_Body</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
+    <status>Obsolete</status>
     <variables>
         <name>soCampaign</name>
         <dataType>SObject</dataType>
@@ -642,14 +785,6 @@ SMS Async Send</description>
         <objectType>Contact</objectType>
     </variables>
     <variables>
-        <name>varCampaignMember</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>CampaignMember</objectType>
-    </variables>
-    <variables>
         <name>varEmailType</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -662,27 +797,12 @@ SMS Async Send</description>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>varMember</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>CampaignMember</objectType>
-    </variables>
-    <variables>
-        <name>varMemberEmail</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
         <value>
             <stringValue></stringValue>
         </value>
     </variables>
     <variables>
-        <name>varMemberId</name>
+        <name>varMemberEmail</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

@@ -16,7 +16,7 @@ You have one or more certificates that have expired or are about to expire.
 Sub Pool Status: {!Contact.ii_Sub_Pool_Status__c}
 
 
-{!Contact.C501_Certs_Expiring_Message__c}
+{!Contact.c501_cm__C501_Certs_Expiring_Message__c}
 
 
 

@@ -6,11 +6,11 @@
         <description>Certification Expiring Admin Alert</description>
         <protected>false</protected>
         <recipients>
-            <recipient>db.iisc@501commons.org</recipient>
+            <recipient>christopherderuvo@imaginewa.org</recipient>
             <type>user</type>
         </recipients>
         <recipients>
-            <recipient>christopherderuvo@imaginewa.org</recipient>
+            <recipient>db.iisc@501commons.org</recipient>
             <type>user</type>
         </recipients>
         <recipients>

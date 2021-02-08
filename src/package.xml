@@ -167,6 +167,17 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>C501_Delete_Guest_Update_Record</members>
+        <members>C501_Guest_Update_Create_FLOW</members>
+        <members>Email_Only_Preferences_FLOW_Custom</members>
+        <members>Email_SMS_Preferences_FLOW</members>
+        <members>SMS_Only_Preferences_FLOW</members>
+        <members>Send_Certification_Alert_FLOW</members>
+        <members>Training_Confirmation</members>
+        <members>Training_No_Show</members>
+        <members>Training_Registration</members>
+        <members>Training_Reminder</members>
+        <members>Training_Reminder_SMS</members>
         <members>cmbp_Create_Training_Initialization_CUSTOM</members>
         <members>cmbp_Create_Training_Initialization_TEMPLATE</members>
         <members>cmbp_Delete_Incomplete_Lead_FLOW_TEMPLATE</members>
@@ -192,12 +203,19 @@
         <members>cmbp_Training_Outreach_FLOW_TEMPLATE</members>
         <members>cmbp_Training_Registration_FLOW_Custom</members>
         <members>cmbp_Training_Registration_FLOW_TEMPLATE</members>
-        <members>Training_Reminder_SMS</members>
-    <name>Flow</name>
+        <members>flow_Training_Confirmation_SMS</members>
+        <members>pbContactCreatedOrEdited</members>
+        <members>processContactUnitStatusChange</members>
+        <name>Flow</name>
     </types>
     <types>
         <members>C501_CampaignMemberStatuses__mdt-CampaignMemberStatus Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>II_Training_Registration</members>
+        <members>cmbp_Class_Management_Letterhead</members>
+        <name>Letterhead</name>
     </types>
     <types>
         <members>C501_CampaignMemberStatuses__mdt.All</members>
@@ -212,11 +230,6 @@
         <members>AutomationReportsSystemAdminOnly/Outreach_Automation_Contact_vHN</members>
         <members>AutomationReportsSystemAdminOnly/Outreach_Automation_Training_ZCe</members>
         <name>Report</name>
-    </types>
-    <types>
-        <members>II_Training_Registration</members>
-        <members>cmbp_Class_Management_Letterhead</members>
-        <name>Letterhead</name>
     </types>
     <types>
         <members>CampaignMember.Denied_Email_Alert</members>

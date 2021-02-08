@@ -797,12 +797,12 @@ DB 12/7 - only outreach for Planned or In Progress no outreach for Canceled, Com
     <formulas>
         <name>doesTrainingLanguageMatch</name>
         <dataType>Boolean</dataType>
-        <expression>IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Spanish&quot; &amp;&amp; INCLUDES({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c},&quot;Spanish&quot;), TRUE,
-IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Somali&quot; &amp;&amp; INCLUDES({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c},&quot;Somali&quot;), TRUE,
+        <expression>IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Spanish&quot; &amp;&amp; TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Spanish&quot;, TRUE,
+IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;Somali&quot; &amp;&amp; TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Somali&quot;, TRUE,
 IF(TEXT({!outreachTrainingRecord.c501_cm__Language__c}) = &quot;English&quot; &amp;&amp; (
-ISBLANK({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) ||
-INCLUDES({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}, &quot;English&quot;) ||
-INCLUDES({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}, &quot;Unknown&quot;)), TRUE, FALSE)))</expression>
+ISBLANK(TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c})) ||
+TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;English&quot; ||
+TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;Unknown&quot;), TRUE, FALSE)))</expression>
     </formulas>
     <formulas>
         <name>getChildTrainingDescription</name>

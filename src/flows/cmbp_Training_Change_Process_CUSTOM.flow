@@ -2315,7 +2315,7 @@ ISNEW()</expression>
         <object>Campaign</object>
     </recordUpdates>
     <startElementReference>isChangedDecision17_myRule_16_Language_c</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

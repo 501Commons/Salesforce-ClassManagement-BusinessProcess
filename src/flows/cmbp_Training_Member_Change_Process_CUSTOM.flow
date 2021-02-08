@@ -850,7 +850,7 @@ ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} ))</expression>
         <object>CampaignMember</object>
     </recordUpdates>
     <startElementReference>isChangedDecision12_myRule_11_Status</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
