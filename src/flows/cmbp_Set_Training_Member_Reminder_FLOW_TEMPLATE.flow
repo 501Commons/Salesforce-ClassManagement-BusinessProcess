@@ -103,7 +103,7 @@
             <targetReference>Get_Member</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>varInputMemberId</name>
         <dataType>String</dataType>

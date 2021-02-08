@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><span style="font-size:21px;"><span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif;">Dear&nbsp;{!Contact.FirstName},<br><br>Thanks for attending our&nbsp;{!Campaign.Name} on&nbsp;{!Campaign.EndDate}.&nbsp;</span></span></div><div><span style="font-size:21px;"><span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif;"><br></span></span></div><div><span style="font-size:21px;"><span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif;">If you wish to apply, please do so <a href="https://docs.google.com/forms/d/e/1FAIpQLScVu4wcOMK6arA0bGlG-xSXc_FVgfFjvNBilXW1EddYmoFnxQ/viewform?usp=sf_link">here</a>. &nbsp;<br><br>Thanks again for joining us!<br><br>-The Imagine Institute<br><br><a data-cke-saved-href="http://imaginewa.org/" href="http://imaginewa.org/">imaginewa.org</a></span></span></div><div style=""><font face="arial">{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</font></div>]]></td>
+</tr>
+</table>

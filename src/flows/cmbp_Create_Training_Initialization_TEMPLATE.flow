@@ -17,13 +17,13 @@
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>db.ii@501commons.org,</stringValue>
+                <stringValue>db.iisc@501commons.org,</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderAddress</name>
             <value>
-                <stringValue>db.ii@501commons.org</stringValue>
+                <stringValue>db.iisc@501commons.org</stringValue>
             </value>
         </inputParameters>
         <inputParameters>

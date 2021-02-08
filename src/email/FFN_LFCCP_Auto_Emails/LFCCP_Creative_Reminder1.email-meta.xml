@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LFCCP Creative Reminder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>White_Logo_with_Imagine_Blue2</letterhead>
+    <name>LFCCP Creative Reminder1</name>
+    <style>freeForm</style>
+    <subject>Your training is coming up!</subject>
+    <textOnly>Your training is coming up! {!CampaignMember.FirstName}, {!CampaignMember.c501_cm__Training_Name__c} is almost here. Details are below! When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c} Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c} Once you have received this email confirmation from the Imagine Institute, you are considered registered. Registered participants who give less than 24 hours&apos; notice for cancellation or &quot;no show&quot; will not be eligible to receive a bonus this fiscal year (July 1-June 30). Please let us know if you won&apos;t be able to make it so we can let another provider take the class. Call us at 206-492-5249 or email training@imaginewa.org. See you soon! -The Imagine Institute www.imaginewa.org ¡Su entrenamiento se acerca! {!CampaignMember.FirstName}, {!CampaignMember.Training_Name_c} ya casi está aquí. Cuando: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c} Dirección: {!CampaignMember.c501_cm__C501_Training_Location_Text__c} Una vez que usted reciba esta confirmación electrónica de parte de el Instituto Imagen usted ya se puede considerar registrado. Participantes registrados quienes den menos de 24 horas de notificación para cancelar o “no se presenten” no serán elegidos para recibir más bonos este año fiscal ( Julio 1 - Junio 30). Por favor déjenos saber si usted no podrá asistir, así nosotros podemos darle la oportunidad a otras proveedoras de tomar la clase. ¿Preguntas? Contáctenos al 206-492-5249 o training@imaginewa.org. -The Imagine Institute www.imaginewa.org
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PREPARE Orientation Confirmation</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header</letterhead>
+    <name>PREPARE Orientation Confirmation</name>
+    <style>freeForm</style>
+    <subject>You&apos;re registered!</subject>
+    <textOnly>You&apos;re registered!
+
+Congratulations {!CampaignMember.FirstName},
+The Imagine Institute has received your application for {!CampaignMember.c501_cm__Training_Name__c}, an anti-racist, trauma informed curriculum designed for early learning educators in King County.   Based on the responses in your application, you meet the criteria for eligibility and we are pleased to enroll you in such an important and needed program for the children you serve.
+
+
+Next Steps:
+
+
+All participants must attend a mandatory orientation.  Based on the cohort preference stated in your application, your orientation will be held on:
+
+
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+{!CampaignMember.Group_Classes__c}
+
+Food Provided: {!CampaignMember.Meal_Provided__c}
+If you have any issues with your assigned orientation, please contact us immediately.  Imagine will attempt to schedule you at an alternate orientation if at all possible.  Participation in orientation is mandatory, and Imagine cannot admit participants into the program without completion of this requirement.
+
+During the orientation, you will receive additional program information, requirements and expectations, along with details about program incentives.
+
+Again, we are so excited to welcome you to this program. Your participation is crucial to implementation of practices that are aimed at building resilience in children in our community.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+¡Está registrado!
+
+{!CampaignMember.FirstName}, está registrado para {!CampaignMember.c501_cm__Training_Name__c} con el Instituto Imagine.
+
+
+
+Cuando:
+
+{!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Dirección:
+
+{!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+
+Si no puede asistir, favor de avisarnos tan pronto como posible.
+
+
+
+
+
+¿Preguntas? Contáctenos al 206-492-5249 o prepareforcare@imaginewa.org.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Any Merge Fields Added then need to update the flow &apos;cmbp Training Notification FLOW CUSTOM&apos;</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Outreach SMS (English)</name>
+    <style>none</style>
+    <subject>Outreach SMS-Email</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Substitute Confirmation (English)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>Substitute Confirmation (English)</name>
+    <style>freeForm</style>
+    <subject>You&apos;re registered!</subject>
+    <textOnly>You&apos;re registered!
+
+You have successfully registered for {!CampaignMember.c501_cm__Training_Name__c} with the Imagine Institute. Details are below!
+
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+Where: {!CampaignMember.Group_Classes__c}
+
+
+If this is an online training, please click the above link to complete your registration!!
+
+Please let us know if you won&apos;t be able to make it.
+
+Call us at 206-492-5249 or email subpool@imaginewa.org.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+Remember: Bring your MERIT STARS number with you. If you have not signed up for one yet, click here.
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

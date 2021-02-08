@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>CDF Thank You (Spanish</name>
+    <style>freeForm</style>
+    <subject>Gracias por asistir, {!Contact.FirstName}!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thanks for attending our {!Campaign.Name} on {!Campaign.EndDate}. Once we have record that you have attended all the required hours of training to receive your bonus, we will submit your information to the State of Washington for payment.
+
+You must claim your bonus on your invoice from the State.
+
+Thanks again for joining us!
+
+-The Imagine Institute
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

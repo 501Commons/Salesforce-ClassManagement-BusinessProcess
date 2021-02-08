@@ -1,0 +1,31 @@
+<apex:page id="cmbp_TrainingRegistrationFinishCustom" showHeader="false" sidebar="false" lightningStylesheets="true">
+
+  <style> 
+  
+     body { 
+       font-family: 'Houschka Rounded Alt';
+       font-weight: 500;
+       font-style: normal;
+       font-size: 18px;
+       line-height: 1.42857143;
+       color: #333;
+    } 
+    
+    input, textarea, select, button {
+       font-family: 'Houschka Rounded Alt';
+       font-weight: 500;
+       font-style: normal;
+       font-size: 18px;
+       line-height: 1.42857143;
+       color: #333;
+    }
+    
+    body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+        background-color: #fff;
+    }
+            
+  </style>
+
+<br/><br/>
+<h1>Thanks for registering</h1>
+</apex:page>

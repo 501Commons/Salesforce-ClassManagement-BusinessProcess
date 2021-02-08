@@ -1,0 +1,8 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal">Dear {!Contact.FirstName},</p><p class="MsoNormal"><br></p><p class="MsoNormal">Thank you so much for attending {!Campaign.c501_cm__Training_Name__c} with the
+Imagine Institute. We’d love to hear about your experience. Please
+take a moment to complete a quick survey to help us improve our services!</p><p class="MsoNormal"><br></p><p class="MsoNormal">Click here to take the survey: www.survey.com.&nbsp;</p><p class="MsoNormal"><br></p><p class="MsoNormal">Sincerely,</p><p class="MsoNormal"><br></p><p class="MsoNormal">The Imagine Institute</p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p><div style=""><font face="arial">{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</font></div>]]></td>
+</tr>
+</table>

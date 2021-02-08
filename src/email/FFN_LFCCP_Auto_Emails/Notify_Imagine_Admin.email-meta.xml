@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Image Admin since contact missing email address</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>Notify Imagine Admin</name>
+    <style>freeForm</style>
+    <subject>Imagine Admin - Action Required - Call</subject>
+    <textOnly>Imagine Administrator - Action Required
+
+There was a problem notifying {!CampaignMember.FirstName}, {!CampaignMember.LastName}.  This could be related to an invalid email, Salesforce issue, missing fields on Training, or a new email Confirmation or Reminder template added that needs to be updated in Salesforce Process Builder/Flow.
+
+Please call to let them know about the training if they are registered then investigate what caused the issue (e.g., update contact email).
+
+The Training Status is {!CampaignMember.Status}.
+
+If Denied then let them know they were not accepted for the training otherwise based on the status let them know they are registered and reminder on the training.
+
+Phone: {!CampaignMember.Phone}
+Email: {!CampaignMember.Email}
+Training Status: {!CampaignMember.Status}
+Training: {!CampaignMember.c501_cm__Training_Full_Name__c}
+
+Remember, all eligible participants who complete all hours of this training will receive a {!CampaignMember.Training_Incentive__c} bonus! Details are below!
+
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+Please let us know if you won&apos;t be able to make it so we can let another provider take the class.
+
+Call us at 206-492-5249 or email training@imaginewa.org.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+Remember: In order to receive your {!CampaignMember.Training_Incentive__c} bonus, you must be authorized and providing care to a subsidized child in the month the training takes place. You must attend both days of training for a $500 bonus and all three days of Child Care Basics training for a $750 bonus. Only registered participants will be allowed entry.
+¡Está registrado!
+
+{!CampaignMember.FirstName}, está registrado para {!CampaignMember.c501_cm__Training_Name__c} con el Imagine Institute.
+
+
+
+Cuando: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+Dirección: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+
+Si no puede asistir, favor de avisarnos tan pronto como posible.
+
+¿Preguntas? Contáctenos al 206-492-5249 o training@imaginewa.org.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+
+Para recibir su bono de {!CampaignMember.Training_Incentive__c}, debe cuidar a un niño con subsidio en el mes de las clases que usted toma y reclamar todas sus facturas mensuales. Los proveedores sin autorización pueden ser facturados para el precio de las clases de taller, así que por favor asegúrese de que usted cumple con los requisitos de elegibilidad para la bonificación antes de asistir la clase. Solo los participantes registrados puede asistir. Debe assistir los dos días de entrenamiento para recibir la bonificación de $500 y los tres días de Conceptos Básicos del Cuidado de Nino para recibir la bonificación de $750.
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

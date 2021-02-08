@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email recieved when denied</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header</letterhead>
+    <name>Denied Email Imagine U</name>
+    <style>freeForm</style>
+    <subject>Class Registration Error</subject>
+    <textOnly>Our records show you do not qualify* for {!CampaignMember.c501_cm__Training_Name__c} on {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c} with the Imagine Institute.
+
+If you feel this is an error please call us at 206-492-5249 or email training@imaginewa.org.
+
+Thank you,
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+----
+
+
+Nuestros archivos indican que no califica* para {!CampaignMember.c501_cm__Training_Name__c} en {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c} con El Instituto Imagine.
+
+Si ud cree que es un error favor de comunicarse al 206-492-5249 O por correo electronico training@imaginewa.org.
+
+-El Instituto Imagine
+
+www.imaginewa.org
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

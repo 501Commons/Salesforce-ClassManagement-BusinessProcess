@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LFCCP Reminder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>White_Logo_with_Imagine_Blue2</letterhead>
+    <name>LFCCP Reminder</name>
+    <style>freeForm</style>
+    <subject>You&apos;re training is coming up!</subject>
+    <textOnly>Your training is coming up!
+
+{!CampaignMember.FirstName}, {!CampaignMember.c501_cm__Training_Name__c} is almost here. Details are below!
+
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+Food Provided: {!CampaignMember.Meal_Provided__c}
+
+Please let us know if you won&apos;t be able to make it so we can let another provider take the class.
+
+Please allow up to 90 business days starting the following month of training for cash incentive.
+
+If you earn $600 or more in cash incentives through the Imagine Institute in a calendar year, January 1, 2020 – December 31, 2020, it is subject to taxes and we need to collect a W-9 form from you BEFORE we can process your payment.
+
+Please fill out the W-9 form, click here, sign it and return to training@imaginewa.org.
+
+Call us at 206-492-5249 or email training@imaginewa.org.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+¡Su entrenamiento se acerca!{!CampaignMember.FirstName}, {!CampaignMember.Training_Name_c} ya casi está aquí.
+
+
+
+Cuando:
+
+{!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Dirección:
+
+{!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+
+
+
+Comida será servida: !CampaignMember.Meal_Provided__c}
+
+
+Si no puede asistir, favor de avisarnos tan pronto como posible.
+
+
+
+Espere hasta 90 días hábiles a partir del siguiente mes de capacitación para recibir incentivos en efectivo.
+
+
+
+Si gana $ 600 o más en incentivos en efectivo a través del Imagine Institute en un año calendario, del 1 de enero de 2020 al 31 de diciembre de 2020, está sujeto a impuestos y debemos cobrarle un formulario W-9 ANTES de que podamos procesar su pago.
+
+
+
+Complete el formulario W-9, haga clic aquí, fírmelo y regrese a training@imaginewa.org.
+
+
+¿Preguntas? Contáctenos al 206-492-5249 o training@imaginewa.org.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

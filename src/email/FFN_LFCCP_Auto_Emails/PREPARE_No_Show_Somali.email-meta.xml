@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PREPARE No Show Somali</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>PREPARE No Show (Somali)</name>
+    <style>freeForm</style>
+    <subject>Missed training</subject>
+    <textOnly>Ku {!CampaignMember.FirstName},
+
+Sida uu muujinaayo diinwaankeena, waxaad seegtay tababarka {!CampaignMember.c501_cm__Training_Name__c} taariikhda {!CampaignMember.c501_cm__Training_Start_DateTime__c}. La participación en esta capacitación es obligatoria para completar el programa PREPARE for Care. Ka qayb-galka tababarkaan waa qasab si aad u dhammeyso Barnaamajka PREPARE for Care. Fadlan la xiriir prepareforcare@imaginewa.org si aad ka wada hadashaan habab suurtogal ah aad la qabsan kartid  shuruudaha barnaamijka.
+
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

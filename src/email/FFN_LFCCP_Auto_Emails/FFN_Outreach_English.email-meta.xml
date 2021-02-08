@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>FFN Outreach English</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>FFN Outreach English</name>
+    <style>freeForm</style>
+    <subject>Free child care training and $750 bonus is coming to your area!</subject>
+    <textOnly>Don&apos;t miss this free training and the chance to earn up to $750!
+
+The Imagine Institute is partnering with your union, SEIU Local 925 and the Department of Children, Youth and Families to provide free training to Family, Friend and Neighbor providers like you. Eligible participants can receive up to $750 for attending.
+
+There is training is coming up soon in your area. Details are below:
+
+
+What: {!CampaignMember.c501_cm__Training_Name__c}
+
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Where: {!Campaign.City__c}
+
+Language: {!Campaign.Language__c}
+
+Click Here to Register!
+
+You can also register by phone, at 206-492-5249.
+
+Hope to see you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+All eligible Family, Friend, and Neighbor child care provider participants who complete all hours of this training will receive a {!CampaignMember.Training_Incentive__c} bonus!
+
+Substitutes who are not Family, Friend, and Neighbor providers are not eligible for a bonus.
+
+Remember: In order to receive your {!CampaignMember.Training_Incentive__c} bonus, you must be within the SEIU 925 bargaining unit and authorized and providing care to a subsidized child in the month the training takes place. You must also have a MERIT STARS number. Please click here to register for your STARS number before class. You must attend both days of the FFN Mandatory and STEM training for a $500 bonus or all three days of Child Care Basics training for a $750 bonus. Only one bonus per fiscal year (July 1, 2018 – June 30, 2019). Only registered participants will be allowed entry.
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

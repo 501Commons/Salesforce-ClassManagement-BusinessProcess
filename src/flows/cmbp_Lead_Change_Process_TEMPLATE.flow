@@ -1,70 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <processMetadataValues>
-            <name>ActionCallType</name>
-            <value>
-                <stringValue>flow</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>flowSelection</name>
-            <value>
-                <stringValue>cmbp Lead Change FLOW CUSTOM</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>Check Outreach Member</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
-        <actionName>cmbp_Lead_Change_FLOW_CUSTOM</actionName>
-        <actionType>flow</actionType>
-        <connector>
-            <targetReference>myDecision2</targetReference>
-        </connector>
-        <inputParameters>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>varInputLeadId</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>maxOccurs</name>
-                <value>
-                    <numberValue>1.0</numberValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>objectType</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <name>varInputLeadId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -91,7 +26,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_1_A1</targetReference>
+                <targetReference>myDecision2</targetReference>
             </connector>
             <label>Lead Change</label>
         </rules>
@@ -157,7 +92,7 @@
      TEXT([Lead].c501_cm__Training_Status__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A1_7200009340</name>
+        <name>formula_4_myRule_3_A1_6940419546</name>
         <dataType>String</dataType>
         <expression>IF(ISPICKVAL({!myVariable_current.c501_cm__Training_Status__c}, &quot;Pending&quot;), 
      &quot;Registered&quot;,
@@ -172,7 +107,7 @@
      TEXT([Lead].c501_cm__Training_Status__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_3_A1_7656931524</name>
+        <name>formula_5_myRule_3_A1_7421132144</name>
         <dataType>String</dataType>
         <expression>IF(ISPICKVAL({!myVariable_current.c501_cm__Training_Status__c}, &quot;Pending&quot;), 
      &quot;Registered&quot;,
@@ -288,7 +223,7 @@
             </processMetadataValues>
             <field>Status</field>
             <value>
-                <elementReference>formula_4_myRule_3_A1_7200009340</elementReference>
+                <elementReference>formula_4_myRule_3_A1_6940419546</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -324,7 +259,7 @@
             </processMetadataValues>
             <field>c501_cm__Training_Status__c</field>
             <value>
-                <elementReference>formula_5_myRule_3_A1_7656931524</elementReference>
+                <elementReference>formula_5_myRule_3_A1_7421132144</elementReference>
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
@@ -387,7 +322,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Email Opt Out</stringValue>
+                    <stringValue>SMS Opt Out</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -402,7 +337,7 @@
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
-            <field>HasOptedOutOfEmail</field>
+            <field>c501_cm__C501_SMS_Opt_Out__c</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
@@ -423,7 +358,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>SMS Opt Out</stringValue>
+                    <stringValue>Email Opt Out</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -438,7 +373,7 @@
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
-            <field>c501_cm__C501_SMS_Opt_Out__c</field>
+            <field>HasOptedOutOfEmail</field>
             <value>
                 <booleanValue>false</booleanValue>
             </value>

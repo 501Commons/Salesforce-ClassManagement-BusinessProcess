@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>FFN Reminder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>White_Logo_with_Imagine_Blue2</letterhead>
+    <name>FFN Reminder (Spanish)</name>
+    <style>freeForm</style>
+    <subject>¡Su entrenamiento se acerca!</subject>
+    <textOnly>¡Su entrenamiento se acerca!
+
+{!CampaignMember.FirstName}, {!Campaign.Name} ya casi está aquí.
+
+
+
+Cuando: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Dirección: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+
+
+Comida será servida: {!CampaignMember.Meal_Provided__c}
+
+
+Si no puede asistir, favor de avisarnos tan pronto como posible.
+¿Preguntas? Contáctenos al 206-492-5249 o training@imaginewa.org.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+
+Para recibir su bono de {!CampaignMember.Training_Incentive__c}, debe cuidar a un niño con subsidio en el mes de las clases que usted toma y reclamar todas sus facturas mensuales. Los proveedores sin autorización pueden ser facturados al precio de las clases del taller, así que por favor asegúrese de que usted cumple con los requisitos de elegibilidad para la bonificación antes de asistir a la clase. Solo los participantes registrados pueden asistir. Ud necesita tener un numero de Merit STARS (numero de estrellas). Porfavor oprima aqui para registrarse antes de que comience su clase. Debe asistir todos los días de las clases obligatorias de FFN (Familiares, Amigos y Vecinos) para obtener el bono de 500dlls o asistir todos los días de la capacitación Básica de Cuidado Infantil para recibir el bono de $ 750. Solo un bono por año fiscal (Julio 1 - Junio 30). Solo los participantes registrados podrán ingresar.
+
+
+
+Los sustitutos que no son proveedores &quot;Family, Friends, and Neighbors&quot; no recibirán una bono.
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

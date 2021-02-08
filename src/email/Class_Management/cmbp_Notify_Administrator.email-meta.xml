@@ -15,16 +15,16 @@ This could be related to an invalid email, Salesforce issue, missing fields on T
 
 Please call to let them know about the training if they are registered then investigate what caused the issue (e.g., update contact email).
 
-The Training Status is {!CampaignMember.c501_cm__Training_Status__c}.
+The Training Status is {!CampaignMember.Training_Status__c}.
 
 If Denied then let them know they were not accepted for the training.  Otherwise, based on the status, let them know they are registered and send a reminder for the training.
 
 Phone: {!CampaignMember.Phone}
 Email: {!CampaignMember.Email}
-Training Status: {!CampaignMember.c501_cm__Training_Status__c}
+Training Status: {!CampaignMember.Training_Status__c}
 Training: {!CampaignMember.c501_cm__Training_Full_Name__c}
 
-Remember, all eligible participants who complete all hours of this training will receive a {!CampaignMember.c501_cm__Training_Incentive__c} bonus! Details are below!
+Remember, all eligible participants who complete all hours of this training will receive a {!CampaignMember.Training_Incentive__c} bonus! Details are below!
 
 
 When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}.

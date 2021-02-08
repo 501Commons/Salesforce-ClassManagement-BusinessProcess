@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Substitute Pool Reminder English</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>White_Logo_with_Imagine_Blue2</letterhead>
+    <name>Substitute Pool Reminder (English)</name>
+    <style>freeForm</style>
+    <subject>Your orientation is coming up!</subject>
+    <textOnly>Your orientation is coming up!
+
+{!CampaignMember.FirstName}, {!CampaignMember.c501_cm__Training_Name__c} is almost here. Details are below!
+
+When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Where: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+This training will take place online over Go To Training. You will receive an email with a link to the training. Please reference the following video if you are experiencing difficulties accessing the training: https://www.youtube.com/watch?v=WF3DD8vgws0
+
+Call us at 206-492-5249 or email subpool@imaginewa.org.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+Remember: Bring your MERIT STARS number with you. If you have not signed up for one yet, click here.
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

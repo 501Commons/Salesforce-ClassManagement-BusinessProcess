@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Admin Alert - missing valid email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>White_Logo_with_Imagine_Blue2</letterhead>
+    <name>Certificate Expiring Status Admin</name>
+    <style>freeForm</style>
+    <subject>Update Your Qualifications</subject>
+    <textOnly>Admin Alert - Contact Email Blank
+
+
+
+Name: {!Contact.Name}
+
+Id: {!Contact.Id}
+
+Stars Id: {!Contact.ii_Stars_Id__c}
+
+
+
+Admin Action Required, please follow up with a Phone Call
+
+Phone: {!Contact.Phone}
+
+
+
+
+
+Hello {!Contact.FirstName},
+
+
+You have one or more certificates that have expired or are about to expire.
+
+
+
+Sub Pool Status: {!Contact.ii_Sub_Pool_Status__c}
+
+
+{!Contact.C501_Certs_Expiring_Message__c}
+
+
+
+To view all your qualifications, log into your Merit account @ https://apps.dcyf.wa.gov/MERIT/Home/Welcome
+
+
+
+
+Please make sure to send us a copy of your updated certificates!
+
+
+
+Call us at 206-492-5249 or email subpool@imaginewa.org if you have any questions or need assistance.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

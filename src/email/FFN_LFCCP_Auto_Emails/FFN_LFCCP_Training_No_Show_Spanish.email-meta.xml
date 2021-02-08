@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>FFN or LFCCP No Show Spanish</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>FFN / LFCCP / Training No Show (Spanish)</name>
+    <style>freeForm</style>
+    <subject>Missed training</subject>
+    <textOnly>Estimado {!CampaignMember.FirstName},
+
+De acuerdo con nuestros registros, usted no asistió a la capacitación {!CampaignMember.c501_cm__Training_Name__c} en {!CampaignMember.c501_cm__Training_Start_DateTime__c}. Por favor visite https://imaginewa.org/training/ si desea registrarse para una clase diferente.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

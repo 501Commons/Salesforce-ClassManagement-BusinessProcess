@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Imagine U No Show (English)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>White_Logo_with_Imagine_Blue2</letterhead>
+    <name>Imagine U No Show (English)</name>
+    <style>freeForm</style>
+    <subject>Missed training</subject>
+    <textOnly>Dear {!CampaignMember.FirstName},
+
+According to our records, you missed {!CampaignMember.c501_cm__Training_Name__c} on {!CampaignMember.c501_cm__Training_Start_DateTime__c}. Participation in this training is mandatory to complete the Imagine U program.  Please contact mentors@imaginewa.org to discuss potential ways to catch up with program requirements.
+
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

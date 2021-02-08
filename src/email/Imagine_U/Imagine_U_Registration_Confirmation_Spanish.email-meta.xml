@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Imagine U Confirmation (Spanish)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>Imagine U Confirmation (Spanish)</name>
+    <style>freeForm</style>
+    <subject>¡Está registrado!</subject>
+    <textOnly>¡Está registrado!
+
+Usted y su intern están registrados para {!CampaignMember.c501_cm__Training_Name__c} con el Imagine Institute.
+
+
+
+
+Cuando: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Dirección: {!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+{!CampaignMember.Group_Classes__c}
+
+
+
+
+Comida será servida: {!CampaignMember.Meal_Provided__c}
+
+
+¿Preguntas? Contáctenos al 206-492-5249 o mentors@imaginewa.org.
+
+-El Instituto Imagine
+
+www.imaginewa.org
+
+
+
+
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

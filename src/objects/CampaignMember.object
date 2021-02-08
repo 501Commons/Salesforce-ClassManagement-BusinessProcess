@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <fullName>External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>External Id</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>Notification_Pending__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -15,5 +25,100 @@
         <inlineHelpText>Set as true when member was added because of the outreach process</inlineHelpText>
         <label>Outreach Member</label>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status_Matching__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Status Matching</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Training_Group_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Campaign.ParentId), &quot;&quot;,Campaign.Parent.c501_cm__Training_Name_WebForm__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Training Group Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c501_Email_Display_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(c501_cm__Training_End_DateTime__c),
+IF(ISBLANK(c501_cm__Training_Start_DateTime__c),
+&quot;&quot;,
+TEXT(c501_cm__Training_Start_DateTime__c) + &quot;.&quot;),
+TEXT(c501_cm__Training_Start_DateTime__c) + &quot; - &quot; + TEXT(c501_cm__Training_End_DateTime__c) + &quot;.&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Display Date</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c501_Email_Display_Incentive_EN__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(c501_Training_Incentive_Type__c),
+&quot;&quot;,
+CASE(c501_Training_Incentive_Type__c,
+&quot;Gift Card&quot;, &quot;This event includes a gift card worth &quot;,
+&quot;Honorarium&quot;, &quot;This event includes an honorarium worth &quot;,
+&quot;Stipend&quot;, &quot;This event includes a stipend worth &quot;,
+&quot;This event includes an incentive worth &quot;)
+&amp; Case(Campaign.c501_cm__Incentive__c, &quot;$50&quot;, &quot;$50.&quot;, &quot;$100&quot;, &quot;$100.&quot;, &quot;$150&quot;, &quot;$150.&quot;, &quot;$200&quot;, &quot;$200.&quot;, &quot;250&quot;, &quot;$250.&quot;, &quot;$500&quot;, &quot;$500.&quot;, &quot;$1000.&quot;, &quot;$1000&quot;, &quot;.&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Display Incentive EN</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c501_Email_Display_Incentive_ES__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(c501_Training_Incentive_Type__c),
+&quot;&quot;,
+CASE(c501_Training_Incentive_Type__c,
+&quot;Gift Card&quot;, &quot;Este evento incluye una tarjeta de regalo por valor de &quot;,
+&quot;Honorarium&quot;, &quot;Este evento incluye un honorario por valor de &quot;,
+&quot;Stipend&quot;, &quot;Este evento incluye un estipendio por valor de &quot;,
+&quot;Este evento incluye un regalo por valor de &quot;)
+&amp; Case(Campaign.c501_cm__Incentive__c, &quot;$50&quot;, &quot;$50.&quot;, &quot;$100&quot;, &quot;$100.&quot;, &quot;$150&quot;, &quot;$150.&quot;, &quot;$200&quot;, &quot;$200.&quot;, &quot;250&quot;, &quot;$250.&quot;, &quot;$500&quot;, &quot;$500.&quot;, &quot;$1000.&quot;, &quot;$1000&quot;, &quot;.&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Display Incentive ES</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c501_Email_Display_Meal_EN__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(c501_cm__Meal_Provided__c = &quot;No&quot;, &quot;&quot;, &quot;A meal is included.&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Display Meal EN</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c501_Email_Display_Meal_ES__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(c501_cm__Meal_Provided__c = &quot;No&quot;, &quot;&quot;, &quot;Se incluye una comida.&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Display Meal ES</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c501_Training_Incentive_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Campaign.Incentive_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Training Incentive Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
 </CustomObject>

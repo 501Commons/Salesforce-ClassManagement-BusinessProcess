@@ -149,112 +149,140 @@
                 <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>getTrainingArea1StateAllCounties</stringValue>
+                    <elementReference>getOutreachTrainingRecordArea1</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_2__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea2</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_3__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea3</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_4__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea4</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_County__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_1__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea1</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_County__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_2__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea2</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_County__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_3__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea3</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_County__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_4__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea4</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Region__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_1__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea1</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Region__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_2__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea2</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Region__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_3__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea3</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Region__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_4__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea4</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_1__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea1</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_2__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea2</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_3__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea3</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Get_Outreach_Contact.Outreach_Area__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>outreachTrainingRecord.Outreach_Area_4__c</elementReference>
+                    <elementReference>getOutreachTrainingRecordArea4</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>getTrainingArea1StateAllCounties</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>getTrainingArea2StateAllCounties</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>getTrainingArea3StateAllCounties</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Outreach_Contact.Outreach_State__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>getTrainingArea4StateAllCounties</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -502,24 +530,44 @@ TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;English&qu
         <expression>&quot;     --&gt; &quot; +  {!Loop_Child_Classes.c501_cm__Training_Name_WebForm__c} + BR()</expression>
     </formulas>
     <formulas>
+        <name>getOutreachTrainingRecordArea1</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!outreachTrainingRecord.Outreach_Area_1__c})), &quot;BLANK&quot;,TEXT({!outreachTrainingRecord.Outreach_Area_1__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>getOutreachTrainingRecordArea2</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!outreachTrainingRecord.Outreach_Area_2__c})), &quot;BLANK&quot;,TEXT({!outreachTrainingRecord.Outreach_Area_2__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>getOutreachTrainingRecordArea3</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!outreachTrainingRecord.Outreach_Area_3__c})), &quot;BLANK&quot;,TEXT({!outreachTrainingRecord.Outreach_Area_3__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>getOutreachTrainingRecordArea4</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!outreachTrainingRecord.Outreach_Area_4__c})), &quot;BLANK&quot;,TEXT({!outreachTrainingRecord.Outreach_Area_4__c}))</expression>
+    </formulas>
+    <formulas>
         <name>getTrainingArea1StateAllCounties</name>
         <dataType>String</dataType>
-        <expression>SUBSTITUTE(TEXT({!Get_Outreach_Trainings.Outreach_Area_1__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
+        <expression>SUBSTITUTE(TEXT({!outreachTrainingRecord.Outreach_Area_1__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
     </formulas>
     <formulas>
         <name>getTrainingArea2StateAllCounties</name>
         <dataType>String</dataType>
-        <expression>SUBSTITUTE(TEXT({!Get_Outreach_Trainings.Outreach_Area_2__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
+        <expression>SUBSTITUTE(TEXT({!outreachTrainingRecord.Outreach_Area_2__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
     </formulas>
     <formulas>
         <name>getTrainingArea3StateAllCounties</name>
         <dataType>String</dataType>
-        <expression>SUBSTITUTE(TEXT({!Get_Outreach_Trainings.Outreach_Area_3__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
+        <expression>SUBSTITUTE(TEXT({!outreachTrainingRecord.Outreach_Area_3__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
     </formulas>
     <formulas>
         <name>getTrainingArea4StateAllCounties</name>
         <dataType>String</dataType>
-        <expression>SUBSTITUTE(TEXT({!Get_Outreach_Trainings.Outreach_Area_4__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
+        <expression>SUBSTITUTE(TEXT({!outreachTrainingRecord.Outreach_Area_4__c}),&quot;-All-Counties&quot;,&quot;&quot;)</expression>
     </formulas>
     <interviewLabel>cmbp Training Outreach FLOW TEMPLATE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Training Outreach FLOW TEMPLATE</label>
@@ -553,6 +601,12 @@ TEXT({!Get_Outreach_Contact.c501_cm__ii_Primary_Language__c}) = &quot;English&qu
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>

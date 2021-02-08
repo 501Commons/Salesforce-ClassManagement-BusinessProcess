@@ -1,45 +1,861 @@
-Insert Accounts:
+Insert CCA_Region__c:
+  sf_object: CCA_Region__c
+  fields:
+  - c501_cm__County__c
+  - Name
+Insert CCI_Animal__c:
+  sf_object: CCI_Animal__c
+  fields:
+  - Name
+Insert Calculated_Measure__c:
+  sf_object: Calculated_Measure__c
+  fields:
+  - Calculated_Value__c
+  - Name
+Insert County_Code__c:
+  sf_object: County_Code__c
+  fields:
+  - Country_Code_Id__c
+  - Name
+Insert Files__c:
+  sf_object: Files__c
+  fields:
+  - Name
+Insert npo02__Household__c:
+  sf_object: npo02__Household__c
+  fields:
+  - Name
+  - npo02__Addressee__c
+  - npo02__Always_Anonymous__c
+  - npo02__AverageAmount__c
+  - npo02__Best_Gift_Year_Total__c
+  - npo02__Best_Gift_Year__c
+  - npo02__FirstCloseDate__c
+  - npo02__Formal_Greeting__c
+  - npo02__HouseholdEmail__c
+  - npo02__HouseholdPhone__c
+  - npo02__Household_ID__c
+  - npo02__Informal_Greeting__c
+  - npo02__LargestAmount__c
+  - npo02__LastCloseDate__c
+  - npo02__LastMembershipAmount__c
+  - npo02__LastMembershipDate__c
+  - npo02__LastMembershipLevel__c
+  - npo02__LastMembershipOrigin__c
+  - npo02__LastOppAmount__c
+  - npo02__MailingCity__c
+  - npo02__MailingCountry__c
+  - npo02__MailingPostalCode__c
+  - npo02__MailingState__c
+  - npo02__MailingStreet__c
+  - npo02__MembershipEndDate__c
+  - npo02__MembershipJoinDate__c
+  - npo02__NumberOfClosedOpps__c
+  - npo02__NumberOfMembershipOpps__c
+  - npo02__OppAmount2YearsAgo__c
+  - npo02__OppAmountLastNDays__c
+  - npo02__OppAmountLastYear__c
+  - npo02__OppAmountThisYear__c
+  - npo02__OppsClosed2YearsAgo__c
+  - npo02__OppsClosedLastNDays__c
+  - npo02__OppsClosedLastYear__c
+  - npo02__OppsClosedThisYear__c
+  - npo02__SYSTEM_CUSTOM_NAMING__c
+  - npo02__SmallestAmount__c
+  - npo02__TotalMembershipOppAmount__c
+  - npo02__TotalOppAmount__c
+  - npsp__Number_of_Household_Members__c
+Insert npsp__Batch__c:
+  sf_object: npsp__Batch__c
+  fields:
+  - Name
+  - npsp__Batch_Status__c
+  - npsp__Description__c
+  - npsp__Number_of_Items__c
+  - npsp__Object_Name__c
+Insert npsp__Engagement_Plan_Template__c:
+  sf_object: npsp__Engagement_Plan_Template__c
+  fields:
+  - Name
+  - npsp__Automatically_Update_Child_Task_Due_Date__c
+  - npsp__Default_Assignee__c
+  - npsp__Description__c
+  - npsp__Reschedule_To__c
+  - npsp__Skip_Weekends__c
+Insert Lead:
+  sf_object: Lead
+  fields:
+  - c501_cm__Class_Type__c
+  - Company
+  - DoNotCall
+  - External_Id__c
+  - FirstName
+  - GW_Volunteers__Volunteer_Availability__c
+  - GW_Volunteers__Volunteer_Notes__c
+  - GW_Volunteers__Volunteer_Skills__c
+  - GW_Volunteers__Volunteer_Status__c
+  - HasOptedOutOfEmail
+  - IsConverted
+  - IsUnreadByOwner
+  - Language_Other__c
+  - LastName
+  - c501_cm__Payee_Number__c
+  - Position__c
+  - Primary_Language__c
+  - Provider_Id_Number__c
+  - Provider_Name__c
+  - QRIS_Level__c
+  - Serving_Families_with_Vouchers__c
+  - State_Id__c
+  - Status
+  - c501_cm__Training_Status__c
+  - Union_Id__c
+  - Union_Member__c
+  - custom_Provider_Number__c
+  - c501_cm__ii_STARS_Id__c
+  - npe01__Preferred_Email__c
+  - npe01__Preferred_Phone__c
+  - npsp__CompanyCity__c
+  - npsp__CompanyCountry__c
+  - npsp__CompanyPostalCode__c
+  - npsp__CompanyState__c
+  - npsp__CompanyStreet__c
+  lookups:
+    npsp__Batch__c:
+      table: npsp__Batch__c
+Insert npsp__Level__c:
+  sf_object: npsp__Level__c
+  fields:
+  - Name
+  - npsp__Active__c
+  - npsp__Description__c
+  - npsp__Level_Field__c
+  - npsp__Maximum_Amount__c
+  - npsp__Minimum_Amount__c
+  - npsp__Previous_Level_Field__c
+  - npsp__Source_Field__c
+  - npsp__Target__c
+  lookups:
+    npsp__Engagement_Plan_Template__c:
+      table: npsp__Engagement_Plan_Template__c
+Insert Account:
   sf_object: Account
-  table: accounts
   fields:
-    Name: Name
-    Description: Description
-    BillingStreet: Street
-    BillingCity: City
-    BillingState: State
-    BillingPostalCode: PostalCode
-    BillingCountry: Country
-    ShippingStreet: Street
-    ShippingCity: City
-    ShippingState: State
-    ShippingPostalCode: PostalCode
-    ShippingCountry: Country
-    Phone: Phone
-    Fax: Fax
-    Website: Website
-    NumberOfEmployees: NumberOfEmployees
-    AccountNumber: AccountNumber
-    Site: Site
-    Type: Type
-Insert Contacts:
+  - c501_cm__County__c
+  - Name
+  - RecordTypeId
+  - c501mm__C501_Merge_Account__c
+  - c501mm__C501_Merge_Action__c
+  - c501mm__C501_Merge_Confidence_From__c
+  - c501mm__C501_Merge_Confidence_To__c
+  - c501mm__C501_Merge_Confidence__c
+  - c501mm__C501_Merge_Criteria_All_Contacts_Match__c
+  - c501mm__C501_Merge_Id__c
+  - c501mm__C501_Merge_Metric_Name__c
+  - c501mm__C501_Merge_Metric__c
+  - c501mm__C501_Merge_Rule__c
+  - c501mm__C501_Merge_Target__c
+  - ii_CCA_License_Status__c
+  - ii_CCA_Region__c
+  - c501_cm__ii_County__c
+  - ii_DEL_Licensing_Office__c
+  - ii_DEL_Licensing_Region__c
+  - ii_Director_Owner_Licensee__c
+  - ii_Early_Achievers_Participation_Status__c
+  - ii_Eligible_For_Substitute_Pool_Status__c
+  - ii_Eligible_Substitute_Pool_Status_Date__c
+  - ii_Email__c
+  - ii_Ethnicity__c
+  - ii_Facility_Documentation_Status_Date__c
+  - ii_Facility_Documentation__c
+  - ii_Facility_Orientation_Status_Date__c
+  - ii_Facility_Orientation__c
+  - ii_Facility_Type__c
+  - ii_FamLink_Id__c
+  - ii_Merit_License_Status__c
+  - ii_Merit_Substitute_Pool_Status__c
+  - ii_Not_Approved_Reasons__c
+  - ii_Primary_Contact__c
+  - c501_cm__ii_Primary_Language__c
+  - ii_Provider_Id__c
+  - ii_Race__c
+  - ii_Rating_Level__c
+  - ii_SSPS__c
+  - ii_Serving_Children_On_Subsidy__c
+  - ii_Substitute_Pool_Status_Date__c
+  - ii_Username__c
+  - npe01__SYSTEMIsIndividual__c
+  - npe01__SYSTEM_AccountType__c
+  - npo02__AverageAmount__c
+  - npo02__Best_Gift_Year_Total__c
+  - npo02__Best_Gift_Year__c
+  - npo02__FirstCloseDate__c
+  - npo02__Formal_Greeting__c
+  - npo02__HouseholdPhone__c
+  - npo02__Informal_Greeting__c
+  - npo02__LargestAmount__c
+  - npo02__LastCloseDate__c
+  - npo02__LastMembershipAmount__c
+  - npo02__LastMembershipDate__c
+  - npo02__LastMembershipLevel__c
+  - npo02__LastMembershipOrigin__c
+  - npo02__LastOppAmount__c
+  - npo02__MembershipEndDate__c
+  - npo02__MembershipJoinDate__c
+  - npo02__NumberOfClosedOpps__c
+  - npo02__NumberOfMembershipOpps__c
+  - npo02__OppAmount2YearsAgo__c
+  - npo02__OppAmountLastNDays__c
+  - npo02__OppAmountLastYear__c
+  - npo02__OppAmountThisYear__c
+  - npo02__OppsClosed2YearsAgo__c
+  - npo02__OppsClosedLastNDays__c
+  - npo02__OppsClosedLastYear__c
+  - npo02__OppsClosedThisYear__c
+  - npo02__SYSTEM_CUSTOM_NAMING__c
+  - npo02__SmallestAmount__c
+  - npo02__TotalMembershipOppAmount__c
+  - npo02__TotalOppAmount__c
+  - npsp__Funding_Focus__c
+  - npsp__Grantmaker__c
+  - npsp__Matching_Gift_Administrator_Name__c
+  - npsp__Matching_Gift_Amount_Max__c
+  - npsp__Matching_Gift_Amount_Min__c
+  - npsp__Matching_Gift_Annual_Employee_Max__c
+  - npsp__Matching_Gift_Comments__c
+  - npsp__Matching_Gift_Company__c
+  - npsp__Matching_Gift_Email__c
+  - npsp__Matching_Gift_Info_Updated__c
+  - npsp__Matching_Gift_Percent__c
+  - npsp__Matching_Gift_Phone__c
+  - npsp__Matching_Gift_Request_Deadline__c
+  - npsp__Number_of_Household_Members__c
+  lookups:
+    Level__c:
+      table: npsp__Level__c
+    ParentId:
+      table: Account
+      after: Insert Account
+    Previous_Level__c:
+      table: npsp__Level__c
+    npe01__One2OneContact__c:
+      table: Contact
+      after: Insert Contact
+    npsp__Batch__c:
+      table: npsp__Batch__c
+Insert AM_Campus_User__c:
+  sf_object: AM_Campus_User__c
+  fields:
+  - ii_Permission_Profile__c
+  - ii_Send_Email_For_Event_Notification__c
+  - ii_Send_Email_For_Feed_Back__c
+  - ii_User_Type__c
+  lookups:
+    ii_Facility__c:
+      table: Account
+Insert AM_Facility_Bulk__c:
+  sf_object: AM_Facility_Bulk__c
+  fields:
+  - Name
+  lookups:
+    ii_Facility__c:
+      table: Account
+Insert AM_Substitue_Bulk__c:
+  sf_object: AM_Substitue_Bulk__c
+  lookups:
+    ii_Facility__c:
+      table: Account
+Insert npsp__Address__c:
+  sf_object: npsp__Address__c
+  fields:
+  - npsp__API_Response__c
+  - npsp__Address_Type__c
+  - npsp__Administrative_Area__c
+  - npsp__Ambiguous__c
+  - npsp__Congressional_District__c
+  - npsp__County_Name__c
+  - npsp__Default_Address__c
+  - npsp__Latest_End_Date__c
+  - npsp__Latest_Start_Date__c
+  - npsp__MailingCity__c
+  - npsp__MailingCountry__c
+  - npsp__MailingPostalCode__c
+  - npsp__MailingState__c
+  - npsp__MailingStreet2__c
+  - npsp__MailingStreet__c
+  - npsp__Pre_Verification_Address__c
+  - npsp__Seasonal_End_Day__c
+  - npsp__Seasonal_End_Month__c
+  - npsp__Seasonal_Start_Day__c
+  - npsp__Seasonal_Start_Month__c
+  - npsp__State_Lower_District__c
+  - npsp__State_Upper_District__c
+  - npsp__Verification_Status__c
+  - npsp__Verified__c
+  lookups:
+    npsp__Household_Account__c:
+      table: Account
+Insert c501_cm__C501_Guest_Update__c:
+  sf_object: c501_cm__C501_Guest_Update__c
+  fields:
+  - c501_cm__C501_Email_Opt_Out_Text__c
+  - c501_cm__C501_SMS_Opt_Out_Text__c
+  - Languages_c
+  lookups:
+    c501_cm__C501_Contact__c:
+      table: Contact
+      after: Insert Contact
+Insert Campaign:
+  sf_object: Campaign
+  fields:
+  - Approval_Code__c
+  - Billable_Hours__c
+  - C501_CampaignMemberStatusesCreated__c
+  - c501_cm__C501_Last_Outreach_Processed__c
+  - c501_cm__C501_Outreach_WA_Counties__c
+  - c501_cm__C501_Training_Location_Additional__c
+  - c501_cm__C501_Trigger_Event_Update__c
+  - c501_cm__City__c
+  - c501_cm__Class_Type__c
+  - c501_cm__Confirmation_Email_Template__c
+  - Evaluations_Sent__c
+  - Final_of_Outreach_Contacts__c
+  - GW_Volunteers__Volunteer_Website_Time_Zone__c
+  - Incentive_Type__c
+  - c501_cm__Incentive__c
+  - IsActive
+  - c501_cm__Language__c
+  - Languages_c
+  - Location_Other__c
+  - c501_cm__Location__c
+  - c501_cm__Meal_Provided__c
+  - Name
+  - No_Show_Email_Template__c
+  - Outreach_Area_1__c
+  - Outreach_Area_2__c
+  - Outreach_Area_3__c
+  - Outreach_Area_4__c
+  - RecordTypeId
+  - c501_cm__Reminder_Email_Template__c
+  - State__c
+  - TestFlight_Enabled__c
+  - Trainer_Employee__c
+  - Trainer_SSPS_ID__c
+  - c501_cm__Training_Incentive__c
+  - c501_cm__Training_Location__c
+  - c501_cm__Training_Name__c
+  - c501_cm__custom_End_DateTime__c
+  - c501_cm__custom_Start_DateTime__c
+  - c501_cm__ii_Days_Until_Class__c
+  - ii_Union_Attended__c
+  - ptPDTFirstDayDate__c
+  - ptPDTLastDayDate__c
+  lookups:
+    c501_cm__C501_Training_Location__c:
+      table: Account
+    Grant_Organization__c:
+      table: Account
+    ParentId:
+      table: Campaign
+      after: Insert Campaign
+    c501_cm__Trainer__c:
+      table: Contact
+      after: Insert Contact
+Insert C501_Class_Notification__c:
+  sf_object: C501_Class_Notification__c
+  fields:
+  - c501_cm__Confirmation_Email_Template__c
+  - Contact_Record_Type__c
+  - Name
+  - No_Show_Email_Template__c
+  - c501_cm__Reminder_Email_Template__c
+  lookups:
+    c501_cm__Training__c:
+      table: Campaign
+Insert C501_ScheduledFlow__c:
+  sf_object: C501_ScheduledFlow__c
+  fields:
+  - Name
+  lookups:
+    Campaign__c:
+      table: Campaign
+Insert CampaignMember:
+  sf_object: CampaignMember
+  fields:
+  - External_Id__c
+  - Group_Classes__c
+  - Notification_Pending__c
+  - Outreach_Member__c
+  - Send_SMS_Training_Registered__c
+  - Send_Training_Registered__c
+  - Send_Training_Reminder__c
+  - Status_Matching__c
+  - c501_cm__Training_Status__c
+  - custom_Attended__c
+  - custom_Member_ID__c
+  lookups:
+    CampaignId:
+      table: Campaign
+    ContactId:
+      table: Contact
+      after: Insert Contact
+    LeadId:
+      table: Lead
+Insert Contact:
   sf_object: Contact
-  table: contacts
   fields:
-    Salutation: salutation
-    FirstName: firstname
-    LastName: lastname
-    Email: email
-    Phone: phone
-    MobilePhone: mobile
-    OtherPhone: OtherPhone
-    HomePhone: HomePhone
-    Title: title
-    Birthdate: birthdate
-    MailingStreet: mailingstreet
-    MailingCity: mailingcity
-    MailingState: mailingstate
-    MailingPostalCode: mailingpostalcode
-    MailingCountry: mailingcountry
+  - C501_BloodBorneP_Training_Completed__c
+  - C501_Certs_Expiring_Message__c
+  - C501_EAS_Access_Code__c
+  - C501_EAS_Attendance_Status__c
+  - C501_EAS_Due_Date__c
+  - C501_EAS_Exception__c
+  - C501_EAS_Training_Completed__c
+  - c501_cm__C501_Email_Opt_Out_by_Contact_Date__c
+  - C501_FFN_Type__c
+  - C501_First_Aid_Training_Completed__c
+  - C501_Health_Safety_Training_Completed__c
+  - C501_Infant_CPR_Training_Completed__c
+  - C501_Last_Unit_Status_Change_Date__c
+  - C501_Previous_Unit_Status__c
+  - C501_Profile_Pic__c
+  - C501_Relative__c
+  - C501_SMS_Opt_Out__c
+  - c501_cm__C501_SMS_Out_Out_by_Contact_Date__c
+  - C501_Safe_Sleep_Training_Completed__c
+  - Director_Owner_Licensee__c
+  - DoNotCall
+  - Dues_Paying_Union_Member__c
+  - ExternalId__c
+  - FirstName
+  - GW_Volunteers__Volunteer_Auto_Reminder_Email_Opt_Out__c
+  - GW_Volunteers__Volunteer_Availability__c
+  - GW_Volunteers__Volunteer_Last_Web_Signup_Date__c
+  - GW_Volunteers__Volunteer_Manager_Notes__c
+  - GW_Volunteers__Volunteer_Notes__c
+  - GW_Volunteers__Volunteer_Organization__c
+  - GW_Volunteers__Volunteer_Skills__c
+  - GW_Volunteers__Volunteer_Status__c
+  - Gender__c
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - Imagine_Email__c
+  - Imagine_Home_Phone__c
+  - Imagine_Mobile_Phone__c
+  - LastName
+  - Outreach_Area__c
+  - Outreach_Date_Last_Sent__c
+  - Outreach_Date_Last_Training__c
+  - Outreach_Most_Recent_Training_Area__c
+  - PREPARE_Class__c
+  - PREPARE_Cohort__c
+  - Position__c
+  - Provider_Type__c
+  - QRIS_Level__c
+  - RecordTypeId
+  - Region__c
+  - State_Id__c
+  - TestFlight_Enabled__c
+  - Union_Id__c
+  - Union_Member__c
+  - c501mm__C501_Merge_Action__c
+  - c501mm__C501_Merge_Confidence_From__c
+  - c501mm__C501_Merge_Confidence_To__c
+  - c501mm__C501_Merge_Confidence__c
+  - c501mm__C501_Merge_Contact__c
+  - c501mm__C501_Merge_Id__c
+  - c501mm__C501_Merge_Metric_Name__c
+  - c501mm__C501_Merge_Metric__c
+  - c501mm__C501_Merge_Rule__c
+  - c501mm__C501_Merge_Target__c
+  - c501mm__Gender__c
+  - ii_AM_Campus_User_Upload__c
+  - ii_AM_Upload__c
+  - ii_Age__c
+  - ii_Annual_Continuing_Education_Training__c
+  - ii_Child_Abuse_Cert_Date__c
+  - ii_Child_Abuse_Cert_Status__c
+  - c501_cm__ii_County__c
+  - ii_Cpr_Cert_Date__c
+  - >c501_cm__ii_Cpr_Cert_Status__c
+  - ii_DEL_Licensing_Office__c
+  - ii_DEL_Licensing_Region__c
+  - ii_Early_Achievers_Part_Status_Date__c
+  - ii_Early_Achievers_Participation_Status__c
+  - ii_Eligible_For_Substitute_Pool_Status__c
+  - ii_Eligible_Substitute_Pool_Status_Date__c
+  - c501_cm__ii_Employer_Name__c
+  - ii_Ethnicity__c
+  - ii_FFP_Eligible__c
+  - ii_Facility_Documentation_Status_Date__c
+  - ii_Facility_Documentation__c
+  - ii_Facility_Name__c
+  - ii_Facility_Orientation_Status_Date__c
+  - ii_Facility_Orientation__c
+  - ii_Facility_Type__c
+  - ii_FamLink_Id__c
+  - ii_First_Aid_Cert_Date__c
+  - c501_cm__ii_First_Aid_Cert_Status__c
+  - ii_Food_Handler_Cert_Date__c
+  - ii_Food_Handler_Cert_Status__c
+  - ii_Hiv_Cert_Date__c
+  - c501_cm__ii_Hiv_Cert_Status__c
+  - ii_Initial_Training_Req_Completed_Year__c
+  - c501_cm__ii_Initial_Training_Requirement__c
+  - c501_cm__ii_Primary_Language__c
+  - ii_License_Number__c
+  - ii_License_Status__c
+  - c501_cm__ii_Licensed__c
+  - ii_Member_ID__c
+  - ii_Member_Subtype_Name__c
+  - ii_Not_Approved_Reasons__c
+  - ii_Orientation_Date__c
+  - ii_Orientation_Incomplete_Reason__c
+  - ii_Orientation_Status__c
+  - ii_PBC_Expiration__c
+  - ii_PBC_Status__c
+  - ii_Participation_Status__c
+  - ii_Primary_Contact__c
+  - c501_cm__ii_Primary_Language__c
+  - ii_Race__c
+  - ii_Rating_Level__c
+  - ii_RecordType_Previous__c
+  - ii_SSPS_Number_Matching__c
+  - ii_SSPS_Number__c
+  - ii_Safe_Sleep_Cert_Date__c
+  - ii_Safe_Sleep_Cert_Status__c
+  - ii_Serving_Children_On_Subsidy__c
+  - ii_Stars_Id_Matching__c
+  - c501_cm__ii_STARS_Id__c
+  - ii_Sub_Pool_Status_Date__c
+  - c501_cm__ii_Sub_Pool_Status__c
+  - ii_Substitute_Pool_Status_Date__c
+  - c501_cm__ii_Substitute_Pool_Status__c
+  - ii_Tb_Cert_Date__c
+  - ii_Tb_Cert_Status__c
+  - c501_cm__ii_Unit_Status__c
+  - ii_Username__c
+  - npe01__AlternateEmail__c
+  - npe01__HomeEmail__c
+  - npe01__PreferredPhone__c
+  - npe01__Preferred_Email__c
+  - npe01__Primary_Address_Type__c
+  - npe01__Private__c
+  - npe01__Secondary_Address_Type__c
+  - npe01__SystemAccountProcessor__c
+  - npe01__SystemIsIndividual__c
+  - npe01__WorkEmail__c
+  - npe01__WorkPhone__c
+  - npo02__AverageAmount__c
+  - npo02__Best_Gift_Year_Total__c
+  - npo02__Best_Gift_Year__c
+  - npo02__FirstCloseDate__c
+  - npo02__Household_Naming_Order__c
+  - npo02__LargestAmount__c
+  - npo02__LastCloseDate__c
+  - npo02__LastMembershipAmount__c
+  - npo02__LastMembershipDate__c
+  - npo02__LastMembershipLevel__c
+  - npo02__LastMembershipOrigin__c
+  - npo02__LastOppAmount__c
+  - npo02__MembershipEndDate__c
+  - npo02__MembershipJoinDate__c
+  - npo02__Naming_Exclusions__c
+  - npo02__NumberOfClosedOpps__c
+  - npo02__NumberOfMembershipOpps__c
+  - npo02__OppAmount2YearsAgo__c
+  - npo02__OppAmountLastNDays__c
+  - npo02__OppAmountLastYear__c
+  - npo02__OppAmountThisYear__c
+  - npo02__OppsClosed2YearsAgo__c
+  - npo02__OppsClosedLastNDays__c
+  - npo02__OppsClosedLastYear__c
+  - npo02__OppsClosedThisYear__c
+  - npo02__SmallestAmount__c
+  - npo02__Soft_Credit_Last_Year__c
+  - npo02__Soft_Credit_This_Year__c
+  - npo02__Soft_Credit_Total__c
+  - npo02__Soft_Credit_Two_Years_Ago__c
+  - npo02__SystemHouseholdProcessor__c
+  - npo02__TotalMembershipOppAmount__c
+  - npo02__TotalOppAmount__c
+  - npsp__Deceased__c
+  - npsp__Do_Not_Contact__c
+  - npsp__Exclude_from_Household_Formal_Greeting__c
+  - npsp__Exclude_from_Household_Informal_Greeting__c
+  - npsp__Exclude_from_Household_Name__c
+  - npsp__First_Soft_Credit_Amount__c
+  - npsp__First_Soft_Credit_Date__c
+  - npsp__Largest_Soft_Credit_Amount__c
+  - npsp__Largest_Soft_Credit_Date__c
+  - npsp__Last_Soft_Credit_Amount__c
+  - npsp__Last_Soft_Credit_Date__c
+  - npsp__Number_of_Soft_Credits_Last_N_Days__c
+  - npsp__Number_of_Soft_Credits_Last_Year__c
+  - npsp__Number_of_Soft_Credits_This_Year__c
+  - npsp__Number_of_Soft_Credits_Two_Years_Ago__c
+  - npsp__Number_of_Soft_Credits__c
+  - npsp__Soft_Credit_Last_N_Days__c
+  - npsp__is_Address_Override__c
+  - pmdm__IsClient__c
+  - testConv1_1__c
   lookups:
     AccountId:
-      table: accounts
+      table: Account
+    Most_Recent_Program_Membership__c:
+      table: ii_Mentor_Program__c
+      after: Insert ii_Mentor_Program__c
+    ReportsToId:
+      table: Contact
+      after: Insert Contact
+    npo02__Household__c:
+      table: npo02__Household__c
+    npsp__Batch__c:
+      table: npsp__Batch__c
+    npsp__Current_Address__c:
+      table: npsp__Address__c
+    npsp__Primary_Affiliation__c:
+      table: Account
+Insert ii_Mentor_Program__c:
+  sf_object: ii_Mentor_Program__c
+  fields:
+  - Cohort__c
+  - Exit_Date__c
+  - Fiscal_Year__c
+  - Intern_Report__c
+  - Intern_Status__c
+  - Mentor_Report__c
+  - Mentor_Status__c
+  - Name
+  - Participant_Type__c
+  - RecordTypeId
+  - State_Approved_Mentor__c
+  - Status__c
+  lookups:
+    Member__c:
+      table: Contact
+    Mentor_Program__c:
+      table: ii_Mentor_Program__c
+      after: Insert ii_Mentor_Program__c
+    Mentor__c:
+      table: Contact
+Insert npe03__Recurring_Donation__c:
+  sf_object: npe03__Recurring_Donation__c
+  fields:
+  - Name
+  - npe03__Amount__c
+  - npe03__Date_Established__c
+  - npe03__Installment_Period__c
+  - npe03__Installments__c
+  - npe03__Last_Payment_Date__c
+  - npe03__Next_Payment_Date__c
+  - npe03__Open_Ended_Status__c
+  - npe03__Paid_Amount__c
+  - npe03__Schedule_Type__c
+  - npe03__Total_Paid_Installments__c
+  lookups:
+    npe03__Contact__c:
+      table: Contact
+    npe03__Organization__c:
+      table: Account
+    npe03__Recurring_Donation_Campaign__c:
+      table: Campaign
+Insert npe5__Affiliation__c:
+  sf_object: npe5__Affiliation__c
+  fields:
+  - npe5__Description__c
+  - npe5__EndDate__c
+  - npe5__Primary__c
+  - npe5__Role__c
+  - npe5__StartDate__c
+  - npe5__Status__c
+  lookups:
+    npe5__Contact__c:
+      table: Contact
+    npe5__Organization__c:
+      table: Account
+Insert Opportunity:
+  sf_object: Opportunity
+  fields:
+  - CloseDate
+  - IsPrivate
+  - Name
+  - RecordTypeId
+  - StageName
+  - npe01__Contact_Id_for_Role__c
+  - npe01__Do_Not_Automatically_Create_Payment__c
+  - npe01__Member_Level__c
+  - npe01__Membership_End_Date__c
+  - npe01__Membership_Origin__c
+  - npe01__Membership_Start_Date__c
+  - npo02__systemHouseholdContactRoleProcessor__c
+  - npsp__Acknowledgment_Date__c
+  - npsp__Acknowledgment_Status__c
+  - npsp__Ask_Date__c
+  - npsp__Closed_Lost_Reason__c
+  - npsp__Fair_Market_Value__c
+  - npsp__Gift_Strategy__c
+  - npsp__Grant_Contract_Date__c
+  - npsp__Grant_Contract_Number__c
+  - npsp__Grant_Period_End_Date__c
+  - npsp__Grant_Period_Start_Date__c
+  - npsp__Grant_Program_Area_s__c
+  - npsp__Grant_Requirements_Website__c
+  - npsp__Honoree_Name__c
+  - npsp__In_Kind_Description__c
+  - npsp__In_Kind_Donor_Declared_Value__c
+  - npsp__In_Kind_Type__c
+  - npsp__Is_Grant_Renewal__c
+  - npsp__Matching_Gift_Employer__c
+  - npsp__Matching_Gift_Status__c
+  - npsp__Notification_Message__c
+  - npsp__Notification_Preference__c
+  - npsp__Notification_Recipient_Information__c
+  - npsp__Notification_Recipient_Name__c
+  - npsp__Primary_Contact_Campaign_Member_Status__c
+  - npsp__Recurring_Donation_Installment_Number__c
+  - npsp__Requested_Amount__c
+  - npsp__Tribute_Type__c
+  lookups:
+    AccountId:
+      table: Account
+    CampaignId:
+      table: Campaign
+    ContactId:
+      table: Contact
+    npe03__Recurring_Donation__c:
+      table: npe03__Recurring_Donation__c
+    npsp__Batch__c:
+      table: npsp__Batch__c
+    npsp__Honoree_Contact__c:
+      table: Contact
+    npsp__Matching_Gift_Account__c:
+      table: Account
+    npsp__Matching_Gift__c:
+      table: Opportunity
+      after: Insert Opportunity
+    npsp__Notification_Recipient_Contact__c:
+      table: Contact
+    npsp__Previous_Grant_Opportunity__c:
+      table: Opportunity
+      after: Insert Opportunity
+    npsp__Primary_Contact__c:
+      table: Contact
+Insert npe01__OppPayment__c:
+  sf_object: npe01__OppPayment__c
+  fields:
+  - npe01__Check_Reference_Number__c
+  - npe01__Custom_Payment_Field__c
+  - npe01__Paid__c
+  - npe01__Payment_Amount__c
+  - npe01__Payment_Date__c
+  - npe01__Payment_Method__c
+  - npe01__Scheduled_Date__c
+  - npe01__Written_Off__c
+  - npsp__Payment_Acknowledged_Date__c
+  - npsp__Payment_Acknowledgment_Status__c
+  lookups:
+    npe01__Opportunity__c:
+      table: Opportunity
+Insert npsp__DataImport__c:
+  sf_object: npsp__DataImport__c
+  fields:
+  - Contact1_Member_ID__c
+  - Contact1_Middle_Name__c
+  - Contact1_RecordTypeId__c
+  - Contact1_ii_Member_Id__c
+  - Contact1_ii_SSPS_Number__c
+  - Contact1_ii_Unit_Status__c
+  - Contact2_Member_ID__c
+  - Contact2_Middle_Name__c
+  - npsp__Account1ImportStatus__c
+  - npsp__Account1_City__c
+  - npsp__Account1_Country__c
+  - npsp__Account1_Name__c
+  - npsp__Account1_Phone__c
+  - npsp__Account1_State_Province__c
+  - npsp__Account1_Street__c
+  - npsp__Account1_Website__c
+  - npsp__Account1_Zip_Postal_Code__c
+  - npsp__Account2ImportStatus__c
+  - npsp__Account2_City__c
+  - npsp__Account2_Country__c
+  - npsp__Account2_Name__c
+  - npsp__Account2_Phone__c
+  - npsp__Account2_State_Province__c
+  - npsp__Account2_Street__c
+  - npsp__Account2_Website__c
+  - npsp__Account2_Zip_Postal_Code__c
+  - npsp__ApexJobId__c
+  - npsp__Campaign_Member_Status__c
+  - npsp__Contact1ImportStatus__c
+  - npsp__Contact1_Alternate_Email__c
+  - npsp__Contact1_Birthdate__c
+  - npsp__Contact1_Firstname__c
+  - npsp__Contact1_Home_Phone__c
+  - npsp__Contact1_Lastname__c
+  - npsp__Contact1_Mobile_Phone__c
+  - npsp__Contact1_Other_Phone__c
+  - npsp__Contact1_Personal_Email__c
+  - npsp__Contact1_Preferred_Email__c
+  - npsp__Contact1_Preferred_Phone__c
+  - npsp__Contact1_Salutation__c
+  - npsp__Contact1_Title__c
+  - npsp__Contact1_Work_Email__c
+  - npsp__Contact1_Work_Phone__c
+  - npsp__Contact2ImportStatus__c
+  - npsp__Contact2_Alternate_Email__c
+  - npsp__Contact2_Birthdate__c
+  - npsp__Contact2_Firstname__c
+  - npsp__Contact2_Home_Phone__c
+  - npsp__Contact2_Lastname__c
+  - npsp__Contact2_Mobile_Phone__c
+  - npsp__Contact2_Other_Phone__c
+  - npsp__Contact2_Personal_Email__c
+  - npsp__Contact2_Preferred_Email__c
+  - npsp__Contact2_Preferred_Phone__c
+  - npsp__Contact2_Salutation__c
+  - npsp__Contact2_Title__c
+  - npsp__Contact2_Work_Email__c
+  - npsp__Contact2_Work_Phone__c
+  - npsp__DonationImportStatus__c
+  - npsp__Donation_Amount__c
+  - npsp__Donation_Campaign_Name__c
+  - npsp__Donation_Date__c
+  - npsp__Donation_Description__c
+  - npsp__Donation_Donor__c
+  - npsp__Donation_Member_Level__c
+  - npsp__Donation_Membership_End_Date__c
+  - npsp__Donation_Membership_Origin__c
+  - npsp__Donation_Membership_Start_Date__c
+  - npsp__Donation_Name__c
+  - npsp__Donation_Record_Type_Name__c
+  - npsp__Donation_Stage__c
+  - npsp__Donation_Type__c
+  - npsp__FailureInformation__c
+  - npsp__HomeAddressImportStatus__c
+  - npsp__Home_City__c
+  - npsp__Home_Country__c
+  - npsp__Home_State_Province__c
+  - npsp__Home_Street__c
+  - npsp__Home_Zip_Postal_Code__c
+  - npsp__Household_Phone__c
+  - npsp__ImportedDate__c
+  - npsp__Payment_Check_Reference_Number__c
+  - npsp__Payment_Method__c
+  - npsp__Status__c
+  lookups:
+    npsp__Account1Imported__c:
+      table: Account
+    npsp__Account2Imported__c:
+      table: Account
+    npsp__Contact1Imported__c:
+      table: Contact
+    npsp__Contact2Imported__c:
+      table: Contact
+    npsp__DonationImported__c:
+      table: Opportunity
+    npsp__HomeAddressImported__c:
+      table: npsp__Address__c
+    npsp__HouseholdAccountImported__c:
+      table: Account

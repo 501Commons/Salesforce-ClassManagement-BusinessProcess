@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PREPARE No Show bilingual</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>PREPARE No Show (bilingual)</name>
+    <style>freeForm</style>
+    <subject>Missed training</subject>
+    <textOnly>Dear {!CampaignMember.FirstName},
+
+According to our records, you missed {!CampaignMember.c501_cm__Training_Name__c} on {!CampaignMember.c501_cm__Training_Start_DateTime__c}. Participation in this training is mandatory to complete the PREPARE for Care program.  Please contact prepareforcare@imaginewa.org to discuss potential ways to catch up with program requirements.
+
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}
+
+----
+
+
+Estimado {!CampaignMember.FirstName},
+
+Según nuestros registros, usted se perdió la capacitación de  {!CampaignMember.c501_cm__Training_Name__c} en {!CampaignMember.c501_cm__Training_Start_DateTime__c}.  La participación en esta capacitación es obligatoria para completar el programa PREPARE for Care. Por favor contacte con prepareforcare@imaginewa.org para discutir posibles formas de ponerse al día con los requisitos del programa.
+
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

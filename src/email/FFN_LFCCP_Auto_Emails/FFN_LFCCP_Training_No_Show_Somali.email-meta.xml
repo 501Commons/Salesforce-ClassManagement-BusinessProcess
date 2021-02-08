@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>FFN or LFCCP No Show Somali</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header_USE</letterhead>
+    <name>FFN / LFCCP / Training No Show (Somali)</name>
+    <style>freeForm</style>
+    <subject>Missed training</subject>
+    <textOnly>Ku {!CampaignMember.FirstName},
+
+Sida uu muujinaayo diinwaankeena, ma aadan imaanin tababarka {!CampaignMember.c501_cm__Training_Name__c} aad isku qortay taariikhda {!CampaignMember.c501_cm__Training_Start_DateTime__c}. Fadlan booqo https://imaginewa.org/training/ haddii aad rabtid inaad isku qorto fasal ka duwan.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -12,10 +12,147 @@
         <unique>true</unique>
     </fields>
     <fields>
-        <fullName>State_Id__c</fullName>
-        <description>State Id a.k.a., State Number, License Program Id, EEC License Number</description>
+        <fullName>Language_Other__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>State Id a.k.a., State Number, License Program Id, EEC License Number</inlineHelpText>
+        <label>Language Other</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provider / Proveedor</fullName>
+                    <default>false</default>
+                    <label>Provider / Proveedor</label>
+                </value>
+                <value>
+                    <fullName>Assistant / Asistente</fullName>
+                    <default>false</default>
+                    <label>Assistant / Asistente</label>
+                </value>
+                <value>
+                    <fullName>Other / Otro</fullName>
+                    <default>false</default>
+                    <label>Other / Otro</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Language</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>c501_cm__custom_Language</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Provider_Id_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Provider Id Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provider_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Provider Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QRIS_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>QRIS Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>I don&apos;t know / No lo sé</fullName>
+                    <default>false</default>
+                    <label>I don&apos;t know / No lo sé</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Serving_Families_with_Vouchers__c</fullName>
+        <externalId>false</externalId>
+        <label>Serving Families with Vouchers</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes / Sí</fullName>
+                    <default>false</default>
+                    <label>Yes / Sí</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>I don&apos;t know / No lo sé</fullName>
+                    <default>false</default>
+                    <label>I don&apos;t know / No lo sé</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State_Id__c</fullName>
+        <externalId>false</externalId>
         <label>State Id</label>
         <length>18</length>
         <required>false</required>
@@ -25,14 +162,41 @@
     </fields>
     <fields>
         <fullName>Union_Id__c</fullName>
-        <description>Union Id a.k.a., Union Member, Union Number, Provider Id</description>
         <externalId>false</externalId>
-        <inlineHelpText>Union Id a.k.a., Union Member, Union Number, Provider Id</inlineHelpText>
         <label>Union Id</label>
         <length>18</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Union_Member__c</fullName>
+        <externalId>false</externalId>
+        <label>Union Member</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes / Sí</fullName>
+                    <default>false</default>
+                    <label>Yes / Sí</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>I don&apos;t know / No lo sé</fullName>
+                    <default>false</default>
+                    <label>I don&apos;t know / No lo sé</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
 </CustomObject>

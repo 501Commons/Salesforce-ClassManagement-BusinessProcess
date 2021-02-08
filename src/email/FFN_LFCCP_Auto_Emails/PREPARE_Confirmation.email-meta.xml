@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LFCCP Confirmation</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Pink_Header</letterhead>
+    <name>PREPARE Confirmation</name>
+    <style>freeForm</style>
+    <subject>You&apos;re registered!</subject>
+    <textOnly>You&apos;re registered!
+
+{!CampaignMember.FirstName}, you have successfully registered for {!CampaignMember.c501_cm__Training_Name__c} with the Imagine Institute. Details are below!
+
+When:
+{!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Where:
+{!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+{!CampaignMember.Group_Classes__c}
+
+Food Provided:
+{!CampaignMember.Meal_Provided__c}
+
+Please let us know if you won&apos;t be able to make it so we can let another provider take the class.
+
+Call us at 206-492-5249 or email prepareforcare@imaginewa.org.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+¡Está registrado!
+
+{!CampaignMember.FirstName}, está registrado para {!CampaignMember.c501_cm__Training_Name__c} con el Instituto Imagine.
+
+Cuando:
+
+{!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
+
+Dirección:
+
+{!CampaignMember.c501_cm__C501_Training_Location_Text__c}
+
+Comida provista:
+
+{!CampaignMember.Meal_Provided__c}
+
+Si no puede asistir, favor de avisarnos tan pronto como posible.
+
+
+
+
+
+¿Preguntas? Contáctenos al 206-492-5249 o prepareforcare@imaginewa.org.
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

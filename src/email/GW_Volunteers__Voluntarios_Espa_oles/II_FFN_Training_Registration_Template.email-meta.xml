@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for training member registration</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>II_Training_Registration</letterhead>
+    <name>II FFN Training Registration Template</name>
+    <style>freeForm</style>
+    <subject>Imagine Institute Training Registration</subject>
+    <textOnly>You&apos;re invited to register!
+
+Hello ,
+
+{!Campaign.Name}
+
+We would like to invite you to an upcoming training session.  Please visit our website to register.
+
+
+http://test501wp.azurewebsites.net/training-registration/
+
+
+
+Remember: In order to receive your bonus, you must be authorized and providing care to a subsidized child in the month the training takes place. No food or child care is provided at this training. Only registered participants will be allowed entry.
+
+Please let us know if you have any questions.
+
+Call us at 206-492-5249 or email training@imaginewa.org.
+
+See you soon!
+
+-The Imagine Institute
+
+www.imaginewa.org
+
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

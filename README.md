@@ -9,7 +9,18 @@ SF w/ Class Management Managed Package is the source of truth (make changes here
 
 Search replace
 1. c501_cm__ with "" - blank/nothing
-2. db.seiuesf@501commons.org with db.ii@501commons.org
+2. db.seiuesf@501commons.org with db.iisc@501commons.org
+
+Check Changes
+3. Stage Changes
+4. cci task run retrieve_unpackaged -o package_xml ./src/package.xml -o path src 
+5. Walk thru all the changes to see which ones you want to take
+NOTE: Contact.object & Custom Settings (don't take these changes from the package (use the ones from destination) - need to figure out how to isolate these changes)
+
+Updates
+1) Lead Assigment Flow Template - need to update to allow deployment
+2) Custom Settings - need something more general then MA and RI owner
+3) Lead Change Process Template - references Lead Flow Custom - have to create a flow custom shell for now - try setting to the Template flow
 
 ## Development
 

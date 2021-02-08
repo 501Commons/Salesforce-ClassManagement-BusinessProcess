@@ -221,7 +221,7 @@
     <formulas>
         <name>formEmailMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetEmailOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_In_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_Out_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c})</expression>
+        <expression>IF({!varSetEmailOptIn},{!$Setup.c501_cm__Imagine_Settings__c.Email_Opt_In_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.Communication_Preference_URL__c},{!$Setup.c501_cm__Imagine_Settings__c.Email_Opt_Out_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.Communication_Preference_URL__c})</expression>
     </formulas>
     <formulas>
         <name>formSetEmailOptOUT</name>
@@ -231,7 +231,7 @@
     <formulas>
         <name>fromSMSMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetSMSOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_In_Reply__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_Out_Reply__c})+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c}</expression>
+        <expression>IF({!varSetSMSOptIn},{!$Setup.c501_cm__Imagine_Settings__c.SMS_Opt_In_Reply__c},{!$Setup.c501_cm__Imagine_Settings__c.SMS_Opt_Out_Reply__c})+{!$Setup.c501_cm__Imagine_Settings__c.Communication_Preference_URL__c}</expression>
     </formulas>
     <formulas>
         <name>getEmailOptOut</name>
@@ -327,15 +327,15 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>HasOptedOutOfEmail</field>
-            <value>
-                <elementReference>getEmailOptOut</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>c501_cm__C501_Email_Opt_Out_by_Contact_Date__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>HasOptedOutOfEmail</field>
+            <value>
+                <elementReference>getEmailOptOut</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>

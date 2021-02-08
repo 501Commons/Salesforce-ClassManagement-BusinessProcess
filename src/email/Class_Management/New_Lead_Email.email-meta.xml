@@ -13,7 +13,7 @@ The Lead is {!Lead.FirstName} {!Lead.LastName}.
 
 
 
-{!$Setup.Imagine_Settings__c.Email_SMS_Unsub_Text__c}</textOnly>
+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_SMS_Unsub_Text__c}</textOnly>
     <type>html</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
