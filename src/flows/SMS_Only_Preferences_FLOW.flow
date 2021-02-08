@@ -572,7 +572,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <formulas>
         <name>formEmailMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetEmailOptIn},{!$Setup.Imagine_Settings__c.Email_Opt_In_Reply__c}+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c},{!$Setup.Imagine_Settings__c.Email_Opt_Out_Reply__c}+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c})</expression>
+        <expression>IF({!varSetEmailOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_In_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Email_Opt_Out_Reply__c}+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c})</expression>
     </formulas>
     <formulas>
         <name>formEmailOptedOutSingle</name>
@@ -602,7 +602,7 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
     <formulas>
         <name>fromSMSMessage</name>
         <dataType>String</dataType>
-        <expression>IF({!varSetSMSOptIn},{!$Setup.Imagine_Settings__c.SMS_Opt_In_Reply__c},{!$Setup.Imagine_Settings__c.SMS_Opt_Out_Reply__c})+{!$Setup.Imagine_Settings__c.Communication_Preference_URL__c}</expression>
+        <expression>IF({!varSetSMSOptIn},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_In_Reply__c},{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__SMS_Opt_Out_Reply__c})+{!$Setup.c501_cm__Imagine_Settings__c.c501_cm__Communication_Preference_URL__c}</expression>
     </formulas>
     <formulas>
         <name>SMSorEmail</name>
@@ -645,6 +645,12 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -1082,7 +1088,13 @@ SUBSTITUTE( {!varPhone}, &quot;(&quot;, &quot;&quot;), &quot;)&quot;, &quot;&quo
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>Input_Phone_or_Email</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Input_Phone_or_Email</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <textTemplates>
         <name>lineBreak</name>

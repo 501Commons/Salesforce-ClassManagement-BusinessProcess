@@ -18,9 +18,9 @@ What: {!CampaignMember.c501_cm__Training_Name__c}
 
 When: {!CampaignMember.c501_cm__Training_Start_DateTime__c} - {!CampaignMember.c501_cm__Training_End_DateTime__c}
 
-Where: {!Campaign.City__c}
+Where: {!Campaign.c501_cm__City__c}
 
-Language: {!Campaign.Language__c}
+Language: {!Campaign.c501_cm__Language__c}
 
 Click Here to Register!
 

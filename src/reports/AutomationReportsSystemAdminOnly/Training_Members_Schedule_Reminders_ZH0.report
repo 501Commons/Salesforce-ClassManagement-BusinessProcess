@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_MEMBER_ID</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Campaign.c501_cm__Training_Name_WebForm__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Campaign.c501_cm__ii_Days_Until_Class__c</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CampaignMember.Notification_Pending__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.c501_cm__ii_Days_Until_Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>14,7,2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Planned,In Progress,Full</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Registered,Registered Reminder</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Training Members Schedule Reminders</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignWithCampaignMembers</reportType>
+    <scope>orgActive</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

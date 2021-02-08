@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_92529172</developerName>
+        <masterLabel>Notification Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Activity$Subject</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Outreach EMail</sourceValue>
+            </sourceValues>
+            <value>Outreach Email</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Outreach SMS</sourceValue>
+            </sourceValues>
+            <value>Outreach SMS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Outreach EMail &amp; SMS</sourceValue>
+            </sourceValues>
+            <value>Outreach Email &amp; SMS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Call</sourceValue>
+            </sourceValues>
+            <value>Call</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Class Reminder Email Notification</sourceValue>
+            </sourceValues>
+            <value>Class Reminder</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Class Registered Email Notification</sourceValue>
+            </sourceValues>
+            <value>Class Registered</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Class Confirmation Email Notification</sourceValue>
+            </sourceValues>
+            <value>Class Confirmation</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Class Denied Email Notification</sourceValue>
+            </sourceValues>
+            <value>Class Denied</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Class Reminder SMS Notification</sourceValue>
+            </sourceValues>
+            <value>Class Reminder SMS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Class Confirmation SMS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Class Confirmation SMS Notification</sourceValue>
+            </sourceValues>
+            <value>Class Confirmation SMS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Certification Expired Email Notification</sourceValue>
+            </sourceValues>
+            <value>Cert Expired</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Certification Expiring</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Certification Exipiring Email Notification</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Certification Expiring Email Notification</sourceValue>
+            </sourceValues>
+            <value>Cert Expiring</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Certification Expired SMS Notification</sourceValue>
+            </sourceValues>
+            <value>Cert Expired SMS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Certification Expiring SMS Notification</sourceValue>
+            </sourceValues>
+            <value>Cert Expiring SMS</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Activity$Subject</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <column>Activity$CreatedDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>9/1/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity$CreatedDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>9/30/2019 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Activity$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_92529172</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Dashboard -Activity Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Activity$CreatedDate</dateColumn>
+        <interval>INTERVAL_PREVCURY</interval>
+    </timeFrameFilter>
+</Report>

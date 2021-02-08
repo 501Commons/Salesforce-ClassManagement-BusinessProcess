@@ -747,6 +747,14 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
             <field>AccountId</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>soContact.Email</assignToReference>
+            <field>Email</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>soContact.Id</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>soContact.c501_cm__C501_Clean_Mobile_Phone__c</assignToReference>
             <field>c501_cm__C501_Clean_Mobile_Phone__c</field>
         </outputAssignments>
@@ -769,14 +777,6 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <outputAssignments>
             <assignToReference>soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c</assignToReference>
             <field>c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.Email</assignToReference>
-            <field>Email</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.Id</assignToReference>
-            <field>Id</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>soContact.c501_cm__ii_Cpr_Cert_Date__c</assignToReference>

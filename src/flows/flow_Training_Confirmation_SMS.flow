@@ -586,20 +586,20 @@ DB 8/5 Switch from Training Status to Status</description>
         </filters>
         <object>Contact</object>
         <outputAssignments>
-            <assignToReference>soContact.c501_cm__C501_Clean_Mobile_Phone__c</assignToReference>
-            <field>c501_cm__C501_Clean_Mobile_Phone__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>soContact.c501_cm__C501_SMS_Opt_Out__c</assignToReference>
-            <field>c501_cm__C501_SMS_Opt_Out__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>soContact.MobilePhone</assignToReference>
             <field>MobilePhone</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>soContact.RecordTypeId</assignToReference>
             <field>RecordTypeId</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>soContact.c501_cm__C501_Clean_Mobile_Phone__c</assignToReference>
+            <field>c501_cm__C501_Clean_Mobile_Phone__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>soContact.c501_cm__C501_SMS_Opt_Out__c</assignToReference>
+            <field>c501_cm__C501_SMS_Opt_Out__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>

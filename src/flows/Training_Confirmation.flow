@@ -906,12 +906,12 @@ Add SMS Send support</description>
             <field>Email</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soContact.HasOptedOutOfEmail</assignToReference>
-            <field>c501_cm__Email_Opt_Out__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>varInputMemberId</assignToReference>
             <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>soContact.HasOptedOutOfEmail</assignToReference>
+            <field>c501_cm__Email_Opt_Out__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>varSendTrainingRegistered</assignToReference>

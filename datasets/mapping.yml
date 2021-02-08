@@ -392,7 +392,7 @@ Insert CampaignMember:
   - Status_Matching__c
   - c501_cm__Training_Status__c
   - custom_Attended__c
-  - custom_Member_ID__c
+  - c501_cm__custom_Member_ID__c
   lookups:
     CampaignId:
       table: Campaign
@@ -404,22 +404,22 @@ Insert CampaignMember:
 Insert Contact:
   sf_object: Contact
   fields:
-  - C501_BloodBorneP_Training_Completed__c
+  - c501_cm__C501_BloodBorneP_Training_Completed__c
   - c501_cm__C501_Certs_Expiring_Message__c
-  - C501_EAS_Access_Code__c
-  - C501_EAS_Attendance_Status__c
-  - C501_EAS_Due_Date__c
-  - C501_EAS_Exception__c
-  - C501_EAS_Training_Completed__c
+  - c501_cm__C501_EAS_Access_Code__c
+  - c501_cm__C501_EAS_Attendance_Status__c
+  - c501_cm__C501_EAS_Due_Date__c
+  - c501_cm__C501_EAS_Exception__c
+  - c501_cm__C501_EAS_Training_Completed__c
   - c501_cm__C501_Email_Opt_Out_by_Contact_Date__c
   - C501_FFN_Type__c
   - C501_First_Aid_Training_Completed__c
-  - C501_Health_Safety_Training_Completed__c
+  - c501_cm__C501_Health_Safety_Training_Completed__c
   - C501_Infant_CPR_Training_Completed__c
   - C501_Last_Unit_Status_Change_Date__c
   - C501_Previous_Unit_Status__c
   - C501_Profile_Pic__c
-  - C501_Relative__c
+  - c501_cm__C501_Relative__c
   - c501_cm__C501_SMS_Opt_Out__c
   - c501_cm__C501_SMS_Out_Out_by_Contact_Date__c
   - C501_Safe_Sleep_Training_Completed__c
@@ -439,8 +439,8 @@ Insert Contact:
   - Gender__c
   - HasOptedOutOfEmail
   - HasOptedOutOfFax
-  - Imagine_Email__c
-  - Imagine_Home_Phone__c
+  - c501_cm__Imagine_Email__c
+  - c501_cm__Imagine_Home_Phone__c
   - c501_cm__Imagine_Mobile_Phone__c
   - LastName
   - Outreach_Area__c
@@ -471,7 +471,7 @@ Insert Contact:
   - c501mm__Gender__c
   - ii_AM_Campus_User_Upload__c
   - ii_AM_Upload__c
-  - ii_Age__c
+  - c501_cm__ii_Age__c
   - ii_Annual_Continuing_Education_Training__c
   - ii_Child_Abuse_Cert_Date__c
   - ii_Child_Abuse_Cert_Status__c
@@ -507,7 +507,7 @@ Insert Contact:
   - ii_License_Status__c
   - c501_cm__ii_Licensed__c
   - ii_Member_ID__c
-  - ii_Member_Subtype_Name__c
+  - c501_cm__ii_Member_Subtype_Name__c
   - ii_Not_Approved_Reasons__c
   - ii_Orientation_Date__c
   - ii_Orientation_Incomplete_Reason__c
@@ -521,7 +521,7 @@ Insert Contact:
   - ii_Rating_Level__c
   - ii_RecordType_Previous__c
   - ii_SSPS_Number_Matching__c
-  - ii_SSPS_Number__c
+  - c501_cm__ii_SSPS_Number__c
   - c501_cm__ii_Safe_Sleep_Cert_Date__c
   - ii_Safe_Sleep_Cert_Status__c
   - ii_Serving_Children_On_Subsidy__c
@@ -621,7 +621,7 @@ Insert ii_Mentor_Program__c:
   fields:
   - Cohort__c
   - Exit_Date__c
-  - Fiscal_Year__c
+  - c501_cm__Fiscal_Year__c
   - Intern_Report__c
   - Intern_Status__c
   - Mentor_Report__c

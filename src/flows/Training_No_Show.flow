@@ -658,7 +658,7 @@ Troubleshooting - SMS removed</description>
 SUBSTITUTE(
 SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!soContact.FirstName}),
 &quot;!CampaignMember.c501_cm__Training_Name__c&quot;, {!soCampaign.c501_cm__Training_Name__c}),
-&quot;!CampaignMember.Training_Start_DateTime__c&quot;, TEXT({!soCampaign.StartDate}))</expression>
+&quot;!CampaignMember.c501_cm__Training_Start_DateTime__c&quot;, TEXT({!soCampaign.StartDate}))</expression>
     </formulas>
     <interviewLabel>Training No Show {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Training No Show</label>
@@ -858,10 +858,6 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
             <field>Email</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>soContact.HasOptedOutOfEmail</assignToReference>
-            <field>c501_cm__Email_Opt_Out__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>varInputMemberId</assignToReference>
             <field>Id</field>
         </outputAssignments>
@@ -872,6 +868,10 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <outputAssignments>
             <assignToReference>soContact.c501_cm__C501_SMS_Opt_Out__c</assignToReference>
             <field>SMS_Opt_Out__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>soContact.HasOptedOutOfEmail</assignToReference>
+            <field>c501_cm__Email_Opt_Out__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>

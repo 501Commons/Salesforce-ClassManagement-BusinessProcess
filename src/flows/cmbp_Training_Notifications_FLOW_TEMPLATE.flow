@@ -765,7 +765,7 @@
             <name>Yes_SMS_OptOut</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Contact.c501_cm__c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Contact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -876,7 +876,7 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Campaign_Member.Contact.c501_cm__c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
+                <leftValueReference>Get_Campaign_Member.Contact.c501_cm__C501_SMS_Opt_Out__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -988,14 +988,14 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
             </value>
         </filters>
         <filters>
-            <field>c501_cm__c501_cm__custom_Start_DateTime__c</field>
+            <field>c501_cm__custom_Start_DateTime__c</field>
             <operator>LessThan</operator>
             <value>
-                <elementReference>Get_Training.c501_cm__c501_cm__custom_Start_DateTime__c</elementReference>
+                <elementReference>Get_Training.c501_cm__custom_Start_DateTime__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__c501_cm__custom_Start_DateTime__c</field>
+            <field>c501_cm__custom_Start_DateTime__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
@@ -1038,14 +1038,14 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
             </value>
         </filters>
         <filters>
-            <field>c501_cm__c501_cm__custom_Start_DateTime__c</field>
+            <field>c501_cm__custom_Start_DateTime__c</field>
             <operator>LessThan</operator>
             <value>
-                <elementReference>Get_Training.c501_cm__c501_cm__custom_Start_DateTime__c</elementReference>
+                <elementReference>Get_Training.c501_cm__custom_Start_DateTime__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>c501_cm__c501_cm__custom_Start_DateTime__c</field>
+            <field>c501_cm__custom_Start_DateTime__c</field>
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>

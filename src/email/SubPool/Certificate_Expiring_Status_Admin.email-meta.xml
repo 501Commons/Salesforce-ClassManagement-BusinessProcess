@@ -15,7 +15,7 @@ Name: {!Contact.Name}
 
 Id: {!Contact.Id}
 
-Stars Id: {!Contact.c501_cm__ii_STARS_Id__c}
+Stars Id: {!Contact.c501_cm__ii_Stars_Id__c}
 
 
 

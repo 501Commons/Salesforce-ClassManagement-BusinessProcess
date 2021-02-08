@@ -950,7 +950,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>11/4 - add lead grouping back to add all registered to single lead based on email
+    <description>2/8 - Filter out Test Flight if not using test flight
+11/4 - add lead grouping back to add all registered to single lead based on email
 10/14b - Fix SubPool only prompting to 2 days
 10/14 - Create new lead each time
 10/13 - Switch to run as System to make sure Lead created and can use the Id to create members
@@ -1641,6 +1642,13 @@
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>varExtraDayMin</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>TestFlight_Enabled__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInputTestFlightEnabled</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>

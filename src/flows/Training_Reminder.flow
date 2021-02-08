@@ -630,12 +630,12 @@ DaveB: Default Event Ownership to Training
         </filters>
         <object>Campaign</object>
         <outputAssignments>
-            <assignToReference>varEmailType</assignToReference>
-            <field>c501_cm__Reminder_Email_Template__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>soCampaign.Status</assignToReference>
             <field>Status</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varEmailType</assignToReference>
+            <field>c501_cm__Reminder_Email_Template__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -759,7 +759,7 @@ DaveB: Default Event Ownership to Training
             <targetReference>Get_Member</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>soCampaign</name>
         <dataType>SObject</dataType>

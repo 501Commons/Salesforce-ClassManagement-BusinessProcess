@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign.C501_LID_Campaign__c</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>Campaign.c501_cm__custom_Start_DateTime__c</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Status</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Responded,Sent</value>
+        </criteriaItems>
+        <operation>with</operation>
+        <primaryTableColumn>CAMPAIGN_ID</primaryTableColumn>
+        <relatedTable>CampaignMember-ContactOrLead</relatedTable>
+        <relatedTableJoinColumn>Campaign</relatedTableJoinColumn>
+    </crossFilters>
+    <description>Trainings (Campaigns) with Start Date Time after May 01 2020, no campaign members have Sent or Responded statuses</description>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.c501_cm__custom_Start_DateTime__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>5/1/2020 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Trainings-RemoveDefaultStatuses</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignList</reportType>
+    <scope>orgAll</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Campaign.c501_cm__custom_Start_DateTime__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+</Report>
