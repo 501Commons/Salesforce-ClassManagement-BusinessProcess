@@ -12,6 +12,15 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>CompanyDashboards</members>
+        <members>CompanyDashboards/FdcCvokvlmXvuEBUwfUtiySdczNvJh</members>
+        <members>CompanyDashboards/RuuNOHzridHAZEiPWubfxNXBimpTVV</members>
+        <members>CompanyDashboards/ijqUSRyWknxtIUSYFYpfZuTPxKbBYz</members>
+        <members>CompanyDashboards/yRlppZhxjXxVUHvbhDTYstsBaEVUeX</members>
+        <members>CompanyDashboards/zHstTSQjhWGEQdVDyvmfCqYKghDHiX</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
         <members>cmbp_Custom_Settings__c.OrgWideEmailAddress__c</members>
         <members>cmbp_Custom_Settings__c.Website_Contact__c</members>
         <name>CustomField</name>
