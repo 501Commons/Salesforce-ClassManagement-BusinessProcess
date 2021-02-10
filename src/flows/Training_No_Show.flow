@@ -898,7 +898,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
             <targetReference>Get_Member</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>soCampaign</name>
         <dataType>SObject</dataType>

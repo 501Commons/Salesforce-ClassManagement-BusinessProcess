@@ -2,25 +2,25 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Denied_Email_Alert</fullName>
-        <description>Denied Email Alert Training (training@imaginewa.org)</description>
+        <description>Denied Email Alert Training</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/Denied_Email_Training</template>
     </alerts>
     <alerts>
         <fullName>Denied_Email_Alert_ImagineU</fullName>
-        <description>Denied Email Alert ImagineU (mentors@imaginewa.org)</description>
+        <description>Denied Email Alert ImagineU</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Denied_Email_Imagine_U</template>
     </alerts>
@@ -38,37 +38,37 @@
     </alerts>
     <alerts>
         <fullName>Outreach_English</fullName>
-        <description>Outreach English (training@imaginewa.org)</description>
+        <description>Outreach English</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Outreach_Emails/Outreach_Email_English</template>
     </alerts>
     <alerts>
         <fullName>Outreach_Somali</fullName>
-        <description>Outreach Somali (training@imaginewa.org)</description>
+        <description>Outreach Somali</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Outreach_Emails/Outreach_Email_Somali</template>
     </alerts>
     <alerts>
         <fullName>Outreach_Spanish</fullName>
-        <description>Outreach Spanish (training@imaginewa.org)</description>
+        <description>Outreach Spanish</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Outreach_Emails/Outreach_Email_Spanish</template>
     </alerts>
@@ -122,289 +122,289 @@
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_LFCCP_No_Show_English</fullName>
-        <description>Training Member - FFN / LFCCP No Show (English) (training@imaginewa.org)</description>
+        <description>Training Member - FFN / LFCCP No Show (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_LFCCP_Training_No_Show_English</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_LFCCP_No_Show_Somali</fullName>
-        <description>Training Member - FFN / LFCCP No Show (Somali) (training@imaginewa.org)</description>
+        <description>Training Member - FFN / LFCCP No Show (Somali)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_LFCCP_Training_No_Show_Somali</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_LFCCP_No_Show_Spanish</fullName>
-        <description>Training Member - FFN / LFCCP No Show (Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - FFN / LFCCP No Show (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_LFCCP_Training_No_Show_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_LFCCP_No_Show_bilingual</fullName>
-        <description>Training Member - FFN / LFCCP No Show (bilingual) (training@imaginewa.org)</description>
+        <description>Training Member - FFN / LFCCP No Show (bilingual)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_LFCCP_Training_No_Show_bilingual</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_Registration_Confirmation</fullName>
-        <description>Training Member - FFN Registration Confirmation (English) (training@imaginewa.org)</description>
+        <description>Training Member - FFN Registration Confirmation (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_Registration_Confirmation_English</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_Registration_Confirmation_Spanish</fullName>
-        <description>Training Member - FFN Registration Confirmation (Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - FFN Registration Confirmation (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_Registration_Confirmation_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_Reminder</fullName>
-        <description>Training Member - FFN Reminder (English) (training@imaginewa.org)</description>
+        <description>Training Member - FFN Reminder (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_Reminder_English</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_FFN_Reminder_Spanish</fullName>
-        <description>Training Member - FFN Reminder (Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - FFN Reminder (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/FFN_Reminder_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_Register</fullName>
-        <description>Training Member - Imagine Register (English) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine Register (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_Confirmation_English</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_Register_Spanish</fullName>
-        <description>Training Member - Imagine Register (Spanish) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine Register (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_Registration_Confirmation_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_Register_bilingual</fullName>
-        <description>Training Member - Imagine Register (bilingual) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine Register (bilingual)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_Confirmation_bilingual</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_Reminder</fullName>
-        <description>Training Member - Imagine Reminder (English) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine Reminder (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_Reminder_English</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_Reminder_Spanish</fullName>
-        <description>Training Member - Imagine Reminder (Spanish) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine Reminder (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_Reminder_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_Reminder_bilingual</fullName>
-        <description>Training Member - Imagine Reminder (bilingual) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine Reminder (bilingual)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_Reminder_bilingual</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_U_No_Show_English</fullName>
-        <description>Training Member - Imagine U No Show (English) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine U No Show (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_No_Show_English</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_U_No_Show_Somali</fullName>
-        <description>Training Member - Imagine U No Show (Somali) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine U No Show (Somali)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_No_Show_Somali</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_U_No_Show_Spanish</fullName>
-        <description>Training Member - Imagine U No Show (Spanish) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine U No Show (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_No_Show_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_Imagine_U_No_Show_bilingual</fullName>
-        <description>Training Member - Imagine U No Show (bilingual) (mentors@imaginewa.org)</description>
+        <description>Training Member - Imagine U No Show (bilingual)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>mentors@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>Imagine_U/Imagine_U_No_Show_bilingual</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_LFCCPReminder</fullName>
-        <description>Training Member - LFCCPReminder (English) (training@imaginewa.org)</description>
+        <description>Training Member - LFCCPReminder (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/LFCCP_Reminder</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_LFCCP_Creative_Registration_English_Spanish</fullName>
-        <description>Training Member - LFCCP Creative Registration (English/Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - LFCCP Creative Registration (English/Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/LFCCP_Creative_Registration1</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_LFCCP_Creative_Reminder_English_Spanish</fullName>
-        <description>Training Member - LFCCP Creative Reminder (English/Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - LFCCP Creative Reminder (English/Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/LFCCP_Creative_Reminder1</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_LFCCP_Registration_Confirmation</fullName>
-        <description>Training Member - LFCCP Registration Confirmation (English) (training@imaginewa.org)</description>
+        <description>Training Member - LFCCP Registration Confirmation (English)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/LFCCP_Registration_Confirmation</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_LFCCP_Registration_Confirmation_Spanish</fullName>
-        <description>Training Member - LFCCP Registration Confirmation (Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - LFCCP Registration Confirmation (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/LFCCP_Registration_Confirmation_Spanish</template>
     </alerts>
     <alerts>
         <fullName>Training_Member_LFCCP_Reminder_Spanish</fullName>
-        <description>Training Member - LFCCP Reminder (Spanish) (training@imaginewa.org)</description>
+        <description>Training Member - LFCCP Reminder (Spanish)</description>
         <protected>false</protected>
         <recipients>
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>subpool@imaginewa.org</senderAddress>
+        <senderAddress>training@imaginewa.org</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>FFN_LFCCP_Auto_Emails/LFCCP_Reminder_Spanish</template>
     </alerts>

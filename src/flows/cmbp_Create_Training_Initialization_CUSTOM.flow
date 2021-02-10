@@ -5,7 +5,7 @@
         <name>SendErrorEmail</name>
         <label>SendErrorEmail</label>
         <locationX>1235</locationX>
-        <locationY>932</locationY>
+        <locationY>1323</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <inputParameters>
@@ -38,7 +38,7 @@
         <name>AddToCreateNewCampaignMemberStatusCollection</name>
         <label>AddToCreateNewCampaignMemberStatusCollection</label>
         <locationX>994</locationX>
-        <locationY>362</locationY>
+        <locationY>753</locationY>
         <assignmentItems>
             <assignToReference>NewCampaignMemberStatuses</assignToReference>
             <operator>Add</operator>
@@ -55,7 +55,7 @@
         <name>CountCMs</name>
         <label>CountCMs</label>
         <locationX>282</locationX>
-        <locationY>333</locationY>
+        <locationY>724</locationY>
         <assignmentItems>
             <assignToReference>numCMs</assignToReference>
             <operator>AssignCount</operator>
@@ -72,7 +72,7 @@
         <name>CountDefaultCMSs</name>
         <label>CountDefaultCMSs</label>
         <locationX>1373</locationX>
-        <locationY>366</locationY>
+        <locationY>757</locationY>
         <assignmentItems>
             <assignToReference>numDefaultCMSs</assignToReference>
             <operator>AssignCount</operator>
@@ -89,7 +89,7 @@
         <name>CountMDTs</name>
         <label>CountMDTs</label>
         <locationX>709</locationX>
-        <locationY>337</locationY>
+        <locationY>728</locationY>
         <assignmentItems>
             <assignToReference>numMDTs</assignToReference>
             <operator>AssignCount</operator>
@@ -106,7 +106,7 @@
         <name>ErrorEmailFaultCreateCMSs</name>
         <label>ErrorEmailFaultCreateCMSs</label>
         <locationX>1486</locationX>
-        <locationY>237</locationY>
+        <locationY>628</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -130,7 +130,7 @@
         <name>ErrorEmailFaultDeleteCMSs</name>
         <label>ErrorEmailFaultDeleteCMSs</label>
         <locationX>1804</locationX>
-        <locationY>251</locationY>
+        <locationY>642</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -154,7 +154,7 @@
         <name>ErrorEmailFaultGetCampaign</name>
         <label>ErrorEmailFaultGetCampaign</label>
         <locationX>176</locationX>
-        <locationY>658</locationY>
+        <locationY>1049</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -178,7 +178,7 @@
         <name>ErrorEmailFaultGetCMs</name>
         <label>ErrorEmailFaultGetCMs</label>
         <locationX>399</locationX>
-        <locationY>234</locationY>
+        <locationY>625</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -202,7 +202,7 @@
         <name>ErrorEmailFaultGetCMSs</name>
         <label>ErrorEmailFaultGetCMSs</label>
         <locationX>582</locationX>
-        <locationY>658</locationY>
+        <locationY>1049</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -226,7 +226,7 @@
         <name>ErrorEmailFaultGetMDTs</name>
         <label>ErrorEmailFaultGetMDTs</label>
         <locationX>818</locationX>
-        <locationY>232</locationY>
+        <locationY>623</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -250,7 +250,7 @@
         <name>ErrorEmailFaultUpdateCampaign</name>
         <label>ErrorEmailFaultUpdateCampaign</label>
         <locationX>2099</locationX>
-        <locationY>488</locationY>
+        <locationY>879</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -274,7 +274,7 @@
         <name>ErrorEmailFoundCMs</name>
         <label>ErrorEmailFoundCMs</label>
         <locationX>280</locationX>
-        <locationY>658</locationY>
+        <locationY>1049</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -298,7 +298,7 @@
         <name>ErrorEmailNoMDTs</name>
         <label>ErrorEmailNoMDTs</label>
         <locationX>709</locationX>
-        <locationY>658</locationY>
+        <locationY>1049</locationY>
         <assignmentItems>
             <assignToReference>ErrorEmailSubject</assignToReference>
             <operator>Assign</operator>
@@ -322,7 +322,7 @@
         <name>Set_New_Campaign_Member_Status_Values</name>
         <label>Set New Campaign Member Status Values</label>
         <locationX>1202</locationX>
-        <locationY>280</locationY>
+        <locationY>671</locationY>
         <assignmentItems>
             <assignToReference>loopCampaignMemberStatus.Label</assignToReference>
             <operator>Assign</operator>
@@ -360,7 +360,7 @@
         <name>UpdatesToOriginalCampaign</name>
         <label>UpdatesToOriginalCampaign</label>
         <locationX>1821</locationX>
-        <locationY>443</locationY>
+        <locationY>834</locationY>
         <assignmentItems>
             <assignToReference>Get_Campaign.C501_CampaignMemberStatusesCreated__c</assignToReference>
             <operator>Assign</operator>
@@ -377,7 +377,7 @@
         <name>FoundMDTs</name>
         <label>FoundMDTs</label>
         <locationX>701</locationX>
-        <locationY>464</locationY>
+        <locationY>855</locationY>
         <defaultConnector>
             <targetReference>ErrorEmailNoMDTs</targetReference>
         </defaultConnector>
@@ -403,7 +403,7 @@
         <name>HasDefaultCMSsToDelete</name>
         <label>HasDefaultCMSsToDelete</label>
         <locationX>1365</locationX>
-        <locationY>501</locationY>
+        <locationY>892</locationY>
         <defaultConnector>
             <targetReference>UpdatesToOriginalCampaign</targetReference>
         </defaultConnector>
@@ -429,7 +429,7 @@
         <name>NoCMs</name>
         <label>NoCMs</label>
         <locationX>275</locationX>
-        <locationY>473</locationY>
+        <locationY>864</locationY>
         <defaultConnector>
             <targetReference>ErrorEmailFoundCMs</targetReference>
         </defaultConnector>
@@ -450,6 +450,29 @@
             <label>No Campaign Members</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Training_Related_Record_Type</name>
+        <label>Training Related Record Type</label>
+        <locationX>282</locationX>
+        <locationY>375</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_TrainingRelatedRecordType</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Record_Type.DeveloperName</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Training</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetCMs</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>2/8 - only update for Training or Training Series campaigns</description>
     <formulas>
         <description>Assemble basic info about the flow for the error email body: who triggered it, when and where it failed, and what record it was working on</description>
         <name>ErrorEmailFlowInfo</name>
@@ -463,7 +486,7 @@
         <name>Assign_Statuses</name>
         <label>Assign Statuses</label>
         <locationX>994</locationX>
-        <locationY>213</locationY>
+        <locationY>604</locationY>
         <assignNextValueToReference>loopCampaignMemberStatusMDTs</assignNextValueToReference>
         <collectionReference>CampaignMemberStatusMDTs</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -481,6 +504,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -492,7 +521,7 @@
         <name>Create_Campaign_Member_Statuses</name>
         <label>Create Campaign Member Statuses</label>
         <locationX>1373</locationX>
-        <locationY>209</locationY>
+        <locationY>600</locationY>
         <connector>
             <targetReference>CountDefaultCMSs</targetReference>
         </connector>
@@ -506,7 +535,7 @@
         <name>Delete_Default_Campaign_Member_Statuses</name>
         <label>Delete Default Campaign Member Statuses</label>
         <locationX>1684</locationX>
-        <locationY>221</locationY>
+        <locationY>612</locationY>
         <connector>
             <targetReference>UpdatesToOriginalCampaign</targetReference>
         </connector>
@@ -520,10 +549,10 @@
         <name>Get_Campaign</name>
         <label>Get Campaign</label>
         <locationX>176</locationX>
-        <locationY>198</locationY>
+        <locationY>231</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetCMs</targetReference>
+            <targetReference>Get_Record_Type</targetReference>
         </connector>
         <faultConnector>
             <targetReference>ErrorEmailFaultGetCampaign</targetReference>
@@ -539,8 +568,29 @@
         <object>Campaign</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>C501_CampaignMemberStatusesCreated__c</queriedFields>
+        <queriedFields>RecordTypeId</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type</name>
+        <label>Get Record Type</label>
+        <locationX>290</locationX>
+        <locationY>213</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Training_Related_Record_Type</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Campaign.RecordTypeId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -548,7 +598,7 @@
         <name>GetActiveCampaignMemberStatusMDT</name>
         <label>GetActiveCampaignMemberStatusMDT</label>
         <locationX>709</locationX>
-        <locationY>201</locationY>
+        <locationY>592</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CountMDTs</targetReference>
@@ -578,7 +628,7 @@
         <name>GetCMs</name>
         <label>GetCMs</label>
         <locationX>286</locationX>
-        <locationY>198</locationY>
+        <locationY>589</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CountCMs</targetReference>
@@ -602,7 +652,7 @@
         <name>GetDefaultCMSs</name>
         <label>GetDefaultCMSs</label>
         <locationX>585</locationX>
-        <locationY>201</locationY>
+        <locationY>592</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>GetActiveCampaignMemberStatusMDT</targetReference>
@@ -626,14 +676,14 @@
         <name>UpdateOriginalCampaign</name>
         <label>UpdateOriginalCampaign</label>
         <locationX>1983</locationX>
-        <locationY>444</locationY>
+        <locationY>835</locationY>
         <faultConnector>
             <targetReference>ErrorEmailFaultUpdateCampaign</targetReference>
         </faultConnector>
         <inputReference>Get_Campaign</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>64</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Get_Campaign</targetReference>

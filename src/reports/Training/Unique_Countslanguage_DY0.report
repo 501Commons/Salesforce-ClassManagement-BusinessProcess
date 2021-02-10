@@ -35,7 +35,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Attended,Pending,Registered,Registered Reminder</value>
+            <value>Attended,Pending,Registered</value>
         </criteriaItems>
         <criteriaItems>
             <column>Contact.CampaignMembers$Name</column>

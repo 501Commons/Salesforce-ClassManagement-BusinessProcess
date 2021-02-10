@@ -603,8 +603,8 @@
     <decisions>
         <name>Check_Extra_Day</name>
         <label>Check Extra Day</label>
-        <locationX>3786</locationX>
-        <locationY>269</locationY>
+        <locationX>3765</locationX>
+        <locationY>284</locationY>
         <defaultConnector>
             <targetReference>Loop_Extra_Days</targetReference>
         </defaultConnector>
@@ -617,6 +617,13 @@
                 <operator>Contains</operator>
                 <rightValue>
                     <elementReference>getDayCheck</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_Extra_Days.c501_cm__Training_Name_WebForm__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>varInputTrainingFilter</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -950,7 +957,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>2/8 - Filter out Test Flight if not using test flight
+    <description>2/8-2 MultiDay prompt fix
+2/8 - Filter out Test Flight if not using test flight
 11/4 - add lead grouping back to add all registered to single lead based on email
 10/14b - Fix SubPool only prompting to 2 days
 10/14 - Create new lead each time
@@ -1220,6 +1228,13 @@
             <operator>GreaterThan</operator>
             <value>
                 <elementReference>varExtraDayMin</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>c501_cm__Training_Name_WebForm__c</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>varInputTrainingFilter</elementReference>
             </value>
         </filters>
         <object>Campaign</object>

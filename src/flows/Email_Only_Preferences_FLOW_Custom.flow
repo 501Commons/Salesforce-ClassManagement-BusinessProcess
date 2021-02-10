@@ -25,7 +25,7 @@
         <inputParameters>
             <name>senderAddress</name>
             <value>
-                <stringValue>training@imaginewa.org</stringValue>
+                <stringValue>subpool@imaginewa.org</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -545,6 +545,7 @@
             <label>Email</label>
         </rules>
     </decisions>
+    <description>2/8 - switch to from subpool until training email online</description>
     <dynamicChoiceSets>
         <name>languages1</name>
         <dataType>Multipicklist</dataType>

@@ -108,7 +108,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Attended,Registered,Registered Reminder</value>
+            <value>Attended,Registered</value>
         </criteriaItems>
         <criteriaItems>
             <column>Contact$c501_cm__ii_Employer_Name__c</column>

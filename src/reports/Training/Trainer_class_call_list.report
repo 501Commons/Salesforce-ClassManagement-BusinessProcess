@@ -83,7 +83,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Pending,Registered,Registered Reminder</value>
+            <value>Pending,Registered</value>
         </criteriaItems>
         <criteriaItems>
             <column>CAMPAIGN_NAME</column>
