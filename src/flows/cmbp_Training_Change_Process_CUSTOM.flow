@@ -1074,7 +1074,7 @@
             <name>originalFormula</name>
             <value>
                 <stringValue>&quot;Register: &quot; &amp;
-[Campaign].C501_Registration_Link__c  &amp;
+[Campaign].c501_cm__C501_Registration_Link__c  &amp;
 &quot; (Training Status: &quot; &amp;
 TEXT([Campaign].Status) &amp;
 &quot;)&quot;</stringValue>
@@ -1104,7 +1104,7 @@ TEXT({!myVariable_current.Status}) &amp;
             <name>originalFormula</name>
             <value>
                 <stringValue>&quot;Register: &quot; &amp;
-[Campaign].C501_Registration_Link__c  &amp;
+[Campaign].c501_cm__C501_Registration_Link__c  &amp;
 &quot; (Training Status: &quot; &amp;
 TEXT([Campaign].Status) &amp;
 &quot;)&quot;</stringValue>
@@ -2315,7 +2315,7 @@ ISNEW()</expression>
         <object>Campaign</object>
     </recordUpdates>
     <startElementReference>isChangedDecision17_myRule_16_Language_c</startElementReference>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
