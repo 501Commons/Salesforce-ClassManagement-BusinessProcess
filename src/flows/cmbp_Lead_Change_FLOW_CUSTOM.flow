@@ -64,7 +64,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>10/14 - use the incoming Lead Id &amp; switch to System Context</description>
+    <description>2/11/2021 - Pass in Lead Email so do not have to query lead
+10/14 - use the incoming Lead Id &amp; switch to System Context</description>
     <interviewLabel>cmbp Lead Change FLOW CUSTOM {!$Flow.CurrentDateTime}</interviewLabel>
     <label>cmbp Lead Change FLOW CUSTOM</label>
     <loops>
@@ -101,26 +102,6 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Lead</name>
-        <label>Get Lead</label>
-        <locationX>509</locationX>
-        <locationY>115</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Lead_Members</targetReference>
-        </connector>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varInputLeadId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Lead</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Lead_Members</name>
         <label>Get Lead Members</label>
         <locationX>674</locationX>
@@ -153,7 +134,7 @@
             <field>Email</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Lead.Email</elementReference>
+                <elementReference>varInputLeadEmail</elementReference>
             </value>
         </filters>
         <filters>
@@ -181,7 +162,7 @@
         <locationX>50</locationX>
         <locationY>50</locationY>
         <connector>
-            <targetReference>Get_Lead</targetReference>
+            <targetReference>Get_Lead_Members</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -200,6 +181,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <name>varInputLeadEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>varInputLeadId</name>

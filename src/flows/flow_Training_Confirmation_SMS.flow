@@ -712,6 +712,7 @@ DB 8/5 Switch from Training Status to Status</description>
         </inputAssignments>
         <object>CampaignMember</object>
     </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
     <start>
         <locationX>49</locationX>
         <locationY>14</locationY>

@@ -277,7 +277,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A2_7627643633</name>
+        <name>formula_4_myRule_3_A2_8398764046</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -288,7 +288,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_7_myRule_6_A1_9883743232</name>
+        <name>formula_7_myRule_6_A1_3117719231</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -296,12 +296,12 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>LEFT([CampaignMember].Campaign.CampaignMemberRecordType.DeveloperName, 8) &lt;&gt; &quot;Training&quot;</stringValue>
+                <stringValue>LEFT([CampaignMember].Campaign.RecordType.DeveloperName, 8) &lt;&gt; &quot;Training&quot;</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
-        <expression>LEFT({!myVariable_current.Campaign.CampaignMemberRecordType.DeveloperName}, 8) &lt;&gt; &quot;Training&quot;</expression>
+        <expression>LEFT({!myVariable_current.Campaign.RecordType.DeveloperName}, 8) &lt;&gt; &quot;Training&quot;</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -371,7 +371,7 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
 
 NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expression>
     </formulas>
-    <interviewLabel>cmbp_Training_Member_Change_Process_CUSTOM-3_InterviewLabel</interviewLabel>
+    <interviewLabel>cmbp_Training_Member_Change_Process_CUSTOM-4_InterviewLabel</interviewLabel>
     <label>cmbp Training Member Change Process CUSTOM</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -799,7 +799,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_4_myRule_3_A2_7627643633</elementReference>
+                <elementReference>formula_4_myRule_3_A2_8398764046</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -882,7 +882,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_7_myRule_6_A1_9883743232</elementReference>
+                <elementReference>formula_7_myRule_6_A1_3117719231</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>

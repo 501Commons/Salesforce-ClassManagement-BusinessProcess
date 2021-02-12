@@ -957,7 +957,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>2/8-2 MultiDay prompt fix
+    <description>2/11 - Fix error getting lead
+2/8-2 MultiDay prompt fix
 2/8 - Filter out Test Flight if not using test flight
 11/4 - add lead grouping back to add all registered to single lead based on email
 10/14b - Fix SubPool only prompting to 2 days
@@ -2183,6 +2184,12 @@ ISNUMBER({!Facility_Payee_Number})</formulaExpression>
         <locationX>2181</locationX>
         <locationY>2030</locationY>
         <flowName>cmbp_Lead_Change_FLOW_CUSTOM</flowName>
+        <inputAssignments>
+            <name>varInputLeadEmail</name>
+            <value>
+                <elementReference>soLead.Email</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <name>varInputLeadId</name>
             <value>
