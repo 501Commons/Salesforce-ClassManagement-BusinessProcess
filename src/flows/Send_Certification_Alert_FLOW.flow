@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Cert_Admin_Alert</name>
         <label>Cert Admin Alert</label>
-        <locationX>1602</locationX>
+        <locationX>1740</locationX>
         <locationY>620</locationY>
         <actionName>Contact.Certification_Expiring_Admin_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -20,7 +20,7 @@
     <actionCalls>
         <name>Certiifcation_Alert</name>
         <label>Certiifcation Alert</label>
-        <locationX>1165</locationX>
+        <locationX>1303</locationX>
         <locationY>633</locationY>
         <actionName>Contact.Certification_Expiring_Alert</actionName>
         <actionType>emailAlert</actionType>
@@ -37,7 +37,7 @@
     <actionCalls>
         <name>Send_SMS_Message</name>
         <label>Send SMS Message</label>
-        <locationX>2163</locationX>
+        <locationX>2301</locationX>
         <locationY>975</locationY>
         <actionName>TwilioSF__TwilioSendSMS</actionName>
         <actionType>apex</actionType>
@@ -64,7 +64,7 @@
         <description>0033u00001DIFxdAAH -&gt; **TEST** Boyce 501 Commons Facility</description>
         <name>Debug_override_Contact</name>
         <label>Debug override Contact</label>
-        <locationX>869</locationX>
+        <locationX>1007</locationX>
         <locationY>231</locationY>
         <assignmentItems>
             <assignToReference>varInputContactId</assignToReference>
@@ -80,7 +80,7 @@
     <decisions>
         <name>Check_Is_Expired</name>
         <label>Check Is Expired</label>
-        <locationX>1277</locationX>
+        <locationX>1415</locationX>
         <locationY>773</locationY>
         <defaultConnector>
             <targetReference>Create_Event_Email</targetReference>
@@ -105,7 +105,7 @@
     <decisions>
         <name>Debug_Mode</name>
         <label>Debug Mode</label>
-        <locationX>855</locationX>
+        <locationX>993</locationX>
         <locationY>50</locationY>
         <defaultConnector>
             <targetReference>Get_Contact</targetReference>
@@ -130,7 +130,7 @@
     <decisions>
         <name>Debug_Mode_0</name>
         <label>Debug Mode</label>
-        <locationX>1941</locationX>
+        <locationX>2079</locationX>
         <locationY>972</locationY>
         <defaultConnector>
             <targetReference>Send_SMS_Message</targetReference>
@@ -152,7 +152,7 @@
     <decisions>
         <name>Debug_Mode_0_0</name>
         <label>Debug Mode</label>
-        <locationX>1463</locationX>
+        <locationX>1601</locationX>
         <locationY>509</locationY>
         <defaultConnector>
             <targetReference>Cert_Admin_Alert</targetReference>
@@ -177,7 +177,7 @@
     <decisions>
         <name>Debug_Mode_0_0_0</name>
         <label>Debug Mode</label>
-        <locationX>1292</locationX>
+        <locationX>1430</locationX>
         <locationY>513</locationY>
         <defaultConnector>
             <targetReference>Certiifcation_Alert</targetReference>
@@ -202,7 +202,7 @@
     <decisions>
         <name>Event_Within_7_Days</name>
         <label>Event Within 7 Days</label>
-        <locationX>599</locationX>
+        <locationX>737</locationX>
         <locationY>204</locationY>
         <defaultConnector>
             <targetReference>Debug_Mode</targetReference>
@@ -224,7 +224,7 @@
     <decisions>
         <name>Valid_Contact</name>
         <label>Valid Contact</label>
-        <locationX>1108</locationX>
+        <locationX>1246</locationX>
         <locationY>357</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
@@ -246,7 +246,7 @@
     <decisions>
         <name>Valid_Email</name>
         <label>Valid Email</label>
-        <locationX>1277</locationX>
+        <locationX>1415</locationX>
         <locationY>195</locationY>
         <defaultConnector>
             <targetReference>Update_Contact_0</targetReference>
@@ -271,7 +271,7 @@
     <decisions>
         <name>Valid_Last_Event</name>
         <label>Valid Last Event</label>
-        <locationX>598</locationX>
+        <locationX>736</locationX>
         <locationY>46</locationY>
         <defaultConnector>
             <targetReference>Debug_Mode</targetReference>
@@ -296,7 +296,7 @@
     <decisions>
         <name>Valid_Mobile_Phone</name>
         <label>Valid Mobile Phone</label>
-        <locationX>1456</locationX>
+        <locationX>1594</locationX>
         <locationY>1125</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -315,7 +315,7 @@
     <decisions>
         <name>Valid_Mobile_Phone_0</name>
         <label>Valid Mobile Phone</label>
-        <locationX>1523</locationX>
+        <locationX>1661</locationX>
         <locationY>973</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -331,7 +331,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>2/3 - Don&apos;t send more than 1 group of notifications per 7 days
+    <description>2/11 - Update event owner to be from custom settings class reg admin
+2/3 - Don&apos;t send more than 1 group of notifications per 7 days
 10/29 - Add Debugging</description>
     <formulas>
         <name>buildSMSMessage</name>
@@ -441,7 +442,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordCreates>
         <name>Create_Event_Email</name>
         <label>Create Event Email</label>
-        <locationX>1349</locationX>
+        <locationX>1487</locationX>
         <locationY>972</locationY>
         <connector>
             <targetReference>Valid_Mobile_Phone_0</targetReference>
@@ -461,7 +462,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -499,7 +500,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordCreates>
         <name>Create_Event_Email_Admin</name>
         <label>Create Event Email Admin</label>
-        <locationX>1476</locationX>
+        <locationX>1614</locationX>
         <locationY>787</locationY>
         <inputAssignments>
             <field>Description</field>
@@ -516,7 +517,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -554,7 +555,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordCreates>
         <name>Create_Event_Expired_Email</name>
         <label>Create Event Expired Email</label>
-        <locationX>1270</locationX>
+        <locationX>1408</locationX>
         <locationY>1119</locationY>
         <connector>
             <targetReference>Valid_Mobile_Phone</targetReference>
@@ -574,7 +575,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -612,7 +613,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordCreates>
         <name>Create_Event_Expired_SMS</name>
         <label>Create Event Expired SMS</label>
-        <locationX>1659</locationX>
+        <locationX>1797</locationX>
         <locationY>1131</locationY>
         <connector>
             <targetReference>Debug_Mode_0</targetReference>
@@ -632,7 +633,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -670,7 +671,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordCreates>
         <name>Create_Event_SMS</name>
         <label>Create Event SMS</label>
-        <locationX>1721</locationX>
+        <locationX>1859</locationX>
         <locationY>962</locationY>
         <connector>
             <targetReference>Debug_Mode_0</targetReference>
@@ -690,7 +691,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -726,9 +727,22 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
         <object>Event</object>
     </recordCreates>
     <recordLookups>
+        <name>Get_Class_Reg_Admin</name>
+        <label>Get Class Reg Admin</label>
+        <locationX>448</locationX>
+        <locationY>28</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Last_Event</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Imagine_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Contact</name>
         <label>Get Contact</label>
-        <locationX>1000</locationX>
+        <locationX>1138</locationX>
         <locationY>232</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -802,7 +816,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordLookups>
         <name>Get_Last_Event</name>
         <label>Get Last Event</label>
-        <locationX>458</locationX>
+        <locationX>596</locationX>
         <locationY>47</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -833,7 +847,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
-        <locationX>1288</locationX>
+        <locationX>1426</locationX>
         <locationY>356</locationY>
         <connector>
             <targetReference>Debug_Mode_0_0_0</targetReference>
@@ -856,7 +870,7 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     <recordUpdates>
         <name>Update_Contact_0</name>
         <label>Update Contact</label>
-        <locationX>1469</locationX>
+        <locationX>1607</locationX>
         <locationY>361</locationY>
         <connector>
             <targetReference>Debug_Mode_0_0</targetReference>
@@ -878,9 +892,9 @@ TEXT({!soContact.c501_cm__C501_Safe_Sleep_Cert_Remaining_Days__c}) + &quot; Day(
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>29</locationY>
+        <locationY>35</locationY>
         <connector>
-            <targetReference>Get_Last_Event</targetReference>
+            <targetReference>Get_Class_Reg_Admin</targetReference>
         </connector>
     </start>
     <status>Active</status>

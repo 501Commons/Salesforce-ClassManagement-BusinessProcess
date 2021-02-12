@@ -132,14 +132,14 @@
     <filter>
         <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
-            <column>Activity$CreatedDate</column>
+            <column>Activity$ActivityDate</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessThan</operator>
             <value>9/1/2019 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Activity$CreatedDate</column>
+            <column>Activity$ActivityDate</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterThan</operator>
@@ -150,7 +150,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Month</dateGranularity>
-        <field>Activity$CreatedDate</field>
+        <field>Activity$ActivityDate</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
@@ -169,7 +169,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Activity$CreatedDate</dateColumn>
+        <dateColumn>Activity$ActivityDate</dateColumn>
         <interval>INTERVAL_PREVCURY</interval>
     </timeFrameFilter>
 </Report>

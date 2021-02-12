@@ -102,7 +102,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>CampaignMember.C501_cm__Training_Status__c</groupingColumn>
+                <groupingColumn>CampaignMember.c501_cm__Training_Status__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -242,7 +242,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>CampaignMember.C501_cm__Training_Status__c</groupingColumn>
+                <groupingColumn>CampaignMember.c501_cm__Training_Status__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -304,8 +304,8 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>CampaignMember.C501_cm__Training_Start_DateTime__c</groupingColumn>
-                <groupingColumn>CampaignMember.C501_cm__Training_Status__c</groupingColumn>
+                <groupingColumn>CampaignMember.c501_cm__Training_Start_DateTime__c</groupingColumn>
+                <groupingColumn>CampaignMember.c501_cm__Training_Status__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -332,7 +332,7 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>db.ii@501commons.org</runningUser>
+    <runningUser>db.iisc@501commons.org</runningUser>
     <textColor>#000000</textColor>
     <title>Training</title>
     <titleColor>#000000</titleColor>

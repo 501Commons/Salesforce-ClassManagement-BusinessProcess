@@ -82,7 +82,7 @@
                 <chartSummary>
                     <aggregate>Unique</aggregate>
                     <axisBinding>y</axisBinding>
-                    <column>Contact.C501_cm__ii_Stars_Id__c</column>
+                    <column>Contact.c501_cm__ii_Stars_Id__c</column>
                 </chartSummary>
                 <componentType>BarGrouped</componentType>
                 <decimalPrecision>-1</decimalPrecision>
@@ -189,7 +189,7 @@
                 <chartSummary>
                     <aggregate>Unique</aggregate>
                     <axisBinding>y</axisBinding>
-                    <column>Contact.C501_cm__ii_Stars_Id__c</column>
+                    <column>Contact.c501_cm__ii_Stars_Id__c</column>
                 </chartSummary>
                 <componentType>Bar</componentType>
                 <decimalPrecision>-1</decimalPrecision>
@@ -224,7 +224,7 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
                     <aggregate>Unique</aggregate>
-                    <column>Contact.C501_cm__ii_Stars_Id__c</column>
+                    <column>Contact.c501_cm__ii_Stars_Id__c</column>
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <decimalPrecision>-1</decimalPrecision>
@@ -247,7 +247,7 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>db.ii@501commons.org</runningUser>
+    <runningUser>db.iisc@501commons.org</runningUser>
     <textColor>#000000</textColor>
     <title>PREPARE</title>
     <titleColor>#000000</titleColor>

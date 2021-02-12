@@ -1439,7 +1439,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 11/20 - Fix error email related to limit exceeded
+    <description>DB 2/11 - reminder SMS event happening in subflow now
+DB 11/20 - Fix error email related to limit exceeded
 DB 11/3 - Don&apos;t reset flag for future child reminders
 DB 11/1 - reset notification flag if sooner child
 DB 10/31 - Fix reminder emails - skip old trainings
@@ -1502,7 +1503,7 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordCreates>
         <name>Create_Notification_Event_SMS</name>
         <label>Create Notification Event SMS</label>
-        <locationX>2523</locationX>
+        <locationX>2525</locationX>
         <locationY>2515</locationY>
         <connector>
             <targetReference>Update_Member_Pending_Notification_SMS</targetReference>
@@ -1728,8 +1729,8 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <recordUpdates>
         <name>Update_Member_Pending_Notification_SMS</name>
         <label>Update Member Pending Notification SMS</label>
-        <locationX>2527</locationX>
-        <locationY>2690</locationY>
+        <locationX>2840</locationX>
+        <locationY>2515</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -1757,10 +1758,10 @@ TEXT(YEAR(DATEVALUE({!Get_Campaign_Member.c501_cm__Training_Start_DateTime__c}))
     <subflows>
         <name>Reminder_SMS</name>
         <label>Reminder SMS</label>
-        <locationX>2517</locationX>
-        <locationY>2104</locationY>
+        <locationX>2837</locationX>
+        <locationY>2094</locationY>
         <connector>
-            <targetReference>Event_Assignment_SMS</targetReference>
+            <targetReference>Update_Member_Pending_Notification_SMS</targetReference>
         </connector>
         <flowName>Training_Reminder_SMS</flowName>
         <inputAssignments>

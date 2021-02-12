@@ -113,7 +113,7 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>db.ii@501commons.org</runningUser>
+    <runningUser>db.iisc@501commons.org</runningUser>
     <textColor>#000000</textColor>
     <title>DEEL &amp; Imagine U</title>
     <titleColor>#000000</titleColor>

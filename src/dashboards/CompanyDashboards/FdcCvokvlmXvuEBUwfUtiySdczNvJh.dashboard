@@ -66,7 +66,7 @@
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>
                     <flexTableColumn>
-                        <reportColumn>Activity.CreatedDate</reportColumn>
+                        <reportColumn>Activity.ActivityDate</reportColumn>
                         <showSubTotal>true</showSubTotal>
                         <showTotal>true</showTotal>
                         <type>grouping</type>
@@ -156,7 +156,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>Activity$CreatedDate</groupingColumn>
+                <groupingColumn>Activity$ActivityDate</groupingColumn>
                 <groupingColumn>BucketField_92529172</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
@@ -196,7 +196,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>Activity$CreatedDate</groupingColumn>
+                <groupingColumn>Activity$ActivityDate</groupingColumn>
                 <groupingColumn>BucketField_92529172</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
@@ -236,7 +236,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>Activity$CreatedDate</groupingColumn>
+                <groupingColumn>Activity$ActivityDate</groupingColumn>
                 <groupingColumn>BucketField_92529172</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
@@ -264,7 +264,7 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>db.ii@501commons.org</runningUser>
+    <runningUser>db.iisc@501commons.org</runningUser>
     <textColor>#000000</textColor>
     <title>Imagine Home Dashboard</title>
     <titleColor>#000000</titleColor>

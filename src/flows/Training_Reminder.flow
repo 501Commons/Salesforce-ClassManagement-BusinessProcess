@@ -3,7 +3,7 @@
     <actionCalls>
         <name>FFN_Reminder_English_Alert</name>
         <label>FFN Reminder (English) Alert</label>
-        <locationX>1450</locationX>
+        <locationX>1680</locationX>
         <locationY>92</locationY>
         <actionName>CampaignMember.Training_Member_FFN_Reminder</actionName>
         <actionType>emailAlert</actionType>
@@ -20,7 +20,7 @@
     <actionCalls>
         <name>FFN_Reminder_Spanish_Alert</name>
         <label>FFN Reminder (Spanish) Alert</label>
-        <locationX>1455</locationX>
+        <locationX>1685</locationX>
         <locationY>206</locationY>
         <actionName>CampaignMember.Training_Member_FFN_Reminder_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -37,7 +37,7 @@
     <actionCalls>
         <name>Imagine_U_Reminder_bilingual_Alert</name>
         <label>Imagine U Reminder (bilingual) Alert</label>
-        <locationX>992</locationX>
+        <locationX>1222</locationX>
         <locationY>862</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_Reminder_bilingual</actionName>
         <actionType>emailAlert</actionType>
@@ -54,7 +54,7 @@
     <actionCalls>
         <name>Imagine_U_Reminder_Spanish_Alert</name>
         <label>Imagine U Reminder (Spanish) Alert</label>
-        <locationX>985</locationX>
+        <locationX>1215</locationX>
         <locationY>644</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_Reminder</actionName>
         <actionType>emailAlert</actionType>
@@ -71,7 +71,7 @@
     <actionCalls>
         <name>LFCCP_Creative_Reminder1_Alert</name>
         <label>LFCCP Creative Reminder1 Alert</label>
-        <locationX>1158</locationX>
+        <locationX>1388</locationX>
         <locationY>88</locationY>
         <actionName>CampaignMember.Training_Member_LFCCP_Creative_Reminder_English_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -88,7 +88,7 @@
     <actionCalls>
         <name>LFCCP_Reminder_Spanish_Alert</name>
         <label>LFCCP Reminder Spanish Alert</label>
-        <locationX>1159</locationX>
+        <locationX>1389</locationX>
         <locationY>278</locationY>
         <actionName>CampaignMember.Training_Member_LFCCP_Reminder_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -105,7 +105,7 @@
     <actionCalls>
         <name>LFCCPReminder_Alert</name>
         <label>LFCCPReminder Alert</label>
-        <locationX>1155</locationX>
+        <locationX>1385</locationX>
         <locationY>187</locationY>
         <actionName>CampaignMember.Training_Member_LFCCPReminder</actionName>
         <actionType>emailAlert</actionType>
@@ -122,7 +122,7 @@
     <actionCalls>
         <name>Notify_Admin</name>
         <label>Notify Admin</label>
-        <locationX>798</locationX>
+        <locationX>1028</locationX>
         <locationY>141</locationY>
         <actionName>CampaignMember.Training_Member_Notify_Imagine_Admin</actionName>
         <actionType>emailAlert</actionType>
@@ -136,7 +136,7 @@
     <actionCalls>
         <name>Prepare_Reminder_English_Alert</name>
         <label>Prepare Reminder (English) Alert</label>
-        <locationX>1439</locationX>
+        <locationX>1669</locationX>
         <locationY>752</locationY>
         <actionName>CampaignMember.Training_Member_Prepare_Reminder</actionName>
         <actionType>emailAlert</actionType>
@@ -153,7 +153,7 @@
     <actionCalls>
         <name>Substitute_Pool_Reminder_English_Alert</name>
         <label>Substitute Pool Reminder (English) Alert</label>
-        <locationX>1653</locationX>
+        <locationX>1883</locationX>
         <locationY>157</locationY>
         <actionName>CampaignMember.SubPool_Reminder_English</actionName>
         <actionType>emailAlert</actionType>
@@ -170,7 +170,7 @@
     <actionCalls>
         <name>Training_Member_Imagine_Reminder_Spanish_Alert</name>
         <label>Training_Member_Imagine_Reminder_Spanish_Alert</label>
-        <locationX>988</locationX>
+        <locationX>1218</locationX>
         <locationY>751</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_Reminder_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -187,7 +187,7 @@
     <decisions>
         <name>Check_Valid_Campaign</name>
         <label>Check Valid Campaign</label>
-        <locationX>622</locationX>
+        <locationX>852</locationX>
         <locationY>723</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -223,7 +223,7 @@
     <decisions>
         <name>Send_Reminder</name>
         <label>Send Reminder</label>
-        <locationX>791</locationX>
+        <locationX>1021</locationX>
         <locationY>396</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
@@ -472,7 +472,7 @@
     <decisions>
         <name>Valid_Class_Notification</name>
         <label>Valid Class Notification</label>
-        <locationX>802</locationX>
+        <locationX>1032</locationX>
         <locationY>719</locationY>
         <defaultConnector>
             <targetReference>Get_Campaign</targetReference>
@@ -501,7 +501,7 @@
     <decisions>
         <name>Valid_Email</name>
         <label>Valid Email</label>
-        <locationX>589</locationX>
+        <locationX>819</locationX>
         <locationY>306</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
@@ -526,7 +526,7 @@
     <decisions>
         <name>Valid_Member</name>
         <label>Valid Member</label>
-        <locationX>390</locationX>
+        <locationX>620</locationX>
         <locationY>303</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
@@ -545,7 +545,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 8/5 Switch from Training Status to Status
+    <description>DB 2/11 - fix create event to use custom setting for ownerid from the class registration admin
+DB 8/5 Switch from Training Status to Status
 LS 6/25 adding bilingual Imagine U reminder
 DaveB: Default Event Ownership to Training
 3/22 DB - filter by Member Status</description>
@@ -562,11 +563,17 @@ DaveB: Default Event Ownership to Training
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
         <name>Create_Event</name>
         <label>Create Event</label>
-        <locationX>1638</locationX>
+        <locationX>1863</locationX>
         <locationY>529</locationY>
         <inputAssignments>
             <field>Description</field>
@@ -583,7 +590,7 @@ DaveB: Default Event Ownership to Training
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Registration_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -615,7 +622,7 @@ DaveB: Default Event Ownership to Training
     <recordLookups>
         <name>Get_Campaign</name>
         <label>Get Campaign</label>
-        <locationX>534</locationX>
+        <locationX>764</locationX>
         <locationY>519</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -641,7 +648,7 @@ DaveB: Default Event Ownership to Training
     <recordLookups>
         <name>Get_Campaign_0</name>
         <label>Get Campaign</label>
-        <locationX>492</locationX>
+        <locationX>722</locationX>
         <locationY>728</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -663,7 +670,7 @@ DaveB: Default Event Ownership to Training
     <recordLookups>
         <name>Get_Class_Notification</name>
         <label>Get Class Notification</label>
-        <locationX>347</locationX>
+        <locationX>577</locationX>
         <locationY>727</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -690,9 +697,22 @@ DaveB: Default Event Ownership to Training
         </outputAssignments>
     </recordLookups>
     <recordLookups>
+        <name>Get_Class_Registration_Admin</name>
+        <label>Get Class Registration Admin</label>
+        <locationX>467</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Member</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Imagine_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Contact</name>
         <label>Get Contact</label>
-        <locationX>347</locationX>
+        <locationX>577</locationX>
         <locationY>464</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -714,7 +734,7 @@ DaveB: Default Event Ownership to Training
     <recordLookups>
         <name>Get_Member</name>
         <label>Get Member</label>
-        <locationX>400</locationX>
+        <locationX>630</locationX>
         <locationY>164</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -754,12 +774,12 @@ DaveB: Default Event Ownership to Training
     </recordLookups>
     <start>
         <locationX>50</locationX>
-        <locationY>224</locationY>
+        <locationY>164</locationY>
         <connector>
-            <targetReference>Get_Member</targetReference>
+            <targetReference>Get_Class_Registration_Admin</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>soCampaign</name>
         <dataType>SObject</dataType>

@@ -3,7 +3,7 @@
     <actionCalls>
         <name>FFN_Registered_English_Alert</name>
         <label>FFN Registered (English) Alert</label>
-        <locationX>1692</locationX>
+        <locationX>1855</locationX>
         <locationY>219</locationY>
         <actionName>CampaignMember.Training_Member_FFN_Registration_Confirmation</actionName>
         <actionType>emailAlert</actionType>
@@ -20,7 +20,7 @@
     <actionCalls>
         <name>FFN_Registered_Spanish_Alert</name>
         <label>FFN Registered (Spanish) Alert</label>
-        <locationX>1694</locationX>
+        <locationX>1857</locationX>
         <locationY>305</locationY>
         <actionName>CampaignMember.Training_Member_FFN_Registration_Confirmation_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -37,7 +37,7 @@
     <actionCalls>
         <name>Imagine_U_Confirmation_Alert_bilingual</name>
         <label>Imagine U Confirmation Alert (bilingual)</label>
-        <locationX>2114</locationX>
+        <locationX>2277</locationX>
         <locationY>117</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_Register_bilingual</actionName>
         <actionType>emailAlert</actionType>
@@ -54,7 +54,7 @@
     <actionCalls>
         <name>Imagine_U_Confirmation_English_Alert</name>
         <label>Imagine U Confirmation (English) Alert</label>
-        <locationX>2117</locationX>
+        <locationX>2280</locationX>
         <locationY>195</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_Register</actionName>
         <actionType>emailAlert</actionType>
@@ -71,7 +71,7 @@
     <actionCalls>
         <name>Imagine_U_Confirmation_Spanish_Alert</name>
         <label>Imagine U Confirmation (Spanish) Alert</label>
-        <locationX>2121</locationX>
+        <locationX>2284</locationX>
         <locationY>277</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_Register_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -88,7 +88,7 @@
     <actionCalls>
         <name>LFCCP_Creative_Registration1_Alert</name>
         <label>LFCCP Creative Registration1 Alert</label>
-        <locationX>2182</locationX>
+        <locationX>2345</locationX>
         <locationY>959</locationY>
         <actionName>CampaignMember.Training_Member_LFCCP_Creative_Registration_English_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -105,7 +105,7 @@
     <actionCalls>
         <name>LFCCP_Registration_Confirmation_Alert</name>
         <label>LFCCP Registration Confirmation Alert</label>
-        <locationX>2165</locationX>
+        <locationX>2328</locationX>
         <locationY>820</locationY>
         <actionName>CampaignMember.Training_Member_LFCCP_Registration_Confirmation</actionName>
         <actionType>emailAlert</actionType>
@@ -122,7 +122,7 @@
     <actionCalls>
         <name>LFCCP_Registration_Confirmation_Spanish_Alert</name>
         <label>LFCCP Registration Confirmation Spanish Alert</label>
-        <locationX>2170</locationX>
+        <locationX>2333</locationX>
         <locationY>892</locationY>
         <actionName>CampaignMember.Training_Member_LFCCP_Registration_Confirmation_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -139,7 +139,7 @@
     <actionCalls>
         <name>Notify_Admin</name>
         <label>Notify Admin</label>
-        <locationX>1422</locationX>
+        <locationX>1585</locationX>
         <locationY>301</locationY>
         <actionName>CampaignMember.Training_Member_Notify_Imagine_Admin</actionName>
         <actionType>emailAlert</actionType>
@@ -153,7 +153,7 @@
     <actionCalls>
         <name>Prepare_Confirmation_English_Alert</name>
         <label>Prepare Confirmation (English) Alert</label>
-        <locationX>1745</locationX>
+        <locationX>1908</locationX>
         <locationY>1002</locationY>
         <actionName>CampaignMember.Training_Member_Prepare_Confirmation</actionName>
         <actionType>emailAlert</actionType>
@@ -170,7 +170,7 @@
     <actionCalls>
         <name>PREPARE_Orientation_Confirmation_Alert</name>
         <label>PREPARE Orientation Confirmation Alert</label>
-        <locationX>1748</locationX>
+        <locationX>1911</locationX>
         <locationY>1079</locationY>
         <actionName>CampaignMember.Training_Member_Prepare_Orientation_Confirmation</actionName>
         <actionType>emailAlert</actionType>
@@ -187,7 +187,7 @@
     <actionCalls>
         <name>Substitute_Confirmation_English_Alert</name>
         <label>Substitute Confirmation (English) Alert</label>
-        <locationX>1644</locationX>
+        <locationX>1807</locationX>
         <locationY>589</locationY>
         <actionName>CampaignMember.SubPool_Confirmation_English</actionName>
         <actionType>emailAlert</actionType>
@@ -204,7 +204,7 @@
     <actionCalls>
         <name>Substitute_Confirmation_Spanish_Alert</name>
         <label>Substitute Confirmation (Spanish) Alert</label>
-        <locationX>1650</locationX>
+        <locationX>1813</locationX>
         <locationY>625</locationY>
         <actionName>CampaignMember.SubPool_Confirmation_Spanish</actionName>
         <actionType>emailAlert</actionType>
@@ -221,7 +221,7 @@
     <decisions>
         <name>Child_Training_in_a_Training_Series</name>
         <label>Child Training in a Training Series</label>
-        <locationX>1144</locationX>
+        <locationX>1307</locationX>
         <locationY>50</locationY>
         <defaultConnector>
             <targetReference>Valid_Member</targetReference>
@@ -243,7 +243,7 @@
     <decisions>
         <name>Group_Training</name>
         <label>Group Training</label>
-        <locationX>1211</locationX>
+        <locationX>1374</locationX>
         <locationY>1168</locationY>
         <defaultConnector>
             <targetReference>Get_Campaign</targetReference>
@@ -268,7 +268,7 @@
     <decisions>
         <name>Notification_Disabled</name>
         <label>Notification Disabled</label>
-        <locationX>700</locationX>
+        <locationX>863</locationX>
         <locationY>141</locationY>
         <defaultConnector>
             <targetReference>SMS_Confirmation</targetReference>
@@ -290,7 +290,7 @@
     <decisions>
         <name>Opt_Out_Email</name>
         <label>Opt Out Email</label>
-        <locationX>1270</locationX>
+        <locationX>1433</locationX>
         <locationY>239</locationY>
         <defaultConnector>
             <targetReference>Valid_Email</targetReference>
@@ -312,7 +312,7 @@
     <decisions>
         <name>Send_Confirmation</name>
         <label>Send Confirmation</label>
-        <locationX>1416</locationX>
+        <locationX>1579</locationX>
         <locationY>432</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
@@ -586,7 +586,7 @@
     <decisions>
         <name>Send_Registered</name>
         <label>Send Registered</label>
-        <locationX>1407</locationX>
+        <locationX>1570</locationX>
         <locationY>603</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
@@ -608,7 +608,7 @@
     <decisions>
         <name>Send_Training_Reminder</name>
         <label>Send Training Reminder</label>
-        <locationX>1406</locationX>
+        <locationX>1569</locationX>
         <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Send_Registered</targetReference>
@@ -633,7 +633,7 @@
     <decisions>
         <name>Valid_Class_Notification</name>
         <label>Valid Class Notification</label>
-        <locationX>1551</locationX>
+        <locationX>1714</locationX>
         <locationY>1347</locationY>
         <defaultConnector>
             <targetReference>Group_Training</targetReference>
@@ -662,7 +662,7 @@
     <decisions>
         <name>Valid_Email</name>
         <label>Valid Email</label>
-        <locationX>1252</locationX>
+        <locationX>1415</locationX>
         <locationY>391</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
@@ -687,7 +687,7 @@
     <decisions>
         <name>Valid_Member</name>
         <label>Valid Member</label>
-        <locationX>1279</locationX>
+        <locationX>1442</locationX>
         <locationY>55</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
@@ -706,7 +706,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 9/29 - Check for No Email/SMS
+    <description>DB 2/11 - fix create event owner id to be from custom settings class reg admin
+DB 9/29 - Check for No Email/SMS
 DB 9/10 - ignore Parent Training
 DB 8/5 Switch from Training Status to Status
 LS 6/24 added Imagine U bilingual confirmation
@@ -724,11 +725,17 @@ Add SMS Send support</description>
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
         <name>Create_Event</name>
         <label>Create Event</label>
-        <locationX>2006</locationX>
+        <locationX>2169</locationX>
         <locationY>636</locationY>
         <inputAssignments>
             <field>Description</field>
@@ -745,7 +752,7 @@ Add SMS Send support</description>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -777,7 +784,7 @@ Add SMS Send support</description>
     <recordLookups>
         <name>Get_1st_Child_Campaign</name>
         <label>Get 1st Child Campaign</label>
-        <locationX>1098</locationX>
+        <locationX>1261</locationX>
         <locationY>958</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -799,7 +806,7 @@ Add SMS Send support</description>
     <recordLookups>
         <name>Get_Campaign</name>
         <label>Get Campaign</label>
-        <locationX>1297</locationX>
+        <locationX>1460</locationX>
         <locationY>927</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -821,7 +828,7 @@ Add SMS Send support</description>
     <recordLookups>
         <name>Get_Class_Notification</name>
         <label>Get Class Notification</label>
-        <locationX>1010</locationX>
+        <locationX>1173</locationX>
         <locationY>1342</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -848,9 +855,22 @@ Add SMS Send support</description>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
+        <name>Get_Class_Reg_Admin</name>
+        <label>Get Class Reg Admin</label>
+        <locationX>448</locationX>
+        <locationY>125</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Member</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Imagine_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Contact</name>
         <label>Get Contact</label>
-        <locationX>1029</locationX>
+        <locationX>1192</locationX>
         <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -872,7 +892,7 @@ Add SMS Send support</description>
     <recordLookups>
         <name>Get_Member</name>
         <label>Get Member</label>
-        <locationX>427</locationX>
+        <locationX>590</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -925,7 +945,7 @@ Add SMS Send support</description>
     <recordLookups>
         <name>Get_Training</name>
         <label>Get Training</label>
-        <locationX>553</locationX>
+        <locationX>716</locationX>
         <locationY>139</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -945,7 +965,7 @@ Add SMS Send support</description>
     <recordUpdates>
         <name>Set_Registered_Sent</name>
         <label>Set Registered Sent</label>
-        <locationX>1258</locationX>
+        <locationX>1421</locationX>
         <locationY>516</locationY>
         <connector>
             <targetReference>Send_Confirmation</targetReference>
@@ -967,16 +987,16 @@ Add SMS Send support</description>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>133</locationY>
+        <locationY>129</locationY>
         <connector>
-            <targetReference>Get_Member</targetReference>
+            <targetReference>Get_Class_Reg_Admin</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <subflows>
         <name>SMS_Confirmation</name>
         <label>SMS Confirmation</label>
-        <locationX>860</locationX>
+        <locationX>1023</locationX>
         <locationY>117</locationY>
         <connector>
             <targetReference>Child_Training_in_a_Training_Series</targetReference>
@@ -992,7 +1012,7 @@ Add SMS Send support</description>
     <subflows>
         <name>SMS_Reminder</name>
         <label>SMS Reminder</label>
-        <locationX>1142</locationX>
+        <locationX>1305</locationX>
         <locationY>642</locationY>
         <connector>
             <targetReference>Send_Registered</targetReference>
@@ -1008,7 +1028,7 @@ Add SMS Send support</description>
     <subflows>
         <name>Trigger_Send_Reminder</name>
         <label>Trigger Send Reminder</label>
-        <locationX>1255</locationX>
+        <locationX>1418</locationX>
         <locationY>716</locationY>
         <connector>
             <targetReference>SMS_Reminder</targetReference>

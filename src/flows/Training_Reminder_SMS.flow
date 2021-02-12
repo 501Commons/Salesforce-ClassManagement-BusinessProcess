@@ -21,6 +21,9 @@
         <locationY>61</locationY>
         <actionName>TwilioSF__TwilioSendSMS</actionName>
         <actionType>apex</actionType>
+        <connector>
+            <targetReference>Get_Class_Reg_Admin</targetReference>
+        </connector>
         <inputParameters>
             <name>message</name>
             <value>
@@ -404,7 +407,8 @@
             <label>Valid Mobile Number</label>
         </rules>
     </decisions>
-    <description>DB 2/7 - Switch to Twilio managed Send SMS
+    <description>DB 2/11 - fix create event to use custom settings class reg admin
+DB 2/7 - Switch to Twilio managed Send SMS
 LS 10/27 - set to run as System Context with Sharing
 DB 9/11 - remove create event (just have in master)
 DB 8/5 Switch from Training Status to Status
@@ -447,6 +451,44 @@ SMS Async Send</description>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Event</name>
+        <label>Create Event</label>
+        <locationX>1896</locationX>
+        <locationY>71</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>varEmailType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Class Reminder SMS</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>soContact.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_Campaign</name>
         <label>Get Campaign</label>
@@ -497,6 +539,19 @@ SMS Async Send</description>
             <assignToReference>varEmailType</assignToReference>
             <field>c501_cm__Reminder_Email_Template__c</field>
         </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Class_Reg_Admin</name>
+        <label>Get Class Reg Admin</label>
+        <locationX>1742</locationX>
+        <locationY>62</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Imagine_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Contact</name>

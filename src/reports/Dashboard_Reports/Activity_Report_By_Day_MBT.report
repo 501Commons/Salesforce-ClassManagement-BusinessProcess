@@ -183,8 +183,7 @@
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
-        <dateGranularity>Day</dateGranularity>
-        <field>Activity$CreatedDate</field>
+        <field>Activity$ActivityDate</field>
         <sortOrder>Asc</sortOrder>
     </groupingsAcross>
     <groupingsDown>
@@ -203,7 +202,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Activity$CreatedDate</dateColumn>
+        <dateColumn>Activity$ActivityDate</dateColumn>
         <interval>INTERVAL_LAST7</interval>
     </timeFrameFilter>
 </Report>

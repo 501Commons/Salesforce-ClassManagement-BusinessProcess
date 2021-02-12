@@ -83,7 +83,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Pending,Registered</value>
+            <value>Pending,Registered,Registered Reminder</value>
         </criteriaItems>
         <criteriaItems>
             <column>CAMPAIGN_NAME</column>
@@ -97,35 +97,35 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>2/9/2021 12:00 AM</value>
+            <value>2/14/2021 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__custom_End_DateTime__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
-            <value>2/12/2021 12:00 AM</value>
+            <value>2/14/2021 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__Class_Type__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Licensed</value>
+            <value>FFN,Licensed</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__Language__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>English</value>
+            <value>Somali</value>
         </criteriaItems>
         <criteriaItems>
             <column>CAMPAIGN_NAME</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>contains</operator>
-            <value>EQEL</value>
+            <value>outdoors</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

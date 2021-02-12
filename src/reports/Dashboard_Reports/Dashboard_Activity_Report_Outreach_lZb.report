@@ -127,21 +127,7 @@
         <field>Activity$Who</field>
     </columns>
     <filter>
-        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
-        <criteriaItems>
-            <column>Activity$CreatedDate</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>lessThan</operator>
-            <value>9/1/2019 12:00 AM</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Activity$CreatedDate</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>greaterThan</operator>
-            <value>9/30/2019 12:00 AM</value>
-        </criteriaItems>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
         <criteriaItems>
             <column>BucketField_92529172</column>
             <columnToColumn>false</columnToColumn>
@@ -149,12 +135,26 @@
             <operator>contains</operator>
             <value>Outreach</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>Activity$ActivityDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>9/1/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity$ActivityDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>9/30/2019 12:00 AM</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Month</dateGranularity>
-        <field>Activity$CreatedDate</field>
+        <field>Activity$ActivityDate</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
@@ -173,7 +173,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Activity$CreatedDate</dateColumn>
+        <dateColumn>Activity$ActivityDate</dateColumn>
         <interval>INTERVAL_PREVCURY</interval>
     </timeFrameFilter>
 </Report>

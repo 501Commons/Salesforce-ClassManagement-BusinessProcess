@@ -8,7 +8,7 @@
         <actionName>TwilioSF__TwilioSendSMS</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Create_Event</targetReference>
+            <targetReference>Get_Class_Reg_Admin</targetReference>
         </connector>
         <inputParameters>
             <name>message</name>
@@ -420,7 +420,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 10/6 - Include Group in SMS
+    <description>DB 2/11 - fix create event to use custom settings class reg admin
+DB 10/6 - Include Group in SMS
 DB 8/5 Switch from Training Status to Status</description>
     <formulas>
         <name>fxSMSEnglishNotification</name>
@@ -448,12 +449,18 @@ DB 8/5 Switch from Training Status to Status</description>
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
         <name>Create_Event</name>
         <label>Create Event</label>
-        <locationX>1687</locationX>
-        <locationY>346</locationY>
+        <locationX>1785</locationX>
+        <locationY>330</locationY>
         <inputAssignments>
             <field>Description</field>
             <value>
@@ -469,7 +476,7 @@ DB 8/5 Switch from Training Status to Status</description>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qgpsQAA</stringValue>
+                <elementReference>Get_Class_Reg_Admin.Class_Registration_Admin__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -481,7 +488,7 @@ DB 8/5 Switch from Training Status to Status</description>
         <inputAssignments>
             <field>Subject</field>
             <value>
-                <stringValue>Class Confirmation SMS Notification</stringValue>
+                <stringValue>Class Confirmation SMS</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -567,6 +574,19 @@ DB 8/5 Switch from Training Status to Status</description>
         </outputAssignments>
         <sortField>c501_cm__custom_Start_DateTime__c</sortField>
         <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Class_Reg_Admin</name>
+        <label>Get Class Reg Admin</label>
+        <locationX>1639</locationX>
+        <locationY>340</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Imagine_Settings__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Contact</name>
