@@ -66,6 +66,18 @@
     <columns>
         <field>Contact$LastName</field>
     </columns>
+    <columns>
+        <field>Contact$c501_cm__ii_Member_Subtype_Name__c</field>
+    </columns>
+    <columns>
+        <field>Contact$c501_cm__ii_Member_ID__c</field>
+    </columns>
+    <columns>
+        <field>Contact$c501_cm__ii_FamLink_Id__c</field>
+    </columns>
+    <columns>
+        <field>Contact$c501_cm__ii_License_Number__c</field>
+    </columns>
     <description>run to get a all in unit for either FFN or LFCCP or Private with all contact information</description>
     <filter>
         <criteriaItems>
@@ -73,7 +85,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Washington State</value>
+            <value>Washington State,Private</value>
         </criteriaItems>
         <criteriaItems>
             <column>Contact$c501_cm__ii_Unit_Status__c</column>
@@ -89,6 +101,13 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>Contact$c501_cm__C501_Record_Type_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>contact</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>
@@ -102,6 +121,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Contact$c501_cm__ii_Unit_Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Contact$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

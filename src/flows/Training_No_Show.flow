@@ -3,8 +3,8 @@
     <actionCalls>
         <name>FFN_LFCCP_Training_No_Show_bilingual</name>
         <label>FFN / LFCCP / Training No Show (bilingual)</label>
-        <locationX>1169</locationX>
-        <locationY>165</locationY>
+        <locationX>1045</locationX>
+        <locationY>221</locationY>
         <actionName>CampaignMember.Training_Member_FFN_LFCCP_No_Show_bilingual</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -20,8 +20,8 @@
     <actionCalls>
         <name>FFN_LFCCP_Training_No_Show_English</name>
         <label>FFN / LFCCP / Training No Show (English)</label>
-        <locationX>1170</locationX>
-        <locationY>241</locationY>
+        <locationX>1069</locationX>
+        <locationY>364</locationY>
         <actionName>CampaignMember.Training_Member_FFN_LFCCP_No_Show_English</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -37,7 +37,7 @@
     <actionCalls>
         <name>FFN_LFCCP_Training_No_Show_Somali</name>
         <label>FFN / LFCCP / Training No Show (Somali)</label>
-        <locationX>1158</locationX>
+        <locationX>1036</locationX>
         <locationY>82</locationY>
         <actionName>CampaignMember.Training_Member_FFN_LFCCP_No_Show_Somali</actionName>
         <actionType>emailAlert</actionType>
@@ -54,8 +54,8 @@
     <actionCalls>
         <name>FFN_LFCCP_Training_No_Show_Spanish</name>
         <label>FFN / LFCCP / Training No Show (Spanish)</label>
-        <locationX>1175</locationX>
-        <locationY>324</locationY>
+        <locationX>1121</locationX>
+        <locationY>502</locationY>
         <actionName>CampaignMember.Training_Member_FFN_LFCCP_No_Show_Spanish</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -71,8 +71,8 @@
     <actionCalls>
         <name>Imagine_U_No_Show_bilingual</name>
         <label>Imagine U No Show (bilingual)</label>
-        <locationX>1358</locationX>
-        <locationY>251</locationY>
+        <locationX>1604</locationX>
+        <locationY>363</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_U_No_Show_bilingual</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -88,8 +88,8 @@
     <actionCalls>
         <name>Imagine_U_No_Show_English</name>
         <label>Imagine U No Show (English)</label>
-        <locationX>1344</locationX>
-        <locationY>366</locationY>
+        <locationX>1601</locationX>
+        <locationY>516</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_U_No_Show_English</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -105,8 +105,8 @@
     <actionCalls>
         <name>Imagine_U_No_Show_Somali</name>
         <label>Imagine U No Show (Somali)</label>
-        <locationX>1344</locationX>
-        <locationY>80</locationY>
+        <locationX>1602</locationX>
+        <locationY>50</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_U_No_Show_Somali</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -122,8 +122,8 @@
     <actionCalls>
         <name>Imagine_U_No_Show_Spanish</name>
         <label>Imagine U No Show (Spanish)</label>
-        <locationX>1352</locationX>
-        <locationY>170</locationY>
+        <locationX>1602</locationX>
+        <locationY>214</locationY>
         <actionName>CampaignMember.Training_Member_Imagine_U_No_Show_Spanish</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -140,7 +140,7 @@
         <name>Notify_Admin</name>
         <label>Notify Admin</label>
         <locationX>927</locationX>
-        <locationY>260</locationY>
+        <locationY>614</locationY>
         <actionName>CampaignMember.Training_Member_Notify_Imagine_Admin</actionName>
         <actionType>emailAlert</actionType>
         <inputParameters>
@@ -153,8 +153,8 @@
     <actionCalls>
         <name>PREPARE_No_Show_bilingual</name>
         <label>PREPARE No Show (bilingual) Alert</label>
-        <locationX>1371</locationX>
-        <locationY>474</locationY>
+        <locationX>1528</locationX>
+        <locationY>1722</locationY>
         <actionName>CampaignMember.Training_Member_PREPARE_No_Show_bilingual</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -170,8 +170,8 @@
     <actionCalls>
         <name>PREPARE_No_Show_English</name>
         <label>PREPARE No Show (English) Alert</label>
-        <locationX>1374</locationX>
-        <locationY>561</locationY>
+        <locationX>1516</locationX>
+        <locationY>1531</locationY>
         <actionName>CampaignMember.Training_Member_PREPARE_No_Show_English</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -187,8 +187,8 @@
     <actionCalls>
         <name>PREPARE_No_Show_Somali</name>
         <label>PREPARE No Show (Somali)</label>
-        <locationX>1378</locationX>
-        <locationY>760</locationY>
+        <locationX>1510</locationX>
+        <locationY>1378</locationY>
         <actionName>CampaignMember.Training_Member_PREPARE_No_Show_Somali</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -204,8 +204,8 @@
     <actionCalls>
         <name>PREPARE_No_Show_Spanish</name>
         <label>PREPARE No Show (Spanish) Alert</label>
-        <locationX>1375</locationX>
-        <locationY>668</locationY>
+        <locationX>1508</locationX>
+        <locationY>1224</locationY>
         <actionName>CampaignMember.Training_Member_PREPARE_No_Show_Spanish</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -221,8 +221,8 @@
     <actionCalls>
         <name>SubPool_No_Show_bilingual</name>
         <label>SubPool No Show (bilingual) Alert</label>
-        <locationX>1173</locationX>
-        <locationY>473</locationY>
+        <locationX>1113</locationX>
+        <locationY>1687</locationY>
         <actionName>CampaignMember.Training_Member_SubPool_No_Show_bilingual</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -238,8 +238,8 @@
     <actionCalls>
         <name>SubPool_No_Show_English</name>
         <label>SubPool No Show (English) Alert</label>
-        <locationX>1178</locationX>
-        <locationY>566</locationY>
+        <locationX>1118</locationX>
+        <locationY>1504</locationY>
         <actionName>CampaignMember.Training_Member_SubPool_No_Show_English</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -255,8 +255,8 @@
     <actionCalls>
         <name>SubPool_No_Show_Somali</name>
         <label>SubPool No Show (Somali)</label>
-        <locationX>1189</locationX>
-        <locationY>754</locationY>
+        <locationX>1125</locationX>
+        <locationY>1176</locationY>
         <actionName>CampaignMember.Training_Member_SubPool_No_Show_Somali</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -272,8 +272,8 @@
     <actionCalls>
         <name>SubPool_No_Show_Spanish</name>
         <label>SubPool No Show (Spanish) Alert</label>
-        <locationX>1184</locationX>
-        <locationY>663</locationY>
+        <locationX>1124</locationX>
+        <locationY>1345</locationY>
         <actionName>CampaignMember.Training_Member_SubPool_No_Show_Spanish</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -290,7 +290,7 @@
         <name>Notification_Disabled</name>
         <label>Notification Disabled</label>
         <locationX>686</locationX>
-        <locationY>218</locationY>
+        <locationY>572</locationY>
         <defaultConnector>
             <targetReference>Valid_Member</targetReference>
         </defaultConnector>
@@ -312,7 +312,7 @@
         <name>Send_No_Show_Email</name>
         <label>Send No Show Email</label>
         <locationX>967</locationX>
-        <locationY>433</locationY>
+        <locationY>787</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
         </defaultConnector>
@@ -369,7 +369,7 @@
                 <leftValueReference>varEmailType</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>FFN_LCFFP_Training_No_Show_bilingual</stringValue>
+                    <stringValue>FFN_LFCCP_Training_No_Show_bilingual</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -562,7 +562,7 @@
         <name>Valid_Class_Notification</name>
         <label>Valid Class Notification</label>
         <locationX>902</locationX>
-        <locationY>635</locationY>
+        <locationY>989</locationY>
         <defaultConnector>
             <targetReference>Get_Campaign</targetReference>
         </defaultConnector>
@@ -591,7 +591,7 @@
         <name>Valid_Email</name>
         <label>Valid Email</label>
         <locationX>719</locationX>
-        <locationY>389</locationY>
+        <locationY>743</locationY>
         <defaultConnector>
             <targetReference>Notify_Admin</targetReference>
         </defaultConnector>
@@ -623,7 +623,7 @@
         <name>Valid_Member</name>
         <label>Valid Member</label>
         <locationX>521</locationX>
-        <locationY>303</locationY>
+        <locationY>657</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>Valid_Member_Check</name>
@@ -641,7 +641,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>DB 2/11 - fix create event ownerid to be from custom settings class reg admin
+    <description>DB 2/24 - Fix typo in FFN Bilingual decision check
+DB 2/11 - fix create event ownerid to be from custom settings class reg admin
 LS 9/29 add Notification Disabled decision
 DB 8/5 Switch from Training Status to Status
 LS 7/20 correcting spelling of LFCCP decisions
@@ -679,8 +680,8 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
     <recordCreates>
         <name>Create_Event</name>
         <label>Create Event</label>
-        <locationX>1765</locationX>
-        <locationY>404</locationY>
+        <locationX>2296</locationX>
+        <locationY>770</locationY>
         <inputAssignments>
             <field>Description</field>
             <value>
@@ -729,7 +730,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <name>Get_Campaign</name>
         <label>Get Campaign</label>
         <locationX>797</locationX>
-        <locationY>494</locationY>
+        <locationY>848</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Send_No_Show_Email</targetReference>
@@ -755,7 +756,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <name>Get_Campaign_0</name>
         <label>Get Campaign</label>
         <locationX>695</locationX>
-        <locationY>71</locationY>
+        <locationY>425</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Notification_Disabled</targetReference>
@@ -781,7 +782,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <name>Get_Class_Notification</name>
         <label>Get Class Notification</label>
         <locationX>478</locationX>
-        <locationY>640</locationY>
+        <locationY>994</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Valid_Class_Notification</targetReference>
@@ -810,7 +811,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <name>Get_Class_Reg_Admin</name>
         <label>Get Class Reg Admin</label>
         <locationX>430</locationX>
-        <locationY>57</locationY>
+        <locationY>411</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Member</targetReference>
@@ -823,7 +824,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <name>Get_Contact</name>
         <label>Get Contact</label>
         <locationX>478</locationX>
-        <locationY>464</locationY>
+        <locationY>818</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Class_Notification</targetReference>
@@ -845,7 +846,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
         <name>Get_Member</name>
         <label>Get Member</label>
         <locationX>567</locationX>
-        <locationY>71</locationY>
+        <locationY>425</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Campaign_0</targetReference>
@@ -897,8 +898,8 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
     <recordLookups>
         <name>getEmailTemplate</name>
         <label>getEmailTemplate</label>
-        <locationX>1929</locationX>
-        <locationY>396</locationY>
+        <locationX>2388</locationX>
+        <locationY>738</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <filters>
             <field>DeveloperName</field>
@@ -913,7 +914,7 @@ SUBSTITUTE({!getEmailTemplate.Body}, &quot;!CampaignMember.FirstName&quot;, {!so
     </recordLookups>
     <start>
         <locationX>50</locationX>
-        <locationY>57</locationY>
+        <locationY>411</locationY>
         <connector>
             <targetReference>Get_Class_Reg_Admin</targetReference>
         </connector>

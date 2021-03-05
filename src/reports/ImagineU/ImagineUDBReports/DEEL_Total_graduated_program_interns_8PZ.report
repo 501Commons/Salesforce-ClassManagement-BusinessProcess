@@ -4,6 +4,7 @@
         <field>CONTACT_ID</field>
     </columns>
     <filter>
+        <booleanFilter>1 AND 2</booleanFilter>
         <criteriaItems>
             <column>ii_Mentor_Program__c.Intern_Status__c</column>
             <columnToColumn>false</columnToColumn>

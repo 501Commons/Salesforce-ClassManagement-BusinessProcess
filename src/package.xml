@@ -121,18 +121,6 @@
         <name>Document</name>
     </types>
     <types>
-        <members>Boys_Writing_with_Logo2</members>
-        <members>Girl_Looking_at_Logo</members>
-        <members>Girl_with_Braids_2</members>
-        <members>Girl_with_Teddy_Bear4</members>
-        <members>II_Training_Registration</members>
-        <members>Pink_Header</members>
-        <members>Pink_Header_USE</members>
-        <members>White_Logo_with_Imagine_Blue2</members>
-        <members>cmbp_Class_Management_Letterhead</members>
-        <name>Letterhead</name>
-    </types>
-    <types>
         <members>Class_Management</members>
         <members>Class_Management/cmbp_New_Lead</members>
         <members>Class_Management/cmbp_Notify_Administrator</members>
@@ -246,6 +234,18 @@
     <types>
         <members>C501_CampaignMemberStatuses__mdt-CampaignMemberStatus Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>Boys_Writing_with_Logo2</members>
+        <members>Girl_Looking_at_Logo</members>
+        <members>Girl_with_Braids_2</members>
+        <members>Girl_with_Teddy_Bear4</members>
+        <members>II_Training_Registration</members>
+        <members>Pink_Header</members>
+        <members>Pink_Header_USE</members>
+        <members>White_Logo_with_Imagine_Blue2</members>
+        <members>cmbp_Class_Management_Letterhead</members>
+        <name>Letterhead</name>
     </types>
     <types>
         <members>C501_CampaignMemberStatuses__mdt.All</members>

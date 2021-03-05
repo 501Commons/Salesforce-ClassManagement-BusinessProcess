@@ -75,11 +75,11 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Contact.CampaignMembers$Name</sortColumn>
-    <sortOrder>Desc</sortOrder>
+    <sortColumn>Contact.CampaignMembers*CampaignMember$c501_cm__Training_Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Contact.CampaignMembers*CampaignMember$c501_cm__Training_Start_DateTime__c</dateColumn>
-        <endDate>2020-12-31</endDate>
+        <endDate>2021-01-31</endDate>
         <interval>INTERVAL_CUSTOM</interval>
         <startDate>2020-07-01</startDate>
     </timeFrameFilter>

@@ -277,7 +277,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A2_8398764046</name>
+        <name>formula_4_myRule_3_A2_1503506053</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -288,7 +288,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_7_myRule_6_A1_3117719231</name>
+        <name>formula_7_myRule_6_A1_5844438456</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -371,7 +371,7 @@ TEXT( {!myVariable_current.Status} ) &lt;&gt; TEXT( {!myVariable_current.c501_cm
 
 NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expression>
     </formulas>
-    <interviewLabel>cmbp_Training_Member_Change_Process_CUSTOM-4_InterviewLabel</interviewLabel>
+    <interviewLabel>cmbp_Training_Member_Change_Process_CUSTOM-5_InterviewLabel</interviewLabel>
     <label>cmbp Training Member Change Process CUSTOM</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -584,7 +584,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Update Status</label>
+        <label>Update Training Status</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <filters>
@@ -616,7 +616,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Status</stringValue>
+                    <stringValue>Training Status</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -631,7 +631,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
                     <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Status</field>
+            <field>c501_cm__Training_Status__c</field>
             <value>
                 <elementReference>myVariable_current.Status</elementReference>
             </value>
@@ -799,7 +799,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_4_myRule_3_A2_8398764046</elementReference>
+                <elementReference>formula_4_myRule_3_A2_1503506053</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>
@@ -882,7 +882,7 @@ NOT( ISBLANK( TEXT( {!myVariable_current.c501_cm__Training_Status__c} )))</expre
             </processMetadataValues>
             <field>Outreach_Date_Last_Training__c</field>
             <value>
-                <elementReference>formula_7_myRule_6_A1_3117719231</elementReference>
+                <elementReference>formula_7_myRule_6_A1_5844438456</elementReference>
             </value>
         </inputAssignments>
         <object>Contact</object>

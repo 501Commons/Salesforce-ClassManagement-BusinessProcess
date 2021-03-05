@@ -83,7 +83,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Pending,Registered,Registered Reminder</value>
+            <value>Registered,Registered Reminder</value>
         </criteriaItems>
         <criteriaItems>
             <column>CAMPAIGN_NAME</column>
@@ -97,35 +97,42 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>2/14/2021 12:00 AM</value>
+            <value>3/7/2021 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__custom_End_DateTime__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
-            <value>2/14/2021 12:00 AM</value>
+            <value>3/7/2021 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__Class_Type__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>FFN,Licensed</value>
+            <value>FFN,Licensed,Substitute</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__Language__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Somali</value>
+            <value>English</value>
         </criteriaItems>
         <criteriaItems>
             <column>CAMPAIGN_NAME</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
-            <operator>contains</operator>
-            <value>outdoors</value>
+            <operator>startsWith</operator>
+            <value>cpr</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Registered,Registered Reminder</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -144,6 +151,6 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Campaign.c501_cm__custom_Start_DateTime__c</sortColumn>
-    <sortOrder>Desc</sortOrder>
+    <sortColumn>LAST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
 </Report>

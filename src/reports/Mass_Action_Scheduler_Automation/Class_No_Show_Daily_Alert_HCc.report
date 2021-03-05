@@ -87,6 +87,13 @@ Pulls Campaign Members whose Training Status was updated to &quot;No Show&quot; 
             <operator>equals</operator>
             <value>YESTERDAY</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>LAST_UPDATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>2/19/2021 12:00 AM</value>
+        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>

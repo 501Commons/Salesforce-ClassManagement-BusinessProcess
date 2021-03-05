@@ -100,6 +100,9 @@
     <columns>
         <field>Contact.c501_cm__ii_Employer_Name__c</field>
     </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
     <description>Used to pull A19 data</description>
     <filter>
         <criteriaItems>
@@ -121,14 +124,14 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>7/1/2020 12:00 AM</value>
+            <value>2/28/2021 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__custom_End_DateTime__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
-            <value>6/30/2021 12:00 AM</value>
+            <value>2/28/2021 12:00 AM</value>
         </criteriaItems>
         <criteriaItems>
             <column>Campaign.c501_cm__Class_Type__c</column>
@@ -142,7 +145,14 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>contains</operator>
-            <value>mod 2</value>
+            <value>reading</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Attended</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

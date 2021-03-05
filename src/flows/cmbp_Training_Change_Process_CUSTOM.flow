@@ -19,6 +19,9 @@
         <locationY>200</locationY>
         <actionName>cmbp_Create_Training_Initialization_CUSTOM</actionName>
         <actionType>flow</actionType>
+        <connector>
+            <targetReference>myDecision4</targetReference>
+        </connector>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -1050,7 +1053,7 @@
 ) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_11_A1_3112844629</name>
+        <name>formula_12_myRule_11_A1_4995405773</name>
         <dataType>String</dataType>
         <expression>CASE({!myVariable_current.c501_cm__C501_Training_Location__r.County__c} ,
 &quot;Adams&quot;,&quot;Grant; Douglas; Adams; Lincoln; Spokane; Whitman; Franklin; Benton; Walla Walla; Columbia; Garfield; Asotin&quot;,
@@ -1108,7 +1111,7 @@ TEXT([Campaign].Status) &amp;
 &quot;)&quot;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_15_myRule_14_A1_4948760751</name>
+        <name>formula_15_myRule_14_A1_8335911826</name>
         <dataType>String</dataType>
         <expression>&quot;Register: &quot; &amp;
 {!myVariable_current.c501_cm__C501_Registration_Link__c}  &amp;
@@ -1123,7 +1126,7 @@ TEXT({!myVariable_current.Status}) &amp;
                 <stringValue>[Campaign].c501_cm__Training_Name__c  &amp; &quot; (&quot; &amp; TEXT([Campaign].c501_cm__Class_Type__c) &amp; &quot;) - &quot; &amp;[Campaign].c501_cm__City__c &amp; &quot; - &quot; &amp; TEXT([Campaign].c501_cm__Language__c)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_16_myRule_14_A1_9207505630</name>
+        <name>formula_16_myRule_14_A1_7013489249</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.c501_cm__Training_Name__c}  &amp; &quot; (&quot; &amp; TEXT({!myVariable_current.c501_cm__Class_Type__c}) &amp; &quot;) - &quot; &amp;{!myVariable_current.c501_cm__City__c} &amp; &quot; - &quot; &amp; TEXT({!myVariable_current.c501_cm__Language__c})</expression>
     </formulas>
@@ -1138,7 +1141,7 @@ TEXT([Campaign].Status) &amp;
 &quot;)&quot;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_29_myRule_18_A1_6620402856</name>
+        <name>formula_29_myRule_18_A1_9384347551</name>
         <dataType>String</dataType>
         <expression>&quot;Register: &quot; &amp;
 {!myVariable_current.c501_cm__C501_Registration_Link__c}  &amp;
@@ -1153,7 +1156,7 @@ TEXT({!myVariable_current.Status}) &amp;
                 <stringValue>[Campaign].c501_cm__Training_Name__c  &amp; &quot; (&quot; &amp; TEXT([Campaign].c501_cm__Class_Type__c) &amp; &quot;) - &quot; &amp;[Campaign].c501_cm__City__c &amp; &quot; - &quot; &amp; TEXT([Campaign].c501_cm__Language__c)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_30_myRule_18_A1_1748106258</name>
+        <name>formula_30_myRule_18_A1_8954624649</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.c501_cm__Training_Name__c}  &amp; &quot; (&quot; &amp; TEXT({!myVariable_current.c501_cm__Class_Type__c}) &amp; &quot;) - &quot; &amp;{!myVariable_current.c501_cm__City__c} &amp; &quot; - &quot; &amp; TEXT({!myVariable_current.c501_cm__Language__c})</expression>
     </formulas>
@@ -1171,7 +1174,7 @@ IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 13) - DATE(1900, 1, 7), 7) = 0,
 IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 3, 14) - DATE(1900, 1, 7), 7) = 0, 14, 0))))))))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_7_A1_1254955692</name>
+        <name>formula_8_myRule_7_A1_3037479297</name>
         <dataType>Date</dataType>
         <expression>DATE(YEAR({!myVariable_current.ptStartDate__c}),3,
 IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 3, 8) - DATE(1900, 1, 7), 7) = 0, 8,
@@ -1196,7 +1199,7 @@ IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 6) - DATE(1900, 1, 7), 7) = 0,
 IF(MOD( DATE(YEAR([Campaign].ptStartDate__c), 11, 7) - DATE(1900, 1, 7), 7) = 0, 7, 0)))))))) - 1</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_7_A1_7091965913</name>
+        <name>formula_9_myRule_7_A1_8145322601</name>
         <dataType>Date</dataType>
         <expression>DATE(YEAR({!myVariable_current.ptStartDate__c}),11,
 IF(MOD( DATE(YEAR({!myVariable_current.ptStartDate__c}), 11, 1) - DATE(1900, 1, 7), 7) = 0, 1,
@@ -1286,7 +1289,7 @@ ISNEW()</expression>
         <dataType>Boolean</dataType>
         <expression>true</expression>
     </formulas>
-    <interviewLabel>cmbp_Training_Change_Process_CUSTOM-7_InterviewLabel</interviewLabel>
+    <interviewLabel>cmbp_Training_Change_Process_CUSTOM-8_InterviewLabel</interviewLabel>
     <label>cmbp Training Change Process CUSTOM</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -1351,7 +1354,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>Description</field>
             <value>
-                <elementReference>formula_15_myRule_14_A1_4948760751</elementReference>
+                <elementReference>formula_15_myRule_14_A1_8335911826</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1411,7 +1414,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <stringValue>0056A000000qHctQAE</stringValue>
+                <stringValue>0053h000000agaB</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1477,7 +1480,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_16_myRule_14_A1_9207505630</elementReference>
+                <elementReference>formula_16_myRule_14_A1_7013489249</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1596,7 +1599,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>c501_cm__C501_Outreach_WA_Counties__c</field>
             <value>
-                <elementReference>formula_12_myRule_11_A1_3112844629</elementReference>
+                <elementReference>formula_12_myRule_11_A1_4995405773</elementReference>
             </value>
         </inputAssignments>
         <object>Campaign</object>
@@ -1689,7 +1692,7 @@ ISNEW()</expression>
             <field>OwnerId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>0056A000000qHctQAE</stringValue>
+                <stringValue>0053h000000agaB</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -1725,7 +1728,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>Description</field>
             <value>
-                <elementReference>formula_29_myRule_18_A1_6620402856</elementReference>
+                <elementReference>formula_29_myRule_18_A1_9384347551</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1833,7 +1836,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_30_myRule_18_A1_1748106258</elementReference>
+                <elementReference>formula_30_myRule_18_A1_8954624649</elementReference>
             </value>
         </inputAssignments>
         <object>Event</object>
@@ -1884,7 +1887,7 @@ ISNEW()</expression>
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>Picklist</stringValue>
+                    <stringValue>String</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -1896,7 +1899,7 @@ ISNEW()</expression>
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Status</stringValue>
+                    <stringValue>Description</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -1911,9 +1914,9 @@ ISNEW()</expression>
                     <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Status</field>
+            <field>Description</field>
             <value>
-                <elementReference>myVariable_current.Status</elementReference>
+                <elementReference>myVariable_current.Description</elementReference>
             </value>
         </inputAssignments>
         <object>Campaign</object>
@@ -2392,7 +2395,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>ptPDTFirstDayDate__c</field>
             <value>
-                <elementReference>formula_8_myRule_7_A1_1254955692</elementReference>
+                <elementReference>formula_8_myRule_7_A1_3037479297</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2428,7 +2431,7 @@ ISNEW()</expression>
             </processMetadataValues>
             <field>ptPDTLastDayDate__c</field>
             <value>
-                <elementReference>formula_9_myRule_7_A1_7091965913</elementReference>
+                <elementReference>formula_9_myRule_7_A1_8145322601</elementReference>
             </value>
         </inputAssignments>
         <object>Campaign</object>

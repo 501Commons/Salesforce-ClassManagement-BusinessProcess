@@ -56,7 +56,7 @@
     </columns>
     <description>Mass Action Scheduler Report - Caution when modifying because is called by Mass Action Scheduler Automation</description>
     <filter>
-        <booleanFilter>((1 AND 2 AND 3) OR (4 AND 5 AND 6)) AND 7 AND 8 AND 9 AND 10</booleanFilter>
+        <booleanFilter>((1 AND 2 AND 3) OR (4 AND 5 AND 6)) AND 7 AND 8 AND 9 AND 10 AND 11</booleanFilter>
         <criteriaItems>
             <column>CampaignMember.Send_SMS_Training_Registered__c</column>
             <columnToColumn>false</columnToColumn>
@@ -126,6 +126,13 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_PARENT_ID</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
